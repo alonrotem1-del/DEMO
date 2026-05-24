@@ -277,6 +277,7 @@
   .tool-card[data-color="yellow"]::before { background: var(--yellow); }
   .tool-card[data-color="purple"]::before { background: #A78BFA; }
   .tool-card[data-color="blue"]::before { background: #60A5FA; }
+  .tool-card[data-color="msblue"]::before { background: #0078D4; }
 
   .tool-header {
     display: flex;
@@ -301,6 +302,7 @@
   .tool-card[data-color="yellow"] .tool-icon { background: rgba(255,194,75,0.15); }
   .tool-card[data-color="purple"] .tool-icon { background: rgba(167,139,250,0.15); }
   .tool-card[data-color="blue"] .tool-icon { background: rgba(96,165,250,0.15); }
+  .tool-card[data-color="msblue"] .tool-icon { background: rgba(0,120,212,0.15); }
 
   .tool-name {
     font-size: 1.3rem;
@@ -313,6 +315,7 @@
   .tool-card[data-color="yellow"] .tool-name { color: var(--yellow); }
   .tool-card[data-color="purple"] .tool-name { color: #A78BFA; }
   .tool-card[data-color="blue"] .tool-name { color: #60A5FA; }
+  .tool-card[data-color="msblue"] .tool-name { color: #2B9FE8; }
 
   .tool-strength {
     font-size: 0.95rem;
@@ -368,6 +371,7 @@
   .tool-card[data-color="yellow"] .tool-when-label { background: rgba(255,194,75,0.2); color: var(--yellow); }
   .tool-card[data-color="purple"] .tool-when-label { background: rgba(167,139,250,0.2); color: #A78BFA; }
   .tool-card[data-color="blue"] .tool-when-label { background: rgba(96,165,250,0.2); color: #60A5FA; }
+  .tool-card[data-color="msblue"] .tool-when-label { background: rgba(0,120,212,0.2); color: #2B9FE8; }
 
   /* ─── MATRIX ─── */
   #matrix {
@@ -1009,6 +1013,22 @@
       </div>
     </div>
 
+    <div class="tool-card reveal reveal-delay-1" data-color="msblue">
+      <div class="tool-header">
+        <div class="tool-icon">🪟</div>
+        <div>
+          <div class="tool-name">Copilot</div>
+          <div style="font-size:0.75rem;color:var(--gray);font-weight:500;">Microsoft 365</div>
+        </div>
+      </div>
+      <p class="tool-strength">משולב ישירות בחבילת Microsoft 365 — Word, Excel, PowerPoint, Teams ו-Outlook. מסכם פגישות, מטייב מצגות וכותב מיילים בתוך הכלים עצמם.</p>
+      <div class="tool-weakness">התועלת המרכזית שלו תלויה ברישיון Microsoft 365 Copilot — ומחוץ לסביבת Office היתרון נעלם.</div>
+      <div class="tool-when">
+        <span class="tool-when-label">מתי</span>
+        <span>עבודה ב-Word, PowerPoint, Teams, Outlook — בלי לצאת מ-Office.</span>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -1091,6 +1111,20 @@
         <div class="matrix-task">פרויקט חוזר</div>
         <div class="matrix-tool">Claude Projects</div>
         <div class="matrix-why">בסיס ידע קבוע לכל שיחה עם אותו לקוח</div>
+      </div>
+
+      <div class="matrix-cell reveal reveal-delay-1" data-col="msblue" style="border-top-color:#2B9FE8">
+        <span class="matrix-icon-big">📝</span>
+        <div class="matrix-task">מצגת PowerPoint</div>
+        <div class="matrix-tool" style="color:#2B9FE8">Copilot</div>
+        <div class="matrix-why">יוצר שקפים מתוך Word / Teams ישירות ב-PowerPoint</div>
+      </div>
+
+      <div class="matrix-cell reveal reveal-delay-2" data-col="msblue" style="border-top-color:#2B9FE8">
+        <span class="matrix-icon-big">🤝</span>
+        <div class="matrix-task">סיכום ישיבת Teams</div>
+        <div class="matrix-tool" style="color:#2B9FE8">Copilot</div>
+        <div class="matrix-why">מסכם שיחה, מחלץ החלטות ומשימות אוטומטית</div>
       </div>
 
     </div>
@@ -1192,6 +1226,12 @@
           <button class="rec-task-btn" onclick="selectTask(this, 'כתיבת מצגת מבנית')" data-task="כתיבת מצגת מבנית">
             <span class="rec-task-emoji">✍️</span> כתיבת מצגת מבנית
           </button>
+          <button class="rec-task-btn" onclick="selectTask(this, 'סיכום ישיבת Teams')" data-task="סיכום ישיבת Teams">
+            <span class="rec-task-emoji">🤝</span> סיכום ישיבת Teams
+          </button>
+          <button class="rec-task-btn" onclick="selectTask(this, 'כתיבה ב-Word או PowerPoint')" data-task="כתיבה ב-Word או PowerPoint">
+            <span class="rec-task-emoji">📝</span> כתיבה ב-Word / PowerPoint
+          </button>
         </div>
 
         <div class="rec-input-wrap">
@@ -1231,6 +1271,7 @@
         <span class="summary-tool-chip">ChatGPT</span>
         <span class="summary-tool-chip">Claude Chat</span>
         <span class="summary-tool-chip">Gemini</span>
+        <span class="summary-tool-chip">Copilot</span>
         <span class="summary-tool-chip">Perplexity</span>
         <span class="summary-tool-chip">NotebookLM</span>
       </div>
@@ -1356,6 +1397,17 @@ const rules = [
     ]
   },
   {
+    keywords: ['office','microsoft','מיקרוסופט','word','powerpoint','פאוורפוינט','וורד','teams','טימס','outlook','אאוטלוק','ישיבה','פגישה','365','שקפים','מצגת powerpoint','סיכום ישיבה'],
+    tool: 'Copilot',
+    emoji: '🪟',
+    color: '#2B9FE8',
+    why: 'Microsoft 365 Copilot עובד בתוך Office ממש — מסכם ישיבות Teams, בונה שקפים ב-PowerPoint, מטייב מסמכי Word ומנסח מיילים ב-Outlook. אם אתם כבר בסביבת Microsoft, זה הכלי שלא דורש לצאת ממנה.',
+    alts: [
+      { name: 'Claude', reason: 'לניתוח מעמיק של תוכן המסמך', color: '#1FB6A6' },
+      { name: 'Gemini', reason: 'אם חלק מהעבודה היא ב-Google Workspace במקביל', color: '#60A5FA' },
+    ]
+  },
+  {
     keywords: ['תמונה','ויזואלי','גרפיקה','עיצוב','image','photo','logo','illustration','צייר'],
     tool: 'ChatGPT',
     emoji: '🎨',
@@ -1377,6 +1429,8 @@ const presetMap = {
   'בניית כלי אוטומציה לקבצים': 2,
   'ניהול אימיילים ב-Gmail': 3,
   'כתיבת מצגת מבנית': 1,
+  'סיכום ישיבת Teams': 7,
+  'כתיבה ב-Word או PowerPoint': 7,
 };
 
 function selectTask(btn, task) {
