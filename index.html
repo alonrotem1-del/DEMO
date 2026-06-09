@@ -258,10 +258,9 @@ footer{background:var(--ink2);border-top:1px solid var(--border);padding:2rem;te
 .scroll-progress-bar{height:100%;background:linear-gradient(90deg,var(--teal),var(--orange));width:0%;transition:width .1s}
 
 /* ── ANIMATIONS ── */
-.fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
-.fade-in.visible{opacity:1;transform:none}
-.anim-ready .fade-in{transition:none}
-.anim-ready .fade-in.visible{transition:opacity .6s ease,transform .6s ease}
+.fade-in{opacity:1;transform:none}
+.fade-in.animated{animation:fadeUp .7s ease both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
 
 /* ── METHODOLOGY ── */
 #methodology{background:var(--ink)}
@@ -970,20 +969,9 @@ window.addEventListener('scroll',()=>{
   prog.style.width=p+'%';
 });
 
-// ── FADE IN ──
-function revealVisible(){
-  document.querySelectorAll('.fade-in:not(.visible)').forEach(el=>{
-    const r=el.getBoundingClientRect();
-    if(r.top<window.innerHeight+60)el.classList.add('visible');
-  });
-}
-const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.05,rootMargin:'0px 0px 100px 0px'});
+// ── FADE IN (optional scroll animation) ──
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('animated')})},{threshold:0.05});
 document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
-// Trigger immediately for elements already in view
-revealVisible();
-window.addEventListener('scroll',revealVisible,{passive:true});
-// Hard fallback: show everything after 1.5s regardless
-setTimeout(()=>document.querySelectorAll('.fade-in').forEach(el=>el.classList.add('visible')),1500);
 
 // ── SOURCE PANEL ──
 function showSource(id,title,content){
