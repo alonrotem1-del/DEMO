@@ -3,1432 +3,984 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>איזה AI לאיזו משימה? | BDO</title>
+<title>BDO Israel | The Future of Consulting</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --ink: #16161D;
-    --ink-light: #1e1e27;
-    --ink-mid: #252530;
-    --orange: #FF6A3D;
-    --teal: #1FB6A6;
-    --yellow: #FFC24B;
-    --white: #F5F5F0;
-    --gray: #8888A0;
-    --gray-light: #2e2e3a;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    background: var(--ink);
-    color: var(--white);
-    font-family: 'Heebo', sans-serif;
-    direction: rtl;
-    overflow-x: hidden;
-  }
-
-  /* ─── NAV ─── */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 1000;
-    background: rgba(22,22,29,0.85);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-    padding: 0 2rem;
-    height: 56px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .nav-logo {
-    font-size: 1.1rem;
-    font-weight: 800;
-    color: var(--orange);
-    letter-spacing: -0.5px;
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 0.25rem;
-    list-style: none;
-    flex-direction: row-reverse;
-  }
-
-  .nav-links a {
-    color: var(--gray);
-    text-decoration: none;
-    font-size: 0.82rem;
-    font-weight: 500;
-    padding: 0.35rem 0.75rem;
-    border-radius: 20px;
-    transition: all 0.2s;
-  }
-
-  .nav-links a:hover {
-    color: var(--white);
-    background: rgba(255,255,255,0.07);
-  }
-
-  /* ─── HERO ─── */
-  #hero {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-    padding: 4rem 2rem 6rem;
-    text-align: center;
-  }
-
-  .hero-bg {
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(ellipse 60% 50% at 20% 50%, rgba(255,106,61,0.12) 0%, transparent 70%),
-      radial-gradient(ellipse 50% 60% at 80% 30%, rgba(31,182,166,0.10) 0%, transparent 70%),
-      radial-gradient(ellipse 40% 40% at 50% 80%, rgba(255,194,75,0.07) 0%, transparent 70%);
-    pointer-events: none;
-  }
-
-  .hero-grid {
-    position: absolute;
-    inset: 0;
-    background-image:
-      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-    background-size: 60px 60px;
-    pointer-events: none;
-  }
-
-  .hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: rgba(255,106,61,0.15);
-    border: 1px solid rgba(255,106,61,0.3);
-    color: var(--orange);
-    font-size: 0.78rem;
-    font-weight: 600;
-    padding: 0.4rem 1rem;
-    border-radius: 100px;
-    margin-bottom: 2rem;
-    letter-spacing: 0.5px;
-  }
-
-  .hero-title {
-    font-size: clamp(3rem, 8vw, 7rem);
-    font-weight: 900;
-    line-height: 1.0;
-    letter-spacing: -2px;
-    margin-bottom: 1.5rem;
-    position: relative;
-  }
-
-  .hero-title .highlight-orange { color: var(--orange); }
-  .hero-title .highlight-teal { color: var(--teal); }
-
-  .hero-subtitle {
-    font-size: clamp(1rem, 2.5vw, 1.35rem);
-    color: var(--gray);
-    max-width: 600px;
-    line-height: 1.7;
-    margin-bottom: 3rem;
-    font-weight: 400;
-  }
-
-  .hero-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: var(--orange);
-    color: var(--ink);
-    font-weight: 700;
-    font-size: 1rem;
-    padding: 0.85rem 2rem;
-    border-radius: 50px;
-    text-decoration: none;
-    transition: transform 0.2s, box-shadow 0.2s;
-    box-shadow: 0 0 30px rgba(255,106,61,0.3);
-  }
-
-  .hero-cta:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 0 40px rgba(255,106,61,0.5);
-  }
-
-  .bdo-tag {
-    position: absolute;
-    bottom: 2.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    color: var(--gray);
-    font-size: 0.8rem;
-    font-weight: 500;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-  }
-
-  .scroll-hint {
-    position: absolute;
-    bottom: 1.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.4rem;
-    color: var(--gray);
-    font-size: 0.72rem;
-    letter-spacing: 1px;
-    animation: bobble 2s ease-in-out infinite;
-  }
-
-  @keyframes bobble {
-    0%, 100% { transform: translateX(-50%) translateY(0); }
-    50% { transform: translateX(-50%) translateY(6px); }
-  }
-
-  .scroll-arrow {
-    width: 20px;
-    height: 20px;
-    border-right: 2px solid var(--gray);
-    border-bottom: 2px solid var(--gray);
-    transform: rotate(45deg);
-  }
-
-  /* ─── SECTIONS ─── */
-  section {
-    padding: 6rem 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .section-label {
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--teal);
-    margin-bottom: 0.75rem;
-  }
-
-  .section-title {
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 900;
-    letter-spacing: -1px;
-    line-height: 1.1;
-    margin-bottom: 1rem;
-  }
-
-  .section-desc {
-    color: var(--gray);
-    font-size: 1.05rem;
-    line-height: 1.7;
-    max-width: 600px;
-    margin-bottom: 3rem;
-  }
-
-  /* ─── TOOL CARDS ─── */
-  .tools-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 1.25rem;
-  }
-
-  .tool-card {
-    background: var(--ink-light);
-    border: 1px solid rgba(255,255,255,0.07);
-    border-radius: 20px;
-    padding: 2rem;
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.25s, box-shadow 0.25s;
-    cursor: default;
-  }
-
-  .tool-card::before {
-    content: '';
-    position: absolute;
-    top: 0; right: 0;
-    width: 120px; height: 120px;
-    border-radius: 50%;
-    opacity: 0.08;
-    transform: translate(30px, -30px);
-    transition: opacity 0.3s;
-  }
-
-  .tool-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 40px rgba(0,0,0,0.4);
-  }
-
-  .tool-card:hover::before { opacity: 0.15; }
-
-  .tool-card[data-color="orange"]::before { background: var(--orange); }
-  .tool-card[data-color="teal"]::before { background: var(--teal); }
-  .tool-card[data-color="yellow"]::before { background: var(--yellow); }
-  .tool-card[data-color="purple"]::before { background: #A78BFA; }
-  .tool-card[data-color="blue"]::before { background: #60A5FA; }
-
-  .tool-header {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 1.25rem;
-  }
-
-  .tool-icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    flex-shrink: 0;
-  }
-
-  .tool-card[data-color="orange"] .tool-icon { background: rgba(255,106,61,0.15); }
-  .tool-card[data-color="teal"] .tool-icon { background: rgba(31,182,166,0.15); }
-  .tool-card[data-color="yellow"] .tool-icon { background: rgba(255,194,75,0.15); }
-  .tool-card[data-color="purple"] .tool-icon { background: rgba(167,139,250,0.15); }
-  .tool-card[data-color="blue"] .tool-icon { background: rgba(96,165,250,0.15); }
-
-  .tool-name {
-    font-size: 1.3rem;
-    font-weight: 800;
-    letter-spacing: -0.5px;
-  }
-
-  .tool-card[data-color="orange"] .tool-name { color: var(--orange); }
-  .tool-card[data-color="teal"] .tool-name { color: var(--teal); }
-  .tool-card[data-color="yellow"] .tool-name { color: var(--yellow); }
-  .tool-card[data-color="purple"] .tool-name { color: #A78BFA; }
-  .tool-card[data-color="blue"] .tool-name { color: #60A5FA; }
-
-  .tool-strength {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: var(--white);
-    margin-bottom: 1rem;
-  }
-
-  .tool-weakness {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.5rem;
-    background: rgba(255,255,255,0.04);
-    border-radius: 10px;
-    padding: 0.65rem 0.85rem;
-    margin-bottom: 1rem;
-    font-size: 0.85rem;
-    color: var(--gray);
-    line-height: 1.5;
-  }
-
-  .tool-weakness::before {
-    content: '⚠';
-    font-size: 0.8rem;
-    opacity: 0.6;
-    flex-shrink: 0;
-    margin-top: 1px;
-  }
-
-  .tool-when {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.5rem;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--white);
-    line-height: 1.5;
-  }
-
-  .tool-when-label {
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    padding: 0.2rem 0.6rem;
-    border-radius: 100px;
-    flex-shrink: 0;
-    margin-top: 1px;
-  }
-
-  .tool-card[data-color="orange"] .tool-when-label { background: rgba(255,106,61,0.2); color: var(--orange); }
-  .tool-card[data-color="teal"] .tool-when-label { background: rgba(31,182,166,0.2); color: var(--teal); }
-  .tool-card[data-color="yellow"] .tool-when-label { background: rgba(255,194,75,0.2); color: var(--yellow); }
-  .tool-card[data-color="purple"] .tool-when-label { background: rgba(167,139,250,0.2); color: #A78BFA; }
-  .tool-card[data-color="blue"] .tool-when-label { background: rgba(96,165,250,0.2); color: #60A5FA; }
-
-  /* ─── MATRIX ─── */
-  #matrix {
-    background: var(--ink-light);
-    border-top: 1px solid rgba(255,255,255,0.05);
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-    max-width: 100%;
-    padding: 6rem 2rem;
-  }
-
-  #matrix > .matrix-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .matrix-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 1rem;
-    margin-top: 3rem;
-  }
-
-  .matrix-cell {
-    background: var(--ink-mid);
-    border: 1px solid rgba(255,255,255,0.06);
-    border-radius: 16px;
-    padding: 1.5rem;
-    text-align: center;
-    transition: transform 0.2s;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .matrix-cell:hover { transform: translateY(-3px); }
-
-  .matrix-task {
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    color: var(--gray);
-    text-transform: uppercase;
-    margin-bottom: 0.75rem;
-  }
-
-  .matrix-tool {
-    font-size: 1.1rem;
-    font-weight: 800;
-    margin-bottom: 0.5rem;
-  }
-
-  .matrix-icon-big {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-    display: block;
-  }
-
-  .matrix-why {
-    font-size: 0.75rem;
-    color: var(--gray);
-    line-height: 1.5;
-  }
-
-  .matrix-cell[data-col="orange"] { border-top: 3px solid var(--orange); }
-  .matrix-cell[data-col="teal"] { border-top: 3px solid var(--teal); }
-  .matrix-cell[data-col="yellow"] { border-top: 3px solid var(--yellow); }
-  .matrix-cell[data-col="purple"] { border-top: 3px solid #A78BFA; }
-  .matrix-cell[data-col="blue"] { border-top: 3px solid #60A5FA; }
-  .matrix-cell[data-col="green"] { border-top: 3px solid #4ADE80; }
-
-  .matrix-cell[data-col="orange"] .matrix-tool { color: var(--orange); }
-  .matrix-cell[data-col="teal"] .matrix-tool { color: var(--teal); }
-  .matrix-cell[data-col="yellow"] .matrix-tool { color: var(--yellow); }
-  .matrix-cell[data-col="purple"] .matrix-tool { color: #A78BFA; }
-  .matrix-cell[data-col="blue"] .matrix-tool { color: #60A5FA; }
-  .matrix-cell[data-col="green"] .matrix-tool { color: #4ADE80; }
-
-  /* ─── CLAUDE FEATURES ─── */
-  .features-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.25rem;
-  }
-
-  @media (max-width: 700px) {
-    .features-layout { grid-template-columns: 1fr; }
-  }
-
-  .feature-card {
-    background: var(--ink-light);
-    border: 1px solid rgba(255,255,255,0.07);
-    border-radius: 20px;
-    padding: 1.75rem;
-    display: flex;
-    gap: 1.25rem;
-    align-items: flex-start;
-    transition: transform 0.2s, border-color 0.2s;
-  }
-
-  .feature-card:hover {
-    transform: translateY(-3px);
-    border-color: rgba(255,106,61,0.25);
-  }
-
-  .feature-card.full-width {
-    grid-column: 1 / -1;
-  }
-
-  .feature-icon {
-    width: 50px;
-    height: 50px;
-    border-radius: 14px;
-    background: rgba(255,106,61,0.12);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.4rem;
-    flex-shrink: 0;
-  }
-
-  .feature-icon.teal { background: rgba(31,182,166,0.12); }
-  .feature-icon.yellow { background: rgba(255,194,75,0.12); }
-  .feature-icon.purple { background: rgba(167,139,250,0.12); }
-  .feature-icon.blue { background: rgba(96,165,250,0.12); }
-
-  .feature-title {
-    font-size: 1.05rem;
-    font-weight: 800;
-    color: var(--orange);
-    margin-bottom: 0.4rem;
-  }
-
-  .feature-card .feature-icon.teal ~ div .feature-title { color: var(--teal); }
-  .feature-card .feature-icon.yellow ~ div .feature-title { color: var(--yellow); }
-  .feature-card .feature-icon.purple ~ div .feature-title { color: #A78BFA; }
-  .feature-card .feature-icon.blue ~ div .feature-title { color: #60A5FA; }
-
-  .feature-desc {
-    font-size: 0.9rem;
-    color: var(--gray);
-    line-height: 1.6;
-  }
-
-  .feature-tag {
-    display: inline-block;
-    font-size: 0.68rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    background: rgba(255,106,61,0.15);
-    color: var(--orange);
-    padding: 0.2rem 0.6rem;
-    border-radius: 100px;
-    margin-top: 0.5rem;
-  }
-
-  /* ─── RECOMMENDER ─── */
-  #recommender {
-    background: var(--ink-light);
-    border-top: 1px solid rgba(255,255,255,0.05);
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-    max-width: 100%;
-    padding: 6rem 2rem;
-  }
-
-  #recommender > .rec-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .rec-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    align-items: start;
-  }
-
-  @media (max-width: 800px) {
-    .rec-layout { grid-template-columns: 1fr; }
-  }
-
-  .rec-tasks {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .rec-task-btn {
-    background: var(--ink-mid);
-    border: 1px solid rgba(255,255,255,0.07);
-    border-radius: 12px;
-    padding: 0.75rem 1.1rem;
-    text-align: right;
-    cursor: pointer;
-    font-family: 'Heebo', sans-serif;
-    font-size: 0.9rem;
-    color: var(--white);
-    font-weight: 500;
-    transition: all 0.2s;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-  }
-
-  .rec-task-btn:hover {
-    background: rgba(255,106,61,0.1);
-    border-color: rgba(255,106,61,0.3);
-    color: var(--orange);
-  }
-
-  .rec-task-btn.active {
-    background: rgba(255,106,61,0.15);
-    border-color: var(--orange);
-    color: var(--orange);
-    font-weight: 700;
-  }
-
-  .rec-task-emoji {
-    font-size: 1.1rem;
-    flex-shrink: 0;
-  }
-
-  .rec-input-wrap {
-    margin-top: 1rem;
-  }
-
-  .rec-input-label {
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: var(--gray);
-    margin-bottom: 0.5rem;
-    display: block;
-  }
-
-  .rec-input {
-    width: 100%;
-    background: var(--ink-mid);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 12px;
-    padding: 0.9rem 1.1rem;
-    color: var(--white);
-    font-family: 'Heebo', sans-serif;
-    font-size: 0.95rem;
-    direction: rtl;
-    outline: none;
-    transition: border-color 0.2s;
-    resize: none;
-  }
-
-  .rec-input:focus {
-    border-color: rgba(255,106,61,0.4);
-    box-shadow: 0 0 0 3px rgba(255,106,61,0.08);
-  }
-
-  .rec-btn {
-    margin-top: 0.75rem;
-    background: var(--orange);
-    color: var(--ink);
-    border: none;
-    border-radius: 12px;
-    padding: 0.75rem 1.5rem;
-    font-family: 'Heebo', sans-serif;
-    font-size: 0.9rem;
-    font-weight: 700;
-    cursor: pointer;
-    transition: transform 0.15s, box-shadow 0.15s;
-    width: 100%;
-  }
-
-  .rec-btn:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 6px 20px rgba(255,106,61,0.3);
-  }
-
-  .rec-result-area {
-    min-height: 300px;
-  }
-
-  .rec-placeholder {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 300px;
-    color: var(--gray);
-    text-align: center;
-    gap: 1rem;
-    border: 2px dashed rgba(255,255,255,0.08);
-    border-radius: 20px;
-  }
-
-  .rec-placeholder-icon { font-size: 3rem; opacity: 0.3; }
-  .rec-placeholder-text { font-size: 0.9rem; }
-
-  .rec-result-card {
-    background: var(--ink-mid);
-    border-radius: 20px;
-    padding: 2rem;
-    border: 1px solid rgba(255,255,255,0.08);
-    animation: slideIn 0.35s ease;
-  }
-
-  @keyframes slideIn {
-    from { opacity: 0; transform: translateY(16px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  .rec-main-tool {
-    font-size: 2rem;
-    font-weight: 900;
-    margin-bottom: 0.25rem;
-    letter-spacing: -1px;
-  }
-
-  .rec-main-emoji { font-size: 2.5rem; margin-bottom: 0.75rem; display: block; }
-
-  .rec-main-why {
-    font-size: 0.95rem;
-    color: var(--gray);
-    line-height: 1.65;
-    margin-bottom: 1.5rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid rgba(255,255,255,0.07);
-  }
-
-  .rec-alts-label {
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--gray);
-    margin-bottom: 0.75rem;
-  }
-
-  .rec-alts {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .rec-alt {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    background: rgba(255,255,255,0.04);
-    border-radius: 10px;
-    padding: 0.65rem 0.9rem;
-  }
-
-  .rec-alt-rank {
-    font-size: 0.72rem;
-    font-weight: 700;
-    color: var(--gray);
-    min-width: 1.5rem;
-  }
-
-  .rec-alt-name {
-    font-size: 0.9rem;
-    font-weight: 700;
-  }
-
-  .rec-alt-reason {
-    font-size: 0.8rem;
-    color: var(--gray);
-    margin-right: auto;
-  }
-
-  /* ─── SUMMARY ─── */
-  .summary-split {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-    margin-top: 3rem;
-  }
-
-  @media (max-width: 700px) {
-    .summary-split { grid-template-columns: 1fr; }
-  }
-
-  .summary-col {
-    border-radius: 24px;
-    padding: 2.5rem;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .summary-col.reactive {
-    background: linear-gradient(135deg, rgba(96,165,250,0.08), rgba(96,165,250,0.03));
-    border: 1px solid rgba(96,165,250,0.2);
-  }
-
-  .summary-col.autonomous {
-    background: linear-gradient(135deg, rgba(255,106,61,0.1), rgba(255,194,75,0.05));
-    border: 1px solid rgba(255,106,61,0.25);
-  }
-
-  .summary-col-label {
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 0.75rem;
-  }
-
-  .reactive .summary-col-label { color: #60A5FA; }
-  .autonomous .summary-col-label { color: var(--orange); }
-
-  .summary-col-title {
-    font-size: 1.6rem;
-    font-weight: 900;
-    letter-spacing: -0.5px;
-    margin-bottom: 1rem;
-    line-height: 1.2;
-  }
-
-  .reactive .summary-col-title { color: #60A5FA; }
-  .autonomous .summary-col-title { color: var(--orange); }
-
-  .summary-col-desc {
-    font-size: 0.92rem;
-    color: var(--gray);
-    line-height: 1.7;
-    margin-bottom: 1.25rem;
-  }
-
-  .summary-tools {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-
-  .summary-tool-chip {
-    font-size: 0.8rem;
-    font-weight: 700;
-    padding: 0.35rem 0.85rem;
-    border-radius: 100px;
-  }
-
-  .reactive .summary-tool-chip {
-    background: rgba(96,165,250,0.12);
-    color: #60A5FA;
-  }
-
-  .autonomous .summary-tool-chip {
-    background: rgba(255,106,61,0.12);
-    color: var(--orange);
-  }
-
-  .big-insight {
-    background: linear-gradient(135deg, rgba(31,182,166,0.08), rgba(255,194,75,0.05));
-    border: 1px solid rgba(31,182,166,0.2);
-    border-radius: 20px;
-    padding: 2rem;
-    margin-top: 2rem;
-    display: flex;
-    gap: 1.25rem;
-    align-items: flex-start;
-  }
-
-  .big-insight-icon {
-    font-size: 2rem;
-    flex-shrink: 0;
-  }
-
-  .big-insight-text {
-    font-size: 1.05rem;
-    line-height: 1.7;
-    color: var(--white);
-    font-weight: 500;
-  }
-
-  .big-insight-text strong { color: var(--teal); }
-
-  /* ─── FOOTER ─── */
-  footer {
-    text-align: center;
-    padding: 3rem 2rem;
-    color: var(--gray);
-    font-size: 0.8rem;
-    border-top: 1px solid rgba(255,255,255,0.05);
-  }
-
-  footer strong { color: var(--white); }
-
-  /* ─── REVEAL ANIMATIONS ─── */
-  .reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
-
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .reveal-delay-1 { transition-delay: 0.1s; }
-  .reveal-delay-2 { transition-delay: 0.2s; }
-  .reveal-delay-3 { transition-delay: 0.3s; }
-  .reveal-delay-4 { transition-delay: 0.4s; }
-  .reveal-delay-5 { transition-delay: 0.5s; }
-
-  /* ─── MISC ─── */
-  .divider {
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
-    margin: 0;
-  }
-
-  @media (max-width: 640px) {
-    .nav-links { display: none; }
-    .tools-grid { grid-template-columns: 1fr; }
-    .matrix-grid { grid-template-columns: 1fr 1fr; }
-    .features-layout { grid-template-columns: 1fr; }
-  }
+:root{
+  --ink:#07070d;--ink2:#0f0f18;--ink3:#171724;--ink4:#1f1f2e;--ink5:#27273a;
+  --teal:#00d4b4;--teal-dim:rgba(0,212,180,.12);--teal-border:rgba(0,212,180,.25);
+  --orange:#ff5a2b;--orange-dim:rgba(255,90,43,.1);
+  --yellow:#f5c030;--yellow-dim:rgba(245,192,48,.1);
+  --red:#ff4040;--green:#22c55e;--purple:#a78bfa;
+  --white:#eeeee9;--gray:#7878a0;--gray2:#444460;
+  --border:rgba(255,255,255,.055);--border2:rgba(255,255,255,.11);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-snap-type:y mandatory}
+body{background:var(--ink);color:var(--white);font-family:'Heebo',sans-serif;direction:rtl;overflow-x:hidden;line-height:1.5}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;inset-inline:0;z-index:1000;height:52px;display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;background:rgba(7,7,13,.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav-brand{font-size:.85rem;font-weight:800;letter-spacing:.04em}
+.nav-brand em{color:var(--teal);font-style:normal}
+.nav-links{display:flex;gap:1.8rem;list-style:none}
+.nav-links a{font-size:.72rem;color:var(--gray);text-decoration:none;font-weight:600;letter-spacing:.06em;text-transform:uppercase;transition:color .2s}
+.nav-links a:hover{color:var(--white)}
+.nav-badge{font-size:.65rem;background:var(--teal-dim);color:var(--teal);border:1px solid var(--teal-border);border-radius:20px;padding:.2rem .7rem;font-weight:700;letter-spacing:.05em}
+@media(max-width:760px){.nav-links{display:none}}
+
+/* ── SCROLL PROGRESS ── */
+.spb{position:fixed;top:52px;inset-inline:0;height:2px;background:var(--border);z-index:999}
+.spb-bar{height:100%;width:0%;background:linear-gradient(90deg,var(--teal),var(--orange));transition:width .1s}
+
+/* ── SECTIONS ── */
+section{min-height:100vh;scroll-snap-align:start;display:flex;align-items:center;justify-content:center;padding:80px 2.5rem 60px;position:relative}
+.slide{max-width:1160px;width:100%;margin:0 auto}
+.slide-label{font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-bottom:.9rem;opacity:.85}
+.slide-h{font-size:clamp(2rem,4.5vw,3.4rem);font-weight:900;line-height:1.1;letter-spacing:-.025em;margin-bottom:.7rem}
+.slide-h .hl{color:var(--teal)}
+.slide-h .hl2{color:var(--orange)}
+.slide-sub{font-size:1rem;color:var(--gray);max-width:560px;line-height:1.65;margin-bottom:2rem}
+
+/* ── CONFIDENCE TAGS ── */
+.tag{display:inline-flex;align-items:center;gap:.25rem;font-size:.6rem;font-weight:700;padding:.15rem .5rem;border-radius:4px;cursor:pointer;transition:all .2s;letter-spacing:.05em;vertical-align:middle}
+.tag:hover{opacity:.75;transform:scale(1.05)}
+.tag-data{background:rgba(34,197,94,.12);color:#22c55e;border:1px solid rgba(34,197,94,.3)}
+.tag-est{background:rgba(245,192,48,.12);color:var(--yellow);border:1px solid rgba(245,192,48,.3)}
+.tag-spec{background:rgba(255,64,64,.12);color:var(--red);border:1px solid rgba(255,64,64,.3)}
+.tag-bench{background:rgba(167,139,250,.12);color:var(--purple);border:1px solid rgba(167,139,250,.3)}
+
+/* ── SOURCE PANEL ── */
+.sp{display:none;position:fixed;bottom:72px;right:2rem;left:2rem;max-width:440px;margin:0 auto;background:var(--ink3);border:1px solid var(--border2);border-radius:14px;padding:1.2rem 1.4rem;z-index:600;box-shadow:0 24px 64px rgba(0,0,0,.65)}
+.sp.on{display:block;animation:su .22s ease}
+@keyframes su{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.sp-close{float:left;background:none;border:none;color:var(--gray);cursor:pointer;font-size:1rem}
+.sp-lbl{font-size:.65rem;color:var(--gray);font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem}
+.sp-body{font-size:.82rem;color:var(--white);line-height:1.6}
+.sp-meta{font-size:.68rem;color:var(--gray2);margin-top:.65rem;padding-top:.65rem;border-top:1px solid var(--border)}
+
+/* ══════════════════════════════════════════
+   SECTION 1 — HERO
+══════════════════════════════════════════ */
+#hero{background:radial-gradient(ellipse 70% 55% at 50% -10%,rgba(0,212,180,.07) 0%,transparent 65%),var(--ink);overflow:hidden}
+#hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 47px,rgba(255,255,255,.013) 48px),repeating-linear-gradient(90deg,transparent,transparent 47px,rgba(255,255,255,.013) 48px);pointer-events:none}
+.hero-kicker{display:inline-flex;align-items:center;gap:.5rem;background:rgba(245,192,48,.08);border:1px solid rgba(245,192,48,.2);border-radius:24px;padding:.35rem 1rem;font-size:.72rem;color:var(--yellow);font-weight:700;margin-bottom:1.8rem;letter-spacing:.06em}
+.hero-thesis{font-size:clamp(1.5rem,3.2vw,2.3rem);font-weight:800;line-height:1.4;color:var(--white);margin-bottom:2.5rem;max-width:820px;border-right:3px solid var(--teal);padding-right:1.4rem}
+.hero-thesis strong{color:var(--teal)}
+.hero-thesis em{color:var(--orange);font-style:normal}
+.hero-cta{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3.5rem}
+.btn-p{background:var(--orange);color:#fff;border:none;padding:.72rem 1.6rem;border-radius:8px;font-size:.88rem;font-weight:700;cursor:pointer;font-family:'Heebo',sans-serif;transition:all .2s}
+.btn-p:hover{background:#ff7a56;transform:translateY(-1px)}
+.btn-g{background:transparent;color:var(--white);border:1px solid var(--border2);padding:.72rem 1.6rem;border-radius:8px;font-size:.88rem;font-weight:600;cursor:pointer;font-family:'Heebo',sans-serif;transition:all .2s}
+.btn-g:hover{border-color:var(--teal);color:var(--teal)}
+.hero-3stats{display:flex;gap:2.5rem;flex-wrap:wrap}
+.hstat{padding-right:2rem;border-right:1px solid var(--border2)}
+.hstat:last-child{border:none}
+.hstat-n{font-size:2.2rem;font-weight:900;color:var(--white);line-height:1}
+.hstat-n span{font-size:1rem;color:var(--teal)}
+.hstat-l{font-size:.72rem;color:var(--gray);margin-top:.3rem}
+.scroll-hint{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.4rem;color:var(--gray);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;animation:bob 2.2s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(6px)}}
+
+/* ══════════════════════════════════════════
+   SECTION 2 — THREE SIGNALS
+══════════════════════════════════════════ */
+#signals{background:var(--ink2)}
+.signals-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2.5rem}
+@media(max-width:700px){.signals-grid{grid-template-columns:1fr}}
+.signal-card{background:var(--ink3);border:1px solid var(--border);border-radius:16px;padding:1.8rem 1.5rem;position:relative;overflow:hidden}
+.signal-card::before{content:'';position:absolute;top:0;right:0;width:100%;height:3px}
+.signal-card.s-teal::before{background:var(--teal)}
+.signal-card.s-orange::before{background:var(--orange)}
+.signal-card.s-yellow::before{background:var(--yellow)}
+.signal-big{font-size:3rem;font-weight:900;line-height:1;margin-bottom:.5rem}
+.signal-card.s-teal .signal-big{color:var(--teal)}
+.signal-card.s-orange .signal-big{color:var(--orange)}
+.signal-card.s-yellow .signal-big{color:var(--yellow)}
+.signal-title{font-size:.95rem;font-weight:700;margin-bottom:.4rem}
+.signal-body{font-size:.8rem;color:var(--gray);line-height:1.55}
+.signal-conf{margin-top:.8rem}
+.signal-window{margin-top:2.5rem;background:linear-gradient(135deg,rgba(0,212,180,.06),rgba(255,90,43,.04));border:1px solid var(--teal-border);border-radius:14px;padding:1.4rem 1.8rem;display:flex;align-items:center;gap:1.5rem}
+.window-icon{font-size:2rem;flex-shrink:0}
+.window-text{font-size:1rem;color:var(--white);line-height:1.6}
+.window-text strong{color:var(--teal)}
+
+/* ══════════════════════════════════════════
+   SECTION 3 — TODAY VS TOMORROW (THE BIG SHIFT)
+══════════════════════════════════════════ */
+#shift{background:var(--ink)}
+.shift-wrap{display:grid;grid-template-columns:1fr auto 1fr;gap:0;margin-top:2rem;border-radius:20px;overflow:hidden}
+@media(max-width:800px){.shift-wrap{grid-template-columns:1fr;gap:1rem}}
+.shift-col{padding:2rem 1.8rem}
+.shift-col.today{background:var(--ink3);border:1px solid var(--border)}
+.shift-col.tmrw{background:linear-gradient(135deg,rgba(0,212,180,.07),rgba(0,212,180,.02));border:1px solid var(--teal-border)}
+.shift-arrow-col{display:flex;align-items:center;justify-content:center;background:var(--ink2);padding:0 1rem;font-size:2rem;color:var(--teal);flex-direction:column;gap:.4rem}
+@media(max-width:800px){.shift-arrow-col{padding:1rem;font-size:1.5rem;flex-direction:row}}
+.shift-header{font-size:.65rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin-bottom:1.2rem;padding-bottom:.8rem;border-bottom:1px solid var(--border)}
+.shift-col.today .shift-header{color:var(--gray)}
+.shift-col.tmrw .shift-header{color:var(--teal)}
+.shift-row{display:flex;gap:.8rem;padding:.65rem 0;border-bottom:1px solid var(--border)}
+.shift-row:last-child{border-bottom:none}
+.shift-icon{font-size:1.1rem;flex-shrink:0;margin-top:.05rem}
+.shift-row-content{}
+.shift-row-title{font-size:.85rem;font-weight:700;margin-bottom:.15rem}
+.shift-row-sub{font-size:.75rem;color:var(--gray);line-height:1.4}
+.shift-col.today .shift-row-title{color:var(--gray)}
+.shift-col.tmrw .shift-row-title{color:var(--white)}
+.shift-footer{margin-top:1.2rem;padding-top:1.2rem;border-top:1px solid var(--border)}
+.shift-model{font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.shift-rev{font-size:1.1rem;font-weight:800;margin-top:.25rem}
+.shift-col.today .shift-rev{color:var(--gray)}
+.shift-col.tmrw .shift-rev{color:var(--teal)}
+
+/* ══════════════════════════════════════════
+   SECTION 4 — WHAT CLIENTS PAY FOR
+══════════════════════════════════════════ */
+#value{background:var(--ink2)}
+.value-wrap{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;margin-top:2.5rem}
+@media(max-width:700px){.value-wrap{grid-template-columns:1fr;gap:2.5rem}}
+.value-col{}
+.value-col-label{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:1.2rem}
+.value-col.vc-today .value-col-label{color:var(--gray)}
+.value-col.vc-future .value-col-label{color:var(--teal)}
+.bar-stack{display:flex;flex-direction:column;gap:4px;width:100%}
+.bar-seg{display:flex;align-items:center;justify-content:space-between;padding:.65rem 1rem;border-radius:7px;transition:all .3s}
+.bar-seg:hover{filter:brightness(1.1)}
+.bar-seg-label{font-size:.8rem;font-weight:700}
+.bar-seg-pct{font-size:1.1rem;font-weight:900}
+.seg-research{background:rgba(136,136,160,.15);color:var(--gray)}
+.seg-analysis{background:rgba(167,139,250,.15);color:var(--purple)}
+.seg-slides{background:rgba(245,192,48,.12);color:var(--yellow)}
+.seg-advice{background:rgba(0,212,180,.12);color:var(--teal)}
+.seg-judgment{background:rgba(0,212,180,.2);color:var(--teal)}
+.seg-ongoing{background:rgba(255,90,43,.15);color:var(--orange)}
+.value-insight{margin-top:2rem;padding:1.2rem 1.5rem;background:var(--ink3);border-radius:12px;border-right:3px solid var(--teal)}
+.value-insight p{font-size:.88rem;color:var(--white);line-height:1.6}
+.value-insight strong{color:var(--teal)}
+
+/* ══════════════════════════════════════════
+   SECTION 5 — THE PYRAMID SHIFT
+══════════════════════════════════════════ */
+#pyramid{background:var(--ink)}
+.pyramid-compare{display:grid;grid-template-columns:1fr 80px 1fr;gap:0;align-items:center;margin-top:2.5rem}
+@media(max-width:800px){.pyramid-compare{grid-template-columns:1fr;gap:2rem}}
+.pyr-side{display:flex;flex-direction:column;gap:5px}
+.pyr-layer{display:flex;align-items:center;justify-content:center;border-radius:6px;text-align:center;padding:.65rem;cursor:pointer;transition:all .3s;position:relative}
+.pyr-layer:hover{filter:brightness(1.15);transform:scaleX(1.01)}
+.pyr-lname{font-size:.78rem;font-weight:700;color:#fff}
+.pyr-lsub{font-size:.62rem;color:rgba(255,255,255,.65);margin-top:.1rem}
+.pyr-arrow-col{display:flex;align-items:center;justify-content:center;font-size:2rem;color:var(--teal)}
+.pyr-legend{display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:1.5rem;justify-content:center}
+.pyr-leg-item{display:flex;align-items:center;gap:.5rem;font-size:.73rem;color:var(--gray)}
+.pyr-leg-dot{width:10px;height:10px;border-radius:50%}
+
+/* ══════════════════════════════════════════
+   SECTION 6 — PRODUCT STACK
+══════════════════════════════════════════ */
+#stack{background:var(--ink2)}
+.stack-wrap{display:grid;grid-template-columns:1fr 300px;gap:3rem;align-items:center;margin-top:2rem}
+@media(max-width:900px){.stack-wrap{grid-template-columns:1fr}}
+.stack-layers{display:flex;flex-direction:column;gap:8px}
+.stack-layer{border-radius:12px;padding:1.3rem 1.6rem;cursor:pointer;transition:all .3s;position:relative;overflow:hidden}
+.stack-layer::after{content:'';position:absolute;top:0;left:0;bottom:0;width:4px}
+.sl-4{background:linear-gradient(135deg,rgba(0,212,180,.14),rgba(0,212,180,.04));border:1px solid rgba(0,212,180,.3)}
+.sl-4::after{background:var(--teal)}
+.sl-3{background:linear-gradient(135deg,rgba(167,139,250,.14),rgba(167,139,250,.04));border:1px solid rgba(167,139,250,.25)}
+.sl-3::after{background:var(--purple)}
+.sl-2{background:linear-gradient(135deg,rgba(245,192,48,.1),rgba(245,192,48,.03));border:1px solid rgba(245,192,48,.2)}
+.sl-2::after{background:var(--yellow)}
+.sl-1{background:linear-gradient(135deg,rgba(136,136,160,.1),rgba(136,136,160,.03));border:1px solid var(--border)}
+.sl-1::after{background:var(--gray)}
+.sl-num{font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.35rem;opacity:.7}
+.sl-title{font-size:1rem;font-weight:800;margin-bottom:.25rem}
+.sl-4 .sl-title{color:var(--teal)}
+.sl-3 .sl-title{color:var(--purple)}
+.sl-2 .sl-title{color:var(--yellow)}
+.sl-1 .sl-title{color:var(--gray)}
+.sl-items{display:flex;gap:.5rem;flex-wrap:wrap}
+.sl-item{font-size:.72rem;background:rgba(255,255,255,.06);border-radius:4px;padding:.2rem .55rem;color:var(--white)}
+.stack-side{}
+.stack-msg{background:var(--ink3);border:1px solid var(--border2);border-radius:14px;padding:1.6rem}
+.stack-msg h3{font-size:1.1rem;font-weight:800;color:var(--white);margin-bottom:1rem;line-height:1.3}
+.stack-msg h3 em{color:var(--teal);font-style:normal}
+.stack-msg p{font-size:.82rem;color:var(--gray);line-height:1.6;margin-bottom:.8rem}
+.stack-msg p:last-child{margin-bottom:0}
+.stack-pointer{display:flex;align-items:flex-start;gap:.6rem;padding:.6rem 0;border-bottom:1px solid var(--border);font-size:.8rem;color:var(--white)}
+.stack-pointer:last-child{border:none}
+.sp-arrow{color:var(--teal);flex-shrink:0;font-size:.9rem;margin-top:.05rem}
+
+/* ══════════════════════════════════════════
+   SECTION 7 — FROM PROJECT TO LIVING ASSET
+══════════════════════════════════════════ */
+#asset{background:var(--ink)}
+.asset-flows{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2.5rem}
+@media(max-width:700px){.asset-flows{grid-template-columns:1fr}}
+.flow-col{border-radius:16px;overflow:hidden}
+.flow-head{padding:1rem 1.4rem;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.flow-col.today-flow .flow-head{background:rgba(136,136,160,.1);color:var(--gray);border:1px solid var(--border)}
+.flow-col.tmrw-flow .flow-head{background:rgba(0,212,180,.08);color:var(--teal);border:1px solid var(--teal-border)}
+.flow-body{border:1px solid var(--border);border-top:none;border-radius:0 0 16px 16px;padding:.5rem}
+.flow-col.tmrw-flow .flow-body{border-color:var(--teal-border)}
+.flow-step{display:flex;align-items:center;gap:.8rem;padding:.7rem .9rem;border-radius:8px;font-size:.83rem;font-weight:600;margin-bottom:2px}
+.flow-step.fs-dim{background:rgba(255,255,255,.03);color:var(--gray)}
+.flow-step.fs-mid{background:rgba(255,255,255,.05);color:var(--white)}
+.flow-step.fs-bright{background:rgba(0,212,180,.1);color:var(--teal)}
+.flow-step.fs-end-bad{background:rgba(136,136,160,.08);color:var(--gray2);text-decoration:line-through}
+.flow-step.fs-end-good{background:rgba(0,212,180,.15);color:var(--teal);font-weight:800}
+.flow-arrow-down{text-align:center;font-size:.75rem;color:var(--gray2);padding:.15rem 0;line-height:1}
+.flow-col.tmrw-flow .flow-arrow-down{color:var(--teal-border)}
+.flow-icon{font-size:1rem;flex-shrink:0}
+
+/* ══════════════════════════════════════════
+   SECTION 8 — FUTURE PRODUCT PORTFOLIO
+══════════════════════════════════════════ */
+#portfolio{background:var(--ink2)}
+.portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem}
+@media(max-width:900px){.portfolio-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.portfolio-grid{grid-template-columns:1fr}}
+.pf-card{background:var(--ink3);border:1px solid var(--border);border-radius:14px;padding:1.4rem;transition:all .3s;position:relative;overflow:hidden}
+.pf-card:hover{border-color:var(--border2);transform:translateY(-3px)}
+.pf-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px}
+.pf-c1::after{background:var(--teal)}
+.pf-c2::after{background:var(--orange)}
+.pf-c3::after{background:var(--yellow)}
+.pf-c4::after{background:var(--purple)}
+.pf-c5::after{background:var(--green)}
+.pf-c6::after{background:var(--gray)}
+.pf-num{font-size:.6rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gray);margin-bottom:.5rem}
+.pf-name{font-size:.95rem;font-weight:800;margin-bottom:1rem;line-height:1.25}
+.pf-row{display:flex;justify-content:space-between;align-items:flex-start;padding:.45rem 0;border-bottom:1px solid var(--border);font-size:.75rem}
+.pf-row:last-child{border:none}
+.pf-key{color:var(--gray);font-size:.68rem;font-weight:600;flex-shrink:0;padding-left:.5rem}
+.pf-val{color:var(--white);text-align:right;line-height:1.35}
+
+/* ══════════════════════════════════════════
+   SECTION 9 — ROADMAP
+══════════════════════════════════════════ */
+#roadmap{background:var(--ink)}
+.phases{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:2.5rem;position:relative}
+@media(max-width:900px){.phases{grid-template-columns:1fr 1fr;gap:1rem}}
+@media(max-width:480px){.phases{grid-template-columns:1fr}}
+.phases::before{content:'';position:absolute;top:38px;right:0;left:0;height:2px;background:linear-gradient(90deg,var(--red),var(--orange),var(--yellow),var(--teal));z-index:0;opacity:.3}
+@media(max-width:900px){.phases::before{display:none}}
+.phase{padding:1.4rem;position:relative;z-index:1}
+.phase-dot{width:14px;height:14px;border-radius:50%;margin:0 auto 1rem;box-shadow:0 0 0 3px rgba(255,255,255,.06)}
+.phase-period{font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-align:center;margin-bottom:.8rem}
+.phase-title{font-size:.88rem;font-weight:800;text-align:center;margin-bottom:1rem;line-height:1.25}
+.phase-items{display:flex;flex-direction:column;gap:.45rem}
+.phase-item{font-size:.75rem;color:var(--gray);display:flex;gap:.5rem;align-items:flex-start;line-height:1.4}
+.phase-item::before{content:'·';color:var(--gray2);flex-shrink:0;font-size:1.2rem;line-height:1}
+
+/* ══════════════════════════════════════════
+   SECTION 10 — THE DECISION
+══════════════════════════════════════════ */
+#decision{background:var(--ink2)}
+.decision-q{font-size:clamp(1.6rem,3.5vw,2.6rem);font-weight:900;line-height:1.2;text-align:center;max-width:760px;margin:0 auto 2.5rem;letter-spacing:-.02em}
+.decision-q strong{color:var(--teal)}
+.decision-paths{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;max-width:800px;margin:0 auto}
+@media(max-width:640px){.decision-paths{grid-template-columns:1fr}}
+.dp{border-radius:16px;padding:1.8rem;text-align:center}
+.dp-a{background:rgba(0,212,180,.07);border:1px solid var(--teal-border)}
+.dp-b{background:rgba(255,90,43,.07);border:1px solid rgba(255,90,43,.2)}
+.dp-icon{font-size:2rem;margin-bottom:.8rem}
+.dp-title{font-size:1rem;font-weight:800;margin-bottom:.5rem}
+.dp-a .dp-title{color:var(--teal)}
+.dp-b .dp-title{color:var(--orange)}
+.dp-desc{font-size:.82rem;color:var(--gray);line-height:1.55}
+.ask-row{display:flex;gap:.7rem;flex-wrap:wrap;justify-content:center;margin-top:2rem}
+.ask-btn{display:inline-flex;align-items:center;gap:.45rem;background:var(--teal-dim);border:1px solid var(--teal-border);color:var(--teal);padding:.45rem .9rem;border-radius:20px;font-size:.74rem;font-weight:700;cursor:pointer;text-decoration:none;font-family:'Heebo',sans-serif;transition:all .2s}
+.ask-btn:hover{background:rgba(0,212,180,.2);transform:translateY(-1px)}
+.ask-btn::before{content:'✦';font-size:.65rem}
+
+/* ══════════════════════════════════════════
+   SECTION 11 — DATA CONFIDENCE
+══════════════════════════════════════════ */
+#confidence{background:var(--ink)}
+.conf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem}
+@media(max-width:700px){.conf-grid{grid-template-columns:1fr}}
+.conf-card{border-radius:12px;padding:1.3rem;border:1px solid var(--border)}
+.conf-card h3{font-size:.78rem;font-weight:700;margin-bottom:1rem;padding-bottom:.6rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:.4rem;letter-spacing:.04em}
+.conf-item{font-size:.76rem;color:var(--gray);padding:.35rem 0;border-bottom:1px solid var(--border);line-height:1.45;display:flex;gap:.5rem}
+.conf-item:last-child{border:none}
+.conf-item::before{content:'—';color:var(--gray2);flex-shrink:0}
+.gaps{margin-top:2rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+@media(max-width:700px){.gaps{grid-template-columns:1fr}}
+.gap-card{background:var(--ink3);border-radius:10px;padding:1.1rem;border:1px solid var(--border);display:flex;gap:.8rem}
+.gap-n{width:22px;height:22px;border-radius:5px;font-size:.7rem;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.gap-text h4{font-size:.78rem;font-weight:700;margin-bottom:.2rem}
+.gap-text p{font-size:.7rem;color:var(--gray);line-height:1.4}
+
+/* ══════════════════════════════════════════
+   FOOTER
+══════════════════════════════════════════ */
+footer{background:var(--ink2);border-top:1px solid var(--border);padding:2rem 2.5rem;text-align:center}
+.footer-disc{max-width:680px;margin:0 auto;font-size:.72rem;color:var(--gray);line-height:1.7}
+.footer-meta{font-size:.66rem;color:var(--gray2);margin-top:.6rem}
 </style>
 </head>
 <body>
 
-<!-- ─── NAV ─── -->
+<!-- SCROLL PROGRESS -->
+<div class="spb"><div class="spb-bar" id="progressBar"></div></div>
+
+<!-- NAV -->
 <nav>
-  <div class="nav-logo">AI Strategy | BDO</div>
+  <div class="nav-brand">BDO<em>.</em>AI</div>
   <ul class="nav-links">
-    <li><a href="#hero">בית</a></li>
-    <li><a href="#tools">כלים</a></li>
-    <li><a href="#matrix">מטריצה</a></li>
-    <li><a href="#claude-features">Claude</a></li>
-    <li><a href="#recommender">ממליץ</a></li>
-    <li><a href="#summary">סיכום</a></li>
+    <li><a href="#shift">המעבר</a></li>
+    <li><a href="#value">ערך</a></li>
+    <li><a href="#stack">מדרג</a></li>
+    <li><a href="#portfolio">מוצרים</a></li>
+    <li><a href="#roadmap">מפת דרכים</a></li>
+    <li><a href="#confidence">נתונים</a></li>
   </ul>
+  <div class="nav-badge">MULTI-AGENT RESEARCH</div>
 </nav>
 
-<!-- ─── HERO ─── -->
-<div id="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-grid"></div>
-
-  <div class="hero-badge">🎯 מדריך אסטרטגי לצוות BDO · 2025</div>
-
-  <h1 class="hero-title">
-    איזה <span class="highlight-orange">AI</span><br>
-    לאיזו <span class="highlight-teal">משימה?</span>
-  </h1>
-
-  <p class="hero-subtitle">
-    מפה אסטרטגית לכלי ה-AI המובילים — מתי להשתמש בכל אחד,<br>
-    ולמה הבחירה הנכונה משנה את התוצאה.
-  </p>
-
-  <a href="#tools" class="hero-cta">בואו נתחיל ↓</a>
-
-  <div class="bdo-tag">BDO · Strategic Advisory</div>
+<!-- SOURCE PANEL -->
+<div class="sp" id="SP">
+  <button class="sp-close" onclick="closeSP()">✕</button>
+  <div class="sp-lbl">מקור ורמת ביטחון</div>
+  <div class="sp-body" id="SP-body"></div>
+  <div class="sp-meta" id="SP-meta"></div>
 </div>
 
-<!-- ─── TOOLS ─── -->
-<section id="tools">
-  <p class="section-label reveal">כלי AI מובילים</p>
-  <h2 class="section-title reveal">הכירו את הכלים</h2>
-  <p class="section-desc reveal">חמישה כלים מרכזיים, לכל אחד אישיות שונה, חוזקה ייחודית, ומצב שבו הוא מנצח.</p>
-
-  <div class="tools-grid">
-
-    <div class="tool-card reveal reveal-delay-1" data-color="orange">
-      <div class="tool-header">
-        <div class="tool-icon">🤖</div>
-        <div>
-          <div class="tool-name">ChatGPT</div>
-          <div style="font-size:0.75rem;color:var(--gray);font-weight:500;">OpenAI</div>
-        </div>
-      </div>
-      <p class="tool-strength">מהיר לרעיונות, מולטימודלי, יוצר תמונות וגם מחפש ברשת. הסוס הבית של רוב האנשים — ולא בכדי.</p>
-      <div class="tool-weakness">בטוח מדי גם כשטועה. לפעמים נשמע בטוח אבל הנתון לא מדויק.</div>
-      <div class="tool-when">
-        <span class="tool-when-label">מתי</span>
-        <span>סיעור מוחות מהיר, טיוטות ראשוניות, יצירת תמונות.</span>
-      </div>
-    </div>
-
-    <div class="tool-card reveal reveal-delay-2" data-color="teal">
-      <div class="tool-header">
-        <div class="tool-icon">🧠</div>
-        <div>
-          <div class="tool-name">Claude</div>
-          <div style="font-size:0.75rem;color:var(--gray);font-weight:500;">Anthropic</div>
-        </div>
-      </div>
-      <p class="tool-strength">ניתוח מסמכים ארוכים, כתיבה מובנית ומדויקת, הבנת הוראות עמוקות. הכי טוב לעבודה אנליטית ברמה גבוהה.</p>
-      <div class="tool-weakness">זהיר עד כדי היסוס — לפעמים מסרב לשאלות שאחרים היו עונים עליהן.</div>
-      <div class="tool-when">
-        <span class="tool-when-label">מתי</span>
-        <span>כתיבה מובנית, ניתוח, משימות דיוק, מסמכים ארוכים.</span>
-      </div>
-    </div>
-
-    <div class="tool-card reveal reveal-delay-3" data-color="blue">
-      <div class="tool-header">
-        <div class="tool-icon">♊</div>
-        <div>
-          <div class="tool-name">Gemini</div>
-          <div style="font-size:0.75rem;color:var(--gray);font-weight:500;">Google DeepMind</div>
-        </div>
-      </div>
-      <p class="tool-strength">משולב לחלוטין ב-Google Workspace — Gmail, Drive, Sheets, Meet. מולטימודלי ועובד בתוך הסביבה שכבר מכירים.</p>
-      <div class="tool-weakness">כאשר לא עובדים בסביבת גוגל — היתרון המרכזי שלו נעלם.</div>
-      <div class="tool-when">
-        <span class="tool-when-label">מתי</span>
-        <span>עבודה בתוך Google Workspace, Drive, Sheets, Gmail.</span>
-      </div>
-    </div>
-
-    <div class="tool-card reveal reveal-delay-4" data-color="purple">
-      <div class="tool-header">
-        <div class="tool-icon">📚</div>
-        <div>
-          <div class="tool-name">NotebookLM</div>
-          <div style="font-size:0.75rem;color:var(--gray);font-weight:500;">Google</div>
-        </div>
-      </div>
-      <p class="tool-strength">עונה <em>רק</em> על בסיס המסמכים שהעלת. אפס הזיות, 100% מבוסס מקורות. מושלם לסיכום חומרי לקוח.</p>
-      <div class="tool-weakness">לא ניגש למידע חיצוני בכלל — מה שלא העלית, לא קיים בשבילו.</div>
-      <div class="tool-when">
-        <span class="tool-when-label">מתי</span>
-        <span>חקר מבוסס-מקורות, סיכום חומרים שלך בלבד, ניתוח תיקי לקוח.</span>
-      </div>
-    </div>
-
-    <div class="tool-card reveal reveal-delay-5" data-color="yellow">
-      <div class="tool-header">
-        <div class="tool-icon">🔍</div>
-        <div>
-          <div class="tool-name">Perplexity</div>
-          <div style="font-size:0.75rem;color:var(--gray);font-weight:500;">Perplexity AI</div>
-        </div>
-      </div>
-      <p class="tool-strength">חיפוש בזמן אמת עם ציטוטי מקורות מדויקים. הכי טוב לעדכון שוטף על שוק, רגולציה, חדשות ענף.</p>
-      <div class="tool-weakness">חזק באיסוף עובדות, חלש יחסית בניתוח מקורי ועמוק.</div>
-      <div class="tool-when">
-        <span class="tool-when-label">מתי</span>
-        <span>מחקר עובדתי עדכני, מקורות עם הפניות, חדשות ומגמות.</span>
-      </div>
-    </div>
-
+<!-- ══════════════════════════════════════
+     SECTION 1 — HERO
+══════════════════════════════════════ -->
+<section id="hero">
+<div class="slide">
+  <div class="hero-kicker">חלון הזדמנות: 16–24 חודש | BDO ישראל 2025</div>
+  <div class="hero-thesis">
+    פירמות ייעוץ לא יעברו<br>
+    <strong>מלמכור ידע — למכור AI.</strong><br>
+    <br>
+    הן יעברו<br>
+    ממכירת פרויקטים חד-פעמיים —<br>
+    <em>למכירת נכסי אינטליגנציה חיים, מערכות תמיכה בהחלטות, ויעוץ אסטרטגי מתמשך.</em>
   </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ─── MATRIX ─── -->
-<div id="matrix">
-  <div class="matrix-inner">
-    <p class="section-label reveal">מטריצת החלטה</p>
-    <h2 class="section-title reveal">משימה → כלי</h2>
-    <p class="section-desc reveal">בחרו סוג משימה ומצאו את הכלי המנצח. המטריצה מבוססת על חוזקות מובחנות, לא על שיווק.</p>
-
-    <div class="matrix-grid">
-
-      <div class="matrix-cell reveal reveal-delay-1" data-col="orange">
-        <span class="matrix-icon-big">💡</span>
-        <div class="matrix-task">סיעור מוחות</div>
-        <div class="matrix-tool">ChatGPT</div>
-        <div class="matrix-why">מהיר, יצירתי, מגוון רעיונות תוך שניות</div>
-      </div>
-
-      <div class="matrix-cell reveal reveal-delay-2" data-col="teal">
-        <span class="matrix-icon-big">📄</span>
-        <div class="matrix-task">ניתוח מסמכים</div>
-        <div class="matrix-tool">Claude</div>
-        <div class="matrix-why">קורא חלונות ארוכים, שומר הקשר לאורך כל הדוח</div>
-      </div>
-
-      <div class="matrix-cell reveal reveal-delay-3" data-col="yellow">
-        <span class="matrix-icon-big">🔎</span>
-        <div class="matrix-task">מחקר עדכני</div>
-        <div class="matrix-tool">Perplexity</div>
-        <div class="matrix-why">זמן אמת + ציטוטים = בסיס לאמינות</div>
-      </div>
-
-      <div class="matrix-cell reveal reveal-delay-4" data-col="purple">
-        <span class="matrix-icon-big">📁</span>
-        <div class="matrix-task">חומרי לקוח</div>
-        <div class="matrix-tool">NotebookLM</div>
-        <div class="matrix-why">רק מהמקורות שלך, אפס המצאות</div>
-      </div>
-
-      <div class="matrix-cell reveal reveal-delay-5" data-col="blue">
-        <span class="matrix-icon-big">📧</span>
-        <div class="matrix-task">Gmail / Drive</div>
-        <div class="matrix-tool">Gemini</div>
-        <div class="matrix-why">משולב ישירות בתוך הכלים שכבר פתוחים</div>
-      </div>
-
-      <div class="matrix-cell reveal reveal-delay-1" data-col="teal">
-        <span class="matrix-icon-big">✍️</span>
-        <div class="matrix-task">כתיבה מדויקת</div>
-        <div class="matrix-tool">Claude</div>
-        <div class="matrix-why">שומר טון, פורמט, הוראות — לאורך כל המסמך</div>
-      </div>
-
-      <div class="matrix-cell reveal reveal-delay-2" data-col="green">
-        <span class="matrix-icon-big">⚙️</span>
-        <div class="matrix-task">כלי / אוטומציה</div>
-        <div class="matrix-tool">Claude Code</div>
-        <div class="matrix-why">בונה ומריץ קוד, פותר בעיות מקצה לקצה</div>
-      </div>
-
-      <div class="matrix-cell reveal reveal-delay-3" data-col="yellow">
-        <span class="matrix-icon-big">📊</span>
-        <div class="matrix-task">מודל Excel</div>
-        <div class="matrix-tool">Claude in Excel</div>
-        <div class="matrix-why">נוסחאות, ניתוח, מודלים ישירות בגיליון</div>
-      </div>
-
-      <div class="matrix-cell reveal reveal-delay-4" data-col="orange">
-        <span class="matrix-icon-big">🖼️</span>
-        <div class="matrix-task">תמונה / גרפיקה</div>
-        <div class="matrix-tool">ChatGPT</div>
-        <div class="matrix-why">DALL-E משולב, יצירת ויזואלים מיידית</div>
-      </div>
-
-      <div class="matrix-cell reveal reveal-delay-5" data-col="teal">
-        <span class="matrix-icon-big">🗂️</span>
-        <div class="matrix-task">פרויקט חוזר</div>
-        <div class="matrix-tool">Claude Projects</div>
-        <div class="matrix-why">בסיס ידע קבוע לכל שיחה עם אותו לקוח</div>
-      </div>
-
+  <div class="hero-cta">
+    <button class="btn-p" onclick="gotoSection('shift')">לראות את המעבר</button>
+    <button class="btn-g" onclick="gotoSection('confidence')">על הנתונים</button>
+  </div>
+  <div class="hero-3stats">
+    <div class="hstat">
+      <div class="hstat-n">40–55<span>%</span></div>
+      <div class="hstat-l">חיסכון פוטנציאלי בשעות delivery <span class="tag tag-est" onclick="showSP('est-delivery','חיסכון שעות delivery','Accenture ו-BCG task-level studies, T2. טווח פרויקט שלם: 25–45%.')">EST</span></div>
+    </div>
+    <div class="hstat">
+      <div class="hstat-n">$3<span>B</span></div>
+      <div class="hstat-l">Accenture AI bookings ברבעון אחד <span class="tag tag-data" onclick="showSP('data-accenture','Accenture $3B','SEC 10-Q Q2 2024. T1. Enterprise בלבד.')">T1</span></div>
+    </div>
+    <div class="hstat">
+      <div class="hstat-n">16–24<span>M</span></div>
+      <div class="hstat-l">חודשים לחלון הזדמנות <span class="tag tag-spec" onclick="showSP('spec-window','חלון הזדמנות','SPECULATIVE — הערכה סטרטגית. לא מבוסס על נתון T1/T2 ספציפי.')">SPEC</span></div>
     </div>
   </div>
 </div>
-
-<div class="divider"></div>
-
-<!-- ─── CLAUDE FEATURES ─── -->
-<section id="claude-features">
-  <p class="section-label reveal">Claude לעבודת ייעוץ</p>
-  <h2 class="section-title reveal">יותר מצ'אטבוט</h2>
-  <p class="section-desc reveal">Claude הוא מערכת שלמה. מעבר לשיחה — כלים שמבצעים משימות, מנהלים קבצים, ועובדים בתוך הכלים שלכם.</p>
-
-  <div class="features-layout">
-
-    <div class="feature-card reveal reveal-delay-1">
-      <div class="feature-icon">⚡</div>
-      <div>
-        <div class="feature-title">Claude Code</div>
-        <p class="feature-desc">בונה כלים, אתרים וסקריפטים — ומבצע משימות מרובות-שלבים על קבצים באופן אוטונומי. כותב קוד, מריץ אותו, מתקן שגיאות וחוזר, הכל ללא התערבות.</p>
-        <span class="feature-tag">אוטונומי</span>
-      </div>
-    </div>
-
-    <div class="feature-card reveal reveal-delay-2">
-      <div class="feature-icon teal">🖥️</div>
-      <div>
-        <div class="feature-title" style="color:var(--teal)">Cowork</div>
-        <p class="feature-desc">כלי שולחני לאוטומציה של ניהול קבצים ומשימות — לאנשים לא-טכניים. מארגן, שם, מעביר ומנהל קבצים בהוראה פשוטה בעברית.</p>
-        <span class="feature-tag" style="background:rgba(31,182,166,0.15);color:var(--teal)">ללא קוד</span>
-      </div>
-    </div>
-
-    <div class="feature-card reveal reveal-delay-3">
-      <div class="feature-icon yellow">📊</div>
-      <div>
-        <div class="feature-title" style="color:var(--yellow)">Claude in Excel</div>
-        <p class="feature-desc">עוזר בתוך גיליונות אקסל — ניתוח נתונים, כתיבת נוסחאות מורכבות, בניית מודלים פיננסיים. ישירות ממשק האקסל, בלי לעזוב את הגיליון.</p>
-        <span class="feature-tag" style="background:rgba(255,194,75,0.15);color:var(--yellow)">בתוך Excel</span>
-      </div>
-    </div>
-
-    <div class="feature-card reveal reveal-delay-4">
-      <div class="feature-icon blue">🌐</div>
-      <div>
-        <div class="feature-title" style="color:#60A5FA">Claude in Chrome</div>
-        <p class="feature-desc">סוכן שגולש ופועל בדפדפן בשמכם. מאחד מידע מעמודים שונים, ממלא טפסים, מחלץ נתונים ומבצע רצף פעולות ברשת — אוטומטית.</p>
-        <span class="feature-tag" style="background:rgba(96,165,250,0.15);color:#60A5FA">סוכן דפדפן</span>
-      </div>
-    </div>
-
-    <div class="feature-card full-width reveal reveal-delay-5">
-      <div class="feature-icon" style="background:rgba(167,139,250,0.12)">📌</div>
-      <div>
-        <div class="feature-title" style="color:#A78BFA">Projects — זיכרון לעבודה חוזרת</div>
-        <p class="feature-desc">מעגן שיחות לבסיס ידע משותף עם הוראות קבועות. כל שיחה חדשה עם אותו לקוח מתחילה עם ההקשר השמור — שם החברה, הסגנון, ההוראות, הקבצים. אפס חזרה על הסבר הרקע.</p>
-        <span class="feature-tag" style="background:rgba(167,139,250,0.15);color:#A78BFA">זיכרון קבוע</span>
-      </div>
-    </div>
-
-  </div>
+<div class="scroll-hint">
+  <span>▼</span>
+  <span>גלול לגלות</span>
+</div>
 </section>
 
-<div class="divider"></div>
+<!-- ══════════════════════════════════════
+     SECTION 2 — THREE SIGNALS
+══════════════════════════════════════ -->
+<section id="signals">
+<div class="slide">
+  <div class="slide-label">3 אותות ברורים</div>
+  <h2 class="slide-h">המהפכה כבר <span class="hl">קורית</span></h2>
+  <div class="signals-grid">
+    <div class="signal-card s-teal">
+      <div class="signal-big">55–65%</div>
+      <div class="signal-title">עבודת ה-Analyst נשחקת</div>
+      <div class="signal-body">AI מחליף research, synthesis ו-benchmarking. BCG ו-McKinsey מצמצמים גיוסי Analysts.</div>
+      <div class="signal-conf"><span class="tag tag-est" onclick="showSP('est-analyst','AI מחליף Analyst work','McKinsey Global Institute & Goldman Sachs, T2. Task-level, not project-level.')">ESTIMATED</span></div>
+    </div>
+    <div class="signal-card s-orange">
+      <div class="signal-big">4 גדולות</div>
+      <div class="signal-title">כבר פנימי אצל כולם</div>
+      <div class="signal-body">Deloitte PairD, McKinsey Lilli, BCG Gamma, KPMG KGS. הכלים קיימים — המוצרים לא.</div>
+      <div class="signal-conf"><span class="tag tag-bench" onclick="showSP('bench-big4','Big 4 AI Platforms','דיווחי עיתונות T2, 2023–2024. קיום מאומת; ROI לא.')">BENCHMARK</span></div>
+    </div>
+    <div class="signal-card s-yellow">
+      <div class="signal-big">107%</div>
+      <div class="signal-title">NRR של Gartner — המודל עובד</div>
+      <div class="signal-body">מנויי אינטליגנציה אסטרטגית מחדשים ומרחיבים. Enterprise. המודל מוכח — mid-market עדיין פתוח.</div>
+      <div class="signal-conf"><span class="tag tag-data" onclick="showSP('data-gartner','Gartner NRR 107%','Gartner FY2023 Annual Report. T1. Enterprise $500M+ בלבד.')">DATA-BACKED</span></div>
+    </div>
+  </div>
+  <div class="signal-window">
+    <div class="window-icon">⚡</div>
+    <div class="window-text"><strong>החלון נסגר:</strong> פירמה שתבנה את המוצרים האלה ב-18 החודשים הקרובים תכבוש עמדה שיהיה קשה לאתגר. פירמה שתחכה — תמצא שוק עם שחקנים מבוססים.</div>
+  </div>
+</div>
+</section>
 
-<!-- ─── RECOMMENDER ─── -->
-<div id="recommender">
-  <div class="rec-inner">
-    <p class="section-label reveal">ממליץ חכם</p>
-    <h2 class="section-title reveal">מה המשימה שלך?</h2>
-    <p class="section-desc reveal">בחרו משימה מהרשימה — או כתבו בחופשיות — וקבלו המלצה מותאמת עם חלופות מדורגות.</p>
+<!-- ══════════════════════════════════════
+     SECTION 3 — THE BIG SHIFT
+══════════════════════════════════════ -->
+<section id="shift">
+<div class="slide">
+  <div class="slide-label">מהפך המודל העסקי</div>
+  <h2 class="slide-h">מה BDO <span class="hl2">מוכרת היום</span> — לעומת מה היא <span class="hl">תמכור מחר</span></h2>
 
-    <div class="rec-layout">
-      <!-- Left: input -->
-      <div>
-        <div class="rec-tasks" id="taskButtons">
-          <button class="rec-task-btn" onclick="selectTask(this, 'סיעור מוחות לפרויקט חדש')" data-task="סיעור מוחות לפרויקט חדש">
-            <span class="rec-task-emoji">💡</span> סיעור מוחות לפרויקט חדש
-          </button>
-          <button class="rec-task-btn" onclick="selectTask(this, 'ניתוח דוח של 80 עמוד')" data-task="ניתוח דוח של 80 עמוד">
-            <span class="rec-task-emoji">📄</span> ניתוח דוח של 80 עמוד
-          </button>
-          <button class="rec-task-btn" onclick="selectTask(this, 'מחקר שוק עם מקורות עדכניים')" data-task="מחקר שוק עם מקורות עדכניים">
-            <span class="rec-task-emoji">🔍</span> מחקר שוק עם מקורות עדכניים
-          </button>
-          <button class="rec-task-btn" onclick="selectTask(this, 'ניתוח חומרי לקוח שהעלנו')" data-task="ניתוח חומרי לקוח שהעלנו">
-            <span class="rec-task-emoji">📁</span> ניתוח חומרי לקוח שהעלנו
-          </button>
-          <button class="rec-task-btn" onclick="selectTask(this, 'בניית מודל אקסל פיננסי')" data-task="בניית מודל אקסל פיננסי">
-            <span class="rec-task-emoji">📊</span> בניית מודל אקסל פיננסי
-          </button>
-          <button class="rec-task-btn" onclick="selectTask(this, 'בניית כלי אוטומציה לקבצים')" data-task="בניית כלי אוטומציה לקבצים">
-            <span class="rec-task-emoji">⚙️</span> בניית כלי אוטומציה לקבצים
-          </button>
-          <button class="rec-task-btn" onclick="selectTask(this, 'ניהול אימיילים ב-Gmail')" data-task="ניהול אימיילים ב-Gmail">
-            <span class="rec-task-emoji">📧</span> ניהול אימיילים ב-Gmail
-          </button>
-          <button class="rec-task-btn" onclick="selectTask(this, 'כתיבת מצגת מבנית')" data-task="כתיבת מצגת מבנית">
-            <span class="rec-task-emoji">✍️</span> כתיבת מצגת מבנית
-          </button>
-        </div>
-
-        <div class="rec-input-wrap">
-          <label class="rec-input-label">או כתבו משימה חופשית:</label>
-          <textarea class="rec-input" id="freeInput" rows="3" placeholder="לדוגמה: אני צריך לסכם 5 ראיונות עם לקוחות ולזהות תמות משותפות..."></textarea>
-          <button class="rec-btn" onclick="analyzeInput()">⚡ קבל המלצה</button>
+  <div class="shift-wrap">
+    <!-- TODAY -->
+    <div class="shift-col today">
+      <div class="shift-header">TODAY — מודל פרויקטלי</div>
+      <div class="shift-row">
+        <div class="shift-icon">🛒</div>
+        <div class="shift-row-content">
+          <div class="shift-row-title">הלקוח קונה</div>
+          <div class="shift-row-sub">מחקר · ראיונות · benchmarking · ניתוח · סדנאות · PPT</div>
         </div>
       </div>
-
-      <!-- Right: result -->
-      <div class="rec-result-area" id="resultArea">
-        <div class="rec-placeholder">
-          <div class="rec-placeholder-icon">🎯</div>
-          <div class="rec-placeholder-text">בחרו משימה כדי לקבל המלצה מותאמת</div>
+      <div class="shift-row">
+        <div class="shift-icon">📦</div>
+        <div class="shift-row-content">
+          <div class="shift-row-title">הלקוח מקבל</div>
+          <div class="shift-row-sub">דק · מודל Excel · מפת דרכים</div>
         </div>
+      </div>
+      <div class="shift-row">
+        <div class="shift-icon">🔗</div>
+        <div class="shift-row-content">
+          <div class="shift-row-title">מערכת יחסים</div>
+          <div class="shift-row-sub">מבוססת פרויקט — מסתיים עם הדק</div>
+        </div>
+      </div>
+      <div class="shift-footer">
+        <div class="shift-model">מודל הכנסות</div>
+        <div class="shift-rev">תשלום חד-פעמי לפרויקט</div>
+      </div>
+    </div>
+
+    <!-- ARROW -->
+    <div class="shift-arrow-col">
+      <span style="font-size:1rem;color:var(--gray)">AI</span>
+      <span>→</span>
+    </div>
+
+    <!-- TOMORROW -->
+    <div class="shift-col tmrw">
+      <div class="shift-header">TOMORROW — מודל נכס חי</div>
+      <div class="shift-row">
+        <div class="shift-icon">🧠</div>
+        <div class="shift-row-content">
+          <div class="shift-row-title">הלקוח קונה</div>
+          <div class="shift-row-sub">אינטליגנציה אסטרטגית · ניטור · benchmarking engine · תמיכת תרחישים · יעוץ מתמשך</div>
+        </div>
+      </div>
+      <div class="shift-row">
+        <div class="shift-icon">🔄</div>
+        <div class="shift-row-content">
+          <div class="shift-row-title">הלקוח מקבל</div>
+          <div class="shift-row-sub">dashboard חי · נכס ידע · briefings חודשיים · סימולציות תרחישים · המלצות שוטפות</div>
+        </div>
+      </div>
+      <div class="shift-row">
+        <div class="shift-icon">♾️</div>
+        <div class="shift-row-content">
+          <div class="shift-row-title">מערכת יחסים</div>
+          <div class="shift-row-sub">מתמשכת — הפירמה נוכחת בשולחן ההחלטות</div>
+        </div>
+      </div>
+      <div class="shift-footer">
+        <div class="shift-model">מודל הכנסות</div>
+        <div class="shift-rev">Retainer + מנוי יעוץ</div>
       </div>
     </div>
   </div>
 </div>
-
-<div class="divider"></div>
-
-<!-- ─── SUMMARY ─── -->
-<section id="summary">
-  <p class="section-label reveal">הבדל מהותי</p>
-  <h2 class="section-title reveal">תגובתי vs. אוטונומי</h2>
-  <p class="section-desc reveal">ההבדל האמיתי בין הכלים הוא לא מי "חכם יותר" — אלא מה הכלי עושה ברגע שסיימתם לכתוב.</p>
-
-  <div class="summary-split">
-    <div class="summary-col reactive reveal reveal-delay-1">
-      <div class="summary-col-label">כלי תגובתי</div>
-      <div class="summary-col-title">מארגן<br>ועונה</div>
-      <p class="summary-col-desc">
-        כלי הצ'אט מקבלים שאלה ומחזירים תשובה. הם מצוינים למחשבה, ניסוח, ניתוח — אבל הם לא פועלים בעולם. ברגע שאתם עוצרים לשאול, הם עוצרים לפעול.
-      </p>
-      <div class="summary-tools">
-        <span class="summary-tool-chip">ChatGPT</span>
-        <span class="summary-tool-chip">Claude Chat</span>
-        <span class="summary-tool-chip">Gemini</span>
-        <span class="summary-tool-chip">Perplexity</span>
-        <span class="summary-tool-chip">NotebookLM</span>
-      </div>
-    </div>
-
-    <div class="summary-col autonomous reveal reveal-delay-2">
-      <div class="summary-col-label">כלי אוטונומי</div>
-      <div class="summary-col-title">מבצע<br>מקצה לקצה</div>
-      <p class="summary-col-desc">
-        Claude Code ו-Cowork לא מחכים שתשאל שאלות נוספות. הם מקבלים מטרה — ופועלים: יוצרים קבצים, מריצים קוד, מתקנים שגיאות, ומדווחים על תוצאה גמורה.
-      </p>
-      <div class="summary-tools">
-        <span class="summary-tool-chip">Claude Code</span>
-        <span class="summary-tool-chip">Cowork</span>
-        <span class="summary-tool-chip">Claude in Chrome</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="big-insight reveal">
-    <div class="big-insight-icon">💡</div>
-    <div class="big-insight-text">
-      <strong>המסקנה האסטרטגית:</strong> כלי צ'אט מגדילים את <em>מהירות המחשבה</em>. כלי אוטונומיים מגדילים את <em>כמות העבודה שנגמרת</em>. לייעוץ, זה ההבדל בין לחסוך שעה — לבין לחסוך יום שלם.
-    </div>
-  </div>
 </section>
 
-<!-- ─── FOOTER ─── -->
+<!-- ══════════════════════════════════════
+     SECTION 4 — WHAT CLIENTS PAY FOR
+══════════════════════════════════════ -->
+<section id="value">
+<div class="slide">
+  <div class="slide-label">שינוי ערך</div>
+  <h2 class="slide-h">על מה לקוחות <span class="hl">ישלמו</span> בעתיד</h2>
+
+  <div class="value-wrap">
+    <div class="value-col vc-today">
+      <div class="value-col-label">TODAY — לקוח משלם על ייצור</div>
+      <div class="bar-stack">
+        <div class="bar-seg seg-research" style="flex:4">
+          <span class="bar-seg-label">🔍 Research</span>
+          <span class="bar-seg-pct">40%</span>
+        </div>
+        <div class="bar-seg seg-analysis" style="flex:3">
+          <span class="bar-seg-label">📊 Analysis</span>
+          <span class="bar-seg-pct">30%</span>
+        </div>
+        <div class="bar-seg seg-slides" style="flex:2">
+          <span class="bar-seg-label">📑 Slides</span>
+          <span class="bar-seg-pct">20%</span>
+        </div>
+        <div class="bar-seg seg-advice" style="flex:1">
+          <span class="bar-seg-label">💡 Advice</span>
+          <span class="bar-seg-pct">10%</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="value-col vc-future">
+      <div class="value-col-label">FUTURE — לקוח משלם על שיפוט</div>
+      <div class="bar-stack">
+        <div class="bar-seg seg-research" style="flex:1">
+          <span class="bar-seg-label">🔍 Research</span>
+          <span class="bar-seg-pct">10%</span>
+        </div>
+        <div class="bar-seg seg-analysis" style="flex:2">
+          <span class="bar-seg-label">📊 Analysis</span>
+          <span class="bar-seg-pct">20%</span>
+        </div>
+        <div class="bar-seg seg-judgment" style="flex:4">
+          <span class="bar-seg-label">🎯 Judgment</span>
+          <span class="bar-seg-pct">40%</span>
+        </div>
+        <div class="bar-seg seg-ongoing" style="flex:3">
+          <span class="bar-seg-label">🔄 Ongoing Support</span>
+          <span class="bar-seg-pct">30%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="value-insight">
+    <p><strong>AI מוזיל ייצור.</strong> Research, analysis ו-slides הופכים ל-commodity. לקוחות יצפו לקבל את אלה בזול — ולשלם פרמיום על שיפוט אסטרטגי ונוכחות מתמשכת. <span class="tag tag-est" onclick="showSP('est-value-shift','שינוי ערך בייעוץ','ESTIMATED — מבוסס על McKinsey Value-Based Pricing framework ואנלוגיה ל-Gartner/AlphaSense. לא מאומת ב-mid-market ישראלי.')">ESTIMATED</span></p>
+  </div>
+  <div class="ask-row" style="justify-content:flex-start">
+    <a class="ask-btn" href="https://claude.ai/new?q=How+will+AI+change+what+consulting+clients+are+willing+to+pay+for%3F+Specifically%3A+will+research+and+slide+production+be+commoditized%2C+and+what+remains+high-value%3F+Give+me+concrete+examples." target="_blank">שאל Claude: מה נשאר בעל ערך גבוה?</a>
+  </div>
+</div>
+</section>
+
+<!-- ══════════════════════════════════════
+     SECTION 5 — THE PYRAMID
+══════════════════════════════════════ -->
+<section id="pyramid">
+<div class="slide">
+  <div class="slide-label">שינוי מבני</div>
+  <h2 class="slide-h">הפירמידה <span class="hl2">מתכווצת מלמטה</span></h2>
+
+  <div class="pyramid-compare">
+    <!-- TODAY pyramid -->
+    <div>
+      <div style="font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gray);text-align:center;margin-bottom:1rem">TODAY</div>
+      <div class="pyr-side">
+        <div class="pyr-layer" style="width:30%;align-self:center;background:rgba(0,212,180,.25);border:1px solid rgba(0,212,180,.4)" onclick="showSP('pyr-partners','Partners — Today','שיפוט, אמון, relationships — בעלי ערך קבוע.')">
+          <div><div class="pyr-lname" style="color:var(--teal)">Partners</div></div>
+        </div>
+        <div class="pyr-layer" style="width:50%;align-self:center;background:rgba(245,192,48,.2);border:1px solid rgba(245,192,48,.35)" onclick="showSP('pyr-mgr','Managers — Today','מנהלים פרויקטים ומנחים Analysts.')">
+          <div><div class="pyr-lname" style="color:var(--yellow)">Managers</div></div>
+        </div>
+        <div class="pyr-layer" style="width:70%;align-self:center;background:rgba(255,90,43,.2);border:1px solid rgba(255,90,43,.35)" onclick="showSP('pyr-cons','Consultants — Today','ניתוחים, deliverables, לקוחות.')">
+          <div><div class="pyr-lname" style="color:var(--orange)">Consultants</div></div>
+        </div>
+        <div class="pyr-layer" style="width:100%;align-self:center;background:rgba(136,136,160,.15);border:1px solid var(--border2)" onclick="showSP('pyr-analysts','Analysts — Today','Research, synthesis, benchmarking — הבסיס הגדול.')">
+          <div><div class="pyr-lname">Analysts</div><div class="pyr-lsub">הבסיס הרחב</div></div>
+        </div>
+      </div>
+      <div style="text-align:center;font-size:.72rem;color:var(--gray);margin-top:.8rem">יחס Analyst:Partner = 8:1 <span class="tag tag-est" onclick="showSP('est-leverage','Leverage Ratio','ESTIMATED — לוגיקה מבנית.')">EST</span></div>
+    </div>
+
+    <div class="pyr-arrow-col">→</div>
+
+    <!-- TOMORROW pyramid -->
+    <div>
+      <div style="font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);text-align:center;margin-bottom:1rem">TOMORROW</div>
+      <div class="pyr-side">
+        <div class="pyr-layer" style="width:35%;align-self:center;background:rgba(0,212,180,.35);border:1px solid rgba(0,212,180,.5)" onclick="showSP('pyr-partners-tmrw','Partners — Tomorrow','Partner + AI = ×2.5 output. ערך גבוה יותר.')">
+          <div><div class="pyr-lname" style="color:var(--teal)">Partners ↑×2.5</div></div>
+        </div>
+        <div class="pyr-layer" style="width:55%;align-self:center;background:rgba(0,212,180,.15);border:1px solid rgba(0,212,180,.25)" onclick="showSP('pyr-ai-lead','AI Leads','מנהלים workflows של AI — תפקיד חדש.')">
+          <div><div class="pyr-lname" style="color:var(--teal)">AI Leads</div><div class="pyr-lsub">= Managers שהוכשרו מחדש</div></div>
+        </div>
+        <div class="pyr-layer" style="width:75%;align-self:center;background:rgba(0,212,180,.1);border:1px solid rgba(0,212,180,.15)" onclick="showSP('pyr-ops','AI Operators','Consultants שהפכו ל-AI Operators.')">
+          <div><div class="pyr-lname" style="color:var(--white)">AI Operators</div><div class="pyr-lsub">= Consultants + reskilling</div></div>
+        </div>
+        <div class="pyr-layer" style="width:55%;align-self:center;background:rgba(255,64,64,.08);border:1px solid rgba(255,64,64,.2)" onclick="showSP('pyr-analysts-tmrw','Analysts — Tomorrow','צמצום גיוסים — AI מחליף 55-65% מהעבודה.')">
+          <div><div class="pyr-lname" style="color:var(--red)">↓ Analysts</div><div class="pyr-lsub">55–65% עבודה ← AI</div></div>
+        </div>
+      </div>
+      <div style="text-align:center;font-size:.72rem;color:var(--teal);margin-top:.8rem">יחס Analyst:Partner = 4:1 <span class="tag tag-est" onclick="showSP('est-leverage-tmrw','Future Leverage Ratio','ESTIMATED — לוגיקה מבנית בלבד.')">EST</span></div>
+    </div>
+  </div>
+  <div class="ask-row">
+    <a class="ask-btn" href="https://claude.ai/new?q=How+should+a+mid-size+consulting+firm+restructure+analyst+and+manager+roles+when+AI+handles+60%25+of+research+and+synthesis%3F+What+new+skills+become+critical%3F" target="_blank">שאל Claude: מבנה הצוות החדש</a>
+  </div>
+</div>
+</section>
+
+<!-- ══════════════════════════════════════
+     SECTION 6 — THE PRODUCT STACK
+══════════════════════════════════════ -->
+<section id="stack">
+<div class="slide">
+  <div class="slide-label">ארכיטקטורת המוצר</div>
+  <h2 class="slide-h">BDO לא תמכור <span class="hl2">פרויקטים.</span><br>היא תמכור <span class="hl">מדרג אסטרטגי שלם.</span></h2>
+
+  <div class="stack-wrap">
+    <div class="stack-layers">
+      <div class="stack-layer sl-4">
+        <div class="sl-num">שכבה 4 — הגבוהה ביותר</div>
+        <div class="sl-title">Executive Advisory</div>
+        <div class="sl-items">
+          <span class="sl-item">Board Briefings</span>
+          <span class="sl-item">Strategic Decisions</span>
+          <span class="sl-item">CEO Access</span>
+          <span class="sl-item">Crisis Response</span>
+        </div>
+      </div>
+      <div class="stack-layer sl-3">
+        <div class="sl-num">שכבה 3</div>
+        <div class="sl-title">Decision Support</div>
+        <div class="sl-items">
+          <span class="sl-item">Scenario Planning</span>
+          <span class="sl-item">Risk Modeling</span>
+          <span class="sl-item">Investment Analysis</span>
+          <span class="sl-item">Market Entry</span>
+        </div>
+      </div>
+      <div class="stack-layer sl-2">
+        <div class="sl-num">שכבה 2</div>
+        <div class="sl-title">Strategic Intelligence</div>
+        <div class="sl-items">
+          <span class="sl-item">Market Monitoring</span>
+          <span class="sl-item">Competitor Alerts</span>
+          <span class="sl-item">Industry Benchmarks</span>
+          <span class="sl-item">Monthly Briefings</span>
+        </div>
+      </div>
+      <div class="stack-layer sl-1">
+        <div class="sl-num">שכבה 1 — תשתית</div>
+        <div class="sl-title">Data + AI Infrastructure</div>
+        <div class="sl-items">
+          <span class="sl-item">Prompt Library</span>
+          <span class="sl-item">Knowledge Base</span>
+          <span class="sl-item">Toolstack</span>
+          <span class="sl-item">QA Protocol</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="stack-side">
+      <div class="stack-msg">
+        <h3>המסר ל-BDO:<br><em>בנה מלמטה, הרוויח מלמעלה</em></h3>
+        <div class="stack-pointer"><span class="sp-arrow">→</span><span>שכבה 1 היא ה-investment הראשון — toolstack + knowledge base</span></div>
+        <div class="stack-pointer"><span class="sp-arrow">→</span><span>שכבות 2–3 הן המוצרים הראשונים הניתנים למכירה</span></div>
+        <div class="stack-pointer"><span class="sp-arrow">→</span><span>שכבה 4 היא הפרמיום — Partners + AI עם ממשק ישיר ל-CEO</span></div>
+        <div class="stack-pointer"><span class="sp-arrow">→</span><span>לקוח שנכנס משכבה 2 יעלה לשכבה 4 עם הזמן</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ══════════════════════════════════════
+     SECTION 7 — FROM PROJECT TO LIVING ASSET
+══════════════════════════════════════ -->
+<section id="asset">
+<div class="slide">
+  <div class="slide-label">השינוי הבסיסי</div>
+  <h2 class="slide-h">מ<span class="hl2">פרויקט שמסתיים</span> — ל<span class="hl">נכס שחי</span></h2>
+
+  <div class="asset-flows">
+    <div class="flow-col today-flow">
+      <div class="flow-head">TODAY — פרויקט חד-פעמי</div>
+      <div class="flow-body">
+        <div class="flow-step fs-dim"><span class="flow-icon">🔴</span>בעיה עסקית</div>
+        <div class="flow-arrow-down">↓</div>
+        <div class="flow-step fs-mid"><span class="flow-icon">📋</span>פרויקט ייעוץ</div>
+        <div class="flow-arrow-down">↓</div>
+        <div class="flow-step fs-dim"><span class="flow-icon">🔍</span>מחקר</div>
+        <div class="flow-arrow-down">↓</div>
+        <div class="flow-step fs-dim"><span class="flow-icon">📊</span>ניתוח</div>
+        <div class="flow-arrow-down">↓</div>
+        <div class="flow-step fs-dim"><span class="flow-icon">📑</span>מצגת</div>
+        <div class="flow-arrow-down">↓</div>
+        <div class="flow-step fs-end-bad"><span class="flow-icon">🔚</span>סיום — הקשר מת</div>
+      </div>
+    </div>
+
+    <div class="flow-col tmrw-flow">
+      <div class="flow-head">TOMORROW — נכס חי ומתפתח</div>
+      <div class="flow-body">
+        <div class="flow-step fs-dim"><span class="flow-icon">🔴</span>בעיה עסקית</div>
+        <div class="flow-arrow-down">↓</div>
+        <div class="flow-step fs-mid"><span class="flow-icon">📋</span>פרויקט ייעוץ</div>
+        <div class="flow-arrow-down">↓</div>
+        <div class="flow-step fs-bright"><span class="flow-icon">🧠</span>נכס ידע — Knowledge Asset</div>
+        <div class="flow-arrow-down">↓</div>
+        <div class="flow-step fs-bright"><span class="flow-icon">📡</span>שכבת ניטור — Market Monitoring</div>
+        <div class="flow-arrow-down">↓</div>
+        <div class="flow-step fs-bright"><span class="flow-icon">🎯</span>תמיכת החלטות — Decision Support</div>
+        <div class="flow-arrow-down">↓</div>
+        <div class="flow-step fs-end-good"><span class="flow-icon">♾️</span>יעוץ מתמשך — הקשר לא נגמר</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="value-insight" style="margin-top:1.5rem">
+    <p><strong>המשמעות ל-BDO:</strong> כל פרויקט יכול להיות נקודת כניסה לנכס חי. לקוח שקיבל Strategy Diagnostic יכול לקבל Monitoring Retainer בחודש שאחריו. המכירה לא נגמרת — היא מתחילה.</p>
+  </div>
+</div>
+</section>
+
+<!-- ══════════════════════════════════════
+     SECTION 8 — FUTURE PRODUCT PORTFOLIO
+══════════════════════════════════════ -->
+<section id="portfolio">
+<div class="slide">
+  <div class="slide-label">תיק מוצרים עתידי</div>
+  <h2 class="slide-h">6 מוצרים שBDO <span class="hl">יכולה למכור</span> ב-18 חודש</h2>
+
+  <div class="portfolio-grid">
+    <div class="pf-card pf-c1">
+      <div class="pf-num">01 — מומלץ ראשון</div>
+      <div class="pf-name">AI Strategy Diagnostic</div>
+      <div class="pf-row"><span class="pf-key">קונה</span><span class="pf-val">CEO / מנכ"ל 50–500M₪</span></div>
+      <div class="pf-row"><span class="pf-key">מקבל</span><span class="pf-val">AI readiness report, gap analysis, roadmap</span></div>
+      <div class="pf-row"><span class="pf-key">הכנסה</span><span class="pf-val">35K–55K₪ value-based <span class="tag tag-est" onclick="showSP('est-p1','AI Diagnostic Pricing','ESTIMATED — Grant Thornton UK analogy T3.')">EST</span></span></div>
+    </div>
+
+    <div class="pf-card pf-c2">
+      <div class="pf-num">02 — High Upside</div>
+      <div class="pf-name">Managed Intelligence Retainer</div>
+      <div class="pf-row"><span class="pf-key">קונה</span><span class="pf-val">לקוח קיים מרוצה, CEO/מנכ"ל</span></div>
+      <div class="pf-row"><span class="pf-key">מקבל</span><span class="pf-val">briefing חודשי + 2 שיחות + competitor alerts</span></div>
+      <div class="pf-row"><span class="pf-key">הכנסה</span><span class="pf-val">8K–15K₪/חודש retainer <span class="tag tag-spec" onclick="showSP('spec-p2','Retainer Pricing','SPECULATIVE — אין ראיה ישירה מ-mid-market ישראלי.')">SPEC</span></span></div>
+    </div>
+
+    <div class="pf-card pf-c3">
+      <div class="pf-num">03</div>
+      <div class="pf-name">Competitive Intelligence Service</div>
+      <div class="pf-row"><span class="pf-key">קונה</span><span class="pf-val">CMO / CSO בשוק תחרותי</span></div>
+      <div class="pf-row"><span class="pf-key">מקבל</span><span class="pf-val">ניטור שוטף, alerts, quarterly deep-dive</span></div>
+      <div class="pf-row"><span class="pf-key">הכנסה</span><span class="pf-val">5K–10K₪/חודש <span class="tag tag-est" onclick="showSP('est-p3','CI Pricing','ESTIMATED')">EST</span></span></div>
+    </div>
+
+    <div class="pf-card pf-c4">
+      <div class="pf-num">04</div>
+      <div class="pf-name">Board Briefing Service</div>
+      <div class="pf-row"><span class="pf-key">קונה</span><span class="pf-val">Chairman / דירקטוריון</span></div>
+      <div class="pf-row"><span class="pf-key">מקבל</span><span class="pf-val">quarterly strategic landscape brief לדיון</span></div>
+      <div class="pf-row"><span class="pf-key">הכנסה</span><span class="pf-val">15K–25K₪ לרבעון <span class="tag tag-spec" onclick="showSP('spec-p4','Board Briefing','SPECULATIVE')">SPEC</span></span></div>
+    </div>
+
+    <div class="pf-card pf-c5">
+      <div class="pf-num">05</div>
+      <div class="pf-name">Scenario Planning Engine</div>
+      <div class="pf-row"><span class="pf-key">קונה</span><span class="pf-val">CFO / CEO בסביבה אי-ודאית</span></div>
+      <div class="pf-row"><span class="pf-key">מקבל</span><span class="pf-val">3–5 תרחישים עם triggers ומדדי מעקב</span></div>
+      <div class="pf-row"><span class="pf-key">הכנסה</span><span class="pf-val">40K–80K₪ + quarterly refresh <span class="tag tag-est" onclick="showSP('est-p5','Scenario Pricing','ESTIMATED')">EST</span></span></div>
+    </div>
+
+    <div class="pf-card pf-c6">
+      <div class="pf-num">06</div>
+      <div class="pf-name">Strategic Monitoring Dashboard</div>
+      <div class="pf-row"><span class="pf-key">קונה</span><span class="pf-val">CFO / COO — חברה עם operations מורכבות</span></div>
+      <div class="pf-row"><span class="pf-key">מקבל</span><span class="pf-val">15–20 KPIs ו-benchmarks ב-Power BI חי</span></div>
+      <div class="pf-row"><span class="pf-key">הכנסה</span><span class="pf-val">18K–28K₪ + 6K₪/רבעון <span class="tag tag-spec" onclick="showSP('spec-p6','Dashboard Pricing','SPECULATIVE — data quality ישראלי מוגבל.')">SPEC</span></span></div>
+    </div>
+  </div>
+  <div class="ask-row">
+    <a class="ask-btn" href="https://claude.ai/new?q=Which+of+these+6+consulting+products+has+the+highest+chance+of+success+for+an+Israeli+mid-market+firm+like+BDO+in+the+next+18+months%3F+Rank+them+and+explain+why." target="_blank">שאל Claude: מה לתעדף מבין 6 המוצרים?</a>
+  </div>
+</div>
+</section>
+
+<!-- ══════════════════════════════════════
+     SECTION 9 — ROADMAP
+══════════════════════════════════════ -->
+<section id="roadmap">
+<div class="slide">
+  <div class="slide-label">תכנית פעולה</div>
+  <h2 class="slide-h">ארבעה שלבים — <span class="hl">מחר בבוקר עד 3 שנים</span></h2>
+
+  <div class="phases">
+    <div class="phase">
+      <div class="phase-dot" style="background:var(--red);box-shadow:0 0 0 4px rgba(255,64,64,.15)"></div>
+      <div class="phase-period" style="color:var(--red)">שלב 0 | 0–30 יום</div>
+      <div class="phase-title">מחר בבוקר</div>
+      <div class="phase-items">
+        <div class="phase-item">AI Policy פנימי — מסמך חד-עמודי</div>
+        <div class="phase-item">Toolstack לכל יועץ (Claude + Perplexity) <span class="tag tag-est" onclick="showSP('est-toolcost','עלות Toolstack','~₪2K/חודש. Public pricing.')">EST</span></div>
+        <div class="phase-item">מיפוי 5–8 לקוחות לפיילוט</div>
+        <div class="phase-item">מנות 3 שותפים ל-ownership אישי</div>
+      </div>
+    </div>
+    <div class="phase">
+      <div class="phase-dot" style="background:var(--orange);box-shadow:0 0 0 4px rgba(255,90,43,.15)"></div>
+      <div class="phase-period" style="color:var(--orange)">שלב 1 | 30–90 יום</div>
+      <div class="phase-title">הוכחת מושג</div>
+      <div class="phase-items">
+        <div class="phase-item">Prompt Library — 20 prompts ייעוציים</div>
+        <div class="phase-item">3 פרויקטי AI Strategy Diagnostic</div>
+        <div class="phase-item">פיילוט retainer — לקוח אחד, 3 חודשים חינם</div>
+        <div class="phase-item">מדידת זמן delivery לפני/אחרי</div>
+      </div>
+    </div>
+    <div class="phase">
+      <div class="phase-dot" style="background:var(--yellow);box-shadow:0 0 0 4px rgba(245,192,48,.15)"></div>
+      <div class="phase-period" style="color:var(--yellow)">שלב 2 | 3–12 חודשים</div>
+      <div class="phase-title">בניית מנגנון</div>
+      <div class="phase-items">
+        <div class="phase-item">5–8 Managed Intelligence Retainers</div>
+        <div class="phase-item">Knowledge Infrastructure (Notion AI)</div>
+        <div class="phase-item">Automated Benchmarking Service</div>
+        <div class="phase-item">Reskilling — Analysts כ-AI Operators</div>
+      </div>
+    </div>
+    <div class="phase">
+      <div class="phase-dot" style="background:var(--teal);box-shadow:0 0 0 4px rgba(0,212,180,.15)"></div>
+      <div class="phase-period" style="color:var(--teal)">שלב 3 | 12–36 חודשים</div>
+      <div class="phase-title">שינוי מודל עסקי</div>
+      <div class="phase-items">
+        <div class="phase-item">Consulting-Enabled Products (CEP) <span class="tag tag-est" onclick="showSP('est-cep','CEP','ESTIMATED timeline.')">EST</span></div>
+        <div class="phase-item">מנוי אסטרטגי כהכנסה קבועה</div>
+        <div class="phase-item">IP מקצועי בר-תמחור</div>
+        <div class="phase-item" style="color:var(--red)">SaaS מלא — ❌ לא בשלב זה</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ask-row">
+    <a class="ask-btn" href="https://claude.ai/new?q=What+is+the+fastest+and+lowest-risk+90-day+action+plan+for+a+consulting+firm+to+build+its+first+AI-powered+recurring+revenue+product%3F+Be+very+specific+and+practical." target="_blank">שאל Claude: 90 יום — תכנית קונקרטית</a>
+    <a class="ask-btn" href="https://claude.ai/new?q=What+are+the+top+3+execution+failures+when+consulting+firms+try+to+build+AI-powered+recurring+products%3F+What+causes+them+to+fail+and+how+to+avoid+it%3F" target="_blank">שאל Claude: למה פירמות נכשלות?</a>
+  </div>
+</div>
+</section>
+
+<!-- ══════════════════════════════════════
+     SECTION 10 — THE DECISION
+══════════════════════════════════════ -->
+<section id="decision">
+<div class="slide">
+  <div class="slide-label">השאלה ל-BDO</div>
+  <div class="decision-q">
+    תוך 5 שנים,<br>
+    <strong>מה יהיה המודל העסקי של הפירמה?</strong>
+  </div>
+
+  <div class="decision-paths">
+    <div class="dp dp-a">
+      <div class="dp-icon">🔄</div>
+      <div class="dp-title">מודל נכסים חיים</div>
+      <div class="dp-desc">הפירמה בונה מוצרי intelligence, retainers ו-decision support. הכנסה חוזרת. נוכחות מתמשכת אצל ה-CEO. המתחרים הגדולים לא ייגעו בסגמנט הזה.</div>
+    </div>
+    <div class="dp dp-b">
+      <div class="dp-icon">📋</div>
+      <div class="dp-title">מודל פרויקטלי מואץ</div>
+      <div class="dp-desc">AI משפר יעילות delivery, מוריד עלויות, מאיץ פרויקטים. אבל המודל העסקי נשאר זהה. לחץ מחירים מבוטיקים AI-native יגדל.</div>
+    </div>
+  </div>
+
+  <div class="value-insight" style="margin-top:2rem;max-width:680px;margin-inline:auto">
+    <p><strong>ממצאי המחקר מצביעים:</strong> הפירמה שתבחר בנתיב הראשון ב-18 החודשים הקרובים תיצור עמדה קשה לאתגר. הביקוש ב-mid-market ישראלי עדיין לא מאומת — הפיילוטים הם ה-validation. <span class="tag tag-spec" onclick="showSP('spec-decision','Decision Framework','SPECULATIVE — הנחה אסטרטגית. הפיילוטים יאמתו או יפריכו.')">SPECULATIVE</span></p>
+  </div>
+  <div class="ask-row">
+    <a class="ask-btn" href="https://claude.ai/new?q=BDO+Israel+is+a+mid-market+consulting+firm.+What+are+the+strongest+arguments+for+and+against+building+AI-powered+advisory+retainers+for+the+50-300M+NIS+company+segment%3F+Give+me+a+balanced+view+with+specific+risks+and+opportunities." target="_blank">שאל Claude: הטיעונים בעד ונגד</a>
+  </div>
+</div>
+</section>
+
+<!-- ══════════════════════════════════════
+     SECTION 11 — DATA CONFIDENCE
+══════════════════════════════════════ -->
+<section id="confidence">
+<div class="slide">
+  <div class="slide-label">שקיפות נתונים</div>
+  <h2 class="slide-h">מה ידוע — ומה <span class="hl2">לא</span></h2>
+  <p class="slide-sub">24/25 משימות מחקר: APPROVED_WITH_CAVEATS. מערכת ביטחון שקופה — לא קיימת ב-PowerPoint רגיל.</p>
+
+  <div class="conf-grid">
+    <div class="conf-card" style="border-color:rgba(34,197,94,.2)">
+      <h3 style="color:var(--green)">✓ DATA-BACKED (T1)</h3>
+      <div class="conf-item">Accenture $3B AI bookings — SEC 10-Q Q2 2024</div>
+      <div class="conf-item">Gartner NRR 107% — Annual Report FY2023</div>
+      <div class="conf-item">Palantir RPO $3.9B — Earnings Call Q4 2023</div>
+      <div class="conf-item">Harvey/Hebbia funding rounds — T1 adjacent</div>
+    </div>
+    <div class="conf-card" style="border-color:rgba(245,192,48,.2)">
+      <h3 style="color:var(--yellow)">~ ESTIMATED / BENCHMARK (T2)</h3>
+      <div class="conf-item">55–65% Analyst work automation</div>
+      <div class="conf-item">40–55% project delivery savings</div>
+      <div class="conf-item">BCG/McKinsey Analyst hiring cuts (FT/Bloomberg)</div>
+      <div class="conf-item">Partner + AI = ×2.5 output</div>
+    </div>
+    <div class="conf-card" style="border-color:rgba(255,64,64,.2)">
+      <h3 style="color:var(--red)">? SPECULATIVE</h3>
+      <div class="conf-item">Mid-market ישראלי ישלם retainer AI</div>
+      <div class="conf-item">תמחור פיילוטים ספציפיים</div>
+      <div class="conf-item">Timeline שינויי מבנה פירמידה</div>
+      <div class="conf-item">ROI מוצרי CEP ב-3 שנים</div>
+    </div>
+  </div>
+
+  <div class="gaps">
+    <div class="gap-card">
+      <div class="gap-n" style="background:rgba(255,64,64,.15);color:var(--red)">1</div>
+      <div class="gap-text">
+        <h4>נכונות תשלום mid-market ישראלי</h4>
+        <p>8 ראיונות לקוחות קיימים — שאלה ישירה: "10K₪/חודש עבור X?"</p>
+      </div>
+    </div>
+    <div class="gap-card">
+      <div class="gap-n" style="background:rgba(245,192,48,.15);color:var(--yellow)">2</div>
+      <div class="gap-text">
+        <h4>פיילוטים ממשיים מ-RSM / GT / BDO Global</h4>
+        <p>פנייה ל-BDO Global AI team + Grant Thornton white papers 2024</p>
+      </div>
+    </div>
+    <div class="gap-card">
+      <div class="gap-n" style="background:rgba(34,197,94,.15);color:var(--green)">3</div>
+      <div class="gap-text">
+        <h4>מדידת delivery ב-BDO פנימית</h4>
+        <p>3 פרויקטים הבאים — רישום שעות לפני/אחרי AI toolstack</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="value-insight" style="margin-top:1.5rem">
+    <p><strong>מה זה מוכיח:</strong> המצגת הזו היא גם המסר וגם ה-proof-of-concept. מחקר מולטי-אג'נטי עם 25 משימות, QA שקוף, וסיווג ביטחון לכל טענה. <strong>זה מה ש-BDO יכולה למכור.</strong></p>
+  </div>
+  <div class="ask-row">
+    <a class="ask-btn" href="https://claude.ai/new?q=I+want+to+build+a+multi-agent+research+system+using+Claude+API+that+produces+consulting-quality+research+with+confidence+tagging+%28DATA-BACKED%2C+ESTIMATED%2C+SPECULATIVE%29.+What+is+the+architecture%3F+How+many+agents%2C+what+roles%2C+how+does+QA+work%3F" target="_blank">שאל Claude: כיצד בונים מערכת כזו?</a>
+  </div>
+</div>
+</section>
+
 <footer>
-  <strong>BDO Israel · Strategic Advisory</strong> · מצגת זו נבנתה עם Claude Code · 2025
+  <p class="footer-disc">הופק על ידי מערכת מחקר מולטי-אג'נטי לצורכי אסטרטגיה פנימית של BDO ישראל. כל הנתונים מסווגים לפי רמת ביטחון. מספרים ישראליים הם extrapolation מ-UK/US benchmarks ודורשים אימות. אין בנאמר המלצה להשקעה.</p>
+  <div class="footer-meta">BDO ישראל | AI Strategy Brief | Multi-Agent Research System | 2025</div>
 </footer>
 
 <script>
-// ─── REVEAL ON SCROLL ───
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('visible');
-      observer.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+// SCROLL PROGRESS
+window.addEventListener('scroll',()=>{
+  const p=(window.scrollY/(document.documentElement.scrollHeight-window.innerHeight))*100;
+  document.getElementById('progressBar').style.width=p+'%';
+},{passive:true});
 
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-// ─── RECOMMENDER LOGIC ───
-const rules = [
-  {
-    keywords: ['רעיונות','סיעור','מוחות','מהיר','טיוטה','איך אפשר','חלופות','קריאייטיב','creative'],
-    tool: 'ChatGPT',
-    emoji: '🤖',
-    color: '#FF6A3D',
-    why: 'ChatGPT מצוין לסיעור מוחות מהיר — מייצר כמות גדולה של רעיונות תוך שניות, כולל זוויות שלא חשבתם עליהן.',
-    alts: [
-      { name: 'Claude', reason: 'אם אתם רוצים שהרעיונות יהיו מנוסחים ומפורטים יותר', color: '#1FB6A6' },
-      { name: 'Gemini', reason: 'אם תרצו לשלב ישירות ב-Google Docs', color: '#60A5FA' },
-    ]
-  },
-  {
-    keywords: ['מסמך','דוח','ניתוח','כתיבה','כתיבה ארוכה','דיוק','עמוד','חוזה','הצעה','summarize','summary','סיכום','מצגת','עקביות','נוסח'],
-    tool: 'Claude',
-    emoji: '🧠',
-    color: '#1FB6A6',
-    why: 'Claude מתמחה בעיבוד מסמכים ארוכים, שמירת עקביות לאורך כל הטקסט, ודיוק בהוראות. הבחירה הנכונה לניתוח מעמיק וכתיבה מובנית.',
-    alts: [
-      { name: 'NotebookLM', reason: 'אם אתם רוצים לבסס על מסמכים שהעלתם בלבד', color: '#A78BFA' },
-      { name: 'ChatGPT', reason: 'לכתיבה מהירה פחות פורמלית', color: '#FF6A3D' },
-    ]
-  },
-  {
-    keywords: ['בנייה','כלי','אתר','אוטומציה','סקריפט','קבצים','קוד','code','script','bot','pipeline','תהליך אוטומטי'],
-    tool: 'Claude Code',
-    emoji: '⚡',
-    color: '#4ADE80',
-    why: 'Claude Code הוא הכלי האוטונומי: הוא לא רק מציע — הוא בונה, מריץ ומתקן. מתאים לכל משימה שדורשת יצירת קוד, כלים, או אוטומציה של קבצים.',
-    alts: [
-      { name: 'Cowork', reason: 'אם אתם לא טכניים ורוצים אוטומציה ללא קוד', color: '#1FB6A6' },
-      { name: 'Claude in Chrome', reason: 'אם הפעולה היא גלישה ואיסוף מהרשת', color: '#60A5FA' },
-    ]
-  },
-  {
-    keywords: ['גוגל','google','drive','sheets','gmail','workspace','מייל','docs'],
-    tool: 'Gemini',
-    emoji: '♊',
-    color: '#60A5FA',
-    why: 'Gemini משולב ישירות בתוך Google Workspace. אין צורך להעתיק-הדביק — הוא עובד בתוך Gmail, Docs ו-Sheets שכבר פתוחים.',
-    alts: [
-      { name: 'Claude', reason: 'לניתוח מעמיק של תוכן שתעתיקו', color: '#1FB6A6' },
-      { name: 'Claude in Excel', reason: 'אם מדובר ספציפית בגיליונות מספריים', color: '#FFC24B' },
-    ]
-  },
-  {
-    keywords: ['מקורות שלי','סיכום חומר','מבוסס מסמכים','קבצים שהעלתי','חומרי לקוח','תיק לקוח','לקוח','ראיונות','ראיון'],
-    tool: 'NotebookLM',
-    emoji: '📚',
-    color: '#A78BFA',
-    why: 'NotebookLM עונה אך ורק על בסיס המסמכים שהעלתם. אפס הזיות, 100% מבוסס מקורות — הבחירה הנכונה כשהאמינות קריטית.',
-    alts: [
-      { name: 'Claude', reason: 'אם רוצים גם ניתוח מחוץ למקורות', color: '#1FB6A6' },
-      { name: 'Perplexity', reason: 'אם צריך לחבר גם למידע ציבורי חיצוני', color: '#FFC24B' },
-    ]
-  },
-  {
-    keywords: ['מחקר','עדכני','מקורות','ציטוט','חדשות','רגולציה','שוק','מגמה','עכשיו','2024','2025','facts','research'],
-    tool: 'Perplexity',
-    emoji: '🔍',
-    color: '#FFC24B',
-    why: 'Perplexity מחפש בזמן אמת ומצטט מקורות. הכי טוב לעדכון שוטף, בדיקת עובדות, חדשות ענף ורגולציה עדכנית.',
-    alts: [
-      { name: 'Claude', reason: 'לניתוח מעמיק של המידע שנמצא', color: '#1FB6A6' },
-      { name: 'Gemini', reason: 'אם אתם בסביבת Google ורוצים לשמור ישירות', color: '#60A5FA' },
-    ]
-  },
-  {
-    keywords: ['אקסל','excel','גיליון','נוסחה','נוסחאות','מודל פיננסי','פיננסי','מימון','budget','forecast','תחזית'],
-    tool: 'Claude in Excel',
-    emoji: '📊',
-    color: '#FFC24B',
-    why: 'Claude in Excel עובד ישירות בתוך גיליון האקסל — מנתח, כותב נוסחאות, ובונה מודלים פיננסיים בלי לצאת מהממשק המוכר.',
-    alts: [
-      { name: 'Claude', reason: 'אם אתם רוצים לנתח את המספרים בשפה', color: '#1FB6A6' },
-      { name: 'Gemini', reason: 'אם הגיליון ב-Google Sheets', color: '#60A5FA' },
-    ]
-  },
-  {
-    keywords: ['תמונה','ויזואלי','גרפיקה','עיצוב','image','photo','logo','illustration','צייר'],
-    tool: 'ChatGPT',
-    emoji: '🎨',
-    color: '#FF6A3D',
-    why: 'ChatGPT עם DALL-E הוא הכי חזק ביצירת תמונות מהוראה טקסטואלית — מיידי, גמיש, ומאפשר איטרציות מהירות.',
-    alts: [
-      { name: 'Gemini', reason: 'אם אתם בסביבת Google ורוצים לשמור ישירות ב-Drive', color: '#60A5FA' },
-      { name: 'Claude', reason: 'לניתוח ותיאור ויזואל — לא ליצירה', color: '#1FB6A6' },
-    ]
-  },
-];
-
-const presetMap = {
-  'סיעור מוחות לפרויקט חדש': 0,
-  'ניתוח דוח של 80 עמוד': 1,
-  'מחקר שוק עם מקורות עדכניים': 5,
-  'ניתוח חומרי לקוח שהעלנו': 4,
-  'בניית מודל אקסל פיננסי': 6,
-  'בניית כלי אוטומציה לקבצים': 2,
-  'ניהול אימיילים ב-Gmail': 3,
-  'כתיבת מצגת מבנית': 1,
-};
-
-function selectTask(btn, task) {
-  document.querySelectorAll('.rec-task-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  document.getElementById('freeInput').value = '';
-  const ruleIdx = presetMap[task];
-  if (ruleIdx !== undefined) showResult(rules[ruleIdx]);
+// SOURCE PANEL
+function showSP(id,title,content){
+  document.getElementById('SP-body').innerHTML='<strong>'+title+'</strong><br><br>'+content;
+  document.getElementById('SP-meta').textContent='ID: '+id+' | לחצו ✕ לסגירה';
+  document.getElementById('SP').classList.add('on');
 }
+function closeSP(){document.getElementById('SP').classList.remove('on')}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeSP()});
 
-function analyzeInput() {
-  const text = document.getElementById('freeInput').value.trim();
-  if (!text) return;
-  document.querySelectorAll('.rec-task-btn').forEach(b => b.classList.remove('active'));
-
-  const lower = text.toLowerCase();
-  let best = null;
-  let bestScore = 0;
-
-  for (const rule of rules) {
-    let score = 0;
-    for (const kw of rule.keywords) {
-      if (lower.includes(kw)) score++;
-    }
-    if (score > bestScore) { bestScore = score; best = rule; }
-  }
-
-  if (!best) best = rules[1]; // default to Claude
-  showResult(best);
-}
-
-function showResult(rule) {
-  const area = document.getElementById('resultArea');
-  area.innerHTML = `
-    <div class="rec-result-card">
-      <span class="rec-main-emoji">${rule.emoji}</span>
-      <div class="rec-main-tool" style="color:${rule.color}">${rule.tool}</div>
-      <p class="rec-main-why">${rule.why}</p>
-      <div class="rec-alts-label">חלופות מומלצות</div>
-      <div class="rec-alts">
-        ${rule.alts.map((a, i) => `
-          <div class="rec-alt">
-            <span class="rec-alt-rank">#${i + 2}</span>
-            <span class="rec-alt-name" style="color:${a.color}">${a.name}</span>
-            <span class="rec-alt-reason">${a.reason}</span>
-          </div>
-        `).join('')}
-      </div>
-    </div>
-  `;
+// NAVIGATION
+function gotoSection(id){
+  document.getElementById(id).scrollIntoView({behavior:'smooth'});
 }
 </script>
-
 </body>
 </html>
