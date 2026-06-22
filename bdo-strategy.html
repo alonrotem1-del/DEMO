@@ -3,984 +3,1039 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BDO Israel | The Future of Consulting</title>
+<title>עתיד הייעוץ | BDO ישראל</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#07070d;--ink2:#0f0f18;--ink3:#171724;--ink4:#1f1f2e;--ink5:#27273a;
-  --teal:#00d4b4;--teal-dim:rgba(0,212,180,.12);--teal-border:rgba(0,212,180,.25);
-  --orange:#ff5a2b;--orange-dim:rgba(255,90,43,.1);
-  --yellow:#f5c030;--yellow-dim:rgba(245,192,48,.1);
-  --red:#ff4040;--green:#22c55e;--purple:#a78bfa;
-  --white:#eeeee9;--gray:#7878a0;--gray2:#444460;
-  --border:rgba(255,255,255,.055);--border2:rgba(255,255,255,.11);
+  --bg0:#07070d;
+  --bg1:#0e0e18;
+  --bg2:#141420;
+  --bg3:#1b1b28;
+  --bg4:#222232;
+  --teal:#00d4b4;
+  --teal-a12:rgba(0,212,180,.12);
+  --teal-a25:rgba(0,212,180,.25);
+  --orange:#ff5a2b;
+  --orange-a12:rgba(255,90,43,.12);
+  --yellow:#f5c030;
+  --yellow-a12:rgba(245,192,48,.12);
+  --red:#ff4040;
+  --green:#22c55e;
+  --purple:#a78bfa;
+  --white:#eaeae5;
+  --gray:#7070a0;
+  --gray2:#3a3a55;
+  --line:rgba(255,255,255,.07);
+  --line2:rgba(255,255,255,.13);
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-snap-type:y mandatory}
-body{background:var(--ink);color:var(--white);font-family:'Heebo',sans-serif;direction:rtl;overflow-x:hidden;line-height:1.5}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg0);
+  color:var(--white);
+  font-family:'Heebo',sans-serif;
+  direction:rtl;
+  overflow-x:hidden;
+  line-height:1.5;
+}
 
-/* ── NAV ── */
-nav{position:fixed;top:0;inset-inline:0;z-index:1000;height:52px;display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;background:rgba(7,7,13,.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+/* NAV */
+nav{
+  position:fixed;top:0;inset-inline:0;z-index:1000;
+  height:52px;padding:0 2.5rem;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(7,7,13,.88);backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--line);
+}
 .nav-brand{font-size:.85rem;font-weight:800;letter-spacing:.04em}
 .nav-brand em{color:var(--teal);font-style:normal}
-.nav-links{display:flex;gap:1.8rem;list-style:none}
-.nav-links a{font-size:.72rem;color:var(--gray);text-decoration:none;font-weight:600;letter-spacing:.06em;text-transform:uppercase;transition:color .2s}
-.nav-links a:hover{color:var(--white)}
-.nav-badge{font-size:.65rem;background:var(--teal-dim);color:var(--teal);border:1px solid var(--teal-border);border-radius:20px;padding:.2rem .7rem;font-weight:700;letter-spacing:.05em}
-@media(max-width:760px){.nav-links{display:none}}
+.nav-dots{display:flex;gap:.5rem;align-items:center}
+.nav-dot{width:6px;height:6px;border-radius:50%;background:var(--gray2);cursor:pointer;transition:all .25s;border:none;padding:0}
+.nav-dot.active,.nav-dot:hover{background:var(--teal);transform:scale(1.5)}
+.nav-label{font-size:.65rem;color:var(--gray);font-weight:600;letter-spacing:.08em}
+.progress-bar{position:fixed;top:52px;inset-inline:0;height:2px;background:var(--line);z-index:999}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--teal),var(--orange));width:0%;transition:width .15s}
 
-/* ── SCROLL PROGRESS ── */
-.spb{position:fixed;top:52px;inset-inline:0;height:2px;background:var(--border);z-index:999}
-.spb-bar{height:100%;width:0%;background:linear-gradient(90deg,var(--teal),var(--orange));transition:width .1s}
+/* SCREENS */
+.screen{
+  min-height:100vh;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  padding:80px 2.5rem 60px;
+  position:relative;
+}
+.inner{max-width:1100px;width:100%;margin:0 auto}
+.screen-num{
+  font-size:.6rem;font-weight:700;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--teal);
+  margin-bottom:.6rem;opacity:.7;
+}
+.headline{
+  font-size:clamp(1.9rem,4vw,3rem);
+  font-weight:900;line-height:1.15;letter-spacing:-.025em;
+  margin-bottom:.6rem;
+}
+.headline .hl{color:var(--teal)}
+.headline .ho{color:var(--orange)}
+.headline .hy{color:var(--yellow)}
+.lead{
+  font-size:clamp(.88rem,1.8vw,1.05rem);
+  color:var(--gray);line-height:1.7;
+  max-width:580px;margin-bottom:2rem;
+}
+.insight-box{
+  background:var(--bg2);border:1px solid var(--line2);
+  border-radius:12px;padding:1.2rem 1.5rem;
+  border-right:3px solid var(--teal);
+  font-size:.88rem;color:var(--white);line-height:1.65;
+  margin-top:1.5rem;
+}
+.insight-box strong{color:var(--teal)}
 
-/* ── SECTIONS ── */
-section{min-height:100vh;scroll-snap-align:start;display:flex;align-items:center;justify-content:center;padding:80px 2.5rem 60px;position:relative}
-.slide{max-width:1160px;width:100%;margin:0 auto}
-.slide-label{font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-bottom:.9rem;opacity:.85}
-.slide-h{font-size:clamp(2rem,4.5vw,3.4rem);font-weight:900;line-height:1.1;letter-spacing:-.025em;margin-bottom:.7rem}
-.slide-h .hl{color:var(--teal)}
-.slide-h .hl2{color:var(--orange)}
-.slide-sub{font-size:1rem;color:var(--gray);max-width:560px;line-height:1.65;margin-bottom:2rem}
+/* ── S1 HOOK ── */
+#s1{
+  background:
+    radial-gradient(ellipse 80% 60% at 50% -5%,rgba(0,212,180,.06) 0%,transparent 65%),
+    var(--bg0);
+  text-align:center;
+}
+#s1::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:
+    repeating-linear-gradient(0deg,transparent,transparent 63px,rgba(255,255,255,.018) 64px),
+    repeating-linear-gradient(90deg,transparent,transparent 63px,rgba(255,255,255,.018) 64px);
+}
+.hook-chip{
+  display:inline-block;
+  background:var(--yellow-a12);border:1px solid rgba(245,192,48,.25);
+  color:var(--yellow);font-size:.72rem;font-weight:700;
+  padding:.3rem .9rem;border-radius:20px;
+  letter-spacing:.06em;margin-bottom:2rem;
+}
+.hook-q{
+  font-size:clamp(1.6rem,4.5vw,3.4rem);
+  font-weight:900;line-height:1.2;letter-spacing:-.03em;
+  max-width:820px;margin:0 auto 1.5rem;
+}
+.hook-q strong{color:var(--teal)}
+.hook-sub{
+  font-size:clamp(.88rem,1.8vw,1.05rem);
+  color:var(--gray);line-height:1.7;
+  max-width:500px;margin:0 auto 2.5rem;
+}
+.scroll-cue{
+  position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:.5rem;
+  color:var(--gray2);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;
+  animation:bob 2.5s ease-in-out infinite;
+}
+@keyframes bob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
 
-/* ── CONFIDENCE TAGS ── */
-.tag{display:inline-flex;align-items:center;gap:.25rem;font-size:.6rem;font-weight:700;padding:.15rem .5rem;border-radius:4px;cursor:pointer;transition:all .2s;letter-spacing:.05em;vertical-align:middle}
-.tag:hover{opacity:.75;transform:scale(1.05)}
-.tag-data{background:rgba(34,197,94,.12);color:#22c55e;border:1px solid rgba(34,197,94,.3)}
-.tag-est{background:rgba(245,192,48,.12);color:var(--yellow);border:1px solid rgba(245,192,48,.3)}
-.tag-spec{background:rgba(255,64,64,.12);color:var(--red);border:1px solid rgba(255,64,64,.3)}
-.tag-bench{background:rgba(167,139,250,.12);color:var(--purple);border:1px solid rgba(167,139,250,.3)}
+/* ── PYRAMID ── */
+.pyramid{display:flex;flex-direction:column;align-items:center;gap:5px}
+.pyr-row{
+  display:flex;align-items:center;justify-content:center;
+  border-radius:5px;transition:all .3s;
+  text-align:center;padding:.55rem 1rem;
+}
+.pyr-lbl{font-size:.78rem;font-weight:700;color:#fff}
+.pyr-sub{font-size:.62rem;color:rgba(255,255,255,.6);margin-top:.1rem}
 
-/* ── SOURCE PANEL ── */
-.sp{display:none;position:fixed;bottom:72px;right:2rem;left:2rem;max-width:440px;margin:0 auto;background:var(--ink3);border:1px solid var(--border2);border-radius:14px;padding:1.2rem 1.4rem;z-index:600;box-shadow:0 24px 64px rgba(0,0,0,.65)}
-.sp.on{display:block;animation:su .22s ease}
-@keyframes su{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
-.sp-close{float:left;background:none;border:none;color:var(--gray);cursor:pointer;font-size:1rem}
-.sp-lbl{font-size:.65rem;color:var(--gray);font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem}
-.sp-body{font-size:.82rem;color:var(--white);line-height:1.6}
-.sp-meta{font-size:.68rem;color:var(--gray2);margin-top:.65rem;padding-top:.65rem;border-top:1px solid var(--border)}
+/* ── S2 WHY CONSULTING ── */
+#s2{background:var(--bg1)}
+.origin-layout{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:3rem;align-items:start;margin-top:2rem;
+}
+@media(max-width:800px){.origin-layout{grid-template-columns:1fr}}
+.flow-chain{display:flex;flex-direction:column;gap:0}
+.fc-node{
+  background:var(--bg3);border:1px solid var(--line);
+  border-radius:10px;padding:.8rem 1.2rem;
+  display:flex;align-items:center;gap:.8rem;
+  font-size:.83rem;font-weight:600;
+}
+.fc-icon{font-size:1rem;flex-shrink:0}
+.fc-arrow{
+  width:2px;height:20px;background:var(--line2);
+  margin:0 auto;position:relative;
+}
+.fc-arrow::after{
+  content:'';position:absolute;bottom:-4px;
+  left:50%;transform:translateX(-50%);
+  border-left:5px solid transparent;
+  border-right:5px solid transparent;
+  border-top:7px solid var(--line2);
+}
+.scarcity-box{
+  background:linear-gradient(135deg,var(--teal-a12),transparent);
+  border:1px solid var(--teal-a25);border-radius:14px;
+  padding:1.8rem;
+}
+.scarcity-box h3{
+  font-size:.95rem;font-weight:800;color:var(--teal);
+  margin-bottom:1.2rem;line-height:1.35;
+}
+.scarcity-item{
+  display:flex;gap:.7rem;align-items:flex-start;
+  padding:.6rem 0;border-bottom:1px solid var(--line);
+  font-size:.82rem;color:var(--white);line-height:1.5;
+}
+.scarcity-item:last-child{border:none}
+.si-dot{width:6px;height:6px;border-radius:50%;background:var(--teal);flex-shrink:0;margin-top:.4rem}
 
-/* ══════════════════════════════════════════
-   SECTION 1 — HERO
-══════════════════════════════════════════ */
-#hero{background:radial-gradient(ellipse 70% 55% at 50% -10%,rgba(0,212,180,.07) 0%,transparent 65%),var(--ink);overflow:hidden}
-#hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 47px,rgba(255,255,255,.013) 48px),repeating-linear-gradient(90deg,transparent,transparent 47px,rgba(255,255,255,.013) 48px);pointer-events:none}
-.hero-kicker{display:inline-flex;align-items:center;gap:.5rem;background:rgba(245,192,48,.08);border:1px solid rgba(245,192,48,.2);border-radius:24px;padding:.35rem 1rem;font-size:.72rem;color:var(--yellow);font-weight:700;margin-bottom:1.8rem;letter-spacing:.06em}
-.hero-thesis{font-size:clamp(1.5rem,3.2vw,2.3rem);font-weight:800;line-height:1.4;color:var(--white);margin-bottom:2.5rem;max-width:820px;border-right:3px solid var(--teal);padding-right:1.4rem}
-.hero-thesis strong{color:var(--teal)}
-.hero-thesis em{color:var(--orange);font-style:normal}
-.hero-cta{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3.5rem}
-.btn-p{background:var(--orange);color:#fff;border:none;padding:.72rem 1.6rem;border-radius:8px;font-size:.88rem;font-weight:700;cursor:pointer;font-family:'Heebo',sans-serif;transition:all .2s}
-.btn-p:hover{background:#ff7a56;transform:translateY(-1px)}
-.btn-g{background:transparent;color:var(--white);border:1px solid var(--border2);padding:.72rem 1.6rem;border-radius:8px;font-size:.88rem;font-weight:600;cursor:pointer;font-family:'Heebo',sans-serif;transition:all .2s}
-.btn-g:hover{border-color:var(--teal);color:var(--teal)}
-.hero-3stats{display:flex;gap:2.5rem;flex-wrap:wrap}
-.hstat{padding-right:2rem;border-right:1px solid var(--border2)}
-.hstat:last-child{border:none}
-.hstat-n{font-size:2.2rem;font-weight:900;color:var(--white);line-height:1}
-.hstat-n span{font-size:1rem;color:var(--teal)}
-.hstat-l{font-size:.72rem;color:var(--gray);margin-top:.3rem}
-.scroll-hint{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.4rem;color:var(--gray);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;animation:bob 2.2s ease-in-out infinite}
-@keyframes bob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(6px)}}
+/* ── S3 ECONOMIC MODEL ── */
+#s3{background:var(--bg0)}
+.model-layout{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:3rem;align-items:start;margin-top:2rem;
+}
+@media(max-width:800px){.model-layout{grid-template-columns:1fr}}
+.hours-flow{
+  background:var(--bg2);border:1px solid var(--line);
+  border-radius:16px;overflow:hidden;
+}
+.hf-header{
+  background:var(--bg3);padding:1rem 1.4rem;
+  font-size:.65rem;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--gray);
+  border-bottom:1px solid var(--line);
+}
+.hf-row{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:.85rem 1.4rem;border-bottom:1px solid var(--line);
+}
+.hf-row:last-child{border:none}
+.hf-label{font-size:.78rem;color:var(--gray);font-weight:600}
+.hf-val{font-size:1rem;font-weight:800;direction:ltr;text-align:left}
+.hf-eq{
+  padding:1rem 1.4rem;
+  background:linear-gradient(135deg,var(--orange-a12),transparent);
+  border-top:1px solid rgba(255,90,43,.2);
+}
+.eq-line{
+  display:flex;align-items:center;justify-content:space-between;
+  font-size:.95rem;font-weight:800;
+}
 
-/* ══════════════════════════════════════════
-   SECTION 2 — THREE SIGNALS
-══════════════════════════════════════════ */
-#signals{background:var(--ink2)}
-.signals-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2.5rem}
-@media(max-width:700px){.signals-grid{grid-template-columns:1fr}}
-.signal-card{background:var(--ink3);border:1px solid var(--border);border-radius:16px;padding:1.8rem 1.5rem;position:relative;overflow:hidden}
-.signal-card::before{content:'';position:absolute;top:0;right:0;width:100%;height:3px}
-.signal-card.s-teal::before{background:var(--teal)}
-.signal-card.s-orange::before{background:var(--orange)}
-.signal-card.s-yellow::before{background:var(--yellow)}
-.signal-big{font-size:3rem;font-weight:900;line-height:1;margin-bottom:.5rem}
-.signal-card.s-teal .signal-big{color:var(--teal)}
-.signal-card.s-orange .signal-big{color:var(--orange)}
-.signal-card.s-yellow .signal-big{color:var(--yellow)}
-.signal-title{font-size:.95rem;font-weight:700;margin-bottom:.4rem}
-.signal-body{font-size:.8rem;color:var(--gray);line-height:1.55}
-.signal-conf{margin-top:.8rem}
-.signal-window{margin-top:2.5rem;background:linear-gradient(135deg,rgba(0,212,180,.06),rgba(255,90,43,.04));border:1px solid var(--teal-border);border-radius:14px;padding:1.4rem 1.8rem;display:flex;align-items:center;gap:1.5rem}
-.window-icon{font-size:2rem;flex-shrink:0}
-.window-text{font-size:1rem;color:var(--white);line-height:1.6}
-.window-text strong{color:var(--teal)}
+/* ── S4 WHAT AI CHANGES ── */
+#s4{background:var(--bg1)}
+.compress-grid{
+  display:grid;grid-template-columns:1fr auto 1fr;
+  gap:0;margin-top:2rem;
+}
+@media(max-width:750px){.compress-grid{grid-template-columns:1fr;gap:1rem}}
+.compress-col{border-radius:14px;overflow:hidden}
+.compress-col.before{background:var(--bg3);border:1px solid var(--line)}
+.compress-col.after{
+  background:linear-gradient(135deg,var(--teal-a12),var(--bg2));
+  border:1px solid var(--teal-a25);
+}
+.cc-head{
+  padding:.9rem 1.3rem;font-size:.65rem;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;
+  border-bottom:1px solid var(--line);
+}
+.compress-col.before .cc-head{color:var(--gray)}
+.compress-col.after .cc-head{color:var(--teal);border-color:var(--teal-a25)}
+.cc-stat{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:.8rem 1.3rem;border-bottom:1px solid var(--line);
+}
+.compress-col.after .cc-stat{border-color:var(--teal-a25)}
+.cc-stat:last-child{border:none}
+.cc-key{font-size:.75rem;color:var(--gray);font-weight:600}
+.cc-val{font-size:1.05rem;font-weight:900;direction:ltr;text-align:left}
+.compress-col.before .cc-val{color:var(--white);opacity:.45}
+.compress-col.after .cc-val{color:var(--teal)}
+.compress-arrow{
+  display:flex;align-items:center;justify-content:center;
+  padding:0 1.2rem;font-size:1.6rem;color:var(--teal);flex-shrink:0;
+}
+@media(max-width:750px){.compress-arrow{padding:.4rem;font-size:1.2rem}}
 
-/* ══════════════════════════════════════════
-   SECTION 3 — TODAY VS TOMORROW (THE BIG SHIFT)
-══════════════════════════════════════════ */
-#shift{background:var(--ink)}
-.shift-wrap{display:grid;grid-template-columns:1fr auto 1fr;gap:0;margin-top:2rem;border-radius:20px;overflow:hidden}
-@media(max-width:800px){.shift-wrap{grid-template-columns:1fr;gap:1rem}}
-.shift-col{padding:2rem 1.8rem}
-.shift-col.today{background:var(--ink3);border:1px solid var(--border)}
-.shift-col.tmrw{background:linear-gradient(135deg,rgba(0,212,180,.07),rgba(0,212,180,.02));border:1px solid var(--teal-border)}
-.shift-arrow-col{display:flex;align-items:center;justify-content:center;background:var(--ink2);padding:0 1rem;font-size:2rem;color:var(--teal);flex-direction:column;gap:.4rem}
-@media(max-width:800px){.shift-arrow-col{padding:1rem;font-size:1.5rem;flex-direction:row}}
-.shift-header{font-size:.65rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin-bottom:1.2rem;padding-bottom:.8rem;border-bottom:1px solid var(--border)}
-.shift-col.today .shift-header{color:var(--gray)}
-.shift-col.tmrw .shift-header{color:var(--teal)}
-.shift-row{display:flex;gap:.8rem;padding:.65rem 0;border-bottom:1px solid var(--border)}
-.shift-row:last-child{border-bottom:none}
-.shift-icon{font-size:1.1rem;flex-shrink:0;margin-top:.05rem}
-.shift-row-content{}
-.shift-row-title{font-size:.85rem;font-weight:700;margin-bottom:.15rem}
-.shift-row-sub{font-size:.75rem;color:var(--gray);line-height:1.4}
-.shift-col.today .shift-row-title{color:var(--gray)}
-.shift-col.tmrw .shift-row-title{color:var(--white)}
-.shift-footer{margin-top:1.2rem;padding-top:1.2rem;border-top:1px solid var(--border)}
-.shift-model{font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
-.shift-rev{font-size:1.1rem;font-weight:800;margin-top:.25rem}
-.shift-col.today .shift-rev{color:var(--gray)}
-.shift-col.tmrw .shift-rev{color:var(--teal)}
+/* ── S5 THREAT ── */
+#s5{background:var(--bg0)}
+.threat-compare{
+  display:grid;grid-template-columns:1fr auto 1fr;
+  gap:0;margin-top:2rem;
+}
+@media(max-width:700px){.threat-compare{grid-template-columns:1fr;gap:1.5rem}}
+.threat-col{
+  border-radius:16px;padding:2rem 1.5rem;
+  display:flex;flex-direction:column;align-items:center;
+  text-align:center;
+}
+.threat-col.old{background:var(--bg3);border:1px solid var(--line)}
+.threat-col.new-ai{
+  background:linear-gradient(135deg,var(--teal-a12),transparent);
+  border:1px solid var(--teal-a25);
+}
+.threat-label{
+  font-size:.65rem;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;margin-bottom:1.2rem;
+}
+.threat-col.old .threat-label{color:var(--gray)}
+.threat-col.new-ai .threat-label{color:var(--teal)}
+.threat-price{
+  font-size:3rem;font-weight:900;line-height:1;
+  margin-bottom:.4rem;direction:ltr;
+}
+.threat-col.old .threat-price{color:var(--white);opacity:.5}
+.threat-col.new-ai .threat-price{color:var(--teal)}
+.threat-items{
+  display:flex;flex-direction:column;gap:.45rem;
+  margin-top:1rem;width:100%;
+}
+.threat-item{
+  font-size:.78rem;padding:.4rem .65rem;border-radius:6px;
+  background:rgba(255,255,255,.03);text-align:right;color:var(--gray);
+}
+.threat-col.new-ai .threat-item{color:var(--white);background:var(--teal-a12)}
+.threat-vs{
+  display:flex;align-items:center;justify-content:center;
+  font-size:.8rem;font-weight:800;color:var(--gray2);
+  padding:0 1rem;flex-shrink:0;
+}
+.threat-q{
+  margin-top:2.5rem;text-align:center;
+  font-size:clamp(1.1rem,2.5vw,1.5rem);
+  font-weight:900;line-height:1.35;
+  color:var(--white);letter-spacing:-.015em;
+}
+.threat-q em{
+  display:block;margin-top:.5rem;
+  color:var(--yellow);font-style:normal;
+  font-size:clamp(.8rem,1.6vw,1rem);font-weight:600;
+}
 
-/* ══════════════════════════════════════════
-   SECTION 4 — WHAT CLIENTS PAY FOR
-══════════════════════════════════════════ */
-#value{background:var(--ink2)}
-.value-wrap{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;margin-top:2.5rem}
-@media(max-width:700px){.value-wrap{grid-template-columns:1fr;gap:2.5rem}}
-.value-col{}
-.value-col-label{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:1.2rem}
-.value-col.vc-today .value-col-label{color:var(--gray)}
-.value-col.vc-future .value-col-label{color:var(--teal)}
-.bar-stack{display:flex;flex-direction:column;gap:4px;width:100%}
-.bar-seg{display:flex;align-items:center;justify-content:space-between;padding:.65rem 1rem;border-radius:7px;transition:all .3s}
-.bar-seg:hover{filter:brightness(1.1)}
-.bar-seg-label{font-size:.8rem;font-weight:700}
-.bar-seg-pct{font-size:1.1rem;font-weight:900}
-.seg-research{background:rgba(136,136,160,.15);color:var(--gray)}
-.seg-analysis{background:rgba(167,139,250,.15);color:var(--purple)}
-.seg-slides{background:rgba(245,192,48,.12);color:var(--yellow)}
-.seg-advice{background:rgba(0,212,180,.12);color:var(--teal)}
-.seg-judgment{background:rgba(0,212,180,.2);color:var(--teal)}
-.seg-ongoing{background:rgba(255,90,43,.15);color:var(--orange)}
-.value-insight{margin-top:2rem;padding:1.2rem 1.5rem;background:var(--ink3);border-radius:12px;border-right:3px solid var(--teal)}
-.value-insight p{font-size:.88rem;color:var(--white);line-height:1.6}
-.value-insight strong{color:var(--teal)}
+/* ── S6 HUMAN PREMIUM ── */
+#s6{background:var(--bg1)}
+.pillars{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:1rem;margin-top:2.5rem;
+}
+@media(max-width:900px){.pillars{grid-template-columns:1fr 1fr}}
+@media(max-width:500px){.pillars{grid-template-columns:1fr}}
+.pillar{
+  border-radius:14px;padding:1.5rem;border:1px solid var(--line);
+  display:flex;flex-direction:column;gap:.65rem;
+  transition:all .3s;
+}
+.pillar:hover{transform:translateY(-3px);border-color:var(--line2)}
+.pillar-num{font-size:2rem;font-weight:900;line-height:1;opacity:.12}
+.pillar-icon{font-size:1.5rem;line-height:1}
+.pillar-title{font-size:.9rem;font-weight:800;line-height:1.25}
+.pillar-ai{
+  font-size:.7rem;font-weight:600;padding:.2rem .55rem;
+  border-radius:4px;background:var(--bg4);color:var(--gray);
+  display:inline-block;direction:ltr;
+}
+.pillar-human{font-size:.77rem;color:var(--white);line-height:1.55}
+.p1{background:linear-gradient(135deg,rgba(0,212,180,.07),transparent)}
+.p1 .pillar-title{color:var(--teal)}
+.p1 .pillar-num{color:var(--teal)}
+.p2{background:linear-gradient(135deg,rgba(167,139,250,.07),transparent)}
+.p2 .pillar-title{color:var(--purple)}
+.p2 .pillar-num{color:var(--purple)}
+.p3{background:linear-gradient(135deg,rgba(245,192,48,.07),transparent)}
+.p3 .pillar-title{color:var(--yellow)}
+.p3 .pillar-num{color:var(--yellow)}
+.p4{background:linear-gradient(135deg,rgba(255,90,43,.07),transparent)}
+.p4 .pillar-title{color:var(--orange)}
+.p4 .pillar-num{color:var(--orange)}
 
-/* ══════════════════════════════════════════
-   SECTION 5 — THE PYRAMID SHIFT
-══════════════════════════════════════════ */
-#pyramid{background:var(--ink)}
-.pyramid-compare{display:grid;grid-template-columns:1fr 80px 1fr;gap:0;align-items:center;margin-top:2.5rem}
-@media(max-width:800px){.pyramid-compare{grid-template-columns:1fr;gap:2rem}}
-.pyr-side{display:flex;flex-direction:column;gap:5px}
-.pyr-layer{display:flex;align-items:center;justify-content:center;border-radius:6px;text-align:center;padding:.65rem;cursor:pointer;transition:all .3s;position:relative}
-.pyr-layer:hover{filter:brightness(1.15);transform:scaleX(1.01)}
-.pyr-lname{font-size:.78rem;font-weight:700;color:#fff}
-.pyr-lsub{font-size:.62rem;color:rgba(255,255,255,.65);margin-top:.1rem}
-.pyr-arrow-col{display:flex;align-items:center;justify-content:center;font-size:2rem;color:var(--teal)}
-.pyr-legend{display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:1.5rem;justify-content:center}
-.pyr-leg-item{display:flex;align-items:center;gap:.5rem;font-size:.73rem;color:var(--gray)}
-.pyr-leg-dot{width:10px;height:10px;border-radius:50%}
+/* ── S7 PROJECT → LIVING ASSET ── */
+#s7{background:var(--bg0)}
+.transform-flows{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:2rem;margin-top:2rem;
+}
+@media(max-width:700px){.transform-flows{grid-template-columns:1fr}}
+.tf-col{border-radius:16px;overflow:hidden}
+.tf-head{
+  padding:.9rem 1.4rem;font-size:.65rem;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;
+}
+.tf-col.tf-today .tf-head{
+  background:var(--bg4);color:var(--gray);
+  border:1px solid var(--line);border-bottom:none;border-radius:16px 16px 0 0;
+}
+.tf-col.tf-future .tf-head{
+  background:var(--teal-a12);color:var(--teal);
+  border:1px solid var(--teal-a25);border-bottom:none;border-radius:16px 16px 0 0;
+}
+.tf-body{padding:.6rem;border-radius:0 0 16px 16px}
+.tf-col.tf-today .tf-body{
+  background:var(--bg3);border:1px solid var(--line);border-top:none;
+}
+.tf-col.tf-future .tf-body{
+  background:linear-gradient(180deg,var(--teal-a12),transparent);
+  border:1px solid var(--teal-a25);border-top:none;
+}
+.tf-step{
+  display:flex;align-items:center;gap:.7rem;
+  padding:.65rem .8rem;border-radius:8px;
+  font-size:.82rem;font-weight:600;margin-bottom:3px;
+}
+.tf-icon{font-size:1rem;flex-shrink:0}
+.ts-dim{background:rgba(255,255,255,.025);color:var(--gray)}
+.ts-mid{background:rgba(255,255,255,.05);color:var(--white)}
+.ts-hi{background:var(--teal-a12);color:var(--teal)}
+.ts-end-bad{background:rgba(255,64,64,.07);color:var(--gray2);text-decoration:line-through;font-style:italic}
+.ts-end-good{background:rgba(0,212,180,.18);color:var(--teal);font-weight:800}
+.tf-down{text-align:center;font-size:.65rem;color:var(--line2);padding:.1rem 0}
+.tf-col.tf-future .tf-down{color:var(--teal-a25)}
 
-/* ══════════════════════════════════════════
-   SECTION 6 — PRODUCT STACK
-══════════════════════════════════════════ */
-#stack{background:var(--ink2)}
-.stack-wrap{display:grid;grid-template-columns:1fr 300px;gap:3rem;align-items:center;margin-top:2rem}
-@media(max-width:900px){.stack-wrap{grid-template-columns:1fr}}
-.stack-layers{display:flex;flex-direction:column;gap:8px}
-.stack-layer{border-radius:12px;padding:1.3rem 1.6rem;cursor:pointer;transition:all .3s;position:relative;overflow:hidden}
-.stack-layer::after{content:'';position:absolute;top:0;left:0;bottom:0;width:4px}
-.sl-4{background:linear-gradient(135deg,rgba(0,212,180,.14),rgba(0,212,180,.04));border:1px solid rgba(0,212,180,.3)}
-.sl-4::after{background:var(--teal)}
-.sl-3{background:linear-gradient(135deg,rgba(167,139,250,.14),rgba(167,139,250,.04));border:1px solid rgba(167,139,250,.25)}
-.sl-3::after{background:var(--purple)}
-.sl-2{background:linear-gradient(135deg,rgba(245,192,48,.1),rgba(245,192,48,.03));border:1px solid rgba(245,192,48,.2)}
-.sl-2::after{background:var(--yellow)}
-.sl-1{background:linear-gradient(135deg,rgba(136,136,160,.1),rgba(136,136,160,.03));border:1px solid var(--border)}
-.sl-1::after{background:var(--gray)}
-.sl-num{font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.35rem;opacity:.7}
-.sl-title{font-size:1rem;font-weight:800;margin-bottom:.25rem}
-.sl-4 .sl-title{color:var(--teal)}
-.sl-3 .sl-title{color:var(--purple)}
-.sl-2 .sl-title{color:var(--yellow)}
-.sl-1 .sl-title{color:var(--gray)}
-.sl-items{display:flex;gap:.5rem;flex-wrap:wrap}
-.sl-item{font-size:.72rem;background:rgba(255,255,255,.06);border-radius:4px;padding:.2rem .55rem;color:var(--white)}
-.stack-side{}
-.stack-msg{background:var(--ink3);border:1px solid var(--border2);border-radius:14px;padding:1.6rem}
-.stack-msg h3{font-size:1.1rem;font-weight:800;color:var(--white);margin-bottom:1rem;line-height:1.3}
-.stack-msg h3 em{color:var(--teal);font-style:normal}
-.stack-msg p{font-size:.82rem;color:var(--gray);line-height:1.6;margin-bottom:.8rem}
-.stack-msg p:last-child{margin-bottom:0}
-.stack-pointer{display:flex;align-items:flex-start;gap:.6rem;padding:.6rem 0;border-bottom:1px solid var(--border);font-size:.8rem;color:var(--white)}
-.stack-pointer:last-child{border:none}
-.sp-arrow{color:var(--teal);flex-shrink:0;font-size:.9rem;margin-top:.05rem}
+/* ── S8 DOCTOR ── */
+#s8{background:var(--bg1)}
+.doctor-compare{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:1.5rem;margin-top:2rem;
+}
+@media(max-width:700px){.doctor-compare{grid-template-columns:1fr}}
+.dc{border-radius:16px;overflow:hidden}
+.dc-head{padding:1.3rem 1.5rem;text-align:center}
+.dc.dc-old .dc-head{background:var(--bg4);border:1px solid var(--line)}
+.dc.dc-new .dc-head{background:var(--teal-a12);border:1px solid var(--teal-a25)}
+.dc-icon{font-size:2.5rem;margin-bottom:.5rem;display:block}
+.dc-title{font-size:1rem;font-weight:800}
+.dc.dc-old .dc-title{color:var(--gray)}
+.dc.dc-new .dc-title{color:var(--teal)}
+.dc-sub{font-size:.75rem;color:var(--gray);margin-top:.2rem}
+.dc-body{padding:.6rem}
+.dc.dc-old .dc-body{
+  background:var(--bg3);border:1px solid var(--line);
+  border-top:none;border-radius:0 0 16px 16px;
+}
+.dc.dc-new .dc-body{
+  background:linear-gradient(180deg,var(--teal-a12),transparent);
+  border:1px solid var(--teal-a25);border-top:none;border-radius:0 0 16px 16px;
+}
+.dc-row{
+  display:flex;align-items:flex-start;gap:.75rem;
+  padding:.7rem .8rem;border-radius:8px;
+  margin-bottom:3px;font-size:.8rem;line-height:1.5;
+}
+.dc.dc-old .dc-row{color:var(--gray);background:rgba(255,255,255,.02)}
+.dc.dc-new .dc-row{color:var(--white);background:var(--teal-a12)}
+.dc-ri{font-size:1rem;flex-shrink:0}
 
-/* ══════════════════════════════════════════
-   SECTION 7 — FROM PROJECT TO LIVING ASSET
-══════════════════════════════════════════ */
-#asset{background:var(--ink)}
-.asset-flows{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2.5rem}
-@media(max-width:700px){.asset-flows{grid-template-columns:1fr}}
-.flow-col{border-radius:16px;overflow:hidden}
-.flow-head{padding:1rem 1.4rem;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
-.flow-col.today-flow .flow-head{background:rgba(136,136,160,.1);color:var(--gray);border:1px solid var(--border)}
-.flow-col.tmrw-flow .flow-head{background:rgba(0,212,180,.08);color:var(--teal);border:1px solid var(--teal-border)}
-.flow-body{border:1px solid var(--border);border-top:none;border-radius:0 0 16px 16px;padding:.5rem}
-.flow-col.tmrw-flow .flow-body{border-color:var(--teal-border)}
-.flow-step{display:flex;align-items:center;gap:.8rem;padding:.7rem .9rem;border-radius:8px;font-size:.83rem;font-weight:600;margin-bottom:2px}
-.flow-step.fs-dim{background:rgba(255,255,255,.03);color:var(--gray)}
-.flow-step.fs-mid{background:rgba(255,255,255,.05);color:var(--white)}
-.flow-step.fs-bright{background:rgba(0,212,180,.1);color:var(--teal)}
-.flow-step.fs-end-bad{background:rgba(136,136,160,.08);color:var(--gray2);text-decoration:line-through}
-.flow-step.fs-end-good{background:rgba(0,212,180,.15);color:var(--teal);font-weight:800}
-.flow-arrow-down{text-align:center;font-size:.75rem;color:var(--gray2);padding:.15rem 0;line-height:1}
-.flow-col.tmrw-flow .flow-arrow-down{color:var(--teal-border)}
-.flow-icon{font-size:1rem;flex-shrink:0}
+/* ── S9 PRODUCTS ── */
+#s9{background:var(--bg0)}
+.product-map-wrap{
+  background:var(--bg2);border:1px solid var(--line);
+  border-radius:14px;overflow:hidden;margin-top:2rem;
+}
+.pm-row{
+  display:grid;grid-template-columns:2fr 1.3fr 1.5fr 1.3fr;
+  gap:0;border-bottom:1px solid var(--line);
+}
+.pm-row:last-child{border-bottom:none}
+.pm-row.pm-header{background:var(--bg3)}
+.pm-cell{
+  padding:.85rem 1rem;font-size:.78rem;
+  border-left:1px solid var(--line);
+}
+[dir=rtl] .pm-cell{border-left:none;border-right:1px solid var(--line)}
+.pm-cell:first-child{border-right:none}
+.pm-row.pm-header .pm-cell{
+  font-size:.6rem;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--gray);
+}
+.pm-name{font-weight:700;color:var(--white);line-height:1.3;font-size:.82rem}
+.pm-name span{display:block;font-size:.64rem;font-weight:500;color:var(--gray);margin-top:.15rem}
+.pm-val{color:var(--white);line-height:1.4;font-size:.77rem}
+.pm-rev{font-weight:700;font-size:.8rem}
+.pm-1 .pm-name,.pm-1 .pm-rev{color:var(--teal)}
+.pm-2 .pm-name,.pm-2 .pm-rev{color:var(--orange)}
+.pm-3 .pm-name,.pm-3 .pm-rev{color:var(--yellow)}
+.pm-4 .pm-name,.pm-4 .pm-rev{color:var(--purple)}
+.pm-5 .pm-name,.pm-5 .pm-rev{color:var(--green)}
+.pm-6 .pm-name,.pm-6 .pm-rev{color:var(--gray)}
 
-/* ══════════════════════════════════════════
-   SECTION 8 — FUTURE PRODUCT PORTFOLIO
-══════════════════════════════════════════ */
-#portfolio{background:var(--ink2)}
-.portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem}
-@media(max-width:900px){.portfolio-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:560px){.portfolio-grid{grid-template-columns:1fr}}
-.pf-card{background:var(--ink3);border:1px solid var(--border);border-radius:14px;padding:1.4rem;transition:all .3s;position:relative;overflow:hidden}
-.pf-card:hover{border-color:var(--border2);transform:translateY(-3px)}
-.pf-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px}
-.pf-c1::after{background:var(--teal)}
-.pf-c2::after{background:var(--orange)}
-.pf-c3::after{background:var(--yellow)}
-.pf-c4::after{background:var(--purple)}
-.pf-c5::after{background:var(--green)}
-.pf-c6::after{background:var(--gray)}
-.pf-num{font-size:.6rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gray);margin-bottom:.5rem}
-.pf-name{font-size:.95rem;font-weight:800;margin-bottom:1rem;line-height:1.25}
-.pf-row{display:flex;justify-content:space-between;align-items:flex-start;padding:.45rem 0;border-bottom:1px solid var(--border);font-size:.75rem}
-.pf-row:last-child{border:none}
-.pf-key{color:var(--gray);font-size:.68rem;font-weight:600;flex-shrink:0;padding-left:.5rem}
-.pf-val{color:var(--white);text-align:right;line-height:1.35}
+/* ── S10 POSITIONING ── */
+#s10{background:var(--bg1)}
+.matrix{
+  display:grid;grid-template-columns:1fr 1fr;
+  grid-template-rows:1fr 1fr;
+  gap:.8rem;margin-top:2rem;
+  max-width:720px;
+}
+.mc{
+  border-radius:12px;padding:1.4rem;
+  border:1px solid var(--line);
+}
+.mc-label{
+  font-size:.6rem;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;margin-bottom:.5rem;color:var(--gray);
+}
+.mc-title{font-size:.92rem;font-weight:800;margin-bottom:.3rem;color:var(--gray)}
+.mc-desc{font-size:.75rem;color:var(--gray2);line-height:1.5}
+.mc.mc-bdo{
+  background:linear-gradient(135deg,var(--teal-a12),transparent);
+  border-color:var(--teal-a25);
+}
+.mc.mc-bdo .mc-label{color:var(--teal)}
+.mc.mc-bdo .mc-title{color:var(--teal)}
+.mc.mc-bdo .mc-desc{color:var(--white)}
+.matrix-dim{background:var(--bg3)}
+.matrix-axes{
+  display:flex;justify-content:space-between;
+  padding:0 .4rem;margin-top:.5rem;
+}
+.axis-lbl{font-size:.62rem;color:var(--gray2);font-weight:600;letter-spacing:.06em}
+.axis-title{
+  font-size:.6rem;color:var(--gray2);font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;
+  margin-top:.8rem;text-align:center;
+}
 
-/* ══════════════════════════════════════════
-   SECTION 9 — ROADMAP
-══════════════════════════════════════════ */
-#roadmap{background:var(--ink)}
-.phases{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:2.5rem;position:relative}
-@media(max-width:900px){.phases{grid-template-columns:1fr 1fr;gap:1rem}}
-@media(max-width:480px){.phases{grid-template-columns:1fr}}
-.phases::before{content:'';position:absolute;top:38px;right:0;left:0;height:2px;background:linear-gradient(90deg,var(--red),var(--orange),var(--yellow),var(--teal));z-index:0;opacity:.3}
-@media(max-width:900px){.phases::before{display:none}}
-.phase{padding:1.4rem;position:relative;z-index:1}
-.phase-dot{width:14px;height:14px;border-radius:50%;margin:0 auto 1rem;box-shadow:0 0 0 3px rgba(255,255,255,.06)}
-.phase-period{font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-align:center;margin-bottom:.8rem}
-.phase-title{font-size:.88rem;font-weight:800;text-align:center;margin-bottom:1rem;line-height:1.25}
-.phase-items{display:flex;flex-direction:column;gap:.45rem}
-.phase-item{font-size:.75rem;color:var(--gray);display:flex;gap:.5rem;align-items:flex-start;line-height:1.4}
-.phase-item::before{content:'·';color:var(--gray2);flex-shrink:0;font-size:1.2rem;line-height:1}
+/* ── S11 CLOSING ── */
+#s11{
+  background:
+    radial-gradient(ellipse 70% 55% at 50% 110%,rgba(0,212,180,.06) 0%,transparent 65%),
+    var(--bg0);
+  text-align:center;
+}
+.closing-q{
+  font-size:clamp(1.4rem,3.5vw,2.6rem);
+  font-weight:900;line-height:1.25;letter-spacing:-.025em;
+  max-width:780px;margin:0 auto 1rem;
+}
+.closing-q strong{color:var(--teal)}
+.closing-meta{
+  font-size:clamp(.82rem,1.6vw,.95rem);
+  color:var(--gray);line-height:1.7;
+  max-width:520px;margin:0 auto 2.5rem;
+}
+.thesis-box{
+  max-width:640px;margin:0 auto 2.5rem;
+  background:var(--bg2);border:1px solid var(--line2);
+  border-radius:14px;padding:1.6rem 2rem;
+  border-top:3px solid var(--teal);
+}
+.thesis-box blockquote{
+  font-size:clamp(.88rem,1.8vw,1.05rem);
+  line-height:1.8;color:var(--white);
+  font-style:normal;font-weight:500;
+}
+.thesis-box cite{
+  display:block;margin-top:1rem;
+  font-size:.68rem;color:var(--gray);font-style:normal;letter-spacing:.08em;
+}
 
-/* ══════════════════════════════════════════
-   SECTION 10 — THE DECISION
-══════════════════════════════════════════ */
-#decision{background:var(--ink2)}
-.decision-q{font-size:clamp(1.6rem,3.5vw,2.6rem);font-weight:900;line-height:1.2;text-align:center;max-width:760px;margin:0 auto 2.5rem;letter-spacing:-.02em}
-.decision-q strong{color:var(--teal)}
-.decision-paths{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;max-width:800px;margin:0 auto}
-@media(max-width:640px){.decision-paths{grid-template-columns:1fr}}
-.dp{border-radius:16px;padding:1.8rem;text-align:center}
-.dp-a{background:rgba(0,212,180,.07);border:1px solid var(--teal-border)}
-.dp-b{background:rgba(255,90,43,.07);border:1px solid rgba(255,90,43,.2)}
-.dp-icon{font-size:2rem;margin-bottom:.8rem}
-.dp-title{font-size:1rem;font-weight:800;margin-bottom:.5rem}
-.dp-a .dp-title{color:var(--teal)}
-.dp-b .dp-title{color:var(--orange)}
-.dp-desc{font-size:.82rem;color:var(--gray);line-height:1.55}
-.ask-row{display:flex;gap:.7rem;flex-wrap:wrap;justify-content:center;margin-top:2rem}
-.ask-btn{display:inline-flex;align-items:center;gap:.45rem;background:var(--teal-dim);border:1px solid var(--teal-border);color:var(--teal);padding:.45rem .9rem;border-radius:20px;font-size:.74rem;font-weight:700;cursor:pointer;text-decoration:none;font-family:'Heebo',sans-serif;transition:all .2s}
-.ask-btn:hover{background:rgba(0,212,180,.2);transform:translateY(-1px)}
-.ask-btn::before{content:'✦';font-size:.65rem}
+/* UTILITY */
+.ask-btn{
+  display:inline-flex;align-items:center;gap:.45rem;
+  background:var(--teal-a12);border:1px solid var(--teal-a25);
+  color:var(--teal);padding:.42rem .9rem;border-radius:20px;
+  font-size:.72rem;font-weight:700;cursor:pointer;
+  text-decoration:none;font-family:'Heebo',sans-serif;transition:all .2s;
+}
+.ask-btn:hover{background:var(--teal-a25);transform:translateY(-1px)}
+.ask-btn::before{content:'✦';font-size:.62rem}
+.ask-row{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1.2rem}
 
-/* ══════════════════════════════════════════
-   SECTION 11 — DATA CONFIDENCE
-══════════════════════════════════════════ */
-#confidence{background:var(--ink)}
-.conf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem}
-@media(max-width:700px){.conf-grid{grid-template-columns:1fr}}
-.conf-card{border-radius:12px;padding:1.3rem;border:1px solid var(--border)}
-.conf-card h3{font-size:.78rem;font-weight:700;margin-bottom:1rem;padding-bottom:.6rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:.4rem;letter-spacing:.04em}
-.conf-item{font-size:.76rem;color:var(--gray);padding:.35rem 0;border-bottom:1px solid var(--border);line-height:1.45;display:flex;gap:.5rem}
-.conf-item:last-child{border:none}
-.conf-item::before{content:'—';color:var(--gray2);flex-shrink:0}
-.gaps{margin-top:2rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
-@media(max-width:700px){.gaps{grid-template-columns:1fr}}
-.gap-card{background:var(--ink3);border-radius:10px;padding:1.1rem;border:1px solid var(--border);display:flex;gap:.8rem}
-.gap-n{width:22px;height:22px;border-radius:5px;font-size:.7rem;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.gap-text h4{font-size:.78rem;font-weight:700;margin-bottom:.2rem}
-.gap-text p{font-size:.7rem;color:var(--gray);line-height:1.4}
-
-/* ══════════════════════════════════════════
-   FOOTER
-══════════════════════════════════════════ */
-footer{background:var(--ink2);border-top:1px solid var(--border);padding:2rem 2.5rem;text-align:center}
-.footer-disc{max-width:680px;margin:0 auto;font-size:.72rem;color:var(--gray);line-height:1.7}
-.footer-meta{font-size:.66rem;color:var(--gray2);margin-top:.6rem}
+footer{
+  background:var(--bg2);border-top:1px solid var(--line);
+  padding:1.8rem 2.5rem;text-align:center;
+}
+.footer-disc{
+  max-width:680px;margin:0 auto;
+  font-size:.7rem;color:var(--gray);line-height:1.7;
+}
+.footer-meta{font-size:.64rem;color:var(--gray2);margin-top:.45rem}
 </style>
 </head>
 <body>
 
-<!-- SCROLL PROGRESS -->
-<div class="spb"><div class="spb-bar" id="progressBar"></div></div>
+<div class="progress-bar"><div class="progress-fill" id="prog"></div></div>
 
-<!-- NAV -->
 <nav>
-  <div class="nav-brand">BDO<em>.</em>AI</div>
-  <ul class="nav-links">
-    <li><a href="#shift">המעבר</a></li>
-    <li><a href="#value">ערך</a></li>
-    <li><a href="#stack">מדרג</a></li>
-    <li><a href="#portfolio">מוצרים</a></li>
-    <li><a href="#roadmap">מפת דרכים</a></li>
-    <li><a href="#confidence">נתונים</a></li>
-  </ul>
-  <div class="nav-badge">MULTI-AGENT RESEARCH</div>
+  <div class="nav-brand">BDO<em>.</em>Strategy</div>
+  <div class="nav-dots" id="navDots"></div>
+  <div class="nav-label">עתיד הייעוץ · BDO ישראל 2025</div>
 </nav>
 
-<!-- SOURCE PANEL -->
-<div class="sp" id="SP">
-  <button class="sp-close" onclick="closeSP()">✕</button>
-  <div class="sp-lbl">מקור ורמת ביטחון</div>
-  <div class="sp-body" id="SP-body"></div>
-  <div class="sp-meta" id="SP-meta"></div>
-</div>
-
-<!-- ══════════════════════════════════════
-     SECTION 1 — HERO
-══════════════════════════════════════ -->
-<section id="hero">
-<div class="slide">
-  <div class="hero-kicker">חלון הזדמנות: 16–24 חודש | BDO ישראל 2025</div>
-  <div class="hero-thesis">
-    פירמות ייעוץ לא יעברו<br>
-    <strong>מלמכור ידע — למכור AI.</strong><br>
-    <br>
-    הן יעברו<br>
-    ממכירת פרויקטים חד-פעמיים —<br>
-    <em>למכירת נכסי אינטליגנציה חיים, מערכות תמיכה בהחלטות, ויעוץ אסטרטגי מתמשך.</em>
+<!-- ══════════════════════════════
+     S1 · OPENING HOOK
+══════════════════════════════ -->
+<section class="screen" id="s1" data-label="פתיחה">
+<div class="inner" style="text-align:center">
+  <div class="hook-chip">BDO ישראל · סיכום אסטרטגי · 2025</div>
+  <div class="hook-q">
+    כשה-AI הופך ידע לזול —<br>
+    <strong>מה הערך של הייעוץ?</strong>
   </div>
-  <div class="hero-cta">
-    <button class="btn-p" onclick="gotoSection('shift')">לראות את המעבר</button>
-    <button class="btn-g" onclick="gotoSection('confidence')">על הנתונים</button>
+  <div class="hook-sub">
+    זה לא מצגת על כלי AI.<br>
+    זו שאלה על עתיד המודל העסקי של BDO.
   </div>
-  <div class="hero-3stats">
-    <div class="hstat">
-      <div class="hstat-n">40–55<span>%</span></div>
-      <div class="hstat-l">חיסכון פוטנציאלי בשעות delivery <span class="tag tag-est" onclick="showSP('est-delivery','חיסכון שעות delivery','Accenture ו-BCG task-level studies, T2. טווח פרויקט שלם: 25–45%.')">EST</span></div>
-    </div>
-    <div class="hstat">
-      <div class="hstat-n">$3<span>B</span></div>
-      <div class="hstat-l">Accenture AI bookings ברבעון אחד <span class="tag tag-data" onclick="showSP('data-accenture','Accenture $3B','SEC 10-Q Q2 2024. T1. Enterprise בלבד.')">T1</span></div>
-    </div>
-    <div class="hstat">
-      <div class="hstat-n">16–24<span>M</span></div>
-      <div class="hstat-l">חודשים לחלון הזדמנות <span class="tag tag-spec" onclick="showSP('spec-window','חלון הזדמנות','SPECULATIVE — הערכה סטרטגית. לא מבוסס על נתון T1/T2 ספציפי.')">SPEC</span></div>
-    </div>
-  </div>
+  <a class="ask-btn" href="https://claude.ai/new?q=What+is+the+most+important+strategic+question+facing+consulting+firms+in+the+next+5+years+due+to+AI%3F+Be+direct." target="_blank">שאל Claude: מה השאלה האסטרטגית המרכזית?</a>
 </div>
-<div class="scroll-hint">
-  <span>▼</span>
-  <span>גלול לגלות</span>
-</div>
+<div class="scroll-cue"><span>▼</span><span>גלול להמשך</span></div>
 </section>
 
-<!-- ══════════════════════════════════════
-     SECTION 2 — THREE SIGNALS
-══════════════════════════════════════ -->
-<section id="signals">
-<div class="slide">
-  <div class="slide-label">3 אותות ברורים</div>
-  <h2 class="slide-h">המהפכה כבר <span class="hl">קורית</span></h2>
-  <div class="signals-grid">
-    <div class="signal-card s-teal">
-      <div class="signal-big">55–65%</div>
-      <div class="signal-title">עבודת ה-Analyst נשחקת</div>
-      <div class="signal-body">AI מחליף research, synthesis ו-benchmarking. BCG ו-McKinsey מצמצמים גיוסי Analysts.</div>
-      <div class="signal-conf"><span class="tag tag-est" onclick="showSP('est-analyst','AI מחליף Analyst work','McKinsey Global Institute & Goldman Sachs, T2. Task-level, not project-level.')">ESTIMATED</span></div>
-    </div>
-    <div class="signal-card s-orange">
-      <div class="signal-big">4 גדולות</div>
-      <div class="signal-title">כבר פנימי אצל כולם</div>
-      <div class="signal-body">Deloitte PairD, McKinsey Lilli, BCG Gamma, KPMG KGS. הכלים קיימים — המוצרים לא.</div>
-      <div class="signal-conf"><span class="tag tag-bench" onclick="showSP('bench-big4','Big 4 AI Platforms','דיווחי עיתונות T2, 2023–2024. קיום מאומת; ROI לא.')">BENCHMARK</span></div>
-    </div>
-    <div class="signal-card s-yellow">
-      <div class="signal-big">107%</div>
-      <div class="signal-title">NRR של Gartner — המודל עובד</div>
-      <div class="signal-body">מנויי אינטליגנציה אסטרטגית מחדשים ומרחיבים. Enterprise. המודל מוכח — mid-market עדיין פתוח.</div>
-      <div class="signal-conf"><span class="tag tag-data" onclick="showSP('data-gartner','Gartner NRR 107%','Gartner FY2023 Annual Report. T1. Enterprise $500M+ בלבד.')">DATA-BACKED</span></div>
-    </div>
-  </div>
-  <div class="signal-window">
-    <div class="window-icon">⚡</div>
-    <div class="window-text"><strong>החלון נסגר:</strong> פירמה שתבנה את המוצרים האלה ב-18 החודשים הקרובים תכבוש עמדה שיהיה קשה לאתגר. פירמה שתחכה — תמצא שוק עם שחקנים מבוססים.</div>
-  </div>
-</div>
-</section>
+<!-- ══════════════════════════════
+     S2 · WHY CONSULTING EXISTED
+══════════════════════════════ -->
+<section class="screen" id="s2" data-label="למה ייעוץ קיים">
+<div class="inner">
+  <div class="screen-num">01 · הבסיס</div>
+  <h2 class="headline">פירמות ייעוץ נבנו על<br><span class="hl">נדירות של ידע</span></h2>
+  <p class="lead">הלקוח שילם כי מחקר שוק, benchmark ו-synthesis עלו שבועות ודרשו צוותים שלמים. הפירמה החזיקה את ה-IP שלקוחות לא יכלו לבנות לבד.</p>
 
-<!-- ══════════════════════════════════════
-     SECTION 3 — THE BIG SHIFT
-══════════════════════════════════════ -->
-<section id="shift">
-<div class="slide">
-  <div class="slide-label">מהפך המודל העסקי</div>
-  <h2 class="slide-h">מה BDO <span class="hl2">מוכרת היום</span> — לעומת מה היא <span class="hl">תמכור מחר</span></h2>
-
-  <div class="shift-wrap">
-    <!-- TODAY -->
-    <div class="shift-col today">
-      <div class="shift-header">TODAY — מודל פרויקטלי</div>
-      <div class="shift-row">
-        <div class="shift-icon">🛒</div>
-        <div class="shift-row-content">
-          <div class="shift-row-title">הלקוח קונה</div>
-          <div class="shift-row-sub">מחקר · ראיונות · benchmarking · ניתוח · סדנאות · PPT</div>
-        </div>
-      </div>
-      <div class="shift-row">
-        <div class="shift-icon">📦</div>
-        <div class="shift-row-content">
-          <div class="shift-row-title">הלקוח מקבל</div>
-          <div class="shift-row-sub">דק · מודל Excel · מפת דרכים</div>
-        </div>
-      </div>
-      <div class="shift-row">
-        <div class="shift-icon">🔗</div>
-        <div class="shift-row-content">
-          <div class="shift-row-title">מערכת יחסים</div>
-          <div class="shift-row-sub">מבוססת פרויקט — מסתיים עם הדק</div>
-        </div>
-      </div>
-      <div class="shift-footer">
-        <div class="shift-model">מודל הכנסות</div>
-        <div class="shift-rev">תשלום חד-פעמי לפרויקט</div>
-      </div>
-    </div>
-
-    <!-- ARROW -->
-    <div class="shift-arrow-col">
-      <span style="font-size:1rem;color:var(--gray)">AI</span>
-      <span>→</span>
-    </div>
-
-    <!-- TOMORROW -->
-    <div class="shift-col tmrw">
-      <div class="shift-header">TOMORROW — מודל נכס חי</div>
-      <div class="shift-row">
-        <div class="shift-icon">🧠</div>
-        <div class="shift-row-content">
-          <div class="shift-row-title">הלקוח קונה</div>
-          <div class="shift-row-sub">אינטליגנציה אסטרטגית · ניטור · benchmarking engine · תמיכת תרחישים · יעוץ מתמשך</div>
-        </div>
-      </div>
-      <div class="shift-row">
-        <div class="shift-icon">🔄</div>
-        <div class="shift-row-content">
-          <div class="shift-row-title">הלקוח מקבל</div>
-          <div class="shift-row-sub">dashboard חי · נכס ידע · briefings חודשיים · סימולציות תרחישים · המלצות שוטפות</div>
-        </div>
-      </div>
-      <div class="shift-row">
-        <div class="shift-icon">♾️</div>
-        <div class="shift-row-content">
-          <div class="shift-row-title">מערכת יחסים</div>
-          <div class="shift-row-sub">מתמשכת — הפירמה נוכחת בשולחן ההחלטות</div>
-        </div>
-      </div>
-      <div class="shift-footer">
-        <div class="shift-model">מודל הכנסות</div>
-        <div class="shift-rev">Retainer + מנוי יעוץ</div>
-      </div>
-    </div>
-  </div>
-</div>
-</section>
-
-<!-- ══════════════════════════════════════
-     SECTION 4 — WHAT CLIENTS PAY FOR
-══════════════════════════════════════ -->
-<section id="value">
-<div class="slide">
-  <div class="slide-label">שינוי ערך</div>
-  <h2 class="slide-h">על מה לקוחות <span class="hl">ישלמו</span> בעתיד</h2>
-
-  <div class="value-wrap">
-    <div class="value-col vc-today">
-      <div class="value-col-label">TODAY — לקוח משלם על ייצור</div>
-      <div class="bar-stack">
-        <div class="bar-seg seg-research" style="flex:4">
-          <span class="bar-seg-label">🔍 Research</span>
-          <span class="bar-seg-pct">40%</span>
-        </div>
-        <div class="bar-seg seg-analysis" style="flex:3">
-          <span class="bar-seg-label">📊 Analysis</span>
-          <span class="bar-seg-pct">30%</span>
-        </div>
-        <div class="bar-seg seg-slides" style="flex:2">
-          <span class="bar-seg-label">📑 Slides</span>
-          <span class="bar-seg-pct">20%</span>
-        </div>
-        <div class="bar-seg seg-advice" style="flex:1">
-          <span class="bar-seg-label">💡 Advice</span>
-          <span class="bar-seg-pct">10%</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="value-col vc-future">
-      <div class="value-col-label">FUTURE — לקוח משלם על שיפוט</div>
-      <div class="bar-stack">
-        <div class="bar-seg seg-research" style="flex:1">
-          <span class="bar-seg-label">🔍 Research</span>
-          <span class="bar-seg-pct">10%</span>
-        </div>
-        <div class="bar-seg seg-analysis" style="flex:2">
-          <span class="bar-seg-label">📊 Analysis</span>
-          <span class="bar-seg-pct">20%</span>
-        </div>
-        <div class="bar-seg seg-judgment" style="flex:4">
-          <span class="bar-seg-label">🎯 Judgment</span>
-          <span class="bar-seg-pct">40%</span>
-        </div>
-        <div class="bar-seg seg-ongoing" style="flex:3">
-          <span class="bar-seg-label">🔄 Ongoing Support</span>
-          <span class="bar-seg-pct">30%</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="value-insight">
-    <p><strong>AI מוזיל ייצור.</strong> Research, analysis ו-slides הופכים ל-commodity. לקוחות יצפו לקבל את אלה בזול — ולשלם פרמיום על שיפוט אסטרטגי ונוכחות מתמשכת. <span class="tag tag-est" onclick="showSP('est-value-shift','שינוי ערך בייעוץ','ESTIMATED — מבוסס על McKinsey Value-Based Pricing framework ואנלוגיה ל-Gartner/AlphaSense. לא מאומת ב-mid-market ישראלי.')">ESTIMATED</span></p>
-  </div>
-  <div class="ask-row" style="justify-content:flex-start">
-    <a class="ask-btn" href="https://claude.ai/new?q=How+will+AI+change+what+consulting+clients+are+willing+to+pay+for%3F+Specifically%3A+will+research+and+slide+production+be+commoditized%2C+and+what+remains+high-value%3F+Give+me+concrete+examples." target="_blank">שאל Claude: מה נשאר בעל ערך גבוה?</a>
-  </div>
-</div>
-</section>
-
-<!-- ══════════════════════════════════════
-     SECTION 5 — THE PYRAMID
-══════════════════════════════════════ -->
-<section id="pyramid">
-<div class="slide">
-  <div class="slide-label">שינוי מבני</div>
-  <h2 class="slide-h">הפירמידה <span class="hl2">מתכווצת מלמטה</span></h2>
-
-  <div class="pyramid-compare">
-    <!-- TODAY pyramid -->
+  <div class="origin-layout">
     <div>
-      <div style="font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gray);text-align:center;margin-bottom:1rem">TODAY</div>
-      <div class="pyr-side">
-        <div class="pyr-layer" style="width:30%;align-self:center;background:rgba(0,212,180,.25);border:1px solid rgba(0,212,180,.4)" onclick="showSP('pyr-partners','Partners — Today','שיפוט, אמון, relationships — בעלי ערך קבוע.')">
-          <div><div class="pyr-lname" style="color:var(--teal)">Partners</div></div>
-        </div>
-        <div class="pyr-layer" style="width:50%;align-self:center;background:rgba(245,192,48,.2);border:1px solid rgba(245,192,48,.35)" onclick="showSP('pyr-mgr','Managers — Today','מנהלים פרויקטים ומנחים Analysts.')">
-          <div><div class="pyr-lname" style="color:var(--yellow)">Managers</div></div>
-        </div>
-        <div class="pyr-layer" style="width:70%;align-self:center;background:rgba(255,90,43,.2);border:1px solid rgba(255,90,43,.35)" onclick="showSP('pyr-cons','Consultants — Today','ניתוחים, deliverables, לקוחות.')">
-          <div><div class="pyr-lname" style="color:var(--orange)">Consultants</div></div>
-        </div>
-        <div class="pyr-layer" style="width:100%;align-self:center;background:rgba(136,136,160,.15);border:1px solid var(--border2)" onclick="showSP('pyr-analysts','Analysts — Today','Research, synthesis, benchmarking — הבסיס הגדול.')">
-          <div><div class="pyr-lname">Analysts</div><div class="pyr-lsub">הבסיס הרחב</div></div>
-        </div>
+      <div style="font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gray);margin-bottom:1rem">מחזור הפרויקט הקלאסי</div>
+      <div class="flow-chain">
+        <div class="fc-node"><span class="fc-icon">❓</span><span>בעיה עסקית של הלקוח</span></div>
+        <div class="fc-arrow"></div>
+        <div class="fc-node" style="background:var(--bg4)"><span class="fc-icon">🔍</span><span>מחקר — שבועות · צוות Analysts</span></div>
+        <div class="fc-arrow"></div>
+        <div class="fc-node" style="background:var(--bg4)"><span class="fc-icon">📊</span><span>ניתוח — benchmarking, models</span></div>
+        <div class="fc-arrow"></div>
+        <div class="fc-node" style="background:var(--bg4)"><span class="fc-icon">📑</span><span>מצגת — עשרות שקפים</span></div>
+        <div class="fc-arrow"></div>
+        <div class="fc-node" style="border-color:var(--teal-a25);background:var(--teal-a12)"><span class="fc-icon">💡</span><span style="color:var(--teal)">המלצה אסטרטגית</span></div>
       </div>
-      <div style="text-align:center;font-size:.72rem;color:var(--gray);margin-top:.8rem">יחס Analyst:Partner = 8:1 <span class="tag tag-est" onclick="showSP('est-leverage','Leverage Ratio','ESTIMATED — לוגיקה מבנית.')">EST</span></div>
     </div>
 
-    <div class="pyr-arrow-col">→</div>
+    <div class="scarcity-box">
+      <h3>למה הלקוח שילם?<br>כי הידע לא היה נגיש אחרת.</h3>
+      <div class="scarcity-item"><div class="si-dot"></div><span>מחקר שוק דרש שבועות וצוותים</span></div>
+      <div class="scarcity-item"><div class="si-dot"></div><span>benchmark תעשייתי לא היה זמין ציבורית</span></div>
+      <div class="scarcity-item"><div class="si-dot"></div><span>synthesis של מידע מרובה דרש ניסיון וזמן</span></div>
+      <div class="scarcity-item"><div class="si-dot"></div><span>הפירמה צברה IP שלקוחות לא יכלו לבנות לבד</span></div>
+    </div>
+  </div>
+</div>
+</section>
 
-    <!-- TOMORROW pyramid -->
+<!-- ══════════════════════════════
+     S3 · THE ECONOMIC MODEL
+══════════════════════════════ -->
+<section class="screen" id="s3" data-label="המודל הכלכלי">
+<div class="inner">
+  <div class="screen-num">02 · המנגנון</div>
+  <h2 class="headline">הפירמידה הייתה<br><span class="ho">מכונת מינוף</span></h2>
+  <p class="lead">Partners מכרו שיפוט ואמון. Analysts ייצרו את הידע. המבנה הצדיק את עצמו כל עוד ייצור ידע היה יקר.</p>
+
+  <div class="model-layout">
     <div>
-      <div style="font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);text-align:center;margin-bottom:1rem">TOMORROW</div>
-      <div class="pyr-side">
-        <div class="pyr-layer" style="width:35%;align-self:center;background:rgba(0,212,180,.35);border:1px solid rgba(0,212,180,.5)" onclick="showSP('pyr-partners-tmrw','Partners — Tomorrow','Partner + AI = ×2.5 output. ערך גבוה יותר.')">
-          <div><div class="pyr-lname" style="color:var(--teal)">Partners ↑×2.5</div></div>
+      <div style="font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gray);margin-bottom:1rem">מבנה הפירמה הקלאסי</div>
+      <div class="pyramid">
+        <div class="pyr-row" style="width:28%;background:rgba(0,212,180,.3);border:1px solid rgba(0,212,180,.5)">
+          <div><div class="pyr-lbl" style="color:var(--teal)">Partners</div><div class="pyr-sub">שיפוט · אמון · מכירה</div></div>
         </div>
-        <div class="pyr-layer" style="width:55%;align-self:center;background:rgba(0,212,180,.15);border:1px solid rgba(0,212,180,.25)" onclick="showSP('pyr-ai-lead','AI Leads','מנהלים workflows של AI — תפקיד חדש.')">
-          <div><div class="pyr-lname" style="color:var(--teal)">AI Leads</div><div class="pyr-lsub">= Managers שהוכשרו מחדש</div></div>
+        <div class="pyr-row" style="width:48%;background:rgba(245,192,48,.2);border:1px solid rgba(245,192,48,.35)">
+          <div><div class="pyr-lbl" style="color:var(--yellow)">Managers</div><div class="pyr-sub">ניהול · deliverables</div></div>
         </div>
-        <div class="pyr-layer" style="width:75%;align-self:center;background:rgba(0,212,180,.1);border:1px solid rgba(0,212,180,.15)" onclick="showSP('pyr-ops','AI Operators','Consultants שהפכו ל-AI Operators.')">
-          <div><div class="pyr-lname" style="color:var(--white)">AI Operators</div><div class="pyr-lsub">= Consultants + reskilling</div></div>
+        <div class="pyr-row" style="width:70%;background:rgba(255,90,43,.2);border:1px solid rgba(255,90,43,.3)">
+          <div><div class="pyr-lbl" style="color:var(--orange)">Consultants</div><div class="pyr-sub">ניתוחים · לקוחות</div></div>
         </div>
-        <div class="pyr-layer" style="width:55%;align-self:center;background:rgba(255,64,64,.08);border:1px solid rgba(255,64,64,.2)" onclick="showSP('pyr-analysts-tmrw','Analysts — Tomorrow','צמצום גיוסים — AI מחליף 55-65% מהעבודה.')">
-          <div><div class="pyr-lname" style="color:var(--red)">↓ Analysts</div><div class="pyr-lsub">55–65% עבודה ← AI</div></div>
+        <div class="pyr-row" style="width:100%;background:rgba(136,136,160,.12);border:1px solid var(--line2)">
+          <div><div class="pyr-lbl">Analysts</div><div class="pyr-sub">מחקר · synthesis · מצגות</div></div>
         </div>
       </div>
-      <div style="text-align:center;font-size:.72rem;color:var(--teal);margin-top:.8rem">יחס Analyst:Partner = 4:1 <span class="tag tag-est" onclick="showSP('est-leverage-tmrw','Future Leverage Ratio','ESTIMATED — לוגיקה מבנית בלבד.')">EST</span></div>
+      <div style="text-align:center;font-size:.72rem;color:var(--gray);margin-top:.7rem">
+        יחס מינוף: <strong style="color:var(--white)">1 Partner × 8 Analysts</strong>
+      </div>
+    </div>
+
+    <div>
+      <div style="font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gray);margin-bottom:1rem">משוואת ההכנסות לפרויקט</div>
+      <div class="hours-flow">
+        <div class="hf-header">פרויקט אסטרטגי טיפוסי</div>
+        <div class="hf-row"><span class="hf-label">שעות Analyst</span><span class="hf-val" style="color:var(--white);opacity:.5">400–600 שע'</span></div>
+        <div class="hf-row"><span class="hf-label">שעות Senior</span><span class="hf-val" style="color:var(--white);opacity:.5">80–120 שע'</span></div>
+        <div class="hf-row"><span class="hf-label">משך זמן</span><span class="hf-val" style="color:var(--white);opacity:.5">6–10 שבועות</span></div>
+        <div class="hf-row"><span class="hf-label">עלות ייצור</span><span class="hf-val" style="color:var(--white);opacity:.5">₪120K–200K</span></div>
+        <div class="hf-eq">
+          <div class="eq-line"><span>תמחור ללקוח</span><span style="color:var(--orange)">₪250K–400K</span></div>
+          <div style="font-size:.7rem;color:var(--gray);margin-top:.35rem">מרג'ין 30–50% — מאחורי זה: מינוף שעות הפירמידה</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ══════════════════════════════
+     S4 · WHAT AI CHANGES
+══════════════════════════════ -->
+<section class="screen" id="s4" data-label="מה AI משנה">
+<div class="inner">
+  <div class="screen-num">03 · השינוי</div>
+  <h2 class="headline">AI לא רק מייעל —<br><span class="hl">הוא מוזיל את ייצור הידע</span></h2>
+  <p class="lead">מחקר, benchmark, synthesis ואפילו טיוטת אסטרטגיה ראשונה — הופכים זולים פי עשרות. זה לא רק יעילות. זה לחץ על תמחור.</p>
+
+  <div class="compress-grid">
+    <div class="compress-col before">
+      <div class="cc-head">לפני AI</div>
+      <div class="cc-stat"><span class="cc-key">משך זמן</span><span class="cc-val" style="color:var(--white);opacity:.45">6–8 שבועות</span></div>
+      <div class="cc-stat"><span class="cc-key">גודל צוות</span><span class="cc-val" style="color:var(--white);opacity:.45">8–12 אנשים</span></div>
+      <div class="cc-stat"><span class="cc-key">עלות ייצור</span><span class="cc-val" style="color:var(--white);opacity:.45">₪150K–200K</span></div>
+      <div class="cc-stat"><span class="cc-key">שעות Analyst</span><span class="cc-val" style="color:var(--white);opacity:.45">400–600 שע'</span></div>
+    </div>
+    <div class="compress-arrow">→</div>
+    <div class="compress-col after">
+      <div class="cc-head">עם AI</div>
+      <div class="cc-stat"><span class="cc-key">משך זמן</span><span class="cc-val">5–10 ימים</span></div>
+      <div class="cc-stat"><span class="cc-key">גודל צוות</span><span class="cc-val">2–3 + AI</span></div>
+      <div class="cc-stat"><span class="cc-key">עלות ייצור</span><span class="cc-val">₪20K–40K</span></div>
+      <div class="cc-stat"><span class="cc-key">שעות Analyst</span><span class="cc-val">40–80 שע'</span></div>
+    </div>
+  </div>
+
+  <div class="insight-box">
+    <strong>הבעיה האמיתית:</strong> לא רק שהפירמה יכולה לעבוד מהר יותר. הלקוח יודע את זה גם. לחץ על תמחור הייצור הולך ועולה — מה שמעלה את השאלה: על מה הלקוח ישלם בעתיד?
+  </div>
+</div>
+</section>
+
+<!-- ══════════════════════════════
+     S5 · THE STRATEGIC THREAT
+══════════════════════════════ -->
+<section class="screen" id="s5" data-label="האיום">
+<div class="inner">
+  <div class="screen-num">04 · האיום</div>
+  <h2 class="headline">כשהתוצאה נראית דומה —<br><span class="ho">מה הלקוח משלם עבורו?</span></h2>
+
+  <div class="threat-compare">
+    <div class="threat-col old">
+      <div class="threat-label">ייעוץ קלאסי</div>
+      <div class="threat-price">₪200,000</div>
+      <div class="threat-items">
+        <div class="threat-item">6 שבועות עבודה</div>
+        <div class="threat-item">צוות של 8 אנשים</div>
+        <div class="threat-item">מחקר שוק מעמיק</div>
+        <div class="threat-item">benchmark תעשייתי</div>
+        <div class="threat-item">מצגת 60 שקפים</div>
+        <div class="threat-item">המלצה אסטרטגית</div>
+      </div>
+    </div>
+    <div class="threat-vs">VS</div>
+    <div class="threat-col new-ai">
+      <div class="threat-label">בוטיק AI-Native</div>
+      <div class="threat-price">₪5,000</div>
+      <div class="threat-items">
+        <div class="threat-item">5 ימי עבודה</div>
+        <div class="threat-item">יועץ אחד + AI</div>
+        <div class="threat-item">מחקר שוק (AI)</div>
+        <div class="threat-item">benchmark (AI)</div>
+        <div class="threat-item">מצגת 60 שקפים</div>
+        <div class="threat-item">המלצה אסטרטגית</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="threat-q">
+    אם ה-PDF נראה אותו דבר —
+    על מה משלמים <strong style="color:var(--yellow)">₪195,000</strong> יותר?
+    <em>זו לא שאלה רטורית. זו שאלה שלקוחות כבר שואלים.</em>
+  </div>
+</div>
+</section>
+
+<!-- ══════════════════════════════
+     S6 · THE HUMAN PREMIUM
+══════════════════════════════ -->
+<section class="screen" id="s6" data-label="הפרמיום האנושי">
+<div class="inner">
+  <div class="screen-num">05 · התשובה</div>
+  <h2 class="headline">הערך לא נעלם —<br><span class="hl">הוא עולה למעלה</span></h2>
+  <p class="lead">AI עונה על שאלות. הפרמיום האנושי נמצא במקום שבו לא מספיק להיות נכון — צריך להיות נכון בהקשר הנכון, בזמן הנכון, עם האנשים הנכונים.</p>
+
+  <div class="pillars">
+    <div class="pillar p1">
+      <div class="pillar-num">01</div>
+      <div class="pillar-icon">🎯</div>
+      <div class="pillar-title">הגדרת הבעיה הנכונה</div>
+      <div class="pillar-ai">AI: עונה על שאלות</div>
+      <div class="pillar-human">בני אדם מזהים מה השאלה שצריך לשאול. פריימינג לא נכון = תשובה נכונה לבעיה הלא-נכונה.</div>
+    </div>
+    <div class="pillar p2">
+      <div class="pillar-num">02</div>
+      <div class="pillar-icon">🧭</div>
+      <div class="pillar-title">שיפוט אסטרטגי</div>
+      <div class="pillar-ai">AI: מעבד מידע</div>
+      <div class="pillar-human">בני אדם מבינים עיתוי, פוליטיקה ארגונית וtradeoffs שאי אפשר לכמת.</div>
+    </div>
+    <div class="pillar p3">
+      <div class="pillar-num">03</div>
+      <div class="pillar-icon">🤝</div>
+      <div class="pillar-title">אמון ב-CEO</div>
+      <div class="pillar-ai">AI: מייצר תשובות</div>
+      <div class="pillar-human">מנהלים לא קונים רק תשובות — הם קונים ביטחון לפני החלטה קריטית. אמון נבנה בשנים.</div>
+    </div>
+    <div class="pillar p4">
+      <div class="pillar-num">04</div>
+      <div class="pillar-icon">🔄</div>
+      <div class="pillar-title">ניהול שינוי</div>
+      <div class="pillar-ai">AI: מייצר את הדק</div>
+      <div class="pillar-human">האתגר האמיתי הוא לא המצגת — הוא להניע ארגון שלם לפעול. עבודה אנושית.</div>
+    </div>
+  </div>
+
+  <div class="insight-box">
+    <strong>המשמעות:</strong> פירמה שתחדל למכור "שעות ומצגות" ותתחיל למכור שיפוט, אמון ונוכחות מתמשכת — תשנה את המודל העסקי שלה לחלוטין.
+  </div>
+</div>
+</section>
+
+<!-- ══════════════════════════════
+     S7 · PROJECT → LIVING ASSET
+══════════════════════════════ -->
+<section class="screen" id="s7" data-label="מוצר חדש">
+<div class="inner">
+  <div class="screen-num">06 · שינוי המוצר</div>
+  <h2 class="headline">מ<span class="ho">פרויקט שנגמר</span><br>ל<span class="hl">נכס שחי</span></h2>
+  <p class="lead">אם הערך עובר מייצור מידע לתמיכת החלטות — גם המוצר חייב להשתנות.</p>
+
+  <div class="transform-flows">
+    <div class="tf-col tf-today">
+      <div class="tf-head">TODAY — מודל הפרויקט</div>
+      <div class="tf-body">
+        <div class="tf-step ts-dim"><span class="tf-icon">❓</span>בעיה עסקית</div>
+        <div class="tf-down">↓</div>
+        <div class="tf-step ts-mid"><span class="tf-icon">📋</span>פרויקט ייעוץ</div>
+        <div class="tf-down">↓</div>
+        <div class="tf-step ts-dim"><span class="tf-icon">🔍</span>מחקר + ניתוח</div>
+        <div class="tf-down">↓</div>
+        <div class="tf-step ts-dim"><span class="tf-icon">📑</span>מצגת + המלצה</div>
+        <div class="tf-down">↓</div>
+        <div class="tf-step ts-end-bad"><span class="tf-icon">🔚</span>הקשר מסתיים. הדק נשכח.</div>
+      </div>
+    </div>
+
+    <div class="tf-col tf-future">
+      <div class="tf-head">FUTURE — מודל הנכס החי</div>
+      <div class="tf-body">
+        <div class="tf-step ts-dim"><span class="tf-icon">❓</span>בעיה עסקית</div>
+        <div class="tf-down">↓</div>
+        <div class="tf-step ts-mid"><span class="tf-icon">📋</span>פרויקט ייעוץ</div>
+        <div class="tf-down">↓</div>
+        <div class="tf-step ts-hi"><span class="tf-icon">🧠</span>נכס ידע — Knowledge Asset</div>
+        <div class="tf-down">↓</div>
+        <div class="tf-step ts-hi"><span class="tf-icon">📡</span>שכבת ניטור — Market Monitoring</div>
+        <div class="tf-down">↓</div>
+        <div class="tf-step ts-hi"><span class="tf-icon">🎯</span>תמיכת החלטות שוטפת</div>
+        <div class="tf-down">↓</div>
+        <div class="tf-step ts-end-good"><span class="tf-icon">♾️</span>יעוץ מתמשך — הקשר לא נגמר</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="insight-box">
+    <strong>כל פרויקט הוא נקודת כניסה.</strong> לקוח שקיבל Diagnostic יכול לקבל Monitoring Retainer בחודש שאחריו. הכנסה חד-פעמית הופכת להכנסה חוזרת.
+  </div>
+</div>
+</section>
+
+<!-- ══════════════════════════════
+     S8 · THE DOCTOR METAPHOR
+══════════════════════════════ -->
+<section class="screen" id="s8" data-label="הרופא האישי">
+<div class="inner">
+  <div class="screen-num">07 · האנלוגיה</div>
+  <h2 class="headline">מ<span class="ho">מומחה שמזמינים למשבר</span><br>ל<span class="hl">רופא אישי שתמיד נוכח</span></h2>
+
+  <div class="doctor-compare">
+    <div class="dc dc-old">
+      <div class="dc-head">
+        <span class="dc-icon">🔪</span>
+        <div class="dc-title">הייעוץ הקלאסי — המנתח</div>
+        <div class="dc-sub">מזמינים רק כשיש בעיה גדולה</div>
+      </div>
+      <div class="dc-body">
+        <div class="dc-row"><span class="dc-ri">💸</span><span>מחיר גבוה לכל התערבות</span></div>
+        <div class="dc-row"><span class="dc-ri">🔔</span><span>מגיע רק כשמזמינים — לא יוזם</span></div>
+        <div class="dc-row"><span class="dc-ri">📋</span><span>מייצר דוח ואז עוזב</span></div>
+        <div class="dc-row"><span class="dc-ri">🔚</span><span>הקשר נגמר עם הפרויקט</span></div>
+      </div>
+    </div>
+
+    <div class="dc dc-new">
+      <div class="dc-head">
+        <span class="dc-icon">🩺</span>
+        <div class="dc-title">הייעוץ העתידי — הרופא האישי</div>
+        <div class="dc-sub">נוכח, עוקב, מתריע ומייעץ</div>
+      </div>
+      <div class="dc-body">
+        <div class="dc-row"><span class="dc-ri">🔄</span><span>מנוי חודשי — צפוי ומשתלם</span></div>
+        <div class="dc-row"><span class="dc-ri">📡</span><span>מנטר רציף — מזהה אותות מוקדמים</span></div>
+        <div class="dc-row"><span class="dc-ri">⚡</span><span>מתריע לפני שהבעיה פורצת</span></div>
+        <div class="dc-row"><span class="dc-ri">♾️</span><span>הקשר מעמיק עם הזמן</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="insight-box">
+    <strong>ה-CEO מעדיף את הרופא האישי.</strong> BDO עם קשרי לקוח עמוקים ב-mid-market ישראלי נמצאת בעמדה מושלמת לעשות את המעבר הזה — לפני שמישהו אחר יתפוס את המרחב.
+  </div>
+</div>
+</section>
+
+<!-- ══════════════════════════════
+     S9 · FUTURE PRODUCT PORTFOLIO
+══════════════════════════════ -->
+<section class="screen" id="s9" data-label="מוצרי העתיד">
+<div class="inner">
+  <div class="screen-num">08 · תיק המוצרים</div>
+  <h2 class="headline">BDO לא תמכור <span class="ho">שעות.</span><br>היא תמכור <span class="hl">שירותי החלטה.</span></h2>
+  <p class="lead">שישה מוצרים שניתן לבנות ב-18 חודש. לכל אחד: מי קונה, מה מקבלים, ואיך BDO מרוויחה.</p>
+
+  <div class="product-map-wrap">
+    <div class="pm-row pm-header">
+      <div class="pm-cell">מוצר</div>
+      <div class="pm-cell">מי קונה</div>
+      <div class="pm-cell">מה מקבלים</div>
+      <div class="pm-cell">מודל הכנסות</div>
+    </div>
+    <div class="pm-row pm-1">
+      <div class="pm-cell"><div class="pm-name">AI Strategy Diagnostic<span>אבחון AI Readiness</span></div></div>
+      <div class="pm-cell"><span class="pm-val">CEO / מנכ"ל<br>חברות 50–500M₪</span></div>
+      <div class="pm-cell"><span class="pm-val">gap analysis + roadmap + benchmark</span></div>
+      <div class="pm-cell"><span class="pm-rev">35K–55K₪ value-based</span></div>
+    </div>
+    <div class="pm-row pm-2">
+      <div class="pm-cell"><div class="pm-name">Managed Intelligence Retainer<span>אינטליגנציה ניהולית שוטפת</span></div></div>
+      <div class="pm-cell"><span class="pm-val">לקוח קיים מרוצה<br>CEO מתחרותי</span></div>
+      <div class="pm-cell"><span class="pm-val">briefing חודשי + competitor alerts</span></div>
+      <div class="pm-cell"><span class="pm-rev">8K–15K₪/חודש</span></div>
+    </div>
+    <div class="pm-row pm-3">
+      <div class="pm-cell"><div class="pm-name">Competitive Intelligence Service<span>ניטור תחרותי</span></div></div>
+      <div class="pm-cell"><span class="pm-val">CMO / CSO<br>שוק תחרותי</span></div>
+      <div class="pm-cell"><span class="pm-val">ניטור שוטף + alerts + deep-dive</span></div>
+      <div class="pm-cell"><span class="pm-rev">5K–10K₪/חודש</span></div>
+    </div>
+    <div class="pm-row pm-4">
+      <div class="pm-cell"><div class="pm-name">Board Briefing Service<span>עדכון דירקטוריון</span></div></div>
+      <div class="pm-cell"><span class="pm-val">Chairman / דירקטוריון</span></div>
+      <div class="pm-cell"><span class="pm-val">quarterly strategic landscape brief</span></div>
+      <div class="pm-cell"><span class="pm-rev">15K–25K₪/רבעון</span></div>
+    </div>
+    <div class="pm-row pm-5">
+      <div class="pm-cell"><div class="pm-name">Scenario Planning Engine<span>מנוע תרחישים</span></div></div>
+      <div class="pm-cell"><span class="pm-val">CFO / CEO<br>סביבה אי-ודאית</span></div>
+      <div class="pm-cell"><span class="pm-val">3–5 תרחישים + triggers + מדדים</span></div>
+      <div class="pm-cell"><span class="pm-rev">40K–80K₪ + refresh</span></div>
+    </div>
+    <div class="pm-row pm-6">
+      <div class="pm-cell"><div class="pm-name">Strategic Monitoring Dashboard<span>לוח בקרה אסטרטגי</span></div></div>
+      <div class="pm-cell"><span class="pm-val">CFO / COO<br>operations מורכבות</span></div>
+      <div class="pm-cell"><span class="pm-val">15–20 KPIs + benchmarks — Power BI חי</span></div>
+      <div class="pm-cell"><span class="pm-rev">18K–28K₪ + 6K₪/רבעון</span></div>
     </div>
   </div>
   <div class="ask-row">
-    <a class="ask-btn" href="https://claude.ai/new?q=How+should+a+mid-size+consulting+firm+restructure+analyst+and+manager+roles+when+AI+handles+60%25+of+research+and+synthesis%3F+What+new+skills+become+critical%3F" target="_blank">שאל Claude: מבנה הצוות החדש</a>
+    <a class="ask-btn" href="https://claude.ai/new?q=Which+of+these+6+consulting+products+has+the+best+product-market+fit+for+Israeli+mid-market+companies+in+the+next+18+months%3F+Rank+them." target="_blank">שאל Claude: מה לתעדף ראשון?</a>
   </div>
 </div>
 </section>
 
-<!-- ══════════════════════════════════════
-     SECTION 6 — THE PRODUCT STACK
-══════════════════════════════════════ -->
-<section id="stack">
-<div class="slide">
-  <div class="slide-label">ארכיטקטורת המוצר</div>
-  <h2 class="slide-h">BDO לא תמכור <span class="hl2">פרויקטים.</span><br>היא תמכור <span class="hl">מדרג אסטרטגי שלם.</span></h2>
+<!-- ══════════════════════════════
+     S10 · BDO POSITIONING
+══════════════════════════════ -->
+<section class="screen" id="s10" data-label="מיצוב BDO">
+<div class="inner">
+  <div class="screen-num">09 · עמדת BDO</div>
+  <h2 class="headline">BDO לא צריכה להיות<br><span class="ho">Accenture</span> — יש ריבוע פנוי</h2>
+  <p class="lead">שיפוט אסטרטגי עמוק × נגישות גבוהה ל-mid-market. המרחב הזה ריק — ולא יישאר כך לאורך זמן.</p>
 
-  <div class="stack-wrap">
-    <div class="stack-layers">
-      <div class="stack-layer sl-4">
-        <div class="sl-num">שכבה 4 — הגבוהה ביותר</div>
-        <div class="sl-title">Executive Advisory</div>
-        <div class="sl-items">
-          <span class="sl-item">Board Briefings</span>
-          <span class="sl-item">Strategic Decisions</span>
-          <span class="sl-item">CEO Access</span>
-          <span class="sl-item">Crisis Response</span>
-        </div>
-      </div>
-      <div class="stack-layer sl-3">
-        <div class="sl-num">שכבה 3</div>
-        <div class="sl-title">Decision Support</div>
-        <div class="sl-items">
-          <span class="sl-item">Scenario Planning</span>
-          <span class="sl-item">Risk Modeling</span>
-          <span class="sl-item">Investment Analysis</span>
-          <span class="sl-item">Market Entry</span>
-        </div>
-      </div>
-      <div class="stack-layer sl-2">
-        <div class="sl-num">שכבה 2</div>
-        <div class="sl-title">Strategic Intelligence</div>
-        <div class="sl-items">
-          <span class="sl-item">Market Monitoring</span>
-          <span class="sl-item">Competitor Alerts</span>
-          <span class="sl-item">Industry Benchmarks</span>
-          <span class="sl-item">Monthly Briefings</span>
-        </div>
-      </div>
-      <div class="stack-layer sl-1">
-        <div class="sl-num">שכבה 1 — תשתית</div>
-        <div class="sl-title">Data + AI Infrastructure</div>
-        <div class="sl-items">
-          <span class="sl-item">Prompt Library</span>
-          <span class="sl-item">Knowledge Base</span>
-          <span class="sl-item">Toolstack</span>
-          <span class="sl-item">QA Protocol</span>
-        </div>
-      </div>
+  <div class="matrix">
+    <div class="mc mc-bdo">
+      <div class="mc-label">→ ההזדמנות של BDO</div>
+      <div class="mc-title">BDO + AI</div>
+      <div class="mc-desc">שיפוט עמוק + נגישות מלאה ל-mid-market. קשרי CEO ישירים, engagements גמישים, מחירים ריאליים. המרחב שהגדולים לא ייגעו בו.</div>
     </div>
-
-    <div class="stack-side">
-      <div class="stack-msg">
-        <h3>המסר ל-BDO:<br><em>בנה מלמטה, הרוויח מלמעלה</em></h3>
-        <div class="stack-pointer"><span class="sp-arrow">→</span><span>שכבה 1 היא ה-investment הראשון — toolstack + knowledge base</span></div>
-        <div class="stack-pointer"><span class="sp-arrow">→</span><span>שכבות 2–3 הן המוצרים הראשונים הניתנים למכירה</span></div>
-        <div class="stack-pointer"><span class="sp-arrow">→</span><span>שכבה 4 היא הפרמיום — Partners + AI עם ממשק ישיר ל-CEO</span></div>
-        <div class="stack-pointer"><span class="sp-arrow">→</span><span>לקוח שנכנס משכבה 2 יעלה לשכבה 4 עם הזמן</span></div>
-      </div>
+    <div class="mc matrix-dim">
+      <div class="mc-label">מחוץ לטווח BDO</div>
+      <div class="mc-title">McKinsey / Deloitte</div>
+      <div class="mc-desc">שיפוט עמוק — אך minimum engagement מעל <span dir="ltr">$300K</span>. לא נגיש ל-mid-market ישראלי.</div>
     </div>
+    <div class="mc matrix-dim">
+      <div class="mc-label">מתחרה עתידי</div>
+      <div class="mc-title">בוטיקים AI-Native</div>
+      <div class="mc-desc">נגישים ומהירים — אך חסרי עומק אסטרטגי, אמון ארגוני וקשרי CEO עמוקים.</div>
+    </div>
+    <div class="mc matrix-dim">
+      <div class="mc-label">לא רלוונטי</div>
+      <div class="mc-title">צוותים פנימיים</div>
+      <div class="mc-desc">חסרי עצמאות, benchmark חיצוני ויכולת לאתגר את ההנהלה.</div>
+    </div>
+  </div>
+  <div class="matrix-axes">
+    <span class="axis-lbl">← שיפוט אסטרטגי עמוק</span>
+    <span class="axis-lbl">נגישות ל-mid-market →</span>
   </div>
 </div>
 </section>
 
-<!-- ══════════════════════════════════════
-     SECTION 7 — FROM PROJECT TO LIVING ASSET
-══════════════════════════════════════ -->
-<section id="asset">
-<div class="slide">
-  <div class="slide-label">השינוי הבסיסי</div>
-  <h2 class="slide-h">מ<span class="hl2">פרויקט שמסתיים</span> — ל<span class="hl">נכס שחי</span></h2>
-
-  <div class="asset-flows">
-    <div class="flow-col today-flow">
-      <div class="flow-head">TODAY — פרויקט חד-פעמי</div>
-      <div class="flow-body">
-        <div class="flow-step fs-dim"><span class="flow-icon">🔴</span>בעיה עסקית</div>
-        <div class="flow-arrow-down">↓</div>
-        <div class="flow-step fs-mid"><span class="flow-icon">📋</span>פרויקט ייעוץ</div>
-        <div class="flow-arrow-down">↓</div>
-        <div class="flow-step fs-dim"><span class="flow-icon">🔍</span>מחקר</div>
-        <div class="flow-arrow-down">↓</div>
-        <div class="flow-step fs-dim"><span class="flow-icon">📊</span>ניתוח</div>
-        <div class="flow-arrow-down">↓</div>
-        <div class="flow-step fs-dim"><span class="flow-icon">📑</span>מצגת</div>
-        <div class="flow-arrow-down">↓</div>
-        <div class="flow-step fs-end-bad"><span class="flow-icon">🔚</span>סיום — הקשר מת</div>
-      </div>
-    </div>
-
-    <div class="flow-col tmrw-flow">
-      <div class="flow-head">TOMORROW — נכס חי ומתפתח</div>
-      <div class="flow-body">
-        <div class="flow-step fs-dim"><span class="flow-icon">🔴</span>בעיה עסקית</div>
-        <div class="flow-arrow-down">↓</div>
-        <div class="flow-step fs-mid"><span class="flow-icon">📋</span>פרויקט ייעוץ</div>
-        <div class="flow-arrow-down">↓</div>
-        <div class="flow-step fs-bright"><span class="flow-icon">🧠</span>נכס ידע — Knowledge Asset</div>
-        <div class="flow-arrow-down">↓</div>
-        <div class="flow-step fs-bright"><span class="flow-icon">📡</span>שכבת ניטור — Market Monitoring</div>
-        <div class="flow-arrow-down">↓</div>
-        <div class="flow-step fs-bright"><span class="flow-icon">🎯</span>תמיכת החלטות — Decision Support</div>
-        <div class="flow-arrow-down">↓</div>
-        <div class="flow-step fs-end-good"><span class="flow-icon">♾️</span>יעוץ מתמשך — הקשר לא נגמר</div>
-      </div>
-    </div>
+<!-- ══════════════════════════════
+     S11 · CLOSING QUESTION
+══════════════════════════════ -->
+<section class="screen" id="s11" data-label="שאלת סיום">
+<div class="inner" style="text-align:center">
+  <div class="screen-num">10 · השאלה הסופית</div>
+  <div class="closing-q">
+    אם לקוח יוכל לייצר<br>
+    <strong>את הדק שלנו תוך שעה</strong> —<br>
+    על מה הוא עדיין ישלם ל-BDO?
   </div>
-
-  <div class="value-insight" style="margin-top:1.5rem">
-    <p><strong>המשמעות ל-BDO:</strong> כל פרויקט יכול להיות נקודת כניסה לנכס חי. לקוח שקיבל Strategy Diagnostic יכול לקבל Monitoring Retainer בחודש שאחריו. המכירה לא נגמרת — היא מתחילה.</p>
+  <div class="closing-meta">
+    זו לא שאלה רטורית.<br>
+    זו השאלה שמנהיגות BDO צריכה לענות עליה ב-18 החודשים הקרובים.
   </div>
-</div>
-</section>
-
-<!-- ══════════════════════════════════════
-     SECTION 8 — FUTURE PRODUCT PORTFOLIO
-══════════════════════════════════════ -->
-<section id="portfolio">
-<div class="slide">
-  <div class="slide-label">תיק מוצרים עתידי</div>
-  <h2 class="slide-h">6 מוצרים שBDO <span class="hl">יכולה למכור</span> ב-18 חודש</h2>
-
-  <div class="portfolio-grid">
-    <div class="pf-card pf-c1">
-      <div class="pf-num">01 — מומלץ ראשון</div>
-      <div class="pf-name">AI Strategy Diagnostic</div>
-      <div class="pf-row"><span class="pf-key">קונה</span><span class="pf-val">CEO / מנכ"ל 50–500M₪</span></div>
-      <div class="pf-row"><span class="pf-key">מקבל</span><span class="pf-val">AI readiness report, gap analysis, roadmap</span></div>
-      <div class="pf-row"><span class="pf-key">הכנסה</span><span class="pf-val">35K–55K₪ value-based <span class="tag tag-est" onclick="showSP('est-p1','AI Diagnostic Pricing','ESTIMATED — Grant Thornton UK analogy T3.')">EST</span></span></div>
-    </div>
-
-    <div class="pf-card pf-c2">
-      <div class="pf-num">02 — High Upside</div>
-      <div class="pf-name">Managed Intelligence Retainer</div>
-      <div class="pf-row"><span class="pf-key">קונה</span><span class="pf-val">לקוח קיים מרוצה, CEO/מנכ"ל</span></div>
-      <div class="pf-row"><span class="pf-key">מקבל</span><span class="pf-val">briefing חודשי + 2 שיחות + competitor alerts</span></div>
-      <div class="pf-row"><span class="pf-key">הכנסה</span><span class="pf-val">8K–15K₪/חודש retainer <span class="tag tag-spec" onclick="showSP('spec-p2','Retainer Pricing','SPECULATIVE — אין ראיה ישירה מ-mid-market ישראלי.')">SPEC</span></span></div>
-    </div>
-
-    <div class="pf-card pf-c3">
-      <div class="pf-num">03</div>
-      <div class="pf-name">Competitive Intelligence Service</div>
-      <div class="pf-row"><span class="pf-key">קונה</span><span class="pf-val">CMO / CSO בשוק תחרותי</span></div>
-      <div class="pf-row"><span class="pf-key">מקבל</span><span class="pf-val">ניטור שוטף, alerts, quarterly deep-dive</span></div>
-      <div class="pf-row"><span class="pf-key">הכנסה</span><span class="pf-val">5K–10K₪/חודש <span class="tag tag-est" onclick="showSP('est-p3','CI Pricing','ESTIMATED')">EST</span></span></div>
-    </div>
-
-    <div class="pf-card pf-c4">
-      <div class="pf-num">04</div>
-      <div class="pf-name">Board Briefing Service</div>
-      <div class="pf-row"><span class="pf-key">קונה</span><span class="pf-val">Chairman / דירקטוריון</span></div>
-      <div class="pf-row"><span class="pf-key">מקבל</span><span class="pf-val">quarterly strategic landscape brief לדיון</span></div>
-      <div class="pf-row"><span class="pf-key">הכנסה</span><span class="pf-val">15K–25K₪ לרבעון <span class="tag tag-spec" onclick="showSP('spec-p4','Board Briefing','SPECULATIVE')">SPEC</span></span></div>
-    </div>
-
-    <div class="pf-card pf-c5">
-      <div class="pf-num">05</div>
-      <div class="pf-name">Scenario Planning Engine</div>
-      <div class="pf-row"><span class="pf-key">קונה</span><span class="pf-val">CFO / CEO בסביבה אי-ודאית</span></div>
-      <div class="pf-row"><span class="pf-key">מקבל</span><span class="pf-val">3–5 תרחישים עם triggers ומדדי מעקב</span></div>
-      <div class="pf-row"><span class="pf-key">הכנסה</span><span class="pf-val">40K–80K₪ + quarterly refresh <span class="tag tag-est" onclick="showSP('est-p5','Scenario Pricing','ESTIMATED')">EST</span></span></div>
-    </div>
-
-    <div class="pf-card pf-c6">
-      <div class="pf-num">06</div>
-      <div class="pf-name">Strategic Monitoring Dashboard</div>
-      <div class="pf-row"><span class="pf-key">קונה</span><span class="pf-val">CFO / COO — חברה עם operations מורכבות</span></div>
-      <div class="pf-row"><span class="pf-key">מקבל</span><span class="pf-val">15–20 KPIs ו-benchmarks ב-Power BI חי</span></div>
-      <div class="pf-row"><span class="pf-key">הכנסה</span><span class="pf-val">18K–28K₪ + 6K₪/רבעון <span class="tag tag-spec" onclick="showSP('spec-p6','Dashboard Pricing','SPECULATIVE — data quality ישראלי מוגבל.')">SPEC</span></span></div>
-    </div>
+  <div class="thesis-box">
+    <blockquote>
+      "השאלה אינה האם יועצים צריכים להשתמש ב-AI.<br>
+      השאלה היא מה הופך לייעוץ<br>
+      כשכולם משתמשים ב-AI."
+    </blockquote>
+    <cite>BDO ישראל · מחקר אסטרטגי 2025</cite>
   </div>
-  <div class="ask-row">
-    <a class="ask-btn" href="https://claude.ai/new?q=Which+of+these+6+consulting+products+has+the+highest+chance+of+success+for+an+Israeli+mid-market+firm+like+BDO+in+the+next+18+months%3F+Rank+them+and+explain+why." target="_blank">שאל Claude: מה לתעדף מבין 6 המוצרים?</a>
-  </div>
-</div>
-</section>
-
-<!-- ══════════════════════════════════════
-     SECTION 9 — ROADMAP
-══════════════════════════════════════ -->
-<section id="roadmap">
-<div class="slide">
-  <div class="slide-label">תכנית פעולה</div>
-  <h2 class="slide-h">ארבעה שלבים — <span class="hl">מחר בבוקר עד 3 שנים</span></h2>
-
-  <div class="phases">
-    <div class="phase">
-      <div class="phase-dot" style="background:var(--red);box-shadow:0 0 0 4px rgba(255,64,64,.15)"></div>
-      <div class="phase-period" style="color:var(--red)">שלב 0 | 0–30 יום</div>
-      <div class="phase-title">מחר בבוקר</div>
-      <div class="phase-items">
-        <div class="phase-item">AI Policy פנימי — מסמך חד-עמודי</div>
-        <div class="phase-item">Toolstack לכל יועץ (Claude + Perplexity) <span class="tag tag-est" onclick="showSP('est-toolcost','עלות Toolstack','~₪2K/חודש. Public pricing.')">EST</span></div>
-        <div class="phase-item">מיפוי 5–8 לקוחות לפיילוט</div>
-        <div class="phase-item">מנות 3 שותפים ל-ownership אישי</div>
-      </div>
-    </div>
-    <div class="phase">
-      <div class="phase-dot" style="background:var(--orange);box-shadow:0 0 0 4px rgba(255,90,43,.15)"></div>
-      <div class="phase-period" style="color:var(--orange)">שלב 1 | 30–90 יום</div>
-      <div class="phase-title">הוכחת מושג</div>
-      <div class="phase-items">
-        <div class="phase-item">Prompt Library — 20 prompts ייעוציים</div>
-        <div class="phase-item">3 פרויקטי AI Strategy Diagnostic</div>
-        <div class="phase-item">פיילוט retainer — לקוח אחד, 3 חודשים חינם</div>
-        <div class="phase-item">מדידת זמן delivery לפני/אחרי</div>
-      </div>
-    </div>
-    <div class="phase">
-      <div class="phase-dot" style="background:var(--yellow);box-shadow:0 0 0 4px rgba(245,192,48,.15)"></div>
-      <div class="phase-period" style="color:var(--yellow)">שלב 2 | 3–12 חודשים</div>
-      <div class="phase-title">בניית מנגנון</div>
-      <div class="phase-items">
-        <div class="phase-item">5–8 Managed Intelligence Retainers</div>
-        <div class="phase-item">Knowledge Infrastructure (Notion AI)</div>
-        <div class="phase-item">Automated Benchmarking Service</div>
-        <div class="phase-item">Reskilling — Analysts כ-AI Operators</div>
-      </div>
-    </div>
-    <div class="phase">
-      <div class="phase-dot" style="background:var(--teal);box-shadow:0 0 0 4px rgba(0,212,180,.15)"></div>
-      <div class="phase-period" style="color:var(--teal)">שלב 3 | 12–36 חודשים</div>
-      <div class="phase-title">שינוי מודל עסקי</div>
-      <div class="phase-items">
-        <div class="phase-item">Consulting-Enabled Products (CEP) <span class="tag tag-est" onclick="showSP('est-cep','CEP','ESTIMATED timeline.')">EST</span></div>
-        <div class="phase-item">מנוי אסטרטגי כהכנסה קבועה</div>
-        <div class="phase-item">IP מקצועי בר-תמחור</div>
-        <div class="phase-item" style="color:var(--red)">SaaS מלא — ❌ לא בשלב זה</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="ask-row">
-    <a class="ask-btn" href="https://claude.ai/new?q=What+is+the+fastest+and+lowest-risk+90-day+action+plan+for+a+consulting+firm+to+build+its+first+AI-powered+recurring+revenue+product%3F+Be+very+specific+and+practical." target="_blank">שאל Claude: 90 יום — תכנית קונקרטית</a>
-    <a class="ask-btn" href="https://claude.ai/new?q=What+are+the+top+3+execution+failures+when+consulting+firms+try+to+build+AI-powered+recurring+products%3F+What+causes+them+to+fail+and+how+to+avoid+it%3F" target="_blank">שאל Claude: למה פירמות נכשלות?</a>
-  </div>
-</div>
-</section>
-
-<!-- ══════════════════════════════════════
-     SECTION 10 — THE DECISION
-══════════════════════════════════════ -->
-<section id="decision">
-<div class="slide">
-  <div class="slide-label">השאלה ל-BDO</div>
-  <div class="decision-q">
-    תוך 5 שנים,<br>
-    <strong>מה יהיה המודל העסקי של הפירמה?</strong>
-  </div>
-
-  <div class="decision-paths">
-    <div class="dp dp-a">
-      <div class="dp-icon">🔄</div>
-      <div class="dp-title">מודל נכסים חיים</div>
-      <div class="dp-desc">הפירמה בונה מוצרי intelligence, retainers ו-decision support. הכנסה חוזרת. נוכחות מתמשכת אצל ה-CEO. המתחרים הגדולים לא ייגעו בסגמנט הזה.</div>
-    </div>
-    <div class="dp dp-b">
-      <div class="dp-icon">📋</div>
-      <div class="dp-title">מודל פרויקטלי מואץ</div>
-      <div class="dp-desc">AI משפר יעילות delivery, מוריד עלויות, מאיץ פרויקטים. אבל המודל העסקי נשאר זהה. לחץ מחירים מבוטיקים AI-native יגדל.</div>
-    </div>
-  </div>
-
-  <div class="value-insight" style="margin-top:2rem;max-width:680px;margin-inline:auto">
-    <p><strong>ממצאי המחקר מצביעים:</strong> הפירמה שתבחר בנתיב הראשון ב-18 החודשים הקרובים תיצור עמדה קשה לאתגר. הביקוש ב-mid-market ישראלי עדיין לא מאומת — הפיילוטים הם ה-validation. <span class="tag tag-spec" onclick="showSP('spec-decision','Decision Framework','SPECULATIVE — הנחה אסטרטגית. הפיילוטים יאמתו או יפריכו.')">SPECULATIVE</span></p>
-  </div>
-  <div class="ask-row">
-    <a class="ask-btn" href="https://claude.ai/new?q=BDO+Israel+is+a+mid-market+consulting+firm.+What+are+the+strongest+arguments+for+and+against+building+AI-powered+advisory+retainers+for+the+50-300M+NIS+company+segment%3F+Give+me+a+balanced+view+with+specific+risks+and+opportunities." target="_blank">שאל Claude: הטיעונים בעד ונגד</a>
-  </div>
-</div>
-</section>
-
-<!-- ══════════════════════════════════════
-     SECTION 11 — DATA CONFIDENCE
-══════════════════════════════════════ -->
-<section id="confidence">
-<div class="slide">
-  <div class="slide-label">שקיפות נתונים</div>
-  <h2 class="slide-h">מה ידוע — ומה <span class="hl2">לא</span></h2>
-  <p class="slide-sub">24/25 משימות מחקר: APPROVED_WITH_CAVEATS. מערכת ביטחון שקופה — לא קיימת ב-PowerPoint רגיל.</p>
-
-  <div class="conf-grid">
-    <div class="conf-card" style="border-color:rgba(34,197,94,.2)">
-      <h3 style="color:var(--green)">✓ DATA-BACKED (T1)</h3>
-      <div class="conf-item">Accenture $3B AI bookings — SEC 10-Q Q2 2024</div>
-      <div class="conf-item">Gartner NRR 107% — Annual Report FY2023</div>
-      <div class="conf-item">Palantir RPO $3.9B — Earnings Call Q4 2023</div>
-      <div class="conf-item">Harvey/Hebbia funding rounds — T1 adjacent</div>
-    </div>
-    <div class="conf-card" style="border-color:rgba(245,192,48,.2)">
-      <h3 style="color:var(--yellow)">~ ESTIMATED / BENCHMARK (T2)</h3>
-      <div class="conf-item">55–65% Analyst work automation</div>
-      <div class="conf-item">40–55% project delivery savings</div>
-      <div class="conf-item">BCG/McKinsey Analyst hiring cuts (FT/Bloomberg)</div>
-      <div class="conf-item">Partner + AI = ×2.5 output</div>
-    </div>
-    <div class="conf-card" style="border-color:rgba(255,64,64,.2)">
-      <h3 style="color:var(--red)">? SPECULATIVE</h3>
-      <div class="conf-item">Mid-market ישראלי ישלם retainer AI</div>
-      <div class="conf-item">תמחור פיילוטים ספציפיים</div>
-      <div class="conf-item">Timeline שינויי מבנה פירמידה</div>
-      <div class="conf-item">ROI מוצרי CEP ב-3 שנים</div>
-    </div>
-  </div>
-
-  <div class="gaps">
-    <div class="gap-card">
-      <div class="gap-n" style="background:rgba(255,64,64,.15);color:var(--red)">1</div>
-      <div class="gap-text">
-        <h4>נכונות תשלום mid-market ישראלי</h4>
-        <p>8 ראיונות לקוחות קיימים — שאלה ישירה: "10K₪/חודש עבור X?"</p>
-      </div>
-    </div>
-    <div class="gap-card">
-      <div class="gap-n" style="background:rgba(245,192,48,.15);color:var(--yellow)">2</div>
-      <div class="gap-text">
-        <h4>פיילוטים ממשיים מ-RSM / GT / BDO Global</h4>
-        <p>פנייה ל-BDO Global AI team + Grant Thornton white papers 2024</p>
-      </div>
-    </div>
-    <div class="gap-card">
-      <div class="gap-n" style="background:rgba(34,197,94,.15);color:var(--green)">3</div>
-      <div class="gap-text">
-        <h4>מדידת delivery ב-BDO פנימית</h4>
-        <p>3 פרויקטים הבאים — רישום שעות לפני/אחרי AI toolstack</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="value-insight" style="margin-top:1.5rem">
-    <p><strong>מה זה מוכיח:</strong> המצגת הזו היא גם המסר וגם ה-proof-of-concept. מחקר מולטי-אג'נטי עם 25 משימות, QA שקוף, וסיווג ביטחון לכל טענה. <strong>זה מה ש-BDO יכולה למכור.</strong></p>
-  </div>
-  <div class="ask-row">
-    <a class="ask-btn" href="https://claude.ai/new?q=I+want+to+build+a+multi-agent+research+system+using+Claude+API+that+produces+consulting-quality+research+with+confidence+tagging+%28DATA-BACKED%2C+ESTIMATED%2C+SPECULATIVE%29.+What+is+the+architecture%3F+How+many+agents%2C+what+roles%2C+how+does+QA+work%3F" target="_blank">שאל Claude: כיצד בונים מערכת כזו?</a>
+  <div class="ask-row" style="justify-content:center">
+    <a class="ask-btn" href="https://claude.ai/new?q=If+consulting+clients+can+generate+a+strategy+deck+in+an+hour+using+AI%2C+what+will+they+still+pay+a+consulting+firm+for%3F+Be+specific." target="_blank">שאל Claude: מה נשאר בלתי-ניתן להחלפה?</a>
+    <a class="ask-btn" href="https://claude.ai/new?q=What+is+the+fastest+90-day+action+plan+for+a+mid-market+consulting+firm+to+build+its+first+AI-powered+recurring+revenue+product%3F" target="_blank">שאל Claude: 90 יום ראשונים</a>
   </div>
 </div>
 </section>
 
 <footer>
-  <p class="footer-disc">הופק על ידי מערכת מחקר מולטי-אג'נטי לצורכי אסטרטגיה פנימית של BDO ישראל. כל הנתונים מסווגים לפי רמת ביטחון. מספרים ישראליים הם extrapolation מ-UK/US benchmarks ודורשים אימות. אין בנאמר המלצה להשקעה.</p>
-  <div class="footer-meta">BDO ישראל | AI Strategy Brief | Multi-Agent Research System | 2025</div>
+  <p class="footer-disc">הופק על ידי מערכת מחקר מולטי-אג'נטי לצורכי אסטרטגיה פנימית של BDO ישראל. כל הנתונים מסווגים לפי רמת ביטחון. מספרים ישראליים הם extrapolation מ-UK/US benchmarks ודורשים אימות בשוק המקומי. אין בנאמר המלצה להשקעה.</p>
+  <div class="footer-meta">BDO ישראל · AI Strategy Research · Multi-Agent Synthesis · 2025</div>
 </footer>
 
 <script>
-// SCROLL PROGRESS
 window.addEventListener('scroll',()=>{
   const p=(window.scrollY/(document.documentElement.scrollHeight-window.innerHeight))*100;
-  document.getElementById('progressBar').style.width=p+'%';
+  document.getElementById('prog').style.width=p+'%';
 },{passive:true});
 
-// SOURCE PANEL
-function showSP(id,title,content){
-  document.getElementById('SP-body').innerHTML='<strong>'+title+'</strong><br><br>'+content;
-  document.getElementById('SP-meta').textContent='ID: '+id+' | לחצו ✕ לסגירה';
-  document.getElementById('SP').classList.add('on');
-}
-function closeSP(){document.getElementById('SP').classList.remove('on')}
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeSP()});
-
-// NAVIGATION
-function gotoSection(id){
-  document.getElementById(id).scrollIntoView({behavior:'smooth'});
-}
+const screens=document.querySelectorAll('section.screen');
+const dotsEl=document.getElementById('navDots');
+screens.forEach((s,i)=>{
+  const btn=document.createElement('button');
+  btn.className='nav-dot';
+  btn.title=s.dataset.label||'';
+  btn.onclick=()=>s.scrollIntoView({behavior:'smooth'});
+  dotsEl.appendChild(btn);
+});
+const dots=dotsEl.querySelectorAll('.nav-dot');
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting&&e.intersectionRatio>.5){
+      const i=Array.from(screens).indexOf(e.target);
+      dots.forEach((d,j)=>d.classList.toggle('active',i===j));
+    }
+  });
+},{threshold:.5});
+screens.forEach(s=>io.observe(s));
 </script>
 </body>
 </html>
