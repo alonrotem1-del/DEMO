@@ -882,6 +882,34 @@
     .matrix-grid { grid-template-columns: 1fr 1fr; }
     .features-layout { grid-template-columns: 1fr; }
   }
+
+  /* ─── EXT LINK BAR ─── */
+  .ext-link-bar {
+    position: fixed;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    z-index: 2000;
+  }
+  .ext-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: rgba(14,124,123,0.9);
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    text-decoration: none;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+  }
+  .ext-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  }
 </style>
 </head>
 <body>
@@ -1430,5 +1458,8 @@ function showResult(rule) {
 }
 </script>
 
+<div class="ext-link-bar">
+  <a class="ext-link" href="baccara-mna-market-screening.html" target="_blank">↗ בקרה גבע · M&A Screening</a>
+</div>
 </body>
 </html>
