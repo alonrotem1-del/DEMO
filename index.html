@@ -164,6 +164,31 @@
     box-shadow: 0 0 40px rgba(255,106,61,0.5);
   }
 
+  .ext-link-bar {
+    position: fixed;
+    bottom: 1.25rem;
+    left: 1.25rem;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .ext-link {
+    background: rgba(22,22,29,0.9);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    padding: 0.45rem 0.9rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--teal);
+    text-decoration: none;
+    transition: background 0.15s;
+    white-space: nowrap;
+  }
+
+  .ext-link:hover { background: rgba(31,182,166,0.15); }
+
   .bdo-tag {
     position: absolute;
     bottom: 2.5rem;
@@ -885,6 +910,11 @@
 </style>
 </head>
 <body>
+
+<!-- ─── EXT LINKS ─── -->
+<div class="ext-link-bar">
+  <a class="ext-link" href="baccara-mna-market-screening.html" target="_blank">↗ בקרה גבע · M&A Screening</a>
+</div>
 
 <!-- ─── NAV ─── -->
 <nav>
