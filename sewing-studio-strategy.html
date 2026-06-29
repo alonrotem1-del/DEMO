@@ -1,0 +1,2060 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>סטודיו לתפירה — ניתוח אסטרטגי ועסקי</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F9F5EF;
+    --cream-dark: #F0EAE0;
+    --warm-brown: #5C3D2E;
+    --dusty-rose: #C27B7B;
+    --sage: #7B9E87;
+    --gold: #C8A45A;
+    --charcoal: #2D2D2D;
+    --mid-gray: #5A5A5A;
+    --light-gray: #8A8A8A;
+    --border: #DDD5C8;
+    --white: #FFFFFF;
+    --rose-light: rgba(194,123,123,0.1);
+    --sage-light: rgba(123,158,135,0.1);
+    --gold-light: rgba(200,164,90,0.1);
+    --brown-light: rgba(92,61,46,0.08);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--charcoal);
+    font-family: 'Heebo', sans-serif;
+    direction: rtl;
+    overflow-x: hidden;
+    line-height: 1.7;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    background: rgba(249,245,239,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-logo {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--warm-brown);
+    letter-spacing: 0.3px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 0.15rem;
+    list-style: none;
+    flex-direction: row-reverse;
+  }
+
+  .nav-links a {
+    color: var(--mid-gray);
+    text-decoration: none;
+    font-size: 0.78rem;
+    font-weight: 500;
+    padding: 0.3rem 0.65rem;
+    border-radius: 20px;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+
+  .nav-links a:hover {
+    color: var(--warm-brown);
+    background: var(--brown-light);
+  }
+
+  /* ─── HERO ─── */
+  #hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding: 6rem 2rem 4rem;
+    text-align: center;
+    background: linear-gradient(160deg, #F9F5EF 0%, #F0EAE0 50%, #EDE4D6 100%);
+  }
+
+  .hero-texture {
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(circle at 20% 30%, rgba(194,123,123,0.08) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, rgba(123,158,135,0.07) 0%, transparent 50%),
+      radial-gradient(circle at 50% 50%, rgba(200,164,90,0.05) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--white);
+    border: 1px solid var(--border);
+    color: var(--mid-gray);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.4rem 1.1rem;
+    border-radius: 100px;
+    margin-bottom: 2.5rem;
+    letter-spacing: 0.5px;
+  }
+
+  .hero-title {
+    font-size: clamp(2.2rem, 5.5vw, 4.2rem);
+    font-weight: 900;
+    line-height: 1.15;
+    letter-spacing: -1.5px;
+    margin-bottom: 1rem;
+    color: var(--warm-brown);
+  }
+
+  .hero-sub {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: var(--mid-gray);
+    max-width: 580px;
+    line-height: 1.8;
+    margin-bottom: 3rem;
+    font-weight: 400;
+  }
+
+  .hero-answer-cards {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+    max-width: 820px;
+  }
+
+  .hero-answer-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.1rem 1.5rem;
+    text-align: right;
+    min-width: 220px;
+    max-width: 260px;
+    position: relative;
+  }
+
+  .hac-icon {
+    font-size: 1.4rem;
+    margin-bottom: 0.4rem;
+    display: block;
+  }
+
+  .hac-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+  }
+
+  .hac-text {
+    font-size: 0.88rem;
+    color: var(--charcoal);
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  .hac-green .hac-label { color: var(--sage); }
+  .hac-amber .hac-label { color: var(--gold); }
+  .hac-red .hac-label { color: var(--dusty-rose); }
+  .hac-blue .hac-label { color: #6B8CAE; }
+
+  .scroll-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--light-gray);
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    animation: bob 2.5s ease-in-out infinite;
+    margin-top: 2rem;
+  }
+
+  .scroll-arrow {
+    width: 18px; height: 18px;
+    border-right: 2px solid var(--light-gray);
+    border-bottom: 2px solid var(--light-gray);
+    transform: rotate(45deg);
+  }
+
+  @keyframes bob {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(7px); }
+  }
+
+  /* ─── SECTION WRAPPERS ─── */
+  .section-wrap {
+    padding: 5rem 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-wrap.alt-bg {
+    max-width: 100%;
+    background: var(--white);
+    padding: 5rem 0;
+  }
+
+  .section-wrap.alt-bg .inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .section-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.7rem, 3.5vw, 2.6rem);
+    font-weight: 900;
+    letter-spacing: -1px;
+    line-height: 1.15;
+    margin-bottom: 0.8rem;
+    color: var(--warm-brown);
+  }
+
+  .section-intro {
+    font-size: 1rem;
+    color: var(--mid-gray);
+    max-width: 640px;
+    line-height: 1.8;
+    margin-bottom: 3rem;
+  }
+
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 0;
+  }
+
+  /* ─── EXECUTIVE ANSWER ─── */
+  .exec-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .exec-card {
+    border-radius: 20px;
+    padding: 2rem;
+    position: relative;
+  }
+
+  .exec-card.green {
+    background: linear-gradient(135deg, rgba(123,158,135,0.12), rgba(123,158,135,0.05));
+    border: 1.5px solid rgba(123,158,135,0.3);
+  }
+
+  .exec-card.amber {
+    background: linear-gradient(135deg, rgba(200,164,90,0.12), rgba(200,164,90,0.05));
+    border: 1.5px solid rgba(200,164,90,0.3);
+  }
+
+  .exec-card.red {
+    background: linear-gradient(135deg, rgba(194,123,123,0.12), rgba(194,123,123,0.05));
+    border: 1.5px solid rgba(194,123,123,0.3);
+  }
+
+  .exec-card.blue {
+    background: linear-gradient(135deg, rgba(107,140,174,0.12), rgba(107,140,174,0.05));
+    border: 1.5px solid rgba(107,140,174,0.3);
+  }
+
+  .exec-card-num {
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: 0.5rem;
+  }
+
+  .green .exec-card-num { color: var(--sage); }
+  .amber .exec-card-num { color: var(--gold); }
+  .red .exec-card-num { color: var(--dusty-rose); }
+  .blue .exec-card-num { color: #6B8CAE; }
+
+  .exec-card-title {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--charcoal);
+  }
+
+  .exec-card-text {
+    font-size: 0.88rem;
+    color: var(--mid-gray);
+    line-height: 1.7;
+  }
+
+  .insight-banner {
+    background: var(--warm-brown);
+    color: var(--cream);
+    border-radius: 20px;
+    padding: 2rem 2.5rem;
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    margin-top: 2rem;
+  }
+
+  .insight-banner-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .insight-banner-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    font-weight: 400;
+  }
+
+  .insight-banner-text strong {
+    font-weight: 800;
+    color: var(--gold);
+  }
+
+  /* ─── LOCAL MARKET ─── */
+  .area-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .area-tag {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    padding: 0.35rem 0.9rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--warm-brown);
+  }
+
+  .opp-risk-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--white);
+  }
+
+  .opp-risk-table th {
+    padding: 1rem 1.5rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .opp-risk-table th:first-child {
+    background: rgba(123,158,135,0.1);
+    color: var(--sage);
+    border-left: 1px solid var(--border);
+    text-align: right;
+  }
+
+  .opp-risk-table th:last-child {
+    background: rgba(194,123,123,0.1);
+    color: var(--dusty-rose);
+    text-align: right;
+  }
+
+  .opp-risk-table td {
+    padding: 1rem 1.5rem;
+    font-size: 0.88rem;
+    line-height: 1.6;
+    vertical-align: top;
+    border-bottom: 1px solid rgba(221,213,200,0.5);
+  }
+
+  .opp-risk-table td:first-child {
+    border-left: 1px solid var(--border);
+    color: #3a5e47;
+  }
+
+  .opp-risk-table td:last-child {
+    color: #7a3d3d;
+  }
+
+  .opp-risk-table tr:last-child td { border-bottom: none; }
+
+  /* ─── SEGMENTS ─── */
+  .seg-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--white);
+    font-size: 0.83rem;
+  }
+
+  .seg-table th {
+    padding: 0.75rem 0.9rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--warm-brown);
+    background: var(--cream-dark);
+    border-bottom: 1px solid var(--border);
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  .seg-table td {
+    padding: 0.85rem 0.9rem;
+    border-bottom: 1px solid rgba(221,213,200,0.5);
+    vertical-align: top;
+    line-height: 1.5;
+    color: var(--charcoal);
+  }
+
+  .seg-table tr:last-child td { border-bottom: none; }
+
+  .seg-table tr:hover td { background: var(--cream); }
+
+  .seg-name {
+    font-weight: 700;
+    color: var(--warm-brown);
+    white-space: nowrap;
+  }
+
+  .badge {
+    display: inline-block;
+    padding: 0.15rem 0.55rem;
+    border-radius: 100px;
+    font-size: 0.68rem;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .badge-green { background: rgba(123,158,135,0.15); color: #3a5e47; }
+  .badge-amber { background: rgba(200,164,90,0.15); color: #7a5a1a; }
+  .badge-red { background: rgba(194,123,123,0.15); color: #7a3d3d; }
+  .badge-gray { background: rgba(90,90,90,0.1); color: var(--mid-gray); }
+  .badge-blue { background: rgba(107,140,174,0.15); color: #2d567a; }
+
+  /* ─── COMPETITION ─── */
+  .comp-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--white);
+    font-size: 0.84rem;
+  }
+
+  .comp-table th {
+    padding: 0.75rem 1rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--warm-brown);
+    background: var(--cream-dark);
+    border-bottom: 1px solid var(--border);
+    text-align: right;
+  }
+
+  .comp-table td {
+    padding: 0.85rem 1rem;
+    border-bottom: 1px solid rgba(221,213,200,0.5);
+    vertical-align: middle;
+    line-height: 1.5;
+  }
+
+  .comp-table tr:last-child td { border-bottom: none; }
+
+  .threat-high { color: #9B2929; font-weight: 700; }
+  .threat-med { color: #7a5a1a; font-weight: 600; }
+  .threat-low { color: #3a5e47; font-weight: 500; }
+
+  /* ─── POSITIONING ─── */
+  .pos-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+
+  .pos-card {
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid var(--border);
+    background: var(--white);
+  }
+
+  .pos-card-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .pos-card-title {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--warm-brown);
+    margin-bottom: 1rem;
+    line-height: 1.4;
+  }
+
+  .pos-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .pos-list li {
+    font-size: 0.87rem;
+    color: var(--mid-gray);
+    display: flex;
+    gap: 0.5rem;
+    align-items: flex-start;
+    line-height: 1.6;
+  }
+
+  .pos-list li::before {
+    content: '·';
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    margin-top: -2px;
+  }
+
+  .pos-card.is { border-color: rgba(123,158,135,0.4); }
+  .pos-card.is .pos-card-label { color: var(--sage); }
+  .pos-card.is .pos-list li::before { color: var(--sage); }
+
+  .pos-card.not { border-color: rgba(194,123,123,0.4); }
+  .pos-card.not .pos-card-label { color: var(--dusty-rose); }
+  .pos-card.not .pos-list li::before { color: var(--dusty-rose); }
+
+  .credibility-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .cred-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.5rem;
+  }
+
+  .cred-role {
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: var(--warm-brown);
+    margin-bottom: 0.4rem;
+  }
+
+  .cred-desc {
+    font-size: 0.82rem;
+    color: var(--mid-gray);
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+  }
+
+  .cred-fit {
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+
+  /* ─── PRICING ─── */
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .price-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .price-card.featured {
+    border-color: var(--warm-brown);
+    box-shadow: 0 4px 20px rgba(92,61,46,0.12);
+  }
+
+  .price-card.featured::before {
+    content: 'בסיס';
+    position: absolute;
+    top: 0.8rem; left: 1rem;
+    background: var(--warm-brown);
+    color: var(--cream);
+    font-size: 0.62rem;
+    font-weight: 800;
+    padding: 0.15rem 0.55rem;
+    border-radius: 100px;
+    letter-spacing: 1px;
+  }
+
+  .price-tier {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--light-gray);
+    margin-bottom: 0.5rem;
+  }
+
+  .price-number {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: var(--warm-brown);
+    letter-spacing: -1px;
+    margin-bottom: 0.15rem;
+  }
+
+  .price-sub {
+    font-size: 0.78rem;
+    color: var(--light-gray);
+    margin-bottom: 1.5rem;
+  }
+
+  .price-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: right;
+  }
+
+  .price-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.82rem;
+    color: var(--mid-gray);
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(221,213,200,0.5);
+  }
+
+  .price-row:last-child { border-bottom: none; padding-bottom: 0; }
+
+  .price-row .val {
+    font-weight: 700;
+    color: var(--charcoal);
+  }
+
+  .cap-warning {
+    background: rgba(200,164,90,0.1);
+    border: 1px solid rgba(200,164,90,0.3);
+    border-radius: 14px;
+    padding: 1.25rem 1.5rem;
+    font-size: 0.88rem;
+    color: var(--charcoal);
+    line-height: 1.7;
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    margin-top: 1.5rem;
+  }
+
+  /* ─── BUSINESS MODEL ─── */
+  .revenue-mix {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .rev-item {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.25rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .rev-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+  }
+
+  .rev-icon { font-size: 1.4rem; margin-bottom: 0.4rem; display: block; }
+  .rev-name { font-size: 0.85rem; font-weight: 700; color: var(--warm-brown); margin-bottom: 0.25rem; }
+  .rev-range { font-size: 0.8rem; font-weight: 600; color: var(--mid-gray); margin-bottom: 0.3rem; }
+  .rev-note { font-size: 0.75rem; color: var(--light-gray); line-height: 1.5; }
+
+  /* ─── FINANCIAL LOGIC ─── */
+  .finance-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .finance-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 2rem;
+  }
+
+  .finance-card-title {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--light-gray);
+    margin-bottom: 1.25rem;
+  }
+
+  .finance-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .finance-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.87rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid rgba(221,213,200,0.5);
+  }
+
+  .finance-row:last-child { border-bottom: none; padding-bottom: 0; }
+
+  .finance-row .label { color: var(--mid-gray); }
+  .finance-row .amount { font-weight: 700; color: var(--charcoal); }
+  .finance-row .amount.red { color: var(--dusty-rose); }
+  .finance-row .amount.green { color: var(--sage); }
+  .finance-row .amount.gold { color: var(--gold); }
+
+  .invest-stages {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .invest-stage {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.25rem;
+    text-align: center;
+  }
+
+  .invest-stage-name {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--light-gray);
+    margin-bottom: 0.5rem;
+  }
+
+  .invest-stage-amount {
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: var(--warm-brown);
+    margin-bottom: 0.3rem;
+  }
+
+  .invest-stage-note {
+    font-size: 0.75rem;
+    color: var(--mid-gray);
+    line-height: 1.5;
+  }
+
+  /* ─── 90-DAY PLAN ─── */
+  .plan-phases {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+
+  .plan-phase {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 2rem;
+    position: relative;
+  }
+
+  .plan-phase-num {
+    position: absolute;
+    top: -14px;
+    right: 1.5rem;
+    background: var(--warm-brown);
+    color: var(--cream);
+    font-size: 0.7rem;
+    font-weight: 800;
+    padding: 0.2rem 0.8rem;
+    border-radius: 100px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .plan-phase-title {
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--warm-brown);
+    margin-bottom: 0.25rem;
+    margin-top: 0.25rem;
+  }
+
+  .plan-phase-period {
+    font-size: 0.73rem;
+    color: var(--light-gray);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 1.25rem;
+  }
+
+  .plan-tasks {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .plan-tasks li {
+    font-size: 0.85rem;
+    color: var(--mid-gray);
+    display: flex;
+    gap: 0.6rem;
+    align-items: flex-start;
+    line-height: 1.6;
+  }
+
+  .plan-tasks li::before {
+    content: '→';
+    color: var(--gold);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .validation-note {
+    background: rgba(92,61,46,0.06);
+    border-right: 3px solid var(--warm-brown);
+    border-radius: 0 10px 10px 0;
+    padding: 1rem 1.25rem;
+    font-size: 0.85rem;
+    color: var(--charcoal);
+    line-height: 1.7;
+    margin-top: 2rem;
+  }
+
+  /* ─── GO/NO-GO ─── */
+  .gng-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+
+  .gng-card {
+    border-radius: 20px;
+    padding: 2rem;
+  }
+
+  .gng-card.go {
+    background: rgba(123,158,135,0.08);
+    border: 1.5px solid rgba(123,158,135,0.3);
+  }
+
+  .gng-card.nogo {
+    background: rgba(194,123,123,0.08);
+    border: 1.5px solid rgba(194,123,123,0.3);
+  }
+
+  .gng-title {
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+  }
+
+  .go .gng-title { color: var(--sage); }
+  .nogo .gng-title { color: var(--dusty-rose); }
+
+  .gng-items {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+
+  .gng-items li {
+    font-size: 0.87rem;
+    color: var(--charcoal);
+    display: flex;
+    gap: 0.6rem;
+    align-items: flex-start;
+    line-height: 1.6;
+    padding-bottom: 0.65rem;
+    border-bottom: 1px solid rgba(221,213,200,0.4);
+  }
+
+  .gng-items li:last-child { border-bottom: none; padding-bottom: 0; }
+
+  .go .gng-items li::before {
+    content: '✓';
+    color: var(--sage);
+    font-weight: 800;
+    flex-shrink: 0;
+  }
+
+  .nogo .gng-items li::before {
+    content: '✕';
+    color: var(--dusty-rose);
+    font-weight: 800;
+    flex-shrink: 0;
+  }
+
+  /* ─── FINAL REC ─── */
+  #final-rec {
+    background: linear-gradient(160deg, var(--warm-brown) 0%, #3E2A1E 100%);
+    padding: 6rem 2rem;
+  }
+
+  .final-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .final-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+
+  .final-title {
+    font-size: clamp(2rem, 4.5vw, 3.2rem);
+    font-weight: 900;
+    color: var(--cream);
+    letter-spacing: -1px;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+
+  .final-subtitle {
+    font-size: 1rem;
+    color: rgba(249,245,239,0.7);
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    line-height: 1.8;
+  }
+
+  .final-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .final-step {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 16px;
+    padding: 1.5rem;
+    text-align: right;
+  }
+
+  .final-step-n {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--gold);
+    margin-bottom: 0.4rem;
+    line-height: 1;
+  }
+
+  .final-step-text {
+    font-size: 0.87rem;
+    color: rgba(249,245,239,0.85);
+    line-height: 1.6;
+  }
+
+  .final-bottom-line {
+    background: rgba(200,164,90,0.15);
+    border: 1px solid rgba(200,164,90,0.3);
+    border-radius: 16px;
+    padding: 1.75rem 2rem;
+    font-size: 1.05rem;
+    color: var(--cream);
+    line-height: 1.8;
+    font-weight: 400;
+  }
+
+  .final-bottom-line strong { color: var(--gold); font-weight: 800; }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--cream-dark);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    color: var(--light-gray);
+    font-size: 0.8rem;
+    border-top: 1px solid var(--border);
+  }
+
+  /* ─── REVEAL ─── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-d1 { transition-delay: 0.1s; }
+  .reveal-d2 { transition-delay: 0.2s; }
+  .reveal-d3 { transition-delay: 0.3s; }
+  .reveal-d4 { transition-delay: 0.4s; }
+  .reveal-d5 { transition-delay: 0.5s; }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .exec-grid { grid-template-columns: 1fr; }
+    .pos-split { grid-template-columns: 1fr; }
+    .finance-grid { grid-template-columns: 1fr; }
+    .gng-grid { grid-template-columns: 1fr; }
+    .plan-phases { grid-template-columns: 1fr; }
+    .pricing-grid { grid-template-columns: 1fr; }
+    .invest-stages { grid-template-columns: 1fr; }
+    .seg-table { font-size: 0.75rem; }
+    .seg-table th, .seg-table td { padding: 0.65rem 0.6rem; }
+  }
+
+  @media print {
+    nav { display: none; }
+    .reveal { opacity: 1; transform: none; }
+    body { background: white; }
+    .section-wrap { padding: 3rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav>
+  <div class="nav-logo">סטודיו לתפירה — ניתוח אסטרטגי</div>
+  <ul class="nav-links">
+    <li><a href="#hero">סיכום</a></li>
+    <li><a href="#local">שוק מקומי</a></li>
+    <li><a href="#segments">לקוחות</a></li>
+    <li><a href="#competition">תחרות</a></li>
+    <li><a href="#positioning">פוזישנינג</a></li>
+    <li><a href="#pricing">תמחור</a></li>
+    <li><a href="#model">מודל עסקי</a></li>
+    <li><a href="#finance">פיננסים</a></li>
+    <li><a href="#plan90">90 יום</a></li>
+    <li><a href="#gng">החלטה</a></li>
+  </ul>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section id="hero">
+  <div class="hero-texture"></div>
+
+  <div class="hero-tag">ניתוח שוק ובדיקת היתכנות עסקית · סטודיו לתפירה בוטיק</div>
+
+  <h1 class="hero-title">האם עסק תפירה<br>יכול לעבוד כאן?</h1>
+
+  <p class="hero-sub">
+    ניתוח מלא של שוק, ביקוש מקומי, פילוח לקוחות, תמחור ומודל עסקי —<br>
+    לפני שמקבלים החלטה אחת.
+  </p>
+
+  <div class="hero-answer-cards">
+    <div class="hero-answer-card hac-green reveal reveal-d1">
+      <span class="hac-icon">✅</span>
+      <div class="hac-label">התשובה הקצרה</div>
+      <div class="hac-text">העסק יכול לעבוד — אך רק בתנאים ספציפיים שיש לבדוק לפני כל השקעה.</div>
+    </div>
+    <div class="hero-answer-card hac-amber reveal reveal-d2">
+      <span class="hac-icon">⏳</span>
+      <div class="hac-label">שנה ראשונה</div>
+      <div class="hac-text">לא מציאותי כמקור הכנסה עיקרי. נדרש תהליך ולידציה מדורג.</div>
+    </div>
+    <div class="hero-answer-card hac-red reveal reveal-d3">
+      <span class="hac-icon">🎯</span>
+      <div class="hac-label">ההחלטה הראשונה</div>
+      <div class="hac-text">לא "לפתוח סטודיו" — אלא "לבדוק אם יש ביקוש בתשלום בפועל".</div>
+    </div>
+    <div class="hero-answer-card hac-blue reveal reveal-d4">
+      <span class="hac-icon">🗺️</span>
+      <div class="hac-label">האזור</div>
+      <div class="hac-text">פרדס חנה–כרכור ורדיוס 30–45 דקות — שוק מקומי, לא ישראל כולה.</div>
+    </div>
+  </div>
+
+  <div class="scroll-cta">
+    <span>גללו לניתוח המלא</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ─── EXECUTIVE ANSWER ─── -->
+<section id="executive" class="section-wrap">
+  <p class="section-label" style="color:var(--warm-brown)">תשובה ניהולית</p>
+  <h2 class="section-title reveal">מה התמונה הכוללת?</h2>
+  <p class="section-intro reveal">ארבע אמירות שצריך להסכים עליהן לפני כל שיחה נוספת.</p>
+
+  <div class="exec-grid">
+    <div class="exec-card green reveal reveal-d1">
+      <div class="exec-card-num">01</div>
+      <div class="exec-card-title">העסק יכול לעבוד</div>
+      <div class="exec-card-text">סטודיו תפירה בוטיק בקבוצות קטנות הוא מודל מוכח. יש ביקוש לחוויות יצירה מקומיות, אסתטיקה מדוקדקת, ולמידה מעשית קהילתית. הפוטנציאל קיים — השאלה היא האם הוא קיים כאן, בהיקף מספיק, במחיר הנכון.</div>
+    </div>
+    <div class="exec-card amber reveal reveal-d2">
+      <div class="exec-card-num">02</div>
+      <div class="exec-card-title">22–30 חודש עד הכנסה מלאה</div>
+      <div class="exec-card-text">על פי הסינתזה: ציר הזמן הריאלי עד שהעסק מניב ₪39k–42k לחודש הוא <strong>22–30 חודש</strong>. שנה 1 היא שנת בניית ביקוש ומוניטין — לא מקור הכנסה עיקרי. ציפייה אחרת תוביל לפישלון.</div>
+    </div>
+    <div class="exec-card red reveal reveal-d3">
+      <div class="exec-card-num">03</div>
+      <div class="exec-card-title">המודל עובד רק בתנאים ספציפיים</div>
+      <div class="exec-card-text">גרופ של 5 משתתפות × 1,500–1,800 ₪ × 3–4 קבוצות בחודש. אם המחיר מתכווץ ל-1,200 ₪ ומטה, אם הקבוצות לא מתמלאות, אם אין חזרתיות של לקוחות — המספרים לא עובדים. לפני הוצאה על סטודיו קבוע, יש לוודא שהתנאים מתקיימים.</div>
+    </div>
+    <div class="exec-card blue reveal reveal-d4">
+      <div class="exec-card-num">04</div>
+      <div class="exec-card-title">הצעד הראשון הוא ולידציה</div>
+      <div class="exec-card-text">ההחלטה הראשונה אינה "האם לפתוח סטודיו?" — אלא "האם אנשים באזורנו ישלמו עבור קורס תפירה בוטיק בפועל?". רישום לרשימת המתנה, הפקדה, או תשלום מוקדם — זה ולידציה. שבח ועניין בשיחה — זה לא.</div>
+    </div>
+  </div>
+
+  <div class="insight-banner reveal">
+    <div class="insight-banner-icon">💡</div>
+    <div class="insight-banner-text">
+      <strong>ציר הזמן הריאלי (מהסינתזה):</strong> חודשים 1–6: פיילוט וולידציה. חודשים 7–12: השקה מסודרת, 2–3 קבוצות. חודשים 13–18: הרחבה, הוספת מדריכה. חודשים 22–30: <strong>₪39k–42k לחודש</strong> — היעד הכלכלי של שתי המייסדות בתרחיש הצלחה. הסיכון הגדול אינו שהרעיון רע — אלא שמוציאים כסף ועוזבות עבודה לפני שיודעות שהביקוש אמיתי.
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ─── LOCAL MARKET ─── -->
+<section id="local" class="section-wrap alt-bg">
+  <div class="inner">
+    <p class="section-label" style="color:var(--sage)">שוק מקומי</p>
+    <h2 class="section-title reveal">פרדס חנה–כרכור והסביבה: האם יש כאן מספיק ביקוש?</h2>
+    <p class="section-intro reveal">
+      העסק אינו פונה לכל ישראל. הוא תלוי בביקוש מקומי ברדיוס נסיעה של 30–45 דקות.
+      זה מגדיר את גודל השוק הריאלי.
+    </p>
+
+    <p class="section-label reveal" style="color: var(--warm-brown); margin-bottom:0.75rem">אזור הכיסוי הרלוונטי</p>
+    <div class="area-tags reveal">
+      <span class="area-tag">פרדס חנה–כרכור</span>
+      <span class="area-tag">כרכור</span>
+      <span class="area-tag">בנימינה</span>
+      <span class="area-tag">זיכרון יעקב</span>
+      <span class="area-tag">חדרה</span>
+      <span class="area-tag">קיסריה</span>
+      <span class="area-tag">אור עקיבא</span>
+      <span class="area-tag">מושבים וקיבוצים סמוכים</span>
+    </div>
+
+    <p class="section-intro reveal" style="margin-bottom:2rem">
+      האזור כולל מאפיינים שיכולים להתאים למוצר: אוריינטציה קהילתית חזקה, צריכת לייפסטייל ובוטיק, נשים וילדים עם פנאי ומשאבים כלכליים, וביקוש לפעילויות העשרה מקומיות — עם פחות צורך לנסוע לתל אביב או חיפה לצרכים יצירתיים.
+    </p>
+
+    <table class="opp-risk-table reveal">
+      <thead>
+        <tr>
+          <th>הזדמנויות באזור</th>
+          <th>סיכונים ואי-וודאויות</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>קהילתיות מפותחת — ניסיון של "שכן ממליץ לשכן" יכול לדחוף גיוס ראשוני מהיר</td>
+          <td>הביקוש בתשלום לא נבדק ישירות — עניין בשיחות ≠ נכונות לשלם 1,500 ₪</td>
+        </tr>
+        <tr>
+          <td>נשים עם הכנסה פנויה ודפוסי צריכת בוטיק ולייפסטייל קיימים באזור</td>
+          <td>תחרות מהמרכז הקהילתי / עמותות נשים בעלות נמוכה יותר עשויה לשכוח</td>
+        </tr>
+        <tr>
+          <td>ביקוש לפעילויות העשרה מקומיות — ישנה מגמה של "לא לנסוע ת"א לכל דבר"</td>
+          <td>היקף האוכלוסייה הרלוונטית (נשים 25–55, בעלות הכנסה) מוגבל בגודל האזור</td>
+        </tr>
+        <tr>
+          <td>תחרות ישירה מסטודיו אחר כמעט לא קיימת באזור הקרוב — פוטנציאל ל-First Mover</td>
+          <td>מעט תחרות גלויה עשוי להיות סימן להזדמנות — אך גם לביקוש נמוך מדי</td>
+        </tr>
+        <tr>
+          <td>אפשרות לסינרגיה עם מוצרי בוטיק / בד / גלריות מקומיות בחיזוק מותג</td>
+          <td>אין נתוני כמה נשים שילמו בפועל עבור קורסי יצירה באזור בשנה האחרונה</td>
+        </tr>
+        <tr>
+          <td>מושבים וקיבוצים סמוכים — קהל שמחפש פעילות איכותית מחוץ לישוב</td>
+          <td>עונתיות: קיץ (חופשי ילדים) + חגים עשויים לייצר חורים גדולים בתפוסה</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="validation-note reveal" style="margin-top:2rem">
+      <strong>מה חסר כאן:</strong> אין נתוני שוק ראשוניים על כמות הנשים שנרשמו לקורסי יצירה בתשלום באזור בשנת 2024–2025. זהו הנתון שהכי חשוב לבדוק — ואפשר לעשות זאת ב-30–50 שיחות שטח ב-14 הימים הראשונים.
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ─── CUSTOMER SEGMENTS ─── -->
+<section id="segments" class="section-wrap">
+  <p class="section-label" style="color:var(--dusty-rose)">פילוח לקוחות</p>
+  <h2 class="section-title reveal">מי קהל היעד — ובאיזה שלב?</h2>
+  <p class="section-intro reveal">ששה סגמנטים ברורים, עם מאפיינים שונים לחלוטין. שלב 1 צריך להתמקד בשלושה לכל היותר.</p>
+
+  <div style="overflow-x:auto">
+  <table class="seg-table reveal">
+    <thead>
+      <tr>
+        <th>סגמנט</th>
+        <th>מוטיבציה</th>
+        <th>נכונות לשלם</th>
+        <th>שעות מועדפות</th>
+        <th>ערוצי גיוס</th>
+        <th>שלב 1?</th>
+        <th>ביטחון</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="seg-name">נשים 30–50<br>פנאי יצירתי</span></td>
+        <td>יצירה, פנאי מושכל, זמן לעצמן, לא רק לפרנסה</td>
+        <td><span class="badge badge-green">1,400–1,800 ₪</span></td>
+        <td>בוקר / אחה"צ ראשון</td>
+        <td>אינסטגרם, קבוצות שכונה, מפה לאוזן</td>
+        <td><span class="badge badge-green">כן — ליבה</span></td>
+        <td><span class="badge badge-amber">בינוני</span></td>
+      </tr>
+      <tr>
+        <td><span class="seg-name">נשים 50+<br>חזרה לתחביב</span></td>
+        <td>עיסוק משמעותי, קהילה, גמישות שעות, "סוף סוף יש זמן"</td>
+        <td><span class="badge badge-green">1,200–1,600 ₪</span></td>
+        <td>בוקר — זמינות גבוהה</td>
+        <td>קבוצות פייסבוק, מכר, עיתון מקומי</td>
+        <td><span class="badge badge-green">כן — מועמד מצוין</span></td>
+        <td><span class="badge badge-green">גבוה</span></td>
+      </tr>
+      <tr>
+        <td><span class="seg-name">נשים 20–30<br>DIY / אפנה איטית</span></td>
+        <td>ויזואלי, TikTok-esque, ייצור עצמי, אתיות, בגד ייחודי</td>
+        <td><span class="badge badge-amber">900–1,400 ₪</span></td>
+        <td>ערב / סוף שבוע</td>
+        <td>אינסטגרם, טיקטוק, גיוס מקוון</td>
+        <td><span class="badge badge-amber">אולי — תלוי מחיר</span></td>
+        <td><span class="badge badge-amber">בינוני</span></td>
+      </tr>
+      <tr>
+        <td><span class="seg-name">אמהות<br>חוגים לילדים / נוער</span></td>
+        <td>פעילות יצירתית לילד/ה, "כבוד", חינוך לאומנות</td>
+        <td><span class="badge badge-amber">800–1,200 ₪</span></td>
+        <td>אחה"צ / אחרי בי"ס</td>
+        <td>קבוצות הורים, רשימות שכונה, ווטסאפ</td>
+        <td><span class="badge badge-amber">שלב 2 מועדף</span></td>
+        <td><span class="badge badge-amber">בינוני</span></td>
+      </tr>
+      <tr>
+        <td><span class="seg-name">אירועים<br>ימי הולדת / בריתות / ארגוני</span></td>
+        <td>חוויה, בידור, ייחודיות, "משהו שזוכרים"</td>
+        <td><span class="badge badge-green">1,800–3,500 ₪ לאירוע</span></td>
+        <td>גמיש — ערבים / שישי</td>
+        <td>אינסטגרם, קבוצות ארגון, Wolt Events</td>
+        <td><span class="badge badge-green">כן — מנוע הכנסה נוסף</span></td>
+        <td><span class="badge badge-amber">בינוני</span></td>
+      </tr>
+      <tr>
+        <td><span class="seg-name">לומדות מתקדמות<br>מסלול מקצועי</span></td>
+        <td>הסבה מקצועית, הכנה לבית ספר לאופנה, פיתוח מיומנויות</td>
+        <td><span class="badge badge-green">1,800–2,500 ₪</span></td>
+        <td>שעות ארוכות, התחייבות רצינית</td>
+        <td>לינקדאין, פורומים מקצועיים</td>
+        <td><span class="badge badge-red">שלב 2 בלבד</span></td>
+        <td><span class="badge badge-red">נמוך — דורש מומחיות שאין עדיין</span></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ─── COMPETITION ─── -->
+<section id="competition" class="section-wrap alt-bg">
+  <div class="inner">
+    <p class="section-label" style="color:var(--gold)">נוף תחרותי</p>
+    <h2 class="section-title reveal">עם מי באמת מתחרות?</h2>
+    <p class="section-intro reveal">
+      התחרות הגדולה ביותר אינה בהכרח מסטודיו בוטיק אחר — אלא מחוגי קהילה זולים ומתוכן חינמי ברשת.
+    </p>
+
+    <table class="comp-table reveal">
+      <thead>
+        <tr>
+          <th>סוג מתחרה</th>
+          <th>מחיר משוער</th>
+          <th>תפיסת מקצועיות</th>
+          <th>נגישות</th>
+          <th>גודל קבוצה</th>
+          <th>רמת איום</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>מרכז קהילתי / עירייה / ויצ"ו</strong></td>
+          <td>300–700 ₪ / חוג</td>
+          <td>נמוכה–בינונית</td>
+          <td>גבוהה — ליד הבית</td>
+          <td>10–20</td>
+          <td><span class="threat-high">⚠ גבוה — מחיר נמוך מאוד</span></td>
+        </tr>
+        <tr>
+          <td><strong>מורות תפירה פרטיות באזור</strong></td>
+          <td>150–300 ₪ / שיעור</td>
+          <td>בינונית — תלוי בהמלצות</td>
+          <td>גבוהה — בית</td>
+          <td>1–3</td>
+          <td><span class="threat-med">בינוני — פרמט שונה</span></td>
+        </tr>
+        <tr>
+          <td><strong>סטודיואים בשרון / תל אביב / חיפה</strong></td>
+          <td>1,200–2,200 ₪ / קורס</td>
+          <td>גבוהה — מוניטין בנוי</td>
+          <td>נמוכה — נסיעה</td>
+          <td>4–8</td>
+          <td><span class="threat-med">בינוני — מחסום הנסיעה מגן</span></td>
+        </tr>
+        <tr>
+          <td><strong>קורסים מקוונים / יוטיוב</strong></td>
+          <td>0–300 ₪ / קורס</td>
+          <td>מגוון — נמוך עד גבוה</td>
+          <td>מקסימלית</td>
+          <td>—</td>
+          <td><span class="threat-high">⚠ גבוה — לקהל מחיר-רגיש</span></td>
+        </tr>
+        <tr>
+          <td><strong>בתי ספר לאופנה (שנקר וכד')</strong></td>
+          <td>גבוה מאוד — שנתי</td>
+          <td>גבוהה מאוד</td>
+          <td>נמוכה</td>
+          <td>גדול</td>
+          <td><span class="threat-low">נמוך — קהל שונה לחלוטין</span></td>
+        </tr>
+        <tr>
+          <td><strong>חברתית: "תפרי עם חברה בבית"</strong></td>
+          <td>0</td>
+          <td>נמוכה</td>
+          <td>גבוהה</td>
+          <td>—</td>
+          <td><span class="threat-med">בינוני — תחרות על זמן, לא כסף</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="insight-banner reveal" style="margin-top:2rem; background:var(--cream-dark); color:var(--charcoal); border:1px solid var(--border)">
+      <div class="insight-banner-icon">🎯</div>
+      <div class="insight-banner-text" style="color:var(--charcoal)">
+        <strong style="color:var(--warm-brown)">המסקנה התחרותית:</strong> הסטודיו לא מתחרה עם שנקר. הוא מתחרה עם חוג תפירה ב-400 ₪ במרכז הקהילתי ועם YouTube חינמי. המחיר של 1,500–1,800 ₪ מחייב ערך אמיתי שמוכח: חוויה, ליווי אישי, אסתטיקה, וחיבור חברתי — לא רק לימוד.
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ─── POSITIONING ─── -->
+<section id="positioning" class="section-wrap">
+  <p class="section-label" style="color:var(--sage)">פוזישנינג</p>
+  <h2 class="section-title reveal">מה הסטודיו הזה — ומה הוא לא</h2>
+
+  <div style="background:var(--white); border:1px solid var(--border); border-radius:20px; padding:2rem; margin-bottom:2rem; text-align:center" class="reveal">
+    <p style="font-size:0.72rem;color:var(--light-gray);letter-spacing:2px;text-transform:uppercase;margin-bottom:0.75rem">ההצהרה המיצובית</p>
+    <p style="font-size:1.25rem;font-weight:700;color:var(--warm-brown);line-height:1.6;max-width:700px;margin:0 auto">
+      "סטודיו בוטיק מקומי ללימודי תפירה בקבוצות קטנות —<br>
+      חוויה אישית, אסתטית ומעשית,<br>
+      לא בית ספר מקצועי ולא חוג זול."
+    </p>
+  </div>
+
+  <div class="pos-split reveal">
+    <div class="pos-card is">
+      <div class="pos-card-label">מה הסטודיו הזה</div>
+      <div class="pos-card-title">חוויה אסתטית ואישית<br>בקבוצה קטנה</div>
+      <ul class="pos-list">
+        <li>4–5 משתתפות לקבוצה — ליווי אישי אמיתי</li>
+        <li>חלל מוקפד ומזמין, לא כיתה</li>
+        <li>פרויקטים מעשיים שאפשר לקחת הביתה</li>
+        <li>חוויה חברתית — לא רק לימוד</li>
+        <li>גמישות לרמות שונות</li>
+        <li>מוצר מקומי: לא צריך לנסוע ת"א</li>
+        <li>ייתכן: חומרים מיוחדים, ערכות, תחושת בוטיק</li>
+      </ul>
+    </div>
+    <div class="pos-card not">
+      <div class="pos-card-label">מה הסטודיו הזה לא</div>
+      <div class="pos-card-title">לא בי"ס אופנה<br>ולא חוג שכונתי</div>
+      <ul class="pos-list">
+        <li>לא מכשיר לתפירה מקצועית ברמת שנקר</li>
+        <li>לא חוג זול במרכז קהילתי</li>
+        <li>לא מתאים למי שרוצה "לפרנס מתפירה" בשלב 1</li>
+        <li>לא מסלול מקצועי לאיפור או הסבה — לא עדיין</li>
+        <li>לא מקום ל-15 משתתפות בחדר</li>
+        <li>לא מדגיש ידע טכני עמוק בפטרן — לא עדיין</li>
+      </ul>
+    </div>
+  </div>
+
+  <div style="background:rgba(200,164,90,0.08);border:1px solid rgba(200,164,90,0.3);border-radius:16px;padding:1.5rem 2rem;margin-top:1.5rem" class="reveal">
+    <p style="font-size:0.78rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem">פערי אמינות שיש לסגור</p>
+    <p style="font-size:0.9rem;color:var(--charcoal);line-height:1.8">
+      כדי שהמיצוב יעבוד, הלקוחה צריכה לסמוך על המדריכה. אמינות לא נבנית מהצהרה — היא נבנית מ: תיק עבודות ויזואלי, המלצות מגרסת ניסיון, נוכחות אסתטית עקבית ברשת, ושיתופי פעולה עם גורמים מוכרים (חנות בד, מעצבת, סדנת יצירה מוכרת).
+    </p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ─── CREDIBILITY GAP ─── -->
+<section id="credibility" class="section-wrap alt-bg">
+  <div class="inner">
+    <p class="section-label" style="color:var(--dusty-rose)">פער כשירות</p>
+    <h2 class="section-title reveal">פער הכשירות המקצועית</h2>
+    <p class="section-intro reveal">
+      המייסדות אינן בעלות ניסיון עמוק בתפירה ופיתוח תבניות — זה לא הורג את העסק, אבל מגדיר בדיוק מה אפשר לשווק בשלב 1.
+    </p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-bottom:2rem" class="reveal">
+      <div style="background:rgba(123,158,135,0.08);border:1.5px solid rgba(123,158,135,0.3);border-radius:20px;padding:2rem">
+        <p style="font-size:0.78rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--sage);margin-bottom:1rem">מה מותר בשלב 1</p>
+        <ul class="pos-list">
+          <li>פרויקטים למתחילות עם סילבוס ממוקד וסגור</li>
+          <li>סדנאות חוויה — לא קורסים מקצועיים</li>
+          <li>ניהול החוויה, הסביבה והקהילה</li>
+          <li>ביצוע מוצרים פשוטים שאפשר ללמד בשליטה מלאה</li>
+          <li>שיתוף פעולה עם תופרת מנוסה לבדיקת סילבוס</li>
+        </ul>
+      </div>
+      <div style="background:rgba(194,123,123,0.08);border:1.5px solid rgba(194,123,123,0.3);border-radius:20px;padding:2rem">
+        <p style="font-size:0.78rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--dusty-rose);margin-bottom:1rem">מה לא לשווק עדיין</p>
+        <ul class="pos-list">
+          <li>מומחיות בפיתוח תבניות (פטרן-מייקינג)</li>
+          <li>"להפוך לתופרת מקצועית"</li>
+          <li>קורסי הסבה לאופנה</li>
+          <li>תפירת בגדי ערב או עבודות מורכבות</li>
+          <li>תחרות עם בוגרות שנקר</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="section-label reveal" style="color:var(--warm-brown);margin-bottom:1rem">אפשרויות לטפל בפער — בלי שותפות בהשקה</p>
+    <div class="credibility-grid reveal">
+      <div class="cred-card">
+        <div class="cred-role">מנטורית ברקע</div>
+        <div class="cred-desc">תופרת מנוסה שבודקת סילבוס, נותנת משוב, ונמצאת כיועצת לא-פורמלית</div>
+        <div class="cred-fit" style="color:var(--sage)">✓ מומלץ לשלב 1</div>
+      </div>
+      <div class="cred-card">
+        <div class="cred-role">מרצה אורח</div>
+        <div class="cred-desc">הבאת תופרת/מעצבת מוכרת לסדנה חד-פעמית — בונה אמינות ואינסטגרם</div>
+        <div class="cred-fit" style="color:var(--sage)">✓ מועיל מאוד</div>
+      </div>
+      <div class="cred-card">
+        <div class="cred-role">יועצת תשולמת</div>
+        <div class="cred-desc">מישהי שמוכנה לסקור חומרים, לוודא שהסילבוס נכון, בתשלום לפי שעה</div>
+        <div class="cred-fit" style="color:var(--sage)">✓ מוצר מסודר</div>
+      </div>
+      <div class="cred-card">
+        <div class="cred-role">מדריכה עתידית</div>
+        <div class="cred-desc">כשיש ביקוש מוכח — גיוס מדריכה מקצועית במשרה חלקית</div>
+        <div class="cred-fit" style="color:var(--gold)">→ שלב 2</div>
+      </div>
+      <div class="cred-card">
+        <div class="cred-role" style="color:var(--dusty-rose)">שותפה בהשקה</div>
+        <div class="cred-desc">מביאה ניסיון מקצועי אבל גם דרישה לחלוקת הכנסה לפני שיש הכנסה</div>
+        <div class="cred-fit" style="color:var(--dusty-rose)">✕ לא מומלץ עכשיו</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ─── PRICING ─── -->
+<section id="pricing" class="section-wrap">
+  <p class="section-label" style="color:var(--gold)">תמחור ויחידת כלכלה</p>
+  <h2 class="section-title reveal">מה המספרים אומרים?</h2>
+  <p class="section-intro reveal">שלושה תרחישים — על בסיס קבוצת 5 משתתפות, 4 קבוצות מלאות בחודש. כל תרחיש מניח תפוסה מלאה — שזה הנחה שצריך לוודא.</p>
+
+  <div class="pricing-grid">
+    <div class="price-card reveal reveal-d1">
+      <div class="price-tier">פיילוט · שלב 1</div>
+      <div class="price-number">₪1,200</div>
+      <div class="price-sub">למשתתפת / קורס (8 מפגשים)</div>
+      <div class="price-rows">
+        <div class="price-row"><span>הכנסה לקבוצה מלאה (5)</span><span class="val">₪6,000</span></div>
+        <div class="price-row"><span>4 קבוצות × 5 × ₪1,200</span><span class="val">₪24,000/חודש</span></div>
+        <div class="price-row"><span>LTV ממוצע (2.3 קורסים)</span><span class="val">₪2,760 ללקוחה</span></div>
+        <div class="price-row"><span>לכל מייסדת נטו (הערכה)</span><span class="val">₪6k–8k</span></div>
+        <div class="price-row"><span>מסקנה</span><span class="val" style="color:var(--dusty-rose)">לא מספיק לטווח ארוך</span></div>
+      </div>
+    </div>
+
+    <div class="price-card featured reveal reveal-d2">
+      <div class="price-tier">השקה · שלב 2</div>
+      <div class="price-number">₪1,500</div>
+      <div class="price-sub">למשתתפת / קורס (8 מפגשים)</div>
+      <div class="price-rows">
+        <div class="price-row"><span>הכנסה לקבוצה מלאה (5)</span><span class="val">₪7,500</span></div>
+        <div class="price-row"><span>מיקס חודשי מלא (סינתזה)</span><span class="val">₪31,200/חודש</span></div>
+        <div class="price-row"><span>LTV ממוצע (2.3 קורסים)</span><span class="val">₪3,450 ללקוחה</span></div>
+        <div class="price-row"><span>לכל מייסדת נטו (הערכה)</span><span class="val">₪8k–12k</span></div>
+        <div class="price-row"><span>מסקנה</span><span class="val" style="color:var(--gold)">יעד ולידציה ראשוני</span></div>
+      </div>
+    </div>
+
+    <div class="price-card reveal reveal-d3">
+      <div class="price-tier">בוגר · אחרי 12 חודש</div>
+      <div class="price-number">₪1,800</div>
+      <div class="price-sub">למשתתפת / קורס (8 מפגשים)</div>
+      <div class="price-rows">
+        <div class="price-row"><span>הכנסה לקבוצה מלאה (5)</span><span class="val">₪9,000</span></div>
+        <div class="price-row"><span>4 קבוצות × 5 × ₪1,800</span><span class="val">₪36,000/חודש</span></div>
+        <div class="price-row"><span>LTV ממוצע (2.3 קורסים)</span><span class="val">₪4,140 ללקוחה</span></div>
+        <div class="price-row"><span>לכל מייסדת נטו (הערכה)</span><span class="val">₪10k–15k</span></div>
+        <div class="price-row"><span>מסקנה</span><span class="val" style="color:var(--sage)">יעד אחרי בניית מוניטין</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cap-warning reveal">
+    <span style="font-size:1.3rem;flex-shrink:0">📈</span>
+    <div>
+      <strong>מסלול העלאת מחיר מומלץ (מהסינתזה):</strong> שלב 1 — פיילוט ב-₪1,200 (בונה ביקוש, מקבלות משוב). שלב 2 — השקה ב-₪1,500 (לאחר ולידציה). שלב 3 — אחרי 12 חודש ומוניטין מוכח — ₪1,800. כל ₪100 עלייה במחיר = +₪1,200/חודש נוסף (בתפוסה של 4 קבוצות × 3 משתתפות מלאה).
+    </div>
+  </div>
+
+  <div class="cap-warning reveal" style="background:rgba(194,123,123,0.08);border-color:rgba(194,123,123,0.3)">
+    <span style="font-size:1.3rem;flex-shrink:0">⚠</span>
+    <div>
+      <strong>תקרת קיבולת:</strong> קבוצות של 5 הן יתרון איכותי — אבל גם מגבלה מבנית. לא ניתן להגדיל הכנסה בלי להוסיף קבוצות, מדריכות, או שעות. בשלב 1 יש פחות מ-4 קבוצות בחודש. הנחת 4 קבוצות מלאות היא תרחיש אופטימי שדורש ולידציה בפועל.
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ─── BUSINESS MODEL ─── -->
+<section id="model" class="section-wrap alt-bg">
+  <div class="inner">
+    <p class="section-label" style="color:var(--dusty-rose)">מודל עסקי</p>
+    <h2 class="section-title reveal">הכנסה מגיעה ממנועים שונים</h2>
+    <p class="section-intro reveal">
+      קורסי מתחילות הם העוגן — אבל לא מקור ההכנסה היחיד. מודל בריא צריך מיקס.
+    </p>
+
+    <div class="revenue-mix reveal">
+      <div class="rev-item">
+        <span class="rev-icon">🧵</span>
+        <div class="rev-name">קורסי מתחילות</div>
+        <div class="rev-range">5,000–9,000 ₪/קבוצה</div>
+        <div class="rev-note">עוגן. גיוס לקוחות. חוזרתיות.</div>
+        <div class="rev-bar" style="background:var(--warm-brown)"></div>
+      </div>
+      <div class="rev-item">
+        <span class="rev-icon">🔄</span>
+        <div class="rev-name">קורסי המשך</div>
+        <div class="rev-range">4,500–7,500 ₪/קבוצה</div>
+        <div class="rev-note">שימור לקוחות קיימות. LTV גבוה.</div>
+        <div class="rev-bar" style="background:var(--sage)"></div>
+      </div>
+      <div class="rev-item">
+        <span class="rev-icon">👤</span>
+        <div class="rev-name">שיעורים פרטיים</div>
+        <div class="rev-range">200–350 ₪/שעה</div>
+        <div class="rev-note">מרג'ין גבוה. אין עומס לוגיסטי.</div>
+        <div class="rev-bar" style="background:var(--gold)"></div>
+      </div>
+      <div class="rev-item">
+        <span class="rev-icon">✨</span>
+        <div class="rev-name">סדנאות גיוס</div>
+        <div class="rev-range">1,200–2,000 ₪/סדנה</div>
+        <div class="rev-note">שיווק מחופש לתוכן. מגיע לקהל חדש.</div>
+        <div class="rev-bar" style="background:var(--dusty-rose)"></div>
+      </div>
+      <div class="rev-item">
+        <span class="rev-icon">🎉</span>
+        <div class="rev-name">אירועים / ארגוני</div>
+        <div class="rev-range">2,000–4,500 ₪/אירוע</div>
+        <div class="rev-note">ספייק הכנסה. שיווק מפה לאוזן.</div>
+        <div class="rev-bar" style="background:#6B8CAE"></div>
+      </div>
+      <div class="rev-item">
+        <span class="rev-icon">📦</span>
+        <div class="rev-name">ערכות / בד / תבניות</div>
+        <div class="rev-range">80–350 ₪ לפריט</div>
+        <div class="rev-note">upsell קטן. תוספת למשתתפות קיימות.</div>
+        <div class="rev-bar" style="background:var(--border)"></div>
+      </div>
+    </div>
+
+    <div style="background:var(--white);border:1px solid var(--border);border-radius:16px;overflow:hidden;margin-bottom:2rem" class="reveal">
+      <div style="background:var(--cream-dark);padding:1rem 1.5rem;border-bottom:1px solid var(--border)">
+        <p style="font-size:0.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--warm-brown)">מיקס הכנסות חודשי — תרחיש בסיס (מהסינתזה) · הפירוט מחושב לפי נוסחאות הסינתזה</p>
+      </div>
+      <table style="width:100%;border-collapse:collapse;font-size:0.87rem">
+        <thead>
+          <tr style="border-bottom:1px solid var(--border)">
+            <th style="padding:0.7rem 1.2rem;text-align:right;color:var(--mid-gray);font-weight:600;font-size:0.75rem">מקור הכנסה</th>
+            <th style="padding:0.7rem 1.2rem;text-align:right;color:var(--mid-gray);font-weight:600;font-size:0.75rem">פירוט</th>
+            <th style="padding:0.7rem 1.2rem;text-align:left;color:var(--mid-gray);font-weight:600;font-size:0.75rem">סכום</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid rgba(221,213,200,0.5)">
+            <td style="padding:0.7rem 1.2rem;font-weight:700;color:var(--warm-brown)">קורסי מתחילות</td>
+            <td style="padding:0.7rem 1.2rem;color:var(--mid-gray)">2 קבוצות × 5 משתתפות × ₪1,500</td>
+            <td style="padding:0.7rem 1.2rem;text-align:left;font-weight:700">₪15,000</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(221,213,200,0.5)">
+            <td style="padding:0.7rem 1.2rem;font-weight:700;color:var(--warm-brown)">קורסי המשך</td>
+            <td style="padding:0.7rem 1.2rem;color:var(--mid-gray)">1 קבוצה × 5 משתתפות × ₪1,200</td>
+            <td style="padding:0.7rem 1.2rem;text-align:left;font-weight:700">₪6,000</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(221,213,200,0.5)">
+            <td style="padding:0.7rem 1.2rem;font-weight:700;color:var(--warm-brown)">שיעורים פרטיים</td>
+            <td style="padding:0.7rem 1.2rem;color:var(--mid-gray)">8 שיעורים × ₪300/שעה</td>
+            <td style="padding:0.7rem 1.2rem;text-align:left;font-weight:700">₪2,400</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(221,213,200,0.5)">
+            <td style="padding:0.7rem 1.2rem;font-weight:700;color:var(--warm-brown)">אירועים / ארגוני</td>
+            <td style="padding:0.7rem 1.2rem;color:var(--mid-gray)">אירוע 1 ב-₪4,000</td>
+            <td style="padding:0.7rem 1.2rem;text-align:left;font-weight:700">₪4,000</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(221,213,200,0.5)">
+            <td style="padding:0.7rem 1.2rem;font-weight:700;color:var(--warm-brown)">ערכות ומכירות</td>
+            <td style="padding:0.7rem 1.2rem;color:var(--mid-gray)">בד, תבניות, כלים — upsell</td>
+            <td style="padding:0.7rem 1.2rem;text-align:left;font-weight:700">₪3,800</td>
+          </tr>
+          <tr style="background:rgba(92,61,46,0.05)">
+            <td style="padding:0.85rem 1.2rem;font-weight:800;color:var(--warm-brown)">סך הכנסות גולמיות</td>
+            <td style="padding:0.85rem 1.2rem;color:var(--mid-gray);font-size:0.8rem">תרחיש בסיס בוגר — לפי הסינתזה</td>
+            <td style="padding:0.85rem 1.2rem;text-align:left;font-weight:900;color:var(--warm-brown);font-size:1.1rem">₪31,200</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="font-size:0.75rem;color:var(--light-gray);padding:0.5rem 0.25rem;font-style:italic;margin-top:-1rem;margin-bottom:1.5rem" class="reveal">
+      * סך ₪31,200 לקוח מהסינתזה. הפירוט לפי קטגוריות (שיעורים פרטיים, ערכות, אירועים) הוא חישוב המחשה עקבי עם טווחי הסינתזה — לא נתון מדויק ממנה.
+    </div>
+
+    <div class="insight-banner reveal" style="background:var(--cream-dark);border:1px solid var(--border);color:var(--charcoal)">
+      <div class="insight-banner-icon">📊</div>
+      <div class="insight-banner-text" style="color:var(--charcoal)">
+        <strong style="color:var(--warm-brown)">ניתוח רגישות (מהסינתזה):</strong> אם תפוסה 60% — הכנסה ₪18,720. אם 75% — ₪23,400. אם 100% — ₪31,200. שיפור חזרתיות לקוחות מ-20% ל-60% מוסיף כ-₪4,800/חודש. כל ₪100 עלייה במחיר הקורס = ₪1,200/חודש נוסף.
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ─── FINANCIAL LOGIC ─── -->
+<section id="finance" class="section-wrap">
+  <p class="section-label" style="color:var(--sage)">לוגיקה פיננסית</p>
+  <h2 class="section-title reveal">מה המספרים הנכונים לבדוק?</h2>
+  <p class="section-intro reveal">ההבדל בין הכנסה, רווח תפעולי, ורווח נקי — קריטי להחלטה על עזיבת עבודה.</p>
+
+  <div class="finance-grid">
+    <div class="finance-card reveal reveal-d1">
+      <div class="finance-card-title">יעדי הכנסה</div>
+      <div class="finance-rows">
+        <div class="finance-row">
+          <span class="label">מינימום קיום — לשתי מייסדות</span>
+          <span class="amount">₪39k–42k / חודש</span>
+        </div>
+        <div class="finance-row">
+          <span class="label">ציר הזמן להגעה ליעד</span>
+          <span class="amount">22–30 חודש (תרחיש הצלחה)</span>
+        </div>
+        <div class="finance-row">
+          <span class="label">למה ₪20k לא מספיק</span>
+          <span class="amount red">₪10k/מייסדת לפני מס — חסר</span>
+        </div>
+        <div class="finance-row">
+          <span class="label">הכנסה גולמית לא שווה רווח</span>
+          <span class="amount">בד, שכירות, ביטוח, ציוד</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="finance-card reveal reveal-d2">
+      <div class="finance-card-title">שכבות רווח להבין</div>
+      <div class="finance-rows">
+        <div class="finance-row">
+          <span class="label">הכנסה גולמית</span>
+          <span class="amount">מה נכנס מלקוחות</span>
+        </div>
+        <div class="finance-row">
+          <span class="label">פחות: עלות ישירה (בד, ציוד)</span>
+          <span class="amount red">−10%–20%</span>
+        </div>
+        <div class="finance-row">
+          <span class="label">פחות: הוצאות תפעול (שכירות, שיווק)</span>
+          <span class="amount red">−20%–30%</span>
+        </div>
+        <div class="finance-row">
+          <span class="label">= רווח תפעולי</span>
+          <span class="amount gold">50%–70% מהגולמי</span>
+        </div>
+        <div class="finance-row">
+          <span class="label">פחות: ביטוח לאומי + מס הכנסה (עצמאי)</span>
+          <span class="amount red">−25%–35%</span>
+        </div>
+        <div class="finance-row">
+          <span class="label">= נקי למייסדת</span>
+          <span class="amount green">₪8k–14k (תרחיש בסיס)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="section-label reveal" style="color:var(--warm-brown);margin-bottom:1rem">השקעה לפי שלב — מהסינתזה (סה"כ ~₪112k)</p>
+  <div class="invest-stages reveal" style="grid-template-columns:repeat(4,1fr)">
+    <div class="invest-stage">
+      <div class="invest-stage-name">שלב 1 — פיילוט</div>
+      <div class="invest-stage-amount">₪25,000</div>
+      <div class="invest-stage-note">ציוד בסיסי, שיווק, אתר, חלל מושכר לפי שעה. בלי שכירות קבועה.</div>
+    </div>
+    <div class="invest-stage">
+      <div class="invest-stage-name">שלב 2 — השקה</div>
+      <div class="invest-stage-amount">₪35,000</div>
+      <div class="invest-stage-note">שכירות חלל, ציוד מלא, מיתוג, שיווק 3–6 חודשים.</div>
+    </div>
+    <div class="invest-stage">
+      <div class="invest-stage-name">שלב 3 — הכשרה</div>
+      <div class="invest-stage-amount">₪30,000</div>
+      <div class="invest-stage-note">גיוס מדריכה מקצועית, הכשרה, פיתוח סילבוס מורחב.</div>
+    </div>
+    <div class="invest-stage" style="border-color:rgba(200,164,90,0.4);background:rgba(200,164,90,0.07)">
+      <div class="invest-stage-name">רזרבה — 3 חודשים</div>
+      <div class="invest-stage-amount">₪22,000</div>
+      <div class="invest-stage-note">כרית ביטחון לחודשים שלא מתמלאים. חובה — לא אופציונלי.</div>
+    </div>
+  </div>
+
+  <div class="cap-warning reveal">
+    <span style="font-size:1.3rem;flex-shrink:0">🚨</span>
+    <div>
+      <strong>אזהרה מפורשת:</strong> אל תשכרו סטודיו קבוע לפני שיש ביקוש מוכח. שכירות חודשית של 3,000–8,000 ₪ + ערבויות היא התחייבות שמפילה עסקים שהתחילו לפני שהוכיחו שיש מי שישלם. הפיילוט יכול להתבצע בחלל מושכר לפי שעה.
+    </div>
+  </div>
+
+  <!-- Sensitivity tables -->
+  <p class="section-label reveal" style="color:var(--warm-brown);margin-top:3rem;margin-bottom:1rem">ניתוח רגישות — מהסינתזה</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem" class="reveal">
+    <div style="background:var(--white);border:1px solid var(--border);border-radius:16px;overflow:hidden">
+      <div style="background:rgba(123,158,135,0.1);padding:0.75rem 1rem;border-bottom:1px solid var(--border)">
+        <p style="font-size:0.72rem;font-weight:700;letter-spacing:1.5px;color:var(--sage);text-transform:uppercase">השפעת תפוסה (₪1,500)</p>
+      </div>
+      <table style="width:100%;border-collapse:collapse;font-size:0.82rem">
+        <tr style="border-bottom:1px solid rgba(221,213,200,0.5)"><td style="padding:0.55rem 1rem;color:var(--mid-gray)">60% תפוסה</td><td style="padding:0.55rem 1rem;text-align:left;font-weight:700">₪18,720</td></tr>
+        <tr style="border-bottom:1px solid rgba(221,213,200,0.5)"><td style="padding:0.55rem 1rem;color:var(--mid-gray)">75% תפוסה</td><td style="padding:0.55rem 1rem;text-align:left;font-weight:700">₪23,400</td></tr>
+        <tr style="background:rgba(123,158,135,0.06)"><td style="padding:0.55rem 1rem;color:var(--mid-gray);font-weight:700">100% תפוסה</td><td style="padding:0.55rem 1rem;text-align:left;font-weight:800;color:var(--sage)">₪31,200</td></tr>
+      </table>
+    </div>
+    <div style="background:var(--white);border:1px solid var(--border);border-radius:16px;overflow:hidden">
+      <div style="background:rgba(200,164,90,0.1);padding:0.75rem 1rem;border-bottom:1px solid var(--border)">
+        <p style="font-size:0.72rem;font-weight:700;letter-spacing:1.5px;color:var(--gold);text-transform:uppercase">השפעת חזרתיות לקוחות</p>
+      </div>
+      <table style="width:100%;border-collapse:collapse;font-size:0.82rem">
+        <tr style="border-bottom:1px solid rgba(221,213,200,0.5)"><td style="padding:0.55rem 1rem;color:var(--mid-gray)">20% חוזרות</td><td style="padding:0.55rem 1rem;text-align:left;font-weight:700">₪26,400</td></tr>
+        <tr style="border-bottom:1px solid rgba(221,213,200,0.5)"><td style="padding:0.55rem 1rem;color:var(--mid-gray)">40% חוזרות</td><td style="padding:0.55rem 1rem;text-align:left;font-weight:700">₪28,800</td></tr>
+        <tr style="background:rgba(200,164,90,0.06)"><td style="padding:0.55rem 1rem;color:var(--mid-gray);font-weight:700">60% חוזרות</td><td style="padding:0.55rem 1rem;text-align:left;font-weight:800;color:var(--gold)">₪31,200</td></tr>
+      </table>
+    </div>
+    <div style="background:var(--white);border:1px solid var(--border);border-radius:16px;overflow:hidden">
+      <div style="background:rgba(92,61,46,0.08);padding:0.75rem 1rem;border-bottom:1px solid var(--border)">
+        <p style="font-size:0.72rem;font-weight:700;letter-spacing:1.5px;color:var(--warm-brown);text-transform:uppercase">השפעת מחיר (4 קבוצות)</p>
+      </div>
+      <table style="width:100%;border-collapse:collapse;font-size:0.82rem">
+        <tr style="border-bottom:1px solid rgba(221,213,200,0.5)"><td style="padding:0.55rem 1rem;color:var(--mid-gray)">₪1,200 לקורס</td><td style="padding:0.55rem 1rem;text-align:left;font-weight:700">₪24,000</td></tr>
+        <tr style="border-bottom:1px solid rgba(221,213,200,0.5)"><td style="padding:0.55rem 1rem;color:var(--mid-gray)">₪1,500 לקורס</td><td style="padding:0.55rem 1rem;text-align:left;font-weight:700">₪30,000</td></tr>
+        <tr style="background:rgba(92,61,46,0.05)"><td style="padding:0.55rem 1rem;color:var(--mid-gray);font-weight:700">₪1,800 לקורס</td><td style="padding:0.55rem 1rem;text-align:left;font-weight:800;color:var(--warm-brown)">₪36,000</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ─── 90-DAY PLAN ─── -->
+<section id="plan90" class="section-wrap alt-bg">
+  <div class="inner">
+    <p class="section-label" style="color:var(--gold)">תוכנית ולידציה</p>
+    <h2 class="section-title reveal">90 יום לוולידציה — צעד אחר צעד</h2>
+    <p class="section-intro reveal">
+      לא תוכנית עסקית, לא השקה — ולידציה. המטרה: לדעת בסוף 90 יום אם הביקוש אמיתי מספיק.
+    </p>
+
+    <div class="plan-phases">
+      <div class="plan-phase reveal reveal-d1">
+        <div class="plan-phase-num">שלב 1</div>
+        <div class="plan-phase-title">מיפוי שוק</div>
+        <div class="plan-phase-period">שבועות 1–2</div>
+        <ul class="plan-tasks">
+          <li>30–50 שיחות עם נשים מהאזור — לא "מחקר", שיחות אמיתיות</li>
+          <li>מיפוי מתחרים מקומיים: מרכז קהילתי, מורות פרטיות, סדנאות</li>
+          <li>בדיקת 2–3 נוסחאות ערך שונות: "חוויה", "מיומנות", "קהילה"</li>
+          <li>שאלות ישירות על נכונות לשלם — 1,200 / 1,500 / 1,800 ₪</li>
+          <li>תיעוד ממצאים: מה עניין? מה גרם להיסוס? מה לא?</li>
+        </ul>
+      </div>
+
+      <div class="plan-phase reveal reveal-d2">
+        <div class="plan-phase-num">שלב 2</div>
+        <div class="plan-phase-title">בניית נוכחות + רשימת המתנה</div>
+        <div class="plan-phase-period">שבועות 3–4</div>
+        <ul class="plan-tasks">
+          <li>עמוד נחיתה פשוט — לא אתר מלא. רק: מה, מי, כמה, איפה</li>
+          <li>רשימת המתנה + הפקדת כוונה (לא חובה, אך מבדילה בין עניין לכוונה)</li>
+          <li>אינסטגרם / פייסבוק — תוכן ויזואלי, לא רק פרסומות</li>
+          <li>סילבוס לדוגמה לסדנה ראשונה — מוכן לשיתוף</li>
+          <li>הצעת פיילוט בתשלום: "סדנה ניסיון ב-₪250 — מוגבל ל-5 מקומות"</li>
+        </ul>
+      </div>
+
+      <div class="plan-phase reveal reveal-d3">
+        <div class="plan-phase-num">שלב 3</div>
+        <div class="plan-phase-title">סדנאות בדיקה בתשלום</div>
+        <div class="plan-phase-period">חודש 2</div>
+        <ul class="plan-tasks">
+          <li>2 סדנאות ניסיון בתשלום — אפשר בחלל מושאל</li>
+          <li>בדיקת 2 נקודות מחיר: 250 ₪ / 350 ₪ לסדנה חד-פעמית</li>
+          <li>איסוף משוב מובנה אחרי כל סדנה</li>
+          <li>תיעוד ויזואלי — תמונות, סרטון, המלצות</li>
+          <li>שאלה ישירה: "האם תירשמי לקורס מלא ב-1,500 ₪?"</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="plan-phases" style="margin-top:1.25rem">
+      <div class="plan-phase reveal" style="grid-column:1 / -1">
+        <div class="plan-phase-num">שלב 4</div>
+        <div class="plan-phase-title">קורס מלא ראשון</div>
+        <div class="plan-phase-period">חודש 3</div>
+        <ul class="plan-tasks" style="display:grid;grid-template-columns:1fr 1fr;gap:0.6rem">
+          <li>קורס מתחילות ראשון — מטרה: 4/5 מקומות מלאים</li>
+          <li>תמחור מלא: 1,400–1,600 ₪ — ולא פחות</li>
+          <li>מדידת שביעות רצון בסוף כל מפגש</li>
+          <li>שאלה בסוף: "האם תמשיכי לקורס הבא?"</li>
+          <li>פתיחת הרשמה לקורס הבא לפני שהנוכחי מסתיים</li>
+          <li>מדד חזרתיות: כמה % ממשיכות — המדד הכי חשוב</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="validation-note reveal">
+      <strong>הכלל הקריטי:</strong> ולידציה אמיתית = רישום + הפקדה + תשלום. שיחה חיובית, "נשמע מגניב", "בטח ארשם" — אלה לא ולידציה. עד שמישהי לא שילמה, אין לדעת שהיא תשלם.
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ─── GO / NO-GO ─── -->
+<section id="gng" class="section-wrap">
+  <p class="section-label" style="color:var(--warm-brown)">קריטריוני החלטה</p>
+  <h2 class="section-title reveal">מתי ממשיכים — ומתי עוצרים?</h2>
+  <p class="section-intro reveal">
+    סף ברור לכל שלב. ההחלטות האלה צריכות להתקבל על בסיס נתונים — לא תחושה.
+  </p>
+
+  <!-- Decision Tree from synthesis -->
+  <div style="background:var(--white);border:1px solid var(--border);border-radius:20px;padding:2rem;margin-bottom:2rem" class="reveal">
+    <p style="font-size:0.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--warm-brown);margin-bottom:1.5rem">עץ החלטות — מהסינתזה</p>
+    <div style="display:flex;flex-direction:column;gap:1rem">
+      <div style="display:grid;grid-template-columns:auto 1fr;gap:0.75rem;align-items:start">
+        <span style="background:var(--warm-brown);color:var(--cream);border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:800;flex-shrink:0">1</span>
+        <div><strong>אחרי 50 שיחות שטח:</strong> האם ≥5 נשים מוכנות לשלם ₪1,500 עכשיו? <span style="color:var(--sage);font-weight:700">כן → המשך לשלב 2</span> / <span style="color:var(--dusty-rose);font-weight:700">לא → עצור, שנה הצעה</span></div>
+      </div>
+      <div style="display:grid;grid-template-columns:auto 1fr;gap:0.75rem;align-items:start">
+        <span style="background:var(--warm-brown);color:var(--cream);border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:800;flex-shrink:0">2</span>
+        <div><strong>אחרי 2 סדנאות ניסיון:</strong> האם ≥3 משתתפות שילמו? האם ≥50% מצינות קורס מלא? <span style="color:var(--sage);font-weight:700">כן → המשך להשקה</span> / <span style="color:var(--dusty-rose);font-weight:700">לא → עצור</span></div>
+      </div>
+      <div style="display:grid;grid-template-columns:auto 1fr;gap:0.75rem;align-items:start">
+        <span style="background:var(--warm-brown);color:var(--cream);border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:800;flex-shrink:0">3</span>
+        <div><strong>אחרי קורס ראשון:</strong> האם 4/5 מקומות מלאים? האם חזרתיות ≥40%? הכנסה ≥₪20,000? <span style="color:var(--sage);font-weight:700">כן → שוקלות להפחית עבודה</span> / <span style="color:var(--gold);font-weight:700">חלקי → המשיכו ללא שינוי</span> / <span style="color:var(--dusty-rose);font-weight:700">לא → עצרו</span></div>
+      </div>
+      <div style="display:grid;grid-template-columns:auto 1fr;gap:0.75rem;align-items:start">
+        <span style="background:var(--gold);color:var(--warm-brown);border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:800;flex-shrink:0">4</span>
+        <div><strong>אחרי 3 חודשים עם הכנסה ≥₪39,000 בעקביות:</strong> <span style="color:var(--sage);font-weight:700">שוקלות עזיבת עבודה → ורק אז סטודיו קבוע</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="gng-grid">
+    <div class="gng-card go reveal reveal-d1">
+      <div class="gng-title">✓ ממשיכים אם</div>
+      <ul class="gng-items">
+        <li>קורס ראשון מתמלא 4/5 מקומות בתשלום מלא</li>
+        <li>לפחות 40% מהמשתתפות מעוניינות בקורס הבא</li>
+        <li>3 חודשים עם הכנסה גולמית ≥ ₪20,000</li>
+        <li>3 חודשים עקביים עם ₪39,000+ → שוקלות להפחית עבודה</li>
+        <li>לפחות 3 לקוחות משלמות לסדנאות הניסיון</li>
+        <li>5+ המלצות אמיתיות מלקוחות שמוכנות לצטט בפומבי</li>
+      </ul>
+    </div>
+
+    <div class="gng-card nogo reveal reveal-d2">
+      <div class="gng-title">✕ עוצרות / מתאימות אם</div>
+      <ul class="gng-items">
+        <li>קורס ראשון: פחות מ-3 נרשמות בתשלום → עצרו, בדקו את ההצעה</li>
+        <li>לקוחות דוחות את המחיר מעל ₪1,200 → אל תשכרו סטודיו קבוע</li>
+        <li>חזרתיות של פחות מ-25% → מודל עסקי דורש שינוי מהותי</li>
+        <li>3 חודשים הכנסה גולמית מתחת ל-₪20,000 → לא עוזבות עבודה</li>
+        <li>אחרי 50 שיחות — פחות מ-5 אנשים שמוכנות לשלם ₪1,500</li>
+        <li>ביקוש קיים רק מתחת ל-₪1,200 — המודל לא כלכלי בסטודיו קבוע</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ─── FINAL RECOMMENDATION ─── -->
+<section id="final-rec">
+  <div class="final-inner">
+    <p class="final-label">המלצה סופית</p>
+    <h2 class="final-title">לא לעזוב עבודה. לא לשכור סטודיו.<br>לאמת — ואז להחליט.</h2>
+    <p class="final-subtitle">
+      הרעיון יכול לעבוד. אבל עדיין לא יודעים אם הוא יעבוד כאן, בהיקף הזה, במחיר הזה.
+      זה מה שאמור לקרות ב-90 הימים הבאים.
+    </p>
+
+    <div class="final-steps">
+      <div class="final-step">
+        <div class="final-step-n">01</div>
+        <div class="final-step-text">לא לעזוב עבודה — עדיין. הסיכון גדול מהיתרון בנקודה זו.</div>
+      </div>
+      <div class="final-step">
+        <div class="final-step-n">02</div>
+        <div class="final-step-text">לא לשכור סטודיו קבוע — עדיין. שכירות לפני ביקוש מוכח הורגת עסקים.</div>
+      </div>
+      <div class="final-step">
+        <div class="final-step-n">03</div>
+        <div class="final-step-text">לבנות אמינות ראשונה — תיק עבודות, נוכחות ברשת, שיתופי פעולה קטנים.</div>
+      </div>
+      <div class="final-step">
+        <div class="final-step-n">04</div>
+        <div class="final-step-text">לאמת ביקוש בפועל — סדנאות קטנות, תשלום, משוב אמיתי מהשטח.</div>
+      </div>
+      <div class="final-step">
+        <div class="final-step-n">05</div>
+        <div class="final-step-text">להשתמש בנתוני השטח — לא בהנחות — כדי להחליט מה הצעד הבא.</div>
+      </div>
+    </div>
+
+    <div class="final-bottom-line">
+      <strong>השורה התחתונה:</strong> אם 90 הימים מראים שיש 4–5 נשים שמוכנות לשלם ₪1,500 לקורס, ו-40%+ חוזרות — יש כאן עסק שאפשר לבנות. ציר הזמן הריאלי: <strong>22–30 חודש</strong> עד ₪39k–42k/חודש לשתי המייסדות. ההשקעה הכוללת: ~<strong>₪112,000</strong> מדורגת. אם המספרים לא מגיעים לסף ב-90 הימים — זה לא כישלון, זה מידע. ועדיף לקבל אותו לפני שמוציאים ₪112,000 ועוזבות עבודה.
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  ניתוח זה מבוסס על בדיקת היתכנות עסקית ושוק · כל ההנחות שאינן מצוינות כנתון ידוע הן הערכות לצורך מסגרת ניתוחית
+</footer>
+
+<script>
+// ─── REVEAL ON SCROLL ───
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// ─── ACTIVE NAV ───
+const sections = document.querySelectorAll('section[id], div[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+
+const navObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      navLinks.forEach(l => l.style.color = '');
+      const active = document.querySelector(`.nav-links a[href="#${e.target.id}"]`);
+      if (active) active.style.color = 'var(--warm-brown)';
+    }
+  });
+}, { threshold: 0.3 });
+
+sections.forEach(s => navObs.observe(s));
+</script>
+
+</body>
+</html>
