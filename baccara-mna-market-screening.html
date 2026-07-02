@@ -1082,28 +1082,41 @@
     <h2 class="section-title">כיצד סיננו את הזירות?</h2>
     <p class="section-lead">הגעה לזירות בראש רשימת העדיפויות דרשה מעבר מוצלח בשבעה שלבי סינון עוקבים.</p>
 
+    <!-- Legend -->
+    <div style="display:flex;gap:1.25rem;justify-content:center;margin-bottom:1rem;flex-wrap:wrap;">
+      <div style="display:flex;align-items:center;gap:0.4rem;font-size:0.75rem;font-weight:700;color:var(--teal)">
+        <div style="width:12px;height:12px;border-radius:3px;background:var(--teal)"></div> מסנן — כן/לא
+      </div>
+      <div style="display:flex;align-items:center;gap:0.4rem;font-size:0.75rem;font-weight:700;color:var(--gray-light)">
+        <div style="width:12px;height:12px;border-radius:3px;background:var(--gray-light)"></div> תנאי סף
+      </div>
+      <div style="display:flex;align-items:center;gap:0.4rem;font-size:0.75rem;font-weight:700;color:var(--amber)">
+        <div style="width:12px;height:12px;border-radius:3px;background:var(--amber)"></div> מתעדף — ניקוד
+      </div>
+    </div>
+
     <div class="funnel-wrap">
-      <div class="funnel-step">① קרבה לליבה — Core Adjacency</div>
-      <div class="funnel-step">② שחקנים ישראליים הרלוונטיים ל-M&A</div>
-      <div class="funnel-step">③ נגישות ביקוש — Accessible Demand</div>
-      <div class="funnel-step">④ חסמי כניסה — Entry Barriers</div>
-      <div class="funnel-step">⑤ פוטנציאל מרווח — Margin Potential</div>
-      <div class="funnel-step">⑥ זמן לתרומה — Time to Contribution</div>
-      <div class="funnel-step">⑦ סיכון פיזור — Dispersion Risk</div>
+      <div class="funnel-step" style="background:var(--teal);max-width:700px">① קרבה לליבה — Core Adjacency</div>
+      <div class="funnel-step" style="background:#0A6B6A;max-width:650px">② שחקנים ישראליים הרלוונטיים ל-M&A</div>
+      <div class="funnel-step" style="background:var(--amber);max-width:600px">③ נגישות ביקוש — Accessible Demand</div>
+      <div class="funnel-step" style="background:#9CA3AF;max-width:550px">④ חסמי כניסה — Entry Barriers</div>
+      <div class="funnel-step" style="background:#B45309;max-width:490px">⑤ פוטנציאל מרווח — Margin Potential</div>
+      <div class="funnel-step" style="background:#92400E;max-width:430px">⑥ זמן לתרומה — Time to Contribution</div>
+      <div class="funnel-step" style="background:#78350F;max-width:370px">⑦ סיכון פיזור — Dispersion Risk</div>
     </div>
 
     <div class="three-col">
       <div class="card teal-top">
-        <div class="card-title">קריטריון מסנן</div>
+        <div class="card-title">קריטריון מסנן <span style="font-size:0.7rem;font-weight:400;color:var(--gray-mid)">(שלבים ①②)</span></div>
         <div class="card-body">קרבה לליבה וקיום שחקנים ישראליים — שאלות "כן/לא" שחוסכות ניתוח נוסף אם התשובה שלילית.</div>
       </div>
-      <div class="card amber-top">
-        <div class="card-title">קריטריון מתעדף</div>
-        <div class="card-body">ביקוש, מרווח, זמן לתרומה וסיכון פיזור — ממדדים לדירוג הזירות שעברו את שלב הסינון.</div>
-      </div>
       <div class="card gray-top">
-        <div class="card-title">קריטריון תנאי סף</div>
+        <div class="card-title">קריטריון תנאי סף <span style="font-size:0.7rem;font-weight:400;color:var(--gray-mid)">(שלב ④)</span></div>
         <div class="card-body">חסמי כניסה (אישורים, AVL, תקנים) — ניתן להסיר תנאית, אך דורשים מיפוי מפורש לפני המשך.</div>
+      </div>
+      <div class="card amber-top">
+        <div class="card-title">קריטריון מתעדף <span style="font-size:0.7rem;font-weight:400;color:var(--gray-mid)">(שלבים ③⑤⑥⑦)</span></div>
+        <div class="card-body">ביקוש, מרווח, זמן לתרומה וסיכון פיזור — ממדדים לדירוג הזירות שעברו את שלב הסינון.</div>
       </div>
     </div>
   </div>
