@@ -41,6 +41,7 @@
     line-height: 1.6;
   }
 
+  /* ── NAV ── */
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -54,69 +55,371 @@
     justify-content: space-between;
   }
 
-  .nav-brand { display: flex; align-items: center; gap: 1rem; }
-  .nav-logo { font-size: 1rem; font-weight: 800; color: var(--navy); }
-  .nav-divider { width: 1px; height: 20px; background: var(--border); }
-  .nav-doc { font-size: 0.78rem; color: var(--gray-mid); font-weight: 500; }
+  .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
 
-  .nav-links { display: flex; gap: 0.15rem; list-style: none; flex-direction: row-reverse; }
-  .nav-links a { color: var(--gray-mid); text-decoration: none; font-size: 0.78rem; font-weight: 600; padding: 0.3rem 0.7rem; border-radius: 4px; transition: all 0.15s; white-space: nowrap; }
-  .nav-links a:hover { background: var(--teal-pale); color: var(--teal); }
+  .nav-logo {
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--navy);
+    letter-spacing: -0.3px;
+  }
 
-  .slide { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 5rem 0 4rem; }
-  .slide-inner { max-width: 1100px; margin: 0 auto; width: 100%; padding: 0 3rem; }
-  .slide-number { font-size: 0.7rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gray-light); margin-bottom: 0.5rem; }
+  .nav-divider {
+    width: 1px;
+    height: 20px;
+    background: var(--border);
+  }
 
-  #cover { background: var(--navy); color: var(--white); }
-  .cover-inner { max-width: 1100px; margin: 0 auto; padding: 0 3rem; display: grid; grid-template-columns: 1fr auto; gap: 4rem; align-items: center; }
-  .cover-eyebrow { font-size: 0.72rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--teal-light); margin-bottom: 1.5rem; }
-  .cover-title { font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 900; line-height: 1.15; letter-spacing: -1px; color: var(--white); margin-bottom: 1.25rem; }
-  .cover-subtitle { font-size: 1rem; color: rgba(255,255,255,0.55); font-weight: 400; margin-bottom: 2.5rem; line-height: 1.6; }
-  .cover-meta { display: flex; gap: 2rem; flex-wrap: wrap; }
-  .cover-meta-item { display: flex; flex-direction: column; gap: 0.2rem; }
-  .cover-meta-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.35); }
-  .cover-meta-value { font-size: 0.85rem; font-weight: 600; color: rgba(255,255,255,0.7); }
-  .cover-badge-col { display: flex; flex-direction: column; gap: 0.75rem; align-items: flex-end; }
-  .cover-badge { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 1rem 1.5rem; font-size: 0.82rem; color: rgba(255,255,255,0.6); text-align: center; white-space: nowrap; }
-  .cover-badge strong { display: block; color: var(--teal-light); font-size: 1.3rem; font-weight: 900; margin-bottom: 0.2rem; }
-  .cover-stripe { height: 4px; background: linear-gradient(90deg, var(--teal-light) 0%, rgba(14,124,123,0.3) 100%); margin-top: 3rem; }
+  .nav-doc {
+    font-size: 0.78rem;
+    color: var(--gray-mid);
+    font-weight: 500;
+  }
 
-  .section-eyebrow { font-size: 0.68rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--teal); margin-bottom: 0.6rem; }
-  .section-title { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 900; letter-spacing: -0.5px; line-height: 1.2; color: var(--navy); margin-bottom: 0.75rem; }
-  .section-lead { font-size: 1rem; color: var(--gray-mid); max-width: 700px; line-height: 1.7; margin-bottom: 3rem; font-weight: 400; }
+  .nav-links {
+    display: flex;
+    gap: 0.15rem;
+    list-style: none;
+    flex-direction: row-reverse;
+  }
 
-  .slide-divider { height: 1px; background: var(--border); }
-  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
-  .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; }
+  .nav-links a {
+    color: var(--gray-mid);
+    text-decoration: none;
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 0.3rem 0.7rem;
+    border-radius: 4px;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
 
-  .card { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 1.5rem; }
-  .card-title { font-size: 0.95rem; font-weight: 800; color: var(--navy); margin-bottom: 0.5rem; }
-  .card-body { font-size: 0.85rem; color: var(--gray-dark); line-height: 1.65; }
+  .nav-links a:hover {
+    background: var(--teal-pale);
+    color: var(--teal);
+  }
+
+  /* ── SLIDES ── */
+  .slide {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5rem 0 4rem;
+  }
+
+  .slide-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 3rem;
+  }
+
+  .slide-number {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gray-light);
+    margin-bottom: 0.5rem;
+  }
+
+  /* ── COVER SLIDE ── */
+  #cover {
+    background: var(--navy);
+    color: var(--white);
+  }
+
+  .cover-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 3rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .cover-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--teal-light);
+    margin-bottom: 1.5rem;
+  }
+
+  .cover-title {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 900;
+    line-height: 1.15;
+    letter-spacing: -1px;
+    color: var(--white);
+    margin-bottom: 1.25rem;
+  }
+
+  .cover-subtitle {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.55);
+    font-weight: 400;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+  }
+
+  .cover-meta {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .cover-meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .cover-meta-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+  }
+
+  .cover-meta-value {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.7);
+  }
+
+  .cover-badge-col {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: flex-end;
+  }
+
+  .cover-badge {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.6);
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .cover-badge strong {
+    display: block;
+    color: var(--teal-light);
+    font-size: 1.3rem;
+    font-weight: 900;
+    margin-bottom: 0.2rem;
+  }
+
+  .cover-stripe {
+    height: 4px;
+    background: linear-gradient(90deg, var(--teal-light) 0%, rgba(14,124,123,0.3) 100%);
+    margin-top: 3rem;
+  }
+
+  /* ── SECTION HEADERS ── */
+  .section-eyebrow {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 0.6rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+    color: var(--navy);
+    margin-bottom: 0.75rem;
+  }
+
+  .section-lead {
+    font-size: 1rem;
+    color: var(--gray-mid);
+    max-width: 700px;
+    line-height: 1.7;
+    margin-bottom: 3rem;
+    font-weight: 400;
+  }
+
+  /* ── SLIDE DIVIDERS ── */
+  .slide-divider {
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* ── TWO-COL LAYOUT ── */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .three-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  /* ── CARD ── */
+  .card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.5rem;
+  }
+
+  .card-title {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+  }
+
+  .card-body {
+    font-size: 0.85rem;
+    color: var(--gray-dark);
+    line-height: 1.65;
+  }
+
   .card.teal-top { border-top: 3px solid var(--teal); }
   .card.navy-top { border-top: 3px solid var(--navy); }
   .card.amber-top { border-top: 3px solid var(--amber); }
   .card.gray-top { border-top: 3px solid var(--gray-light); }
 
-  .scope-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-  .scope-box { border-radius: 10px; padding: 1.75rem; }
-  .scope-box.is { background: var(--green-pale); border: 1.5px solid #6EE7B7; }
-  .scope-box.is-not { background: var(--gray-bg); border: 1.5px solid var(--border); }
-  .scope-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 1rem; }
+  /* ── SCOPE BOXES ── */
+  .scope-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .scope-box {
+    border-radius: 10px;
+    padding: 1.75rem;
+  }
+
+  .scope-box.is {
+    background: var(--green-pale);
+    border: 1.5px solid #6EE7B7;
+  }
+
+  .scope-box.is-not {
+    background: var(--gray-bg);
+    border: 1.5px solid var(--border);
+  }
+
+  .scope-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
   .scope-box.is .scope-label { color: var(--green); }
   .scope-box.is-not .scope-label { color: var(--gray-mid); }
-  .scope-item { display: flex; align-items: flex-start; gap: 0.6rem; margin-bottom: 0.6rem; font-size: 0.88rem; color: var(--gray-dark); line-height: 1.5; }
-  .scope-dot { width: 6px; height: 6px; border-radius: 50%; margin-top: 0.45rem; flex-shrink: 0; }
+
+  .scope-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    margin-bottom: 0.6rem;
+    font-size: 0.88rem;
+    color: var(--gray-dark);
+    line-height: 1.5;
+  }
+
+  .scope-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    margin-top: 0.45rem;
+    flex-shrink: 0;
+  }
+
   .scope-box.is .scope-dot { background: var(--green); }
   .scope-box.is-not .scope-dot { background: var(--gray-light); }
 
-  .mgmt-question { background: var(--navy); color: var(--white); border-radius: 12px; padding: 2.5rem 3rem; margin-bottom: 2rem; }
-  .mgmt-q-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--teal-light); margin-bottom: 1rem; }
-  .mgmt-q-text { font-size: 1.2rem; font-weight: 600; line-height: 1.65; color: var(--white); }
-  .criteria-chips { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.5rem; }
-  .crit-chip { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); border-radius: 20px; padding: 0.35rem 0.9rem; font-size: 0.78rem; font-weight: 600; color: rgba(255,255,255,0.75); }
+  /* ── MANAGEMENT QUESTION ── */
+  .mgmt-question {
+    background: var(--navy);
+    color: var(--white);
+    border-radius: 12px;
+    padding: 2.5rem 3rem;
+    margin-bottom: 2rem;
+  }
 
-  .funnel-wrap { display: flex; flex-direction: column; align-items: center; gap: 0; margin: 2rem 0; }
-  .funnel-step { width: 100%; max-width: 700px; padding: 0.9rem 1.5rem; text-align: center; font-size: 0.88rem; font-weight: 700; color: var(--white); border-radius: 4px; margin-bottom: 3px; clip-path: polygon(0 0, 100% 0, 96% 100%, 4% 100%); }
+  .mgmt-q-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--teal-light);
+    margin-bottom: 1rem;
+  }
+
+  .mgmt-q-text {
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.65;
+    color: var(--white);
+  }
+
+  .criteria-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 1.5rem;
+  }
+
+  .crit-chip {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 20px;
+    padding: 0.35rem 0.9rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.75);
+  }
+
+  /* ── FUNNEL ── */
+  .funnel-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    margin: 2rem 0;
+  }
+
+  .funnel-step {
+    width: 100%;
+    max-width: 700px;
+    padding: 0.9rem 1.5rem;
+    text-align: center;
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--white);
+    border-radius: 4px;
+    margin-bottom: 3px;
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 96% 100%, 4% 100%);
+  }
+
   .funnel-step:nth-child(1) { background: var(--navy); max-width: 700px; }
   .funnel-step:nth-child(2) { background: #1A3560; max-width: 650px; }
   .funnel-step:nth-child(3) { background: #204278; max-width: 600px; }
@@ -125,63 +428,366 @@
   .funnel-step:nth-child(6) { background: #085E5D; max-width: 430px; }
   .funnel-step:nth-child(7) { background: #064F4E; max-width: 370px; }
 
-  .matrix-grid-2x2 { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 3px; background: var(--border); border: 1.5px solid var(--border); border-radius: 8px; overflow: hidden; }
-  .matrix-cell-2x2 { background: var(--white); padding: 1.25rem; min-height: 200px; display: flex; flex-direction: column; gap: 0.5rem; }
-  .matrix-cell-2x2.top-right { background: #EDFAF9; }
-  .matrix-cell-2x2.bottom-right { background: var(--amber-pale); }
-  .matrix-cell-2x2.top-left { background: var(--gray-bg); }
-  .matrix-cell-2x2.bottom-left { background: var(--gray-bg); }
-  .matrix-quadrant-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gray-light); margin-bottom: 0.5rem; }
+  /* ── 2x2 MATRIX ── */
+  .matrix-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 720px;
+    margin: 2rem auto;
+  }
 
-  .arena-dot { display: inline-flex; align-items: center; background: var(--white); border: 1.5px solid var(--border); border-radius: 20px; padding: 0.25rem 0.7rem; font-size: 0.75rem; font-weight: 700; color: var(--navy); white-space: nowrap; width: fit-content; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .matrix-grid-2x2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 3px;
+    background: var(--border);
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .matrix-cell-2x2 {
+    background: var(--white);
+    padding: 1.25rem;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: relative;
+  }
+
+  .matrix-cell-2x2.top-right {
+    background: #EDFAF9;
+  }
+
+  .matrix-cell-2x2.bottom-right {
+    background: var(--amber-pale);
+  }
+
+  .matrix-cell-2x2.top-left {
+    background: var(--gray-bg);
+  }
+
+  .matrix-cell-2x2.bottom-left {
+    background: var(--gray-bg);
+  }
+
+  .matrix-quadrant-label {
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gray-light);
+    margin-bottom: 0.5rem;
+  }
+
+  .arena-dot {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--white);
+    border: 1.5px solid var(--border);
+    border-radius: 20px;
+    padding: 0.25rem 0.7rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--navy);
+    white-space: nowrap;
+    width: fit-content;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+
   .arena-dot.priority { border-color: var(--teal); color: var(--teal); background: var(--teal-pale); }
   .arena-dot.conditional { border-color: var(--amber); color: var(--amber); background: var(--amber-pale); }
   .arena-dot.low { border-color: var(--gray-light); color: var(--gray-mid); }
 
-  .matrix-axis-x { text-align: center; font-size: 0.72rem; font-weight: 700; color: var(--gray-mid); margin-top: 0.5rem; }
-  .outer-matrix-wrap { max-width: 720px; margin: 0 auto; position: relative; padding-left: 3rem; }
-  .y-axis-label { position: absolute; left: 0; top: 50%; transform: translateY(-50%) rotate(-90deg); font-size: 0.72rem; font-weight: 700; color: var(--gray-mid); white-space: nowrap; }
+  .matrix-axis-x {
+    text-align: center;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--gray-mid);
+    margin-top: 0.5rem;
+    letter-spacing: 0.5px;
+  }
 
-  .insight-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 1.5rem; }
-  .insight-card { border-radius: 10px; padding: 1.4rem; border: 1px solid var(--border); }
-  .insight-card.blocked { background: var(--red-pale); border-color: #FECACA; }
-  .insight-card.caution { background: var(--amber-pale); border-color: #FDE68A; }
-  .insight-card-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.6rem; }
+  .matrix-axis-y-wrap {
+    position: absolute;
+    right: -3.5rem;
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--gray-mid);
+    white-space: nowrap;
+    letter-spacing: 0.5px;
+  }
+
+  .outer-matrix-wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    position: relative;
+    padding-left: 3rem;
+  }
+
+  .y-axis-label {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%) rotate(-90deg);
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--gray-mid);
+    white-space: nowrap;
+    letter-spacing: 0.5px;
+  }
+
+  /* ── INSIGHT CARDS ── */
+  .insight-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+  }
+
+  .insight-card {
+    border-radius: 10px;
+    padding: 1.4rem;
+    border: 1px solid var(--border);
+  }
+
+  .insight-card.blocked {
+    background: var(--red-pale);
+    border-color: #FECACA;
+  }
+
+  .insight-card.caution {
+    background: var(--amber-pale);
+    border-color: #FDE68A;
+  }
+
+  .insight-card-label {
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+
   .insight-card.blocked .insight-card-label { color: var(--red); }
   .insight-card.caution .insight-card-label { color: var(--amber); }
-  .insight-card-title { font-size: 1rem; font-weight: 800; color: var(--navy); margin-bottom: 0.5rem; }
-  .insight-card-body { font-size: 0.83rem; color: var(--gray-dark); line-height: 1.6; }
 
-  .arena-header { display: flex; align-items: flex-start; gap: 1.5rem; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
-  .arena-icon { width: 56px; height: 56px; background: var(--teal-pale); border: 2px solid var(--teal); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; flex-shrink: 0; }
+  .insight-card-title {
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+  }
+
+  .insight-card-body {
+    font-size: 0.83rem;
+    color: var(--gray-dark);
+    line-height: 1.6;
+  }
+
+  /* ── ARENA SLIDES ── */
+  .arena-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .arena-icon {
+    width: 56px;
+    height: 56px;
+    background: var(--teal-pale);
+    border: 2px solid var(--teal);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    flex-shrink: 0;
+  }
+
   .arena-title-block .section-eyebrow { margin-bottom: 0.2rem; }
-  .arena-title-block h2 { font-size: 1.7rem; font-weight: 900; color: var(--navy); letter-spacing: -0.5px; }
-  .arena-content-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.25rem; margin-bottom: 1.5rem; }
-  .arena-card { border: 1px solid var(--border); border-radius: 8px; padding: 1.2rem; background: var(--white); }
-  .arena-card-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--teal); margin-bottom: 0.5rem; }
-  .arena-card-content { font-size: 0.83rem; color: var(--gray-dark); line-height: 1.6; }
+  .arena-title-block h2 {
+    font-size: 1.7rem;
+    font-weight: 900;
+    color: var(--navy);
+    letter-spacing: -0.5px;
+  }
 
-  .verdict-banner { background: var(--green-pale); border: 1.5px solid #6EE7B7; border-radius: 8px; padding: 1rem 1.5rem; display: flex; align-items: center; gap: 1rem; font-size: 0.9rem; font-weight: 700; color: var(--green); }
+  .arena-content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
 
-  .cond-row { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; margin-bottom: 1rem; }
-  .cond-header { background: var(--navy); padding: 0.85rem 1.5rem; display: flex; align-items: center; justify-content: space-between; }
-  .cond-arena-name { font-size: 1rem; font-weight: 800; color: var(--white); }
-  .cond-badge { font-size: 0.68rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.7); padding: 0.25rem 0.7rem; border-radius: 20px; }
-  .cond-body { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0; }
-  .cond-col { padding: 1.2rem 1.4rem; border-right: 1px solid var(--border); font-size: 0.83rem; color: var(--gray-dark); line-height: 1.6; }
+  .arena-card {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.2rem;
+    background: var(--white);
+  }
+
+  .arena-card-label {
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 0.5rem;
+  }
+
+  .arena-card-content {
+    font-size: 0.83rem;
+    color: var(--gray-dark);
+    line-height: 1.6;
+  }
+
+  .verdict-banner {
+    background: var(--green-pale);
+    border: 1.5px solid #6EE7B7;
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--green);
+  }
+
+  .verdict-banner.continue { background: var(--green-pale); border-color: #6EE7B7; color: var(--green); }
+  .verdict-banner.conditional { background: var(--amber-pale); border-color: #FDE68A; color: var(--amber); }
+  .verdict-banner.low { background: var(--gray-bg); border-color: var(--border); color: var(--gray-mid); }
+
+  /* ── CONDITIONAL ARENAS ── */
+  .cond-row {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+  }
+
+  .cond-header {
+    background: var(--navy);
+    padding: 0.85rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .cond-arena-name {
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--white);
+  }
+
+  .cond-badge {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    background: rgba(255,255,255,0.12);
+    color: rgba(255,255,255,0.7);
+    padding: 0.25rem 0.7rem;
+    border-radius: 20px;
+  }
+
+  .cond-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0;
+  }
+
+  .cond-col {
+    padding: 1.2rem 1.4rem;
+    border-right: 1px solid var(--border);
+    font-size: 0.83rem;
+    color: var(--gray-dark);
+    line-height: 1.6;
+  }
+
   .cond-col:last-child { border-right: none; }
-  .cond-col-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gray-light); margin-bottom: 0.5rem; }
 
-  .priority-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
-  .priority-table th { background: var(--navy); color: rgba(255,255,255,0.75); font-size: 0.65rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 0.75rem 0.9rem; text-align: center; border: 1px solid rgba(255,255,255,0.1); white-space: nowrap; }
+  .cond-col-label {
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gray-light);
+    margin-bottom: 0.5rem;
+  }
+
+  /* ── PRIORITY TABLE ── */
+  .priority-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.82rem;
+  }
+
+  .priority-table th {
+    background: var(--navy);
+    color: rgba(255,255,255,0.75);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 0.75rem 0.9rem;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.1);
+    white-space: nowrap;
+  }
+
   .priority-table th:first-child { text-align: right; }
-  .priority-table td { padding: 0.7rem 0.9rem; border: 1px solid var(--border); text-align: center; vertical-align: middle; color: var(--gray-dark); }
-  .priority-table td:first-child { text-align: right; font-weight: 700; color: var(--navy); background: var(--gray-bg); white-space: nowrap; }
-  .priority-table tr:nth-child(1) td:first-child, .priority-table tr:nth-child(2) td:first-child { border-right: 3px solid var(--teal); }
-  .priority-table tr:nth-child(3) td:first-child, .priority-table tr:nth-child(4) td:first-child, .priority-table tr:nth-child(5) td:first-child { border-right: 3px solid var(--amber); }
-  .priority-table tr:nth-child(6) td:first-child, .priority-table tr:nth-child(7) td:first-child { border-right: 3px solid var(--gray-light); }
 
-  .pill { display: inline-block; border-radius: 20px; padding: 0.18rem 0.65rem; font-size: 0.72rem; font-weight: 700; white-space: nowrap; }
+  .priority-table td {
+    padding: 0.7rem 0.9rem;
+    border: 1px solid var(--border);
+    text-align: center;
+    vertical-align: middle;
+    color: var(--gray-dark);
+  }
+
+  .priority-table td:first-child {
+    text-align: right;
+    font-weight: 700;
+    color: var(--navy);
+    background: var(--gray-bg);
+    white-space: nowrap;
+  }
+
+  .priority-table tr:nth-child(1) td:first-child,
+  .priority-table tr:nth-child(2) td:first-child {
+    border-right: 3px solid var(--teal);
+  }
+
+  .priority-table tr:nth-child(3) td:first-child,
+  .priority-table tr:nth-child(4) td:first-child,
+  .priority-table tr:nth-child(5) td:first-child {
+    border-right: 3px solid var(--amber);
+  }
+
+  .priority-table tr:nth-child(6) td:first-child,
+  .priority-table tr:nth-child(7) td:first-child {
+    border-right: 3px solid var(--gray-light);
+  }
+
+  .pill {
+    display: inline-block;
+    border-radius: 20px;
+    padding: 0.18rem 0.65rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
   .pill.high { background: var(--green-pale); color: var(--green); }
   .pill.med { background: var(--amber-pale); color: var(--amber); }
   .pill.low { background: var(--gray-bg); color: var(--gray-mid); border: 1px solid var(--border); }
@@ -189,25 +795,120 @@
   .pill.cond { background: var(--amber-pale); color: var(--amber); }
   .pill.skip { background: var(--gray-bg); color: var(--gray-mid); border: 1px solid var(--border); }
 
-  .gaps-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.25rem; }
-  .gap-group { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
-  .gap-group-header { background: var(--navy); padding: 0.75rem 1.1rem; font-size: 0.78rem; font-weight: 800; color: var(--white); }
-  .gap-group-body { padding: 1rem 1.1rem; }
-  .gap-item { display: flex; align-items: flex-start; gap: 0.5rem; margin-bottom: 0.55rem; font-size: 0.82rem; color: var(--gray-dark); line-height: 1.5; }
-  .gap-item::before { content: '→'; color: var(--teal); font-weight: 700; flex-shrink: 0; }
+  /* ── INFO GAPS ── */
+  .gaps-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.25rem;
+  }
 
-  #closing { background: var(--navy); color: var(--white); }
-  .closing-inner { max-width: 1100px; margin: 0 auto; padding: 0 3rem; text-align: center; }
-  .closing-eyebrow { font-size: 0.68rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--teal-light); margin-bottom: 1.5rem; }
-  .closing-message { font-size: clamp(1.1rem, 2.5vw, 1.5rem); font-weight: 600; line-height: 1.7; color: rgba(255,255,255,0.9); max-width: 820px; margin: 0 auto 3rem; }
+  .gap-group {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .gap-group-header {
+    background: var(--navy);
+    padding: 0.75rem 1.1rem;
+    font-size: 0.78rem;
+    font-weight: 800;
+    color: var(--white);
+  }
+
+  .gap-group-body {
+    padding: 1rem 1.1rem;
+  }
+
+  .gap-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 0.55rem;
+    font-size: 0.82rem;
+    color: var(--gray-dark);
+    line-height: 1.5;
+  }
+
+  .gap-item::before {
+    content: '→';
+    color: var(--teal);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 0.05rem;
+  }
+
+  /* ── CLOSING ── */
+  #closing {
+    background: var(--navy);
+    color: var(--white);
+  }
+
+  .closing-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 3rem;
+    text-align: center;
+  }
+
+  .closing-eyebrow {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--teal-light);
+    margin-bottom: 1.5rem;
+  }
+
+  .closing-message {
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    font-weight: 600;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.9);
+    max-width: 820px;
+    margin: 0 auto 3rem;
+  }
+
   .closing-message strong { color: var(--teal-light); }
-  .closing-next-steps { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
-  .next-step-box { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 1rem 1.5rem; font-size: 0.82rem; color: rgba(255,255,255,0.65); text-align: center; min-width: 180px; }
-  .next-step-box .step-num { font-size: 1.4rem; font-weight: 900; color: var(--teal-light); display: block; margin-bottom: 0.25rem; }
-  .closing-footer-line { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.75rem; color: rgba(255,255,255,0.3); }
 
+  .closing-next-steps {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .next-step-box {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.65);
+    text-align: center;
+    min-width: 180px;
+  }
+
+  .next-step-box .step-num {
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: var(--teal-light);
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  .closing-footer-line {
+    margin-top: 4rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.3);
+  }
+
+  /* ── SLIDE BG VARIANTS ── */
   .slide.gray-bg { background: var(--gray-bg); }
 
+  /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
     .two-col, .scope-grid, .insight-row { grid-template-columns: 1fr; }
     .three-col, .arena-content-grid, .cond-body, .gaps-grid { grid-template-columns: 1fr 1fr; }
@@ -215,14 +916,17 @@
     .cover-badge-col { display: none; }
     .nav-links { display: none; }
   }
+
   @media (max-width: 640px) {
     .slide-inner, .cover-inner, .closing-inner { padding: 0 1.5rem; }
     .three-col, .arena-content-grid, .cond-body, .gaps-grid { grid-template-columns: 1fr; }
   }
 </style>
+<!-- deployed: 2026-07-02 -->
 </head>
 <body>
 
+<!-- ── NAV ── -->
 <nav>
   <div class="nav-brand">
     <div class="nav-logo">בקרה גבע · M&A</div>
@@ -236,7 +940,7 @@
     <li><a href="#logic">לוגיקה</a></li>
     <li><a href="#arena-map">מפת זירות</a></li>
     <li><a href="#insight">תובנה</a></li>
-    <li><a href="#irrigation">השקיה</a></li>
+    <li><a href="#irrigation">השקיה — עומק</a></li>
     <li><a href="#actuation">Actuation</a></li>
     <li><a href="#conditional">מותנות</a></li>
     <li><a href="#low-priority">נמוכות</a></li>
@@ -246,6 +950,9 @@
   </ul>
 </nav>
 
+<!-- ════════════════════════════════════════════════════
+     SLIDE 1 — COVER
+════════════════════════════════════════════════════ -->
 <div id="cover" class="slide">
   <div class="cover-inner">
     <div>
@@ -253,15 +960,33 @@
       <h1 class="cover-title">בקרה גבע —<br>סקר שוק ותעדוף<br>זירות M&A</h1>
       <p class="cover-subtitle">שלד מצגת מנהלים | טיוטה לעיבוד ממצאי האנלייזר</p>
       <div class="cover-meta">
-        <div class="cover-meta-item"><span class="cover-meta-label">לקוח</span><span class="cover-meta-value">בקרה גבע בע"מ</span></div>
-        <div class="cover-meta-item"><span class="cover-meta-label">שלב</span><span class="cover-meta-value">סינון ראשוני — Phase 1</span></div>
-        <div class="cover-meta-item"><span class="cover-meta-label">סטטוס</span><span class="cover-meta-value">טיוטה לדיון</span></div>
+        <div class="cover-meta-item">
+          <span class="cover-meta-label">לקוח</span>
+          <span class="cover-meta-value">בקרה גבע בע"מ</span>
+        </div>
+        <div class="cover-meta-item">
+          <span class="cover-meta-label">שלב</span>
+          <span class="cover-meta-value">סינון ראשוני — Phase 1</span>
+        </div>
+        <div class="cover-meta-item">
+          <span class="cover-meta-label">סטטוס</span>
+          <span class="cover-meta-value">טיוטה לדיון</span>
+        </div>
       </div>
     </div>
     <div class="cover-badge-col">
-      <div class="cover-badge"><strong>7</strong>זירות שנסקרו</div>
-      <div class="cover-badge"><strong>2</strong>זירות להמשך בחינה</div>
-      <div class="cover-badge"><strong>3</strong>זירות מותנות</div>
+      <div class="cover-badge">
+        <strong>7</strong>
+        זירות שנסקרו
+      </div>
+      <div class="cover-badge">
+        <strong>2</strong>
+        זירות להמשך בחינה
+      </div>
+      <div class="cover-badge">
+        <strong>3</strong>
+        זירות מותנות
+      </div>
     </div>
   </div>
   <div class="cover-stripe"></div>
@@ -269,12 +994,16 @@
 
 <div class="slide-divider"></div>
 
+<!-- ════════════════════════════════════════════════════
+     SLIDE 2 — WHAT THIS IS / IS NOT
+════════════════════════════════════════════════════ -->
 <div id="scope" class="slide">
   <div class="slide-inner">
     <div class="slide-number">01 · SCOPE</div>
     <div class="section-eyebrow">הגדרת עבודה</div>
     <h2 class="section-title">מה עבודה זו כוללת — ומה לא</h2>
     <p class="section-lead">סקר זה עוסק בזיהוי וסינון זירות M&A רלוונטיות לבקרה גבע. הוא אינו תחליף לתהליך בדיקת נאותות או לתמחור עסקאות.</p>
+
     <div class="scope-grid">
       <div class="scope-box is">
         <div class="scope-label">כן — זה כולל</div>
@@ -285,6 +1014,7 @@
         <div class="scope-item"><div class="scope-dot"></div><span>זיהוי תנאי סף לבחינה מעמיקה יותר</span></div>
         <div class="scope-item"><div class="scope-dot"></div><span>הגדרת פערי מידע למילוי בשלב הבא</span></div>
       </div>
+
       <div class="scope-box is-not">
         <div class="scope-label">לא — זה לא כולל</div>
         <div class="scope-item"><div class="scope-dot"></div><span>המלצה על יעד רכישה ספציפי</span></div>
@@ -300,14 +1030,23 @@
 
 <div class="slide-divider"></div>
 
+<!-- ════════════════════════════════════════════════════
+     SLIDE 3 — MANAGEMENT QUESTION
+════════════════════════════════════════════════════ -->
 <div id="question" class="slide gray-bg">
   <div class="slide-inner">
     <div class="slide-number">02 · QUESTION</div>
     <div class="section-eyebrow">שאלת ההנהלה</div>
     <h2 class="section-title">מה השאלה שאנחנו עונים עליה?</h2>
+
     <div class="mgmt-question">
       <div class="mgmt-q-label">שאלת ניהול מרכזית</div>
-      <div class="mgmt-q-text">אילו זירות M&A הן הרלוונטיות ביותר לבקרה גבע לבחינה ראשונה, על בסיס התאמה לליבת הפעילות, זמינות שחקנים ישראליים, נגישות שוק, פוטנציאל רווחיות, זמן עד להשפעה, ורמת סיכון פיזור?</div>
+      <div class="mgmt-q-text">
+        אילו זירות M&A הן הרלוונטיות ביותר לבקרה גבע לבחינה ראשונה,<br>
+        על בסיס התאמה לליבת הפעילות, זמינות שחקנים ישראליים,<br>
+        נגישות שוק, פוטנציאל רווחיות, זמן עד להשפעה, ורמת סיכון פיזור?
+      </div>
+
       <div class="criteria-chips">
         <div class="crit-chip">קרבה לליבה</div>
         <div class="crit-chip">שחקנים ישראליים רלוונטיים</div>
@@ -318,166 +1057,882 @@
         <div class="crit-chip">סיכון פיזור</div>
       </div>
     </div>
+
     <div class="two-col">
-      <div class="card navy-top"><div class="card-title">מה נחשב "התאמה לליבה"?</div><div class="card-body">התאמה ללוגיקת הפעולה של בקרה גבע: תרמוהידרולוגיה, שסתומים, מנגנוני בקרת נוזלים. ניתן לפרש זאת גם כתאמה לערוצי הפצה, לקוחות, ומבנה ה-BOM.</div></div>
-      <div class="card teal-top"><div class="card-title">מה נחשב "שחקן ישראלי רלוונטי"?</div><div class="card-body">חברה ישראלית פעילה בזירה, בעלת גרעין טכנולוגי, לקוחות ועובדים — שניתן לרכוש. לא מייצג, לא מפיץ, ולא ישות שמפורצת בתחרות מסודרת.</div></div>
+      <div class="card navy-top">
+        <div class="card-title">מה נחשב "התאמה לליבה"?</div>
+        <div class="card-body">התאמה ללוגיקת הפעולה של בקרה גבע: תרמוהידרולוגיה, שסתומים, מנגנוני בקרת נוזלים. ניתן לפרש זאת גם כתאמה לערוצי הפצה, לקוחות, ומבנה ה-BOM.</div>
+      </div>
+      <div class="card teal-top">
+        <div class="card-title">מה נחשב "שחקן ישראלי רלוונטי"?</div>
+        <div class="card-body">חברה ישראלית פעילה בזירה, בעלת גרעין טכנולוגי, לקוחות ועובדים — שניתן לרכוש. לא מייצג, לא מפיץ, ולא ישות שמפורצת בתחרות מסודרת.</div>
+      </div>
     </div>
   </div>
 </div>
 
 <div class="slide-divider"></div>
 
+<!-- ════════════════════════════════════════════════════
+     SLIDE 4 — SCREENING LOGIC
+════════════════════════════════════════════════════ -->
 <div id="logic" class="slide">
   <div class="slide-inner">
     <div class="slide-number">03 · LOGIC</div>
     <div class="section-eyebrow">לוגיקת הסינון</div>
     <h2 class="section-title">כיצד סיננו את הזירות?</h2>
     <p class="section-lead">הגעה לזירות בראש רשימת העדיפויות דרשה מעבר מוצלח בשבעה שלבי סינון עוקבים.</p>
-    <div class="funnel-wrap">
-      <div class="funnel-step">① קרבה לליבה — Core Adjacency</div>
-      <div class="funnel-step">② שחקנים ישראליים הרלוונטיים ל-M&A</div>
-      <div class="funnel-step">③ נגישות ביקוש — Accessible Demand</div>
-      <div class="funnel-step">④ חסמי כניסה — Entry Barriers</div>
-      <div class="funnel-step">⑤ פוטנציאל מרווח — Margin Potential</div>
-      <div class="funnel-step">⑥ זמן לתרומה — Time to Contribution</div>
-      <div class="funnel-step">⑦ סיכון פיזור — Dispersion Risk</div>
+
+
+    <!-- ── CURRENT WORK STAGE CALLOUT ── -->
+    <div style="background:var(--teal-pale);border:1.5px solid var(--teal);border-radius:10px;padding:1.5rem 1.75rem;margin-bottom:2rem;">
+      <div style="font-size:0.68rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--teal);margin-bottom:0.75rem;">שלב העבודה הנוכחי: מיפוי עומק לפני תעדוף</div>
+      <p style="font-size:0.88rem;color:var(--navy);line-height:1.75;margin-bottom:1.25rem;">העבודה הסופית נועדה לתמוך בתעדוף זירות צמיחה לא־אורגנית. עם זאת, לפני דירוג או המלצה, יש למפות כל זירה לעומק: מי השחקנים, מה תפקידם בשרשרת הערך, האם הם עצמאיים או חלק מקבוצה, האם הם יעד אפשרי או רק לקוח / מתחרה / benchmark, ומה סוג המהלך האפשרי מולם.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.75rem;">
+        <div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:0.9rem 1rem;display:flex;align-items:flex-start;gap:0.75rem;">
+          <div style="font-size:1.1rem;font-weight:900;color:var(--teal);flex-shrink:0;">1</div>
+          <div style="font-size:0.82rem;font-weight:700;color:var(--navy);line-height:1.4;">מיפוי עומק של כל זירה</div>
+        </div>
+        <div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:0.9rem 1rem;display:flex;align-items:flex-start;gap:0.75rem;">
+          <div style="font-size:1.1rem;font-weight:900;color:var(--teal);flex-shrink:0;">2</div>
+          <div style="font-size:0.82rem;font-weight:700;color:var(--navy);line-height:1.4;">סיווג שחקנים וסוגי מהלכים אפשריים</div>
+        </div>
+        <div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:0.9rem 1rem;display:flex;align-items:flex-start;gap:0.75rem;">
+          <div style="font-size:1.1rem;font-weight:900;color:var(--teal);flex-shrink:0;">3</div>
+          <div style="font-size:0.82rem;font-weight:700;color:var(--navy);line-height:1.4;">תעדוף זירות / מהלכים בשלב הבא</div>
+        </div>
+      </div>
     </div>
+
+    <!-- Legend -->
+    <div style="display:flex;gap:1.25rem;justify-content:center;margin-bottom:1rem;flex-wrap:wrap;">
+      <div style="display:flex;align-items:center;gap:0.4rem;font-size:0.75rem;font-weight:700;color:var(--teal)">
+        <div style="width:12px;height:12px;border-radius:3px;background:var(--teal)"></div> מסנן — כן/לא
+      </div>
+      <div style="display:flex;align-items:center;gap:0.4rem;font-size:0.75rem;font-weight:700;color:var(--gray-light)">
+        <div style="width:12px;height:12px;border-radius:3px;background:var(--gray-light)"></div> תנאי סף
+      </div>
+      <div style="display:flex;align-items:center;gap:0.4rem;font-size:0.75rem;font-weight:700;color:var(--amber)">
+        <div style="width:12px;height:12px;border-radius:3px;background:var(--amber)"></div> מתעדף — ניקוד
+      </div>
+    </div>
+
+    <div class="funnel-wrap">
+      <div class="funnel-step" style="background:var(--teal);max-width:700px">① קרבה לליבה — Core Adjacency</div>
+      <div class="funnel-step" style="background:#0A6B6A;max-width:650px">② שחקנים ישראליים הרלוונטיים ל-M&A</div>
+      <div class="funnel-step" style="background:var(--amber);max-width:600px">③ נגישות ביקוש — Accessible Demand</div>
+      <div class="funnel-step" style="background:#9CA3AF;max-width:550px">④ חסמי כניסה — Entry Barriers</div>
+      <div class="funnel-step" style="background:#B45309;max-width:490px">⑤ פוטנציאל מרווח — Margin Potential</div>
+      <div class="funnel-step" style="background:#92400E;max-width:430px">⑥ זמן לתרומה — Time to Contribution</div>
+      <div class="funnel-step" style="background:#78350F;max-width:370px">⑦ סיכון פיזור — Dispersion Risk</div>
+    </div>
+
     <div class="three-col">
-      <div class="card teal-top"><div class="card-title">קריטריון מסנן</div><div class="card-body">קרבה לליבה וקיום שחקנים ישראליים — שאלות "כן/לא" שחוסכות ניתוח נוסף אם התשובה שלילית.</div></div>
-      <div class="card amber-top"><div class="card-title">קריטריון מתעדף</div><div class="card-body">ביקוש, מרווח, זמן לתרומה וסיכון פיזור — ממדדים לדירוג הזירות שעברו את שלב הסינון.</div></div>
-      <div class="card gray-top"><div class="card-title">קריטריון תנאי סף</div><div class="card-body">חסמי כניסה (אישורים, AVL, תקנים) — ניתן להסיר תנאית, אך דורשים מיפוי מפורש לפני המשך.</div></div>
+      <div class="card teal-top">
+        <div class="card-title">קריטריון מסנן <span style="font-size:0.7rem;font-weight:400;color:var(--gray-mid)">(שלבים ①②)</span></div>
+        <div class="card-body">קרבה לליבה וקיום שחקנים ישראליים — שאלות "כן/לא" שחוסכות ניתוח נוסף אם התשובה שלילית.</div>
+      </div>
+      <div class="card gray-top">
+        <div class="card-title">קריטריון תנאי סף <span style="font-size:0.7rem;font-weight:400;color:var(--gray-mid)">(שלב ④)</span></div>
+        <div class="card-body">חסמי כניסה (אישורים, AVL, תקנים) — ניתן להסיר תנאית, אך דורשים מיפוי מפורש לפני המשך.</div>
+      </div>
+      <div class="card amber-top">
+        <div class="card-title">קריטריון מתעדף <span style="font-size:0.7rem;font-weight:400;color:var(--gray-mid)">(שלבים ③⑤⑥⑦)</span></div>
+        <div class="card-body">ביקוש, מרווח, זמן לתרומה וסיכון פיזור — ממדדים לדירוג הזירות שעברו את שלב הסינון.</div>
+      </div>
     </div>
   </div>
 </div>
 
 <div class="slide-divider"></div>
 
+<!-- ════════════════════════════════════════════════════
+     SLIDE 5 — ARENA MAP 2x2
+════════════════════════════════════════════════════ -->
 <div id="arena-map" class="slide gray-bg">
   <div class="slide-inner">
     <div class="slide-number">04 · ARENA MAP</div>
     <div class="section-eyebrow">מפת הזירות</div>
     <h2 class="section-title">מיקום הזירות — מבט כולל</h2>
     <p class="section-lead">ציר X: התאמה אסטרטגית לליבת בקרה גבע. ציר Y: נגישות M&A / עושר האקוסיסטם הישראלי.</p>
+
     <div class="outer-matrix-wrap">
       <div class="y-axis-label">נגישות M&A / אקוסיסטם ישראלי ↑</div>
       <div class="matrix-grid-2x2">
-        <div class="matrix-cell-2x2 top-right"><div class="matrix-quadrant-label">התאמה גבוהה · נגישות גבוהה</div><div class="arena-dot priority">השקיה חכמה</div><div class="arena-dot priority">Valve Actuation / סחר טכני</div></div>
-        <div class="matrix-cell-2x2 top-left"><div class="matrix-quadrant-label">התאמה נמוכה · נגישות גבוהה</div><div class="arena-dot low">מים עירוניים</div></div>
-        <div class="matrix-cell-2x2 bottom-right"><div class="matrix-quadrant-label">התאמה גבוהה · נגישות נמוכה</div><div class="arena-dot conditional">CTIS / פנאומטיקה ביטחונית</div><div class="arena-dot conditional">מים תעשייתיים / חקלאיים</div><div class="arena-dot conditional">כיבוי אש</div></div>
-        <div class="matrix-cell-2x2 bottom-left"><div class="matrix-quadrant-label">התאמה נמוכה · נגישות נמוכה</div><div class="arena-dot low">אנרגיה / גז</div><div class="arena-dot low">מרכזי נתונים / סמיקונדקטורס</div></div>
+
+        <!-- Top-Right: High fit + High accessibility = PRIORITY -->
+        <div class="matrix-cell-2x2 top-right" style="order:1">
+          <div class="matrix-quadrant-label">התאמה גבוהה · נגישות גבוהה</div>
+          <div class="arena-dot priority">השקיה חכמה</div>
+          <div class="arena-dot priority">Valve Actuation / סחר טכני</div>
+        </div>
+
+        <!-- Top-Left: Low fit + High accessibility -->
+        <div class="matrix-cell-2x2 top-left" style="order:2">
+          <div class="matrix-quadrant-label">התאמה נמוכה · נגישות גבוהה</div>
+          <div class="arena-dot low">מים עירוניים</div>
+        </div>
+
+        <!-- Bottom-Right: High fit + Low accessibility = CONDITIONAL -->
+        <div class="matrix-cell-2x2 bottom-right" style="order:3">
+          <div class="matrix-quadrant-label">התאמה גבוהה · נגישות נמוכה</div>
+          <div class="arena-dot conditional">CTIS / פנאומטיקה ביטחונית</div>
+          <div class="arena-dot conditional">מים תעשייתיים / חקלאיים</div>
+          <div class="arena-dot conditional">כיבוי אש</div>
+        </div>
+
+        <!-- Bottom-Left: Low fit + Low accessibility = LOW PRIORITY -->
+        <div class="matrix-cell-2x2 bottom-left" style="order:4">
+          <div class="matrix-quadrant-label">התאמה נמוכה · נגישות נמוכה</div>
+          <div class="arena-dot low">אנרגיה / גז</div>
+          <div class="arena-dot low">מרכזי נתונים / סמיקונדקטורס</div>
+        </div>
+
       </div>
       <div class="matrix-axis-x">← התאמה אסטרטגית לליבת בקרה גבע →</div>
     </div>
+
     <div style="display:flex;gap:1rem;justify-content:center;margin-top:2rem;flex-wrap:wrap;">
-      <div style="display:flex;align-items:center;gap:0.4rem;font-size:0.78rem;font-weight:600;color:var(--teal)"><div style="width:12px;height:12px;border-radius:50%;background:var(--teal)"></div> המשך בחינה</div>
-      <div style="display:flex;align-items:center;gap:0.4rem;font-size:0.78rem;font-weight:600;color:var(--amber)"><div style="width:12px;height:12px;border-radius:50%;background:var(--amber)"></div> מותנה — נדרש תנאי סף</div>
-      <div style="display:flex;align-items:center;gap:0.4rem;font-size:0.78rem;font-weight:600;color:var(--gray-mid)"><div style="width:12px;height:12px;border-radius:50%;background:var(--gray-light)"></div> עדיפות נמוכה</div>
+      <div style="display:flex;align-items:center;gap:0.4rem;font-size:0.78rem;font-weight:600;color:var(--teal)">
+        <div style="width:12px;height:12px;border-radius:50%;background:var(--teal)"></div> המשך בחינה
+      </div>
+      <div style="display:flex;align-items:center;gap:0.4rem;font-size:0.78rem;font-weight:600;color:var(--amber)">
+        <div style="width:12px;height:12px;border-radius:50%;background:var(--amber)"></div> מותנה — נדרש תנאי סף
+      </div>
+      <div style="display:flex;align-items:center;gap:0.4rem;font-size:0.78rem;font-weight:600;color:var(--gray-mid)">
+        <div style="width:12px;height:12px;border-radius:50%;background:var(--gray-light)"></div> עדיפות נמוכה
+      </div>
     </div>
   </div>
 </div>
 
 <div class="slide-divider"></div>
 
+<!-- ════════════════════════════════════════════════════
+     SLIDE 6 — KEY INSIGHT
+════════════════════════════════════════════════════ -->
 <div id="insight" class="slide">
   <div class="slide-inner">
     <div class="slide-number">05 · KEY INSIGHT</div>
     <div class="section-eyebrow">תובנת מפתח</div>
     <h2 class="section-title">קרבה טכנולוגית אינה מספיקה</h2>
     <p class="section-lead">זירות רבות נראות קרובות לבקרה גבע מבחינה טכנולוגית — אך נחסמות על ידי חסמי כניסה מבניים שקשה לעקוף גם ב-M&A.</p>
+
     <div class="insight-row">
-      <div class="insight-card blocked"><div class="insight-card-label">קרוב טכנולוגית · חסום</div><div class="insight-card-title">כיבוי אש</div><div class="insight-card-body">קרוב מאוד לשסתומים ומנגנוני בקרה. אך כניסה לשוק מחייבת אישורי EN12845, FM, UL — חסמי אישורים שאינם ניתנים להעברה בקלות גם ברכישה.</div></div>
-      <div class="insight-card blocked"><div class="insight-card-label">מרווח גבוה · לא נגיש</div><div class="insight-card-title">גז ואנרגיה</div><div class="insight-card-body">מרווחים אטרקטיביים ושוק יציב. אך מחייב ATEX, EN161, SIL ורשימות AVL של ספקים — שנצברות לאורך שנים ואינן ניידות.</div></div>
-      <div class="insight-card caution"><div class="insight-card-label">ביקוש אמיתי · אקוסיסטם לא ברור</div><div class="insight-card-title">CTIS / פנאומטיקה ביטחונית</div><div class="insight-card-body">ביקוש ביטחוני מוכח ועקבי. אך האם קיים אקוסיסטם M&A ישראלי נגיש? התמונה עדיין לא ברורה ודורשת מיפוי ספציפי.</div></div>
-      <div class="insight-card caution"><div class="insight-card-label">שוק חם · כושר ספיגה נמוך</div><div class="insight-card-title">מרכזי נתונים / סמיקונדקטורס</div><div class="insight-card-body">שוק בצמיחה מואצת. אך ההתאמה לבקרה גבע חלשה, ולמיפוי שחקנים ישראליים ניתנים לרכישה — התוצאות לא עודדו.</div></div>
+      <div class="insight-card blocked">
+        <div class="insight-card-label">קרוב טכנולוגית · חסום</div>
+        <div class="insight-card-title">כיבוי אש</div>
+        <div class="insight-card-body">קרוב מאוד לשסתומים ומנגנוני בקרה. אך כניסה לשוק מחייבת אישורי EN12845, FM, UL — חסמי אישורים שאינם ניתנים להעברה בקלות גם ברכישה.</div>
+      </div>
+
+      <div class="insight-card blocked">
+        <div class="insight-card-label">מרווח גבוה · לא נגיש</div>
+        <div class="insight-card-title">גז ואנרגיה</div>
+        <div class="insight-card-body">מרווחים אטרקטיביים ושוק יציב. אך מחייב ATEX, EN161, SIL ורשימות AVL של ספקים — שנצברות לאורך שנים ואינן ניידות.</div>
+      </div>
+
+      <div class="insight-card caution">
+        <div class="insight-card-label">ביקוש אמיתי · אקוסיסטם לא ברור</div>
+        <div class="insight-card-title">CTIS / פנאומטיקה ביטחונית</div>
+        <div class="insight-card-body">ביקוש ביטחוני מוכח ועקבי. אך האם קיים אקוסיסטם M&A ישראלי נגיש? התמונה עדיין לא ברורה ודורשת מיפוי ספציפי.</div>
+      </div>
+
+      <div class="insight-card caution">
+        <div class="insight-card-label">שוק חם · כושר ספיגה נמוך</div>
+        <div class="insight-card-title">מרכזי נתונים / סמיקונדקטורס</div>
+        <div class="insight-card-body">שוק בצמיחה מואצת. אך ההתאמה לבקרה גבע חלשה, ולמיפוי שחקנים ישראליים ניתנים לרכישה — התוצאות לא עודדו.</div>
+      </div>
     </div>
   </div>
 </div>
 
 <div class="slide-divider"></div>
 
+<!-- ════════════════════════════════════════════════════
+     SLIDE 7 — SMART IRRIGATION
+════════════════════════════════════════════════════ -->
 <div id="irrigation" class="slide gray-bg">
   <div class="slide-inner">
-    <div class="slide-number">06 · ARENA A</div>
-    <div class="arena-header"><div class="arena-icon">💧</div><div class="arena-title-block"><div class="section-eyebrow">זירה ראשונה לבחינה</div><h2>השקיה חכמה</h2></div></div>
-    <div class="arena-content-grid">
-      <div class="arena-card"><div class="arena-card-label">מדוע רלוונטי</div><div class="arena-card-content">[פלייסהולדר — חפיפה בין שסתומי בקרת נוזלים, מנגנוני לחץ ומוצרי ההשקיה החכמה.]</div></div>
-      <div class="arena-card"><div class="arena-card-label">מוצרים ופתרונות</div><div class="arena-card-content">[פלייסהולדר — שסתומי בקרה אוטומטיים, מנהלי לחץ, חיישני זרימה, מערכות טפטוף חכמות, IoT.]</div></div>
-      <div class="arena-card"><div class="arena-card-label">אקוסיסטם ישראלי</div><div class="arena-card-content">[פלייסהולדר — שמות שחקנים ישראליים רלוונטיים, גדלים משוערים, נגישות כיעד M&A.]</div></div>
-      <div class="arena-card"><div class="arena-card-label">התאמה לשרשרת הערך</div><div class="arena-card-content">[פלייסהולדר — היכן בשרשרת הערך יש חפיפה עם יכולות בקרה גבע: ייצור, הפצה, שירות.]</div></div>
-      <div class="arena-card"><div class="arena-card-label">סיכונים עיקריים</div><div class="arena-card-content">[פלייסהולדר — תחרות (Netafim, Rivulis), ריכוז לקוחות, תלות בסבסוד חקלאי, מחזוריות עונתית.]</div></div>
-      <div class="arena-card"><div class="arena-card-label">פוטנציאל מרווח</div><div class="arena-card-content">[פלייסהולדר — gross margin טיפוסי, מנוף ל-value-added services וחוזים שירות חוזרים.]</div></div>
+    <div class="slide-number">06 · ARENA A — DEEP DIVE</div>
+
+    <!-- Status tag -->
+    <div style="display:inline-flex;align-items:center;gap:0.5rem;background:var(--amber-pale);border:1.5px solid var(--amber);border-radius:20px;padding:0.3rem 0.9rem;margin-bottom:1.25rem;font-size:0.72rem;font-weight:700;color:var(--amber);letter-spacing:1px;">
+      ⚠ טיוטת מיפוי ראשונית — להמחשת מבנה התוצר
     </div>
-    <div class="verdict-banner"><span style="font-size:1.2rem">✓</span><span>המלצה ראשונית: המשך בחינה — זירה ראשונה לעומק</span></div>
+
+    <div class="arena-header">
+      <div class="arena-icon">💧</div>
+      <div class="arena-title-block">
+        <div class="section-eyebrow">דוגמת עומק למיפוי זירה</div>
+        <h2>השקיה — דוגמת עומק למיפוי זירה</h2>
+      </div>
+    </div>
+
+    <p style="font-size:0.95rem;color:var(--gray-mid);margin-bottom:2rem;line-height:1.6;">מיפוי ראשוני של שחקנים, שרשרת ערך, סוגי מהלכים אפשריים ופערי מידע</p>
+
+    <!-- ── A. MANAGEMENT TAKEAWAY ── -->
+    <div style="background:var(--navy);border-radius:12px;padding:2rem 2.5rem;margin-bottom:2rem;">
+      <div style="font-size:0.65rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal-light);margin-bottom:1rem;">תובנת הנהלה — ראשונית</div>
+      <p style="font-size:1rem;color:rgba(255,255,255,0.9);line-height:1.75;margin-bottom:1.5rem;">
+        זירת ההשקיה בישראל אינה שוק של "שחקן אחד לרכישה", אלא אקוסיסטם הכולל יצרני רכיבים, חברות פתרון מלא, שכבת בקרה ואוטומציה, סינון, דישון, אינטגרציה, הפצה וגינון.
+        עבור בקרה גבע, השאלה אינה רק האם השקיה היא זירה אטרקטיבית, אלא <strong style="color:var(--teal-light)">באיזו שכבה בשרשרת הערך ניתן להשלים יכולות</strong>: בקרה, הרחבת סל, fertigation, זכויות שיווק, שותפויות, רכישת ערוץ או אינטגרציה מסחרית.
+      </p>
+      <div style="display:flex;flex-direction:column;gap:0.5rem;">
+        <div style="display:flex;align-items:flex-start;gap:0.6rem;font-size:0.85rem;color:rgba(255,255,255,0.65);">
+          <span style="color:var(--teal-light);font-weight:700;flex-shrink:0;">·</span>
+          <span>שחקנים גדולים רבים כבר עברו קונסולידציה</span>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:0.6rem;font-size:0.85rem;color:rgba(255,255,255,0.65);">
+          <span style="color:var(--teal-light);font-weight:700;flex-shrink:0;">·</span>
+          <span>הפער המרכזי עבור בקרה עשוי להיות בשכבת הבקרה והאוטומציה</span>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:0.6rem;font-size:0.85rem;color:rgba(255,255,255,0.65);">
+          <span style="color:var(--teal-light);font-weight:700;flex-shrink:0;">·</span>
+          <span>שכבת הסחר/הפצה עשויה להיות מעשית יותר לבחינה מאשר רכישת יצרן גדול</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── B. VALUE CHAIN ── -->
+    <div style="margin-bottom:2rem;">
+      <div style="font-size:0.68rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--teal);margin-bottom:1rem;">שרשרת הערך — השקיה</div>
+      <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:3px;background:var(--border);border-radius:10px;overflow:hidden;">
+
+        <div style="background:var(--white);padding:1rem 0.8rem;display:flex;flex-direction:column;gap:0.4rem;position:relative;">
+          <div style="font-size:0.62rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--teal);margin-bottom:0.2rem;">① רכיבים / IP</div>
+          <div style="font-size:0.78rem;color:var(--navy);font-weight:700;line-height:1.3;">סולנואידים, מגופים, שסתומים</div>
+          <div style="font-size:0.73rem;color:var(--gray-mid);line-height:1.4;">רכיבי בקרה וידע הנדסי</div>
+          <div style="margin-top:auto;padding-top:0.6rem;border-top:2px solid var(--teal);font-size:0.65rem;font-weight:700;color:var(--teal);">✓ ליבת בקרה גבע — נוכחות חזקה</div>
+        </div>
+
+        <div style="background:var(--white);padding:1rem 0.8rem;display:flex;flex-direction:column;gap:0.4rem;">
+          <div style="font-size:0.62rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gray-mid);margin-bottom:0.2rem;">② מוצרים ומערכות</div>
+          <div style="font-size:0.78rem;color:var(--navy);font-weight:700;line-height:1.3;">טפטוף, מיקרו, ראשי מערכת</div>
+          <div style="font-size:0.73rem;color:var(--gray-mid);line-height:1.4;">מערכות השקיה מלאות</div>
+          <div style="margin-top:auto;padding-top:0.6rem;border-top:2px solid var(--gray-light);font-size:0.65rem;font-weight:700;color:var(--gray-mid);">Netafim, Rivulis</div>
+        </div>
+
+        <div style="background:#EDFAF9;padding:1rem 0.8rem;display:flex;flex-direction:column;gap:0.4rem;">
+          <div style="font-size:0.62rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--teal);margin-bottom:0.2rem;">③ בקרה ו־IoT</div>
+          <div style="font-size:0.78rem;color:var(--navy);font-weight:700;line-height:1.3;">בקרים, timers, smart valves</div>
+          <div style="font-size:0.73rem;color:var(--gray-mid);line-height:1.4;">חיישנים, תקשורת, ניהול מרחוק</div>
+          <div style="margin-top:auto;padding-top:0.6rem;border-top:2px solid #DC2626;font-size:0.65rem;font-weight:700;color:#DC2626;">✗ פער מרכזי — חסר לבקרה גבע</div>
+        </div>
+
+        <div style="background:var(--white);padding:1rem 0.8rem;display:flex;flex-direction:column;gap:0.4rem;">
+          <div style="font-size:0.62rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gray-mid);margin-bottom:0.2rem;">④ סינון / Fertigation</div>
+          <div style="font-size:0.78rem;color:var(--navy);font-weight:700;line-height:1.3;">סינון, משאבות מינון, דישון</div>
+          <div style="font-size:0.73rem;color:var(--gray-mid);line-height:1.4;">בקרת ריכוז ותוספות סל</div>
+          <div style="margin-top:auto;padding-top:0.6rem;border-top:2px solid var(--gray-light);font-size:0.65rem;font-weight:700;color:var(--gray-mid);">Amiad, ספקי דישון</div>
+        </div>
+
+        <div style="background:var(--amber-pale);padding:1rem 0.8rem;display:flex;flex-direction:column;gap:0.4rem;">
+          <div style="font-size:0.62rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--amber);margin-bottom:0.2rem;">⑤ מפיצים / גינון</div>
+          <div style="font-size:0.78rem;color:var(--navy);font-weight:700;line-height:1.3;">ערוצי שוק, התקנה, שירות</div>
+          <div style="font-size:0.73rem;color:var(--gray-mid);line-height:1.4;">קבלני גינון, סחר מקצועי</div>
+          <div style="margin-top:auto;padding-top:0.6rem;border-top:2px solid var(--amber);font-size:0.65rem;font-weight:700;color:var(--amber);">~ חלקי — ערוץ לבדיקה</div>
+        </div>
+
+        <div style="background:var(--white);padding:1rem 0.8rem;display:flex;flex-direction:column;gap:0.4rem;">
+          <div style="font-size:0.62rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gray-mid);margin-bottom:0.2rem;">⑥ לקוחות</div>
+          <div style="font-size:0.78rem;color:var(--navy);font-weight:700;line-height:1.3;">חקלאים, רשויות, קבלנים</div>
+          <div style="font-size:0.73rem;color:var(--gray-mid);line-height:1.4;">פרויקטים, לקוחות מוסדיים</div>
+          <div style="margin-top:auto;padding-top:0.6rem;border-top:2px solid var(--gray-light);font-size:0.65rem;font-weight:700;color:var(--gray-mid);">שוק קצה</div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- ── WHERE BACCARA SITS TODAY ── -->
+    <div style="margin-bottom:2rem;">
+      <div style="font-size:0.68rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--teal);margin-bottom:0.4rem;">איפה בקרה גבע עומדת כיום — לפי שכבת שרשרת הערך</div>
+      <div style="font-size:0.78rem;color:var(--gray-mid);margin-bottom:0.75rem;">ראשוני — לאימות מול נתוני החברה</div>
+      <div style="overflow-x:auto;">
+        <table style="width:100%;border-collapse:collapse;font-size:0.78rem;min-width:700px;">
+          <thead>
+            <tr>
+              <th style="background:var(--navy);color:rgba(255,255,255,0.75);font-size:0.62rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:0.65rem 0.9rem;text-align:right;border:1px solid rgba(255,255,255,0.1);">שכבה</th>
+              <th style="background:var(--navy);color:rgba(255,255,255,0.75);font-size:0.62rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:0.65rem 0.9rem;text-align:right;border:1px solid rgba(255,255,255,0.1);">שחקנים לדוגמה</th>
+              <th style="background:var(--navy);color:rgba(255,255,255,0.75);font-size:0.62rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:0.65rem 0.9rem;text-align:center;border:1px solid rgba(255,255,255,0.1);">בקרה גבע כיום</th>
+              <th style="background:var(--navy);color:rgba(255,255,255,0.75);font-size:0.62rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:0.65rem 0.9rem;text-align:right;border:1px solid rgba(255,255,255,0.1);">פער / הזדמנות</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding:0.6rem 0.9rem;border:1px solid var(--border);font-weight:700;color:var(--navy);background:#EDFAF9;">סולנואידים ורכיבי בקרה</td>
+              <td style="padding:0.6rem 0.9rem;border:1px solid var(--border);color:var(--gray-dark);">בקרה גבע, Galcon (חלק)</td>
+              <td style="padding:0.6rem 0.9rem;border:1px solid var(--border);text-align:center;"><span style="background:#D1FAE5;color:#059669;border-radius:20px;padding:0.15rem 0.6rem;font-size:0.7rem;font-weight:700;">נוכחות חזקה</span></td>
+              <td style="padding:0.6rem 0.9rem;border:1px solid var(--border);color:var(--gray-dark);">ליבה קיימת</td>
+            </tr>
+            <tr>
+              <td style="padding:0.6rem 0.9rem;border:1px solid var(--border);font-weight:700;color:var(--navy);background:var(--red-pale);">Controllers / Timers</td>
+              <td style="padding:0.6rem 0.9rem;border:1px solid var(--border);color:var(--gray-dark);">Galcon, Rain Bird, Hunter</td>
+              <td style="padding:0.6rem 0.9rem;border:1px solid var(--border);text-align:center;"><span style="background:var(--red-pale);color:var(--red);border-radius:20px;padding:0.15rem 0.6rem;font-size:0.7rem;font-weight:700;">חסר</span></td>
+              <td style="padding:0.6rem 0.9rem;border:1px solid var(--border);color:var(--red);font-weight:700;">פער מרכזי</td>
+            </tr>
+            <tr>
+              <td style="padding:0.6rem 0.9rem;border:1px solid var(--border);font-weight:700;color:var(--navy);background:var(--amber-pale);">Smart valves / flow control</td>
+              <td style="padding:0.6rem 0.9rem;border:1px solid var(--border);color:var(--gray-dark);">BERMAD, Dorot/Aquestia</td>
+              <td style="padding:0.6rem 0.9rem;border:1px solid var(--border);text-align:center;"><span style="background:var(--amber-pale);color:var(--amber);border-radius:20px;padding:0.15rem 0.6rem;font-size:0.7rem;font-weight:700;">חלקי</span></td>
+              <td style="padding:0.6rem 0.9rem;border:1px solid var(--border);color:var(--gray-dark);">שכבה משלימה</td>
+            </tr>
+            <tr>
+              <td style="padding:0.6rem 0.9rem;border:1px solid var(--border);font-weight:700;color:var(--navy);background:var(--red-pale);">IoT / ניהול מרחוק</td>
+              <td style="padding:0.6rem 0.9rem;border:1px solid var(--border);color:var(--gray-dark);">Galcon, Mottech, Rain Bird</td>
+              <td style="padding:0.6rem 0.9rem;border:1px solid var(--border);text-align:center;"><span style="background:var(--red-pale);color:var(--red);border-radius:20px;padding:0.15rem 0.6rem;font-size:0.7rem;font-weight:700;">חסר</span></td>
+              <td style="padding:0.6rem 0.9rem;border:1px solid var(--border);color:var(--red);font-weight:700;">פער גבוה</td>
+            </tr>
+            <tr>
+              <td style="padding:0.6rem 0.9rem;border:1px solid var(--border);font-weight:700;color:var(--navy);background:var(--gray-bg);">סינון</td>
+              <td style="padding:0.6rem 0.9rem;border:1px solid var(--border);color:var(--gray-dark);">Amiad</td>
+              <td style="padding:0.6rem 0.9rem;border:1px solid var(--border);text-align:center;"><span style="background:var(--gray-bg);color:var(--gray-mid);border:1px solid var(--border);border-radius:20px;padding:0.15rem 0.6rem;font-size:0.7rem;font-weight:700;">חסר</span></td>
+              <td style="padding:0.6rem 0.9rem;border:1px solid var(--border);color:var(--gray-dark);">הרחבת סל אפשרית</td>
+            </tr>
+            <tr>
+              <td style="padding:0.6rem 0.9rem;border:1px solid var(--border);font-weight:700;color:var(--navy);background:var(--gray-bg);">טפטוף / מיקרו־השקיה</td>
+              <td style="padding:0.6rem 0.9rem;border:1px solid var(--border);color:var(--gray-dark);">Netafim, Rivulis, Metzer</td>
+              <td style="padding:0.6rem 0.9rem;border:1px solid var(--border);text-align:center;"><span style="background:var(--gray-bg);color:var(--gray-mid);border:1px solid var(--border);border-radius:20px;padding:0.15rem 0.6rem;font-size:0.7rem;font-weight:700;">חסר</span></td>
+              <td style="padding:0.6rem 0.9rem;border:1px solid var(--border);color:var(--gray-mid);">כנראה מחוץ לליבה</td>
+            </tr>
+            <tr>
+              <td style="padding:0.6rem 0.9rem;border:1px solid var(--border);font-weight:700;color:var(--navy);background:var(--amber-pale);">סחר והפצה</td>
+              <td style="padding:0.6rem 0.9rem;border:1px solid var(--border);color:var(--gray-dark);">חברות סחר וגינון [ממתין למיפוי]</td>
+              <td style="padding:0.6rem 0.9rem;border:1px solid var(--border);text-align:center;"><span style="background:var(--amber-pale);color:var(--amber);border-radius:20px;padding:0.15rem 0.6rem;font-size:0.7rem;font-weight:700;">חלקי</span></td>
+              <td style="padding:0.6rem 0.9rem;border:1px solid var(--border);color:var(--amber);font-weight:700;">ערוץ לבדיקה</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="margin-top:0.5rem;font-size:0.7rem;color:var(--gray-mid);">ראשוני — לאימות מול נתוני החברה</div>
+    </div>
+
+    <!-- ── C. PLAYER MAPPING TABLE ── -->
+    <div style="margin-bottom:2rem;">
+      <div style="font-size:0.68rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--teal);margin-bottom:0.4rem;">מיפוי שחקנים ראשוני — השקיה</div>
+      <div style="font-size:0.8rem;color:var(--gray-mid);margin-bottom:0.5rem;">לא רשימת יעדי רכישה; מיפוי תפקידים, בעלות ורלוונטיות ראשונית</div>
+      <div style="background:var(--amber-pale);border:1px solid var(--amber);border-radius:8px;padding:0.6rem 0.9rem;margin-bottom:0.75rem;font-size:0.78rem;color:var(--gray-dark);line-height:1.5;">
+        <strong style="color:var(--amber);">⚠ הבהרה:</strong> הטבלה אינה רשימת יעדי רכישה. היא מפת שחקנים ראשונית שמטרתה להבחין בין <strong>יעד אפשרי, שותף, ערוץ, לקוח, מתחרה ו-benchmark</strong>. כל סיווג דורש אימות לפני שימוש.
+      </div>
+      <div style="overflow-x:auto;">
+        <table style="width:100%;border-collapse:collapse;font-size:0.78rem;min-width:900px;">
+          <thead>
+            <tr>
+              <th style="background:var(--navy);color:rgba(255,255,255,0.75);font-size:0.62rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:0.7rem 0.9rem;text-align:right;border:1px solid rgba(255,255,255,0.1);white-space:nowrap;">שחקן</th>
+              <th style="background:var(--navy);color:rgba(255,255,255,0.75);font-size:0.62rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:0.7rem 0.9rem;text-align:center;border:1px solid rgba(255,255,255,0.1);white-space:nowrap;">שכבה</th>
+              <th style="background:var(--navy);color:rgba(255,255,255,0.75);font-size:0.62rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:0.7rem 0.9rem;text-align:right;border:1px solid rgba(255,255,255,0.1);">מה ידוע כרגע</th>
+              <th style="background:var(--navy);color:rgba(255,255,255,0.75);font-size:0.62rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:0.7rem 0.9rem;text-align:right;border:1px solid rgba(255,255,255,0.1);">רלוונטיות אפשרית לבקרה</th>
+              <th style="background:var(--navy);color:rgba(255,255,255,0.75);font-size:0.62rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:0.7rem 0.9rem;text-align:center;border:1px solid rgba(255,255,255,0.1);white-space:nowrap;">סטטוס ראשוני</th>
+              <th style="background:var(--navy);color:rgba(255,255,255,0.75);font-size:0.62rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:0.7rem 0.9rem;text-align:right;border:1px solid rgba(255,255,255,0.1);">פער / בדיקה נדרשת</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding:0.7rem 0.9rem;border:1px solid var(--border);font-weight:700;color:var(--navy);background:var(--gray-bg);white-space:nowrap;">Netafim / Orbia</td>
+              <td style="padding:0.7rem 0.9rem;border:1px solid var(--border);text-align:center;"><span style="background:var(--gray-bg);border:1px solid var(--border);border-radius:20px;padding:0.15rem 0.6rem;font-size:0.7rem;font-weight:700;color:var(--gray-mid);">② מערכות</span></td>
+              <td style="padding:0.7rem 0.9rem;border:1px solid var(--border);color:var(--gray-dark);line-height:1.5;">שחקן גלובלי מוביל; קשר ישראלי משמעותי. בעלות Orbia.</td>
+              <td style="padding:0.7rem 0.9rem;border:1px solid var(--border);color:var(--gray-dark);line-height:1.5;">Benchmark מרכזי; לא יעד רכישה ריאלי.</td>
+              <td style="padding:0.7rem 0.9rem;border:1px solid var(--border);text-align:center;"><span style="background:var(--gray-bg);border:1px solid var(--border);border-radius:20px;padding:0.15rem 0.6rem;font-size:0.7rem;font-weight:700;color:var(--gray-mid);">Benchmark</span></td>
+              <td style="padding:0.7rem 0.9rem;border:1px solid var(--border);color:var(--gray-dark);line-height:1.5;">להבין אילו שכבות בסל שלהם ניתנות להשלמה דרך שותפים אחרים.</td>
+            </tr>
+            <tr>
+              <td style="padding:0.7rem 0.9rem;border:1px solid var(--border);font-weight:700;color:var(--navy);background:var(--gray-bg);white-space:nowrap;">Rivulis / Jain</td>
+              <td style="padding:0.7rem 0.9rem;border:1px solid var(--border);text-align:center;"><span style="background:var(--gray-bg);border:1px solid var(--border);border-radius:20px;padding:0.15rem 0.6rem;font-size:0.7rem;font-weight:700;color:var(--gray-mid);">② מערכות</span></td>
+              <td style="padding:0.7rem 0.9rem;border:1px solid var(--border);color:var(--gray-dark);line-height:1.5;">דוגמה לריכוזיות וקונסולידציה בענף ההשקיה.</td>
+              <td style="padding:0.7rem 0.9rem;border:1px solid var(--border);color:var(--gray-dark);line-height:1.5;">בעיקר benchmark; ייתכן ספקי משנה סביבם.</td>
+              <td style="padding:0.7rem 0.9rem;border:1px solid var(--border);text-align:center;"><span style="background:var(--gray-bg);border:1px solid var(--border);border-radius:20px;padding:0.15rem 0.6rem;font-size:0.7rem;font-weight:700;color:var(--gray-mid);">Benchmark</span></td>
+              <td style="padding:0.7rem 0.9rem;border:1px solid var(--border);color:var(--gray-dark);line-height:1.5;">לבדוק נכסי ערוץ / נציגות / ספקי משנה סביב הפעילות בישראל.</td>
+            </tr>
+            <tr>
+              <td style="padding:0.7rem 0.9rem;border:1px solid var(--border);font-weight:700;color:var(--navy);background:var(--gray-bg);white-space:nowrap;">Aquestia / Dorot</td>
+              <td style="padding:0.7rem 0.9rem;border:1px solid var(--border);text-align:center;"><span style="background:#EDFAF9;border:1px solid var(--teal);border-radius:20px;padding:0.15rem 0.6rem;font-size:0.7rem;font-weight:700;color:var(--teal);">① רכיבים</span></td>
+              <td style="padding:0.7rem 0.9rem;border:1px solid var(--border);color:var(--gray-dark);line-height:1.5;">מגופים ושסתומים. יש להתייחס לסטטוס במסגרת Aquestia — לא שחקן עצמאי פשוט.</td>
+              <td style="padding:0.7rem 0.9rem;border:1px solid var(--border);color:var(--gray-dark);line-height:1.5;">דוגמה לקונסולידציה; לא יעד M&A ישיר.</td>
+              <td style="padding:0.7rem 0.9rem;border:1px solid var(--border);text-align:center;"><span style="background:var(--amber-pale);border:1px solid var(--amber);border-radius:20px;padding:0.15rem 0.6rem;font-size:0.7rem;font-weight:700;color:var(--amber);">לאימות בעלות</span></td>
+              <td style="padding:0.7rem 0.9rem;border:1px solid var(--border);color:var(--gray-dark);line-height:1.5;">לוודא מבנה בעלות ומה נשאר כיכולת מקומית רלוונטית.</td>
+            </tr>
+            <tr>
+              <td style="padding:0.7rem 0.9rem;border:1px solid var(--border);font-weight:700;color:var(--navy);background:var(--gray-bg);white-space:nowrap;">BERMAD</td>
+              <td style="padding:0.7rem 0.9rem;border:1px solid var(--border);text-align:center;"><span style="background:#EDFAF9;border:1px solid var(--teal);border-radius:20px;padding:0.15rem 0.6rem;font-size:0.7rem;font-weight:700;color:var(--teal);">① רכיבים</span></td>
+              <td style="padding:0.7rem 0.9rem;border:1px solid var(--border);color:var(--gray-dark);line-height:1.5;">שחקן ישראלי משמעותי בבקרת מים. מגופי בקרה ו-flow management.</td>
+              <td style="padding:0.7rem 0.9rem;border:1px solid var(--border);color:var(--gray-dark);line-height:1.5;">Benchmark / מתחרה ישיר בליבת רכיבי בקרה.</td>
+              <td style="padding:0.7rem 0.9rem;border:1px solid var(--border);text-align:center;"><span style="background:var(--gray-bg);border:1px solid var(--border);border-radius:20px;padding:0.15rem 0.6rem;font-size:0.7rem;font-weight:700;color:var(--gray-mid);">Benchmark</span></td>
+              <td style="padding:0.7rem 0.9rem;border:1px solid var(--border);color:var(--gray-dark);line-height:1.5;">לבדוק שכבות משלימות / ערוצים שאינם חופפים לבקרה.</td>
+            </tr>
+            <tr>
+              <td style="padding:0.7rem 0.9rem;border:1px solid var(--border);font-weight:700;color:var(--navy);background:var(--gray-bg);white-space:nowrap;">Galcon</td>
+              <td style="padding:0.7rem 0.9rem;border:1px solid var(--border);text-align:center;"><span style="background:#EDFAF9;border:1px solid var(--teal);border-radius:20px;padding:0.15rem 0.6rem;font-size:0.7rem;font-weight:700;color:var(--teal);">③ בקרה</span></td>
+              <td style="padding:0.7rem 0.9rem;border:1px solid var(--border);color:var(--gray-dark);line-height:1.5;">בקרי השקיה, timers, IoT לגינון, חקלאות וניהול מים. ממוקד בדיוק בשכבת הפער של בקרה גבע.</td>
+              <td style="padding:0.7rem 0.9rem;border:1px solid var(--border);color:var(--gray-dark);line-height:1.5;"><strong style="color:var(--teal);">שחקן בקרה מרכזי לבדיקה</strong> — רלוונטי לבחינת שותפות / M&A / JV, בכפוף לאימות בעלות, התאמה וחפיפה תחרותית.</td>
+              <td style="padding:0.7rem 0.9rem;border:1px solid var(--border);text-align:center;"><span style="background:#EDFAF9;border:2px solid var(--teal);border-radius:20px;padding:0.2rem 0.7rem;font-size:0.7rem;font-weight:800;color:var(--teal);">★ שחקן בקרה / יעד בדיקה</span></td>
+              <td style="padding:0.7rem 0.9rem;border:1px solid var(--border);color:var(--gray-dark);line-height:1.5;">לבדוק עצמאות, מבנה בעלות, ערוצים, GP, חפיפת לקוחות עם בקרה גבע.</td>
+            </tr>
+            <tr>
+              <td style="padding:0.7rem 0.9rem;border:1px solid var(--border);font-weight:700;color:var(--navy);background:var(--gray-bg);white-space:nowrap;">Amiad</td>
+              <td style="padding:0.7rem 0.9rem;border:1px solid var(--border);text-align:center;"><span style="background:var(--gray-bg);border:1px solid var(--border);border-radius:20px;padding:0.15rem 0.6rem;font-size:0.7rem;font-weight:700;color:var(--gray-mid);">④ סינון</span></td>
+              <td style="padding:0.7rem 0.9rem;border:1px solid var(--border);color:var(--gray-dark);line-height:1.5;">פתרונות סינון מים להשקיה ותעשייה.</td>
+              <td style="padding:0.7rem 0.9rem;border:1px solid var(--border);color:var(--gray-dark);line-height:1.5;">שכבה משלימה בסל השקיה; ייתכן benchmark.</td>
+              <td style="padding:0.7rem 0.9rem;border:1px solid var(--border);text-align:center;"><span style="background:var(--gray-bg);border:1px solid var(--border);border-radius:20px;padding:0.15rem 0.6rem;font-size:0.7rem;font-weight:700;color:var(--gray-mid);">שחקן משלים</span></td>
+              <td style="padding:0.7rem 0.9rem;border:1px solid var(--border);color:var(--gray-dark);line-height:1.5;">לבדוק חפיפה לערוצי בקרה והאם סינון הוא הרחבת סל רלוונטית.</td>
+            </tr>
+            <tr>
+              <td style="padding:0.7rem 0.9rem;border:1px solid var(--border);font-weight:700;color:var(--navy);background:var(--gray-bg);white-space:nowrap;">Metzer</td>
+              <td style="padding:0.7rem 0.9rem;border:1px solid var(--border);text-align:center;"><span style="background:var(--gray-bg);border:1px solid var(--border);border-radius:20px;padding:0.15rem 0.6rem;font-size:0.7rem;font-weight:700;color:var(--gray-mid);">② מערכות</span></td>
+              <td style="padding:0.7rem 0.9rem;border:1px solid var(--border);color:var(--gray-dark);line-height:1.5;">שחקן בתחום פתרונות השקיה וטפטוף.</td>
+              <td style="padding:0.7rem 0.9rem;border:1px solid var(--border);color:var(--gray-dark);line-height:1.5;">רלוונטי להבנת מבנה השוק ושכבת המוצרים.</td>
+              <td style="padding:0.7rem 0.9rem;border:1px solid var(--border);text-align:center;"><span style="background:var(--gray-bg);border:1px solid var(--border);border-radius:20px;padding:0.15rem 0.6rem;font-size:0.7rem;font-weight:700;color:var(--gray-mid);">Benchmark</span></td>
+              <td style="padding:0.7rem 0.9rem;border:1px solid var(--border);color:var(--gray-dark);line-height:1.5;">לבדוק קשר לערוצי הפצה ואינטגרטורים.</td>
+            </tr>
+            <tr>
+              <td style="padding:0.7rem 0.9rem;border:1px solid var(--border);font-weight:700;color:var(--navy);background:var(--amber-pale);">חברות סחר, גינון, הפצה</td>
+              <td style="padding:0.7rem 0.9rem;border:1px solid var(--border);text-align:center;background:var(--amber-pale);"><span style="background:var(--white);border:1px solid var(--amber);border-radius:20px;padding:0.15rem 0.6rem;font-size:0.7rem;font-weight:700;color:var(--amber);">⑤ ערוץ</span></td>
+              <td style="padding:0.7rem 0.9rem;border:1px solid var(--border);color:var(--gray-dark);line-height:1.5;background:var(--amber-pale);">שכבה שדורשת מיפוי פרטני: מפיצים, קמעונאות מקצועית, חברות התקנה.</td>
+              <td style="padding:0.7rem 0.9rem;border:1px solid var(--border);color:var(--gray-dark);line-height:1.5;background:var(--amber-pale);"><strong style="color:var(--amber);">ייתכן פוטנציאל מעשי</strong> לרכישת ערוץ / הרחבת סחר.</td>
+              <td style="padding:0.7rem 0.9rem;border:1px solid var(--border);text-align:center;background:var(--amber-pale);"><span style="background:var(--white);border:1px solid var(--amber);border-radius:20px;padding:0.15rem 0.6rem;font-size:0.7rem;font-weight:700;color:var(--amber);">פער מידע</span></td>
+              <td style="padding:0.7rem 0.9rem;border:1px solid var(--border);color:var(--gray-dark);line-height:1.5;background:var(--amber-pale);">למפות שמות ספציפיים, הסכמי ייצוג, אזורי כיסוי, לקוחות ושירות.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="margin-top:0.6rem;font-size:0.7rem;font-weight:600;color:var(--amber);display:flex;align-items:center;gap:0.4rem;">
+        <span>⚠</span> מיפוי ראשוני — דורש אימות מקורות לפני שימוש כממצא סופי
+      </div>
+    </div>
+
+    <!-- ── D. SEGMENTATION CARDS ── -->
+    <div style="margin-bottom:2rem;">
+      <div style="font-size:0.68rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--teal);margin-bottom:1rem;">ניתוח לפי שכבה</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;">
+
+        <div style="background:var(--white);border:1px solid var(--border);border-top:3px solid var(--teal);border-radius:10px;padding:1.25rem;">
+          <div style="font-size:0.85rem;font-weight:800;color:var(--navy);margin-bottom:0.5rem;">① רכיבים ומגופים</div>
+          <div style="font-size:0.82rem;color:var(--gray-dark);line-height:1.65;">קרוב לליבת בקרה גבע: סולנואידים, מגופים, שסתומים ורכיבי בקרת זורמים. כאן נמצאים מתחרים ו-benchmarks חזקים, אך לא בהכרח יעדי רכישה פשוטים.</div>
+        </div>
+
+        <div style="background:#EDFAF9;border:1px solid var(--teal);border-top:3px solid var(--teal);border-radius:10px;padding:1.25rem;">
+          <div style="font-size:0.85rem;font-weight:800;color:var(--navy);margin-bottom:0.5rem;">③ בקרה ואוטומציה <span style="font-size:0.68rem;font-weight:700;background:var(--teal);color:white;padding:0.1rem 0.5rem;border-radius:10px;margin-right:0.3rem;">עניין אסטרטגי</span></div>
+          <div style="font-size:0.82rem;color:var(--gray-dark);line-height:1.65;">שכבה בעלת עניין אסטרטגי גבוה יותר: controllers, timers, smart valves, IoT וניהול השקיה מרחוק. זו יכולה להיות שכבת השלמה ליכולות בקרה.</div>
+        </div>
+
+        <div style="background:var(--white);border:1px solid var(--border);border-top:3px solid var(--gray-light);border-radius:10px;padding:1.25rem;">
+          <div style="font-size:0.85rem;font-weight:800;color:var(--navy);margin-bottom:0.5rem;">④ Fertigation וסינון</div>
+          <div style="font-size:0.82rem;color:var(--gray-dark);line-height:1.65;">תתי־מסלולים משלימים לסל השקיה רחב. עשויים להתאים להרחבת סל, שותפות או זכויות שיווק, אך לא בהכרח כמהלך עצמאי טרנספורמטיבי.</div>
+        </div>
+
+        <div style="background:var(--amber-pale);border:1px solid var(--amber);border-top:3px solid var(--amber);border-radius:10px;padding:1.25rem;">
+          <div style="font-size:0.85rem;font-weight:800;color:var(--navy);margin-bottom:0.5rem;">⑤ סחר, גינון והפצה</div>
+          <div style="font-size:0.82rem;color:var(--gray-dark);line-height:1.65;">שכבה מסחרית שעשויה להיות מעשית יותר לרכישה או שותפות: ערוץ, לקוחות, שירות, מותגים מיוצגים וזכויות הפצה.</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── E. PRELIMINARY INSIGHTS ── -->
+    <div style="margin-bottom:2rem;">
+      <div style="font-size:0.68rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--teal);margin-bottom:1rem;">תובנות ראשוניות מזירת ההשקיה</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;">
+
+        <div style="background:var(--white);border:1px solid var(--border);border-radius:10px;padding:1.1rem;">
+          <div style="font-size:0.72rem;font-weight:800;color:var(--navy);margin-bottom:0.4rem;">קונסולידציה כבר התרחשה</div>
+          <div style="font-size:0.78rem;color:var(--gray-dark);line-height:1.55;">שחקנים ישראליים מרכזיים אינם יעדי M&A פשוטים — חלקם חלק מקבוצות גלובליות:</div>
+          <div style="margin-top:0.5rem;display:flex;flex-direction:column;gap:0.25rem;">
+            <div style="font-size:0.73rem;color:var(--gray-mid);">· Netafim ← Orbia</div>
+            <div style="font-size:0.73rem;color:var(--gray-mid);">· Rivulis ← Jain Irrigation</div>
+            <div style="font-size:0.73rem;color:var(--gray-mid);">· NaanDanJain ← קונסולידציה היסטורית</div>
+            <div style="font-size:0.73rem;color:var(--gray-mid);">· Dorot ← Aquestia</div>
+          </div>
+          <div style="margin-top:0.5rem;font-size:0.72rem;color:var(--amber);font-style:italic;">אינדיקציה ראשונית — לאימות</div>
+        </div>
+
+        <div style="background:var(--white);border:1px solid var(--border);border-radius:10px;padding:1.1rem;">
+          <div style="font-size:0.72rem;font-weight:800;color:var(--navy);margin-bottom:0.4rem;">הזירה אינה אחידה</div>
+          <div style="font-size:0.78rem;color:var(--gray-dark);line-height:1.55;">השקיה כוללת כמה שכבות שונות מאוד: רכיבים, מערכות, בקרה, סינון, דישון וערוצים. כל שכבה דורשת לוגיקת מהלך אחרת.</div>
+        </div>
+
+        <div style="background:var(--white);border:1px solid var(--border);border-radius:10px;padding:1.1rem;">
+          <div style="font-size:0.72rem;font-weight:800;color:var(--navy);margin-bottom:0.4rem;">הפער אינו רק מוצר</div>
+          <div style="font-size:0.78rem;color:var(--gray-dark);line-height:1.55;">רכישת רכיב בודד לא בהכרח מספיקה. השאלה היא האם המהלך מוסיף יכולת מערכתית, ערוץ, מותג או שליטה בשכבת בקרה.</div>
+        </div>
+
+        <div style="background:#EDFAF9;border:1px solid var(--teal);border-radius:10px;padding:1.1rem;">
+          <div style="font-size:0.72rem;font-weight:800;color:var(--teal);margin-bottom:0.4rem;">בקרה ואוטומציה כציר מרכזי</div>
+          <div style="font-size:0.78rem;color:var(--gray-dark);line-height:1.55;">שכבת הבקרה / smart irrigation עשויה להיות הציר המעניין ביותר להשלמת יכולות, במיוחד מול ליבת בקרה גבע.</div>
+        </div>
+
+        <div style="background:var(--amber-pale);border:1px solid var(--amber);border-radius:10px;padding:1.1rem;">
+          <div style="font-size:0.72rem;font-weight:800;color:var(--amber);margin-bottom:0.4rem;">ערוץ עשוי להיות נכס</div>
+          <div style="font-size:0.78rem;color:var(--gray-dark);line-height:1.55;">חברות סחר, גינון והפצה עשויות להיות יעד מעשי יותר לבחינה מאשר רכישת יצרן גדול.</div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- ── FERTIGATION SUB-SECTION ── -->
+    <div style="border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:1.25rem;">
+      <div style="background:var(--navy);padding:0.65rem 1.25rem;display:flex;align-items:center;justify-content:space-between;">
+        <div style="font-size:0.88rem;font-weight:800;color:var(--white);">Fertigation — תת־מסלול משלים</div>
+        <div style="font-size:0.65rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;background:rgba(255,255,255,0.12);color:rgba(255,255,255,0.7);padding:0.2rem 0.6rem;border-radius:20px;">בחינה ראשונית</div>
+      </div>
+      <div style="padding:1.1rem 1.25rem;font-size:0.83rem;color:var(--gray-dark);line-height:1.7;">
+        בתת־מסלול הדישון והפרטיגיישן, הערך לבקרה גבע אינו בהכרח רכישת יצרן ציוד מינון, אלא האפשרות <strong style="color:var(--navy);">להשלים סל</strong>: solenoid + valve + controller + dosing.
+        הפער המרכזי הוא זיהוי מפיצים ונציגויות של שחקנים כמו <strong>Dosatron / Mixtron / Irritec</strong> בישראל.
+        <div style="margin-top:0.6rem;font-size:0.72rem;color:var(--amber);">⚠ ראשוני — דורש מיפוי נציגויות</div>
+      </div>
+    </div>
+
+    <!-- ── DISTRIBUTION / GARDENING SUB-SECTION ── -->
+    <div style="border:1px solid var(--amber);border-radius:10px;overflow:hidden;margin-bottom:1.25rem;">
+      <div style="background:var(--amber);padding:0.65rem 1.25rem;display:flex;align-items:center;justify-content:space-between;">
+        <div style="font-size:0.88rem;font-weight:800;color:var(--white);">חברות סחר, גינון והפצה — פער מידע מרכזי</div>
+        <div style="font-size:0.65rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;background:rgba(255,255,255,0.25);color:rgba(255,255,255,0.9);padding:0.2rem 0.6rem;border-radius:20px;">ממתין למיפוי</div>
+      </div>
+      <div style="padding:1.1rem 1.25rem;font-size:0.83rem;color:var(--gray-dark);line-height:1.7;">
+        שכבת ההפצה עשויה להיות <strong style="color:var(--navy);">פרקטית יותר לבחינה</strong> ממהלך רכישת יצרן גדול, אך המידע הציבורי חלש.
+        יש למפות שמות שחקנים, הסכמי ייצוג, אזורי כיסוי, לקוחות ושירות.
+        <div style="margin-top:0.8rem;display:grid;grid-template-columns:1fr 1fr;gap:0.4rem;">
+          <div style="display:flex;gap:0.5rem;font-size:0.78rem;"><span style="color:var(--amber);font-weight:700;">→</span><span>מי מחזיק בייצוג בלעדי של מותגים רלוונטיים?</span></div>
+          <div style="display:flex;gap:0.5rem;font-size:0.78rem;"><span style="color:var(--amber);font-weight:700;">→</span><span>מה מבנה הבעלות של חברות סחר וגינון?</span></div>
+          <div style="display:flex;gap:0.5rem;font-size:0.78rem;"><span style="color:var(--amber);font-weight:700;">→</span><span>האם קיים ערוץ עצמאי לרכישה / שותפות?</span></div>
+          <div style="display:flex;gap:0.5rem;font-size:0.78rem;"><span style="color:var(--amber);font-weight:700;">→</span><span>אילו לקוחות ואזורים מכוסים בכל שחקן?</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── F. WHAT STILL NEEDS TO BE COMPLETED ── -->
+    <div style="border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:2rem;">
+      <div style="background:var(--navy);padding:0.65rem 1.25rem;font-size:0.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.75);">מה עדיין חסר להשלמה</div>
+      <div style="padding:1rem 1.25rem;display:grid;grid-template-columns:1fr 1fr;gap:0.4rem 1.5rem;">
+        <div style="display:flex;align-items:flex-start;gap:0.5rem;font-size:0.82rem;color:var(--gray-dark);line-height:1.5;padding:0.3rem 0;border-bottom:1px solid var(--border);">
+          <span style="color:var(--amber);font-weight:700;flex-shrink:0;">✗</span>
+          <span>מיפוי מלא של חברות סחר והפצה בתחום ההשקיה בישראל</span>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:0.5rem;font-size:0.82rem;color:var(--gray-dark);line-height:1.5;padding:0.3rem 0;border-bottom:1px solid var(--border);">
+          <span style="color:var(--amber);font-weight:700;flex-shrink:0;">✗</span>
+          <span>זיהוי מי מחזיק בזכויות ייצוג בלעדיות למותגים רלוונטיים</span>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:0.5rem;font-size:0.82rem;color:var(--gray-dark);line-height:1.5;padding:0.3rem 0;border-bottom:1px solid var(--border);">
+          <span style="color:var(--amber);font-weight:700;flex-shrink:0;">✗</span>
+          <span>בדיקה אילו שחקנים עצמאיים באמת נותרו בשוק</span>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:0.5rem;font-size:0.82rem;color:var(--gray-dark);line-height:1.5;padding:0.3rem 0;border-bottom:1px solid var(--border);">
+          <span style="color:var(--amber);font-weight:700;flex-shrink:0;">✗</span>
+          <span>הפרדה בין מתחרים, לקוחות, נציגויות ויעדי רכישה אפשריים</span>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:0.5rem;font-size:0.82rem;color:var(--gray-dark);line-height:1.5;padding:0.3rem 0;">
+          <span style="color:var(--amber);font-weight:700;flex-shrink:0;">✗</span>
+          <span>בדיקת רלוונטיות מסחרית לבקרה: רכישה, שותפות, זכויות שיווק, הרחבת סחר או benchmark</span>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:0.5rem;font-size:0.82rem;color:var(--gray-dark);line-height:1.5;padding:0.3rem 0;">
+          <span style="color:var(--amber);font-weight:700;flex-shrink:0;">✗</span>
+          <span>אימות מקורות לכל שחקן לפני שימוש במצגת סופית</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── G. HOW THIS FEEDS FUTURE PRIORITIZATION ── -->
+    <div style="background:var(--navy);border-radius:12px;padding:1.75rem 2rem;margin-bottom:1.75rem;">
+      <div style="font-size:0.65rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal-light);margin-bottom:0.75rem;">איך המיפוי יתורגם בהמשך לתעדוף?</div>
+      <p style="font-size:0.88rem;color:rgba(255,255,255,0.8);line-height:1.75;margin-bottom:1.25rem;">לאחר השלמת מיפוי השחקנים בכל הזירות, ניתן יהיה להשוות בין הזירות לא לפי תחושת אטרקטיביות כללית, אלא לפי שאלות קונקרטיות: האם קיימים שחקנים עצמאיים? האם ניתן לקצר חסמי כניסה באמצעות שותפות או רכישה? האם יש ערוץ או נציגות שניתן לרכוש? האם הזירה קרובה לליבת בקרה גבע? ומה רמת הביטחון במידע.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:0.5rem;">
+        <div style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:20px;padding:0.3rem 0.85rem;font-size:0.75rem;font-weight:600;color:rgba(255,255,255,0.7);">קיום שחקנים עצמאיים</div>
+        <div style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:20px;padding:0.3rem 0.85rem;font-size:0.75rem;font-weight:600;color:rgba(255,255,255,0.7);">קרבה לליבת בקרה גבע</div>
+        <div style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:20px;padding:0.3rem 0.85rem;font-size:0.75rem;font-weight:600;color:rgba(255,255,255,0.7);">יכולת לקצר חסמי כניסה</div>
+        <div style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:20px;padding:0.3rem 0.85rem;font-size:0.75rem;font-weight:600;color:rgba(255,255,255,0.7);">נגישות מסחרית: ערוץ / נציגות / שותפות</div>
+        <div style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:20px;padding:0.3rem 0.85rem;font-size:0.75rem;font-weight:600;color:rgba(255,255,255,0.7);">רמת ביטחון במידע</div>
+      </div>
+    </div>
+
+    <div class="verdict-banner continue">
+      <span style="font-size:1.2rem">✓</span>
+      <span>Continue — subject to validation of the bundle / control-layer hypothesis and target-level economics</span>
+    </div>
   </div>
 </div>
 
+
 <div class="slide-divider"></div>
 
+<!-- ════════════════════════════════════════════════════
+     SLIDE 8 — VALVE ACTUATION
+════════════════════════════════════════════════════ -->
 <div id="actuation" class="slide">
   <div class="slide-inner">
     <div class="slide-number">07 · ARENA B</div>
-    <div class="arena-header"><div class="arena-icon" style="background:var(--navy);border-color:var(--navy-mid);color:white">⚙️</div><div class="arena-title-block"><div class="section-eyebrow">זירה שנייה לבחינה</div><h2>Valve Actuation / סחר טכני</h2></div></div>
-    <div class="arena-content-grid">
-      <div class="arena-card"><div class="arena-card-label">מדוע רלוונטי</div><div class="arena-card-content">[פלייסהולדר — קרבה ישירה לכישורי השסתומים של בקרה גבע. הרחבה לאוטומציה ואקטואציה כצעד טבעי.]</div></div>
-      <div class="arena-card"><div class="arena-card-label">הקשר SMC / Festo</div><div class="arena-card-content">[פלייסהולדר — חשיפת לקוחות בקרה גבע ל-SMC/Festo, ה-white-space שבהם שחקן ישראלי יכול להתחרות.]</div></div>
-      <div class="arena-card"><div class="arena-card-label">נישות white-space</div><div class="arena-card-content">[פלייסהולדר — קטגוריות מוצרים שהגלובליים אינם משרתים בצורה אופטימלית בישראל.]</div></div>
-      <div class="arena-card"><div class="arena-card-label">טיפוסי שחקנים</div><div class="arena-card-content">[פלייסהולדר — יצרן מקומי? נציג? משווק ב-WL? — מי מתאים לרכישה ומה הרציונל.]</div></div>
-      <div class="arena-card"><div class="arena-card-label">סיכונים עיקריים</div><div class="arena-card-content">[פלייסהולדר — תלות בנציגות, סיכון החלפת ספק, שוליות נמוכה בסחר טהור, חשיפה לשינויי מט"ח.]</div></div>
-      <div class="arena-card"><div class="arena-card-label">מוצרים לבחינה</div><div class="arena-card-content">[פלייסהולדר — אקטואטורים פנאומטיים, שסתומי כדור ממונעים, פוזיציונרים חשמליים, בקרת לחץ.]</div></div>
+
+    <div class="arena-header">
+      <div class="arena-icon" style="background:var(--navy);border-color:var(--navy-mid);color:white">⚙️</div>
+      <div class="arena-title-block">
+        <div class="section-eyebrow">זירה שנייה לבחינה</div>
+        <h2>Valve Actuation / סחר טכני</h2>
+      </div>
     </div>
-    <div class="verdict-banner"><span style="font-size:1.2rem">✓</span><span>המלצה ראשונית: המשך בחינה — זירה שנייה לעומק</span></div>
+
+    <div class="arena-content-grid">
+      <div class="arena-card">
+        <div class="arena-card-label">מדוע רלוונטי</div>
+        <div class="arena-card-content">[פלייסהולדר — לפרט על קרבה ישירה לכישורי השסתומים של בקרה גבע. הרחבה לאוטומציה ואקטואציה כצעד טבעי.]</div>
+      </div>
+
+      <div class="arena-card">
+        <div class="arena-card-label">הקשר SMC / Festo</div>
+        <div class="arena-card-content">[פלייסהולדר — לנתח חשיפת לקוחות בקרה גבע ל-SMC/Festo, ומהם ה-white-space שבהם שחקן ישראלי יכול להתחרות.]</div>
+      </div>
+
+      <div class="arena-card">
+        <div class="arena-card-label">נישות white-space</div>
+        <div class="arena-card-content">[פלייסהולדר — לזהות קטגוריות מוצרים או סגמנטי לקוחות שהגלובליים אינם משרתים בצורה אופטימלית בישראל.]</div>
+      </div>
+
+      <div class="arena-card">
+        <div class="arena-card-label">טיפוסי שחקנים</div>
+        <div class="arena-card-content">[פלייסהולדר — לסווג: יצרן מקומי? נציג? משווק ב-WL? — ולזהות מי מהם מתאים לרכישה ומה הרציונל.]</div>
+      </div>
+
+      <div class="arena-card">
+        <div class="arena-card-label">סיכונים עיקריים</div>
+        <div class="arena-card-content">[פלייסהולדר — תלות בנציגות, סיכון החלפת ספק ע"י לקוחות, שוליות נמוכה בסחר טהור, חשיפה לשינויי מט"ח.]</div>
+      </div>
+
+      <div class="arena-card">
+        <div class="arena-card-label">מוצרים לבחינה</div>
+        <div class="arena-card-content">[פלייסהולדר — אקטואטורים פנאומטיים, שסתומי כדור ממונעים, פוזיציונרים חשמליים, מערכות בקרת לחץ.]</div>
+      </div>
+    </div>
+
+    <div class="verdict-banner continue">
+      <span style="font-size:1.2rem">✓</span>
+      <span>זירה לבחינה בהמשך — Valve Actuation</span>
+    </div>
   </div>
 </div>
 
 <div class="slide-divider"></div>
 
+<!-- ════════════════════════════════════════════════════
+     SLIDE 9 — CONDITIONAL ARENAS
+════════════════════════════════════════════════════ -->
 <div id="conditional" class="slide gray-bg">
   <div class="slide-inner">
     <div class="slide-number">08 · CONDITIONAL</div>
     <div class="section-eyebrow">זירות מותנות</div>
     <h2 class="section-title">זירות שדורשות תנאי סף לפני המשך</h2>
     <p class="section-lead">שלוש זירות מציגות היגיון אסטרטגי חלקי, אך עם חסמים ספציפיים שיש לאמת לפני השקעת משאבי חקירה נוספים.</p>
-    <div class="cond-row"><div class="cond-header"><div class="cond-arena-name">CTIS / פנאומטיקה ביטחונית</div><div class="cond-badge">מותנה</div></div><div class="cond-body"><div class="cond-col"><div class="cond-col-label">מדוע מעניין</div>[פלייסהולדר — ביקוש ביטחוני עקבי, קרבה לפנאומטיקה, חסמי כניסה שיוצרים ערך.]</div><div class="cond-col"><div class="cond-col-label">מה חוסם</div>[פלייסהולדר — ספק לגבי אקוסיסטם M&A ישראלי, בירוקרטיה ביטחונית, תלות בלקוח ממשלתי.]</div><div class="cond-col"><div class="cond-col-label">תנאי להמשך</div>[פלייסהולדר — מיפוי שחקנים ניתנים לרכישה, אימות גודל שוק, מגבלות העברת בעלות.]</div></div></div>
-    <div class="cond-row"><div class="cond-header"><div class="cond-arena-name">מים תעשייתיים / חקלאיים</div><div class="cond-badge">מותנה</div></div><div class="cond-body"><div class="cond-col"><div class="cond-col-label">מדוע מעניין</div>[פלייסהולדר — חפיפה טכנולוגית, שוק יציב ומקומי, לקוחות חוזרים ו-service contracts.]</div><div class="cond-col"><div class="cond-col-label">מה חוסם</div>[פלייסהולדר — שוק מפוצל עם שולים נמוכים, תחרות מיבואנים סיניים, ספק לגבי גודל שחקן.]</div><div class="cond-col"><div class="cond-col-label">תנאי להמשך</div>[פלייסהולדר — לזהות שחקן עם gross margin >35% ויכולת ייחודית שמצדיקה פרמיית רכישה.]</div></div></div>
-    <div class="cond-row"><div class="cond-header"><div class="cond-arena-name">כיבוי אש</div><div class="cond-badge">מותנה</div></div><div class="cond-body"><div class="cond-col"><div class="cond-col-label">מדוע מעניין</div>[פלייסהולדר — קרבה לשסתומים, שוק מוסדר ויציב, לקוחות B2B חוזרים, מרווח גבוה.]</div><div class="cond-col"><div class="cond-col-label">מה חוסם</div>[פלייסהולדר — אישורי EN12845, FM/UL אינם ניתנים להעברה — נדרשת בחינה אם רכישה מעבירה אישורים.]</div><div class="cond-col"><div class="cond-col-label">תנאי להמשך</div>[פלייסהולדר — לאמת עם ייעוץ רגולטורי: האם רכישה מעבירה אישורים? אם כן — הזירה עולה.]</div></div></div>
-  </div>
-</div>
 
-<div class="slide-divider"></div>
+    <div class="cond-row">
+      <div class="cond-header">
+        <div class="cond-arena-name">CTIS / פנאומטיקה ביטחונית</div>
+        <div class="cond-badge">מותנה</div>
+      </div>
+      <div class="cond-body">
+        <div class="cond-col">
+          <div class="cond-col-label">מדוע מעניין</div>
+          [פלייסהולדר — ביקוש ביטחוני עקבי, קרבה לפנאומטיקה תעשייתית, חסמי כניסה שיוצרים ערך ומגינים מתחרות.]
+        </div>
+        <div class="cond-col">
+          <div class="cond-col-label">מה חוסם</div>
+          [פלייסהולדר — ספק לגבי עומק אקוסיסטם M&A ישראלי, חשיפה לבירוקרטיה ביטחונית, תלות בלקוח ממשלתי בודד.]
+        </div>
+        <div class="cond-col">
+          <div class="cond-col-label">תנאי להמשך</div>
+          [פלייסהולדר — מיפוי שחקנים ישראליים ספציפיים הניתנים לרכישה, אימות שוק גודל, ובדיקת מגבלות ביטחוניות על העברת בעלות.]
+        </div>
+      </div>
+    </div>
 
-<div id="low-priority" class="slide">
-  <div class="slide-inner">
-    <div class="slide-number">09 · LOW PRIORITY</div>
-    <div class="section-eyebrow">זירות בעדיפות נמוכה</div>
-    <h2 class="section-title">זירות שאינן מומלצות בשלב זה</h2>
-    <p class="section-lead">הזירות הבאות הוצאו מרשימת העדיפויות הראשונה. לכל אחת מוסבר מדוע, ומה ישנה את המסקנה.</p>
-    <div class="three-col">
-      <div class="card gray-top"><div class="card-title">אנרגיה / גז</div><div class="card-body" style="margin-bottom:1rem"><strong style="display:block;font-size:0.72rem;letter-spacing:1px;color:var(--gray-light);text-transform:uppercase;margin-bottom:0.4rem">למה לא עכשיו</strong>[פלייסהולדר — ATEX/EN161/SIL ו-AVL. שוק מבוסס על אמון ורשימות ספקים שנבנות לאורך שנים.]</div><div class="card-body"><strong style="display:block;font-size:0.72rem;letter-spacing:1px;color:var(--gray-light);text-transform:uppercase;margin-bottom:0.4rem">מה ישנה המסקנה</strong>[פלייסהולדר — שחקן ישראלי עם AVL מלא ורישיונות תקינה בתוקף שמבקש יציאה.]</div></div>
-      <div class="card gray-top"><div class="card-title">מרכזי נתונים / סמיקונדקטורס</div><div class="card-body" style="margin-bottom:1rem"><strong style="display:block;font-size:0.72rem;letter-spacing:1px;color:var(--gray-light);text-transform:uppercase;margin-bottom:0.4rem">למה לא עכשיו</strong>[פלייסהולדר — שוק חם אך התאמה חלשה לכישורי הליבה. תמחור יעדים גבוה מהנורמה.]</div><div class="card-body"><strong style="display:block;font-size:0.72rem;letter-spacing:1px;color:var(--gray-light);text-transform:uppercase;margin-bottom:0.4rem">מה ישנה המסקנה</strong>[פלייסהולדר — אם בקרה גבע מרחיבה הגדרת ליבה לכלול מערכות קירור נוזליות.]</div></div>
-      <div class="card gray-top"><div class="card-title">מים עירוניים (אם רלוונטי)</div><div class="card-body" style="margin-bottom:1rem"><strong style="display:block;font-size:0.72rem;letter-spacing:1px;color:var(--gray-light);text-transform:uppercase;margin-bottom:0.4rem">למה לא עכשיו</strong>[פלייסהולדר — שוק מוסדר חזק, קצבי החלפה ממשלתיים, אוריינטציה לתמחור מינימלי.]</div><div class="card-body"><strong style="display:block;font-size:0.72rem;letter-spacing:1px;color:var(--gray-light);text-transform:uppercase;margin-bottom:0.4rem">מה ישנה המסקנה</strong>[פלייסהולדר — פרטיזציה של תשתיות מים, או שחקן עם טכנולוגיה ייחודית בניהול רשת.]</div></div>
+    <div class="cond-row">
+      <div class="cond-header">
+        <div class="cond-arena-name">מים תעשייתיים / חקלאיים</div>
+        <div class="cond-badge">מותנה</div>
+      </div>
+      <div class="cond-body">
+        <div class="cond-col">
+          <div class="cond-col-label">מדוע מעניין</div>
+          [פלייסהולדר — חפיפה טכנולוגית עם קו השסתומים, שוק יציב ומקומי, פוטנציאל לקוחות חוזרים ו-service contracts.]
+        </div>
+        <div class="cond-col">
+          <div class="cond-col-label">מה חוסם</div>
+          [פלייסהולדר — שוק מפוצל עם שולים נמוכים, תחרות גבוהה מיבואנים סיניים, ספק לגבי גודל שחקן ישראלי ניתן לרכישה.]
+        </div>
+        <div class="cond-col">
+          <div class="cond-col-label">תנאי להמשך</div>
+          [פלייסהולדר — לזהות שחקן ישראלי עם gross margin >35% ויכולת ייחודית שמצדיקה פרמיית רכישה.]
+        </div>
+      </div>
+    </div>
+
+    <div class="cond-row">
+      <div class="cond-header">
+        <div class="cond-arena-name">כיבוי אש</div>
+        <div class="cond-badge">מותנה</div>
+      </div>
+      <div class="cond-body">
+        <div class="cond-col">
+          <div class="cond-col-label">מדוע מעניין</div>
+          [פלייסהולדר — קרבה גבוהה לשסתומים, שוק מוסדר ויציב, לקוחות B2B חוזרים, מרווח גבוה יחסית.]
+        </div>
+        <div class="cond-col">
+          <div class="cond-col-label">מה חוסם</div>
+          [פלייסהולדר — אישורי EN12845, FM/UL אינם ניתנים להעברה. נדרשת בחינה אם M&A של ישות מאושרת מעביר את רישיונות האישור.]
+        </div>
+        <div class="cond-col">
+          <div class="cond-col-label">תנאי להמשך</div>
+          [פלייסהולדר — לאמת עם עו"ד ייעוץ רגולטורי — האם רכישה מעבירה אישורים? אם כן, הזירה עולה בסדר העדיפויות.]
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
 <div class="slide-divider"></div>
 
+<!-- ════════════════════════════════════════════════════
+     SLIDE 10 — LOW PRIORITY
+════════════════════════════════════════════════════ -->
+<div id="low-priority" class="slide">
+  <div class="slide-inner">
+    <div class="slide-number">09 · LOW PRIORITY</div>
+    <div class="section-eyebrow">זירות בעדיפות נמוכה</div>
+    <h2 class="section-title">זירות שאינן מומלצות בשלב זה</h2>
+    <p class="section-lead">הזירות הבאות הוצאו מרשימת העדיפויות הראשונה. לכל אחת מוסבר מדוע, ומה ישנה את המסקנה.</p>
+
+    <div class="three-col">
+      <div class="card gray-top">
+        <div class="card-title">אנרגיה / גז</div>
+        <div class="card-body" style="margin-bottom:1rem">
+          <strong style="display:block;font-size:0.72rem;letter-spacing:1px;color:var(--gray-light);text-transform:uppercase;margin-bottom:0.4rem">למה לא עכשיו</strong>
+          [פלייסהולדר — דרישות ATEX/EN161/SIL ו-AVL המונעות כניסה מהירה. שוק שמבוסס על אמון ורשימות ספקים שנבנות לאורך שנים.]
+        </div>
+        <div class="card-body">
+          <strong style="display:block;font-size:0.72rem;letter-spacing:1px;color:var(--gray-light);text-transform:uppercase;margin-bottom:0.4rem">מה ישנה המסקנה</strong>
+          [פלייסהולדר — זיהוי שחקן ישראלי עם AVL מלא ורישיונות תקינה בתוקף שמבקש יציאה — ירים את הזירה.]
+        </div>
+      </div>
+
+      <div class="card gray-top">
+        <div class="card-title">מרכזי נתונים / סמיקונדקטורס</div>
+        <div class="card-body" style="margin-bottom:1rem">
+          <strong style="display:block;font-size:0.72rem;letter-spacing:1px;color:var(--gray-light);text-transform:uppercase;margin-bottom:0.4rem">למה לא עכשיו</strong>
+          [פלייסהולדר — שוק חם אך התאמה חלשה לכישורי הליבה. מסלול הרכישה לא ברור, ותמחור יעדים בתחום גבוה מהנורמה.]
+        </div>
+        <div class="card-body">
+          <strong style="display:block;font-size:0.72rem;letter-spacing:1px;color:var(--gray-light);text-transform:uppercase;margin-bottom:0.4rem">מה ישנה המסקנה</strong>
+          [פלייסהולדר — אם בקרה גבע מרחיבה את הגדרת הליבה לכלול מערכות קירור נוזליות — הזירה הופכת רלוונטית.]
+        </div>
+      </div>
+
+      <div class="card gray-top">
+        <div class="card-title">מים עירוניים (אם רלוונטי)</div>
+        <div class="card-body" style="margin-bottom:1rem">
+          <strong style="display:block;font-size:0.72rem;letter-spacing:1px;color:var(--gray-light);text-transform:uppercase;margin-bottom:0.4rem">למה לא עכשיו</strong>
+          [פלייסהולדר — שוק מוסדר חזק, קצבי החלפה ממשלתיים, אוריינטציה לתמחור מינימלי ולא לחדשנות מוצרית.]
+        </div>
+        <div class="card-body">
+          <strong style="display:block;font-size:0.72rem;letter-spacing:1px;color:var(--gray-light);text-transform:uppercase;margin-bottom:0.4rem">מה ישנה המסקנה</strong>
+          [פלייסהולדר — פרטיזציה של תשתיות מים בישראל, או שחקן עם טכנולוגיה ייחודית בניהול רשת.]
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="slide-divider"></div>
+
+<!-- ════════════════════════════════════════════════════
+     SLIDE 11 — PRIORITIZATION TABLE
+════════════════════════════════════════════════════ -->
 <div id="table" class="slide gray-bg">
   <div class="slide-inner">
     <div class="slide-number">10 · SUMMARY TABLE</div>
     <div class="section-eyebrow">טבלת תעדוף</div>
     <h2 class="section-title">השוואה כלל-זירות</h2>
     <p class="section-lead">סיכום ממדי ההערכה לכל שבע הזירות שנסקרו. ערכים הם הערכות ראשוניות בלבד — ממתינים לאימות.</p>
+
     <div style="overflow-x:auto">
       <table class="priority-table">
-        <thead><tr><th>זירה</th><th>התאמה לליבה</th><th>אקוסיסטם ישראלי</th><th>חסמי כניסה</th><th>פוטנציאל מרווח</th><th>זמן לתרומה</th><th>סיכון</th><th>המלצה</th></tr></thead>
+        <thead>
+          <tr>
+            <th>זירה</th>
+            <th>התאמה לליבה</th>
+            <th>אקוסיסטם ישראלי</th>
+            <th>חסמי כניסה</th>
+            <th>פוטנציאל מרווח</th>
+            <th>זמן לתרומה</th>
+            <th>סיכון</th>
+            <th>המלצה</th>
+          </tr>
+        </thead>
         <tbody>
-          <tr><td>השקיה חכמה</td><td><span class="pill high">גבוה</span></td><td><span class="pill high">גבוה</span></td><td><span class="pill high">נמוך</span></td><td><span class="pill med">בינוני</span></td><td><span class="pill high">קצר</span></td><td><span class="pill med">בינוני</span></td><td><span class="pill continue">המשך</span></td></tr>
-          <tr><td>Valve Actuation / סחר טכני</td><td><span class="pill high">גבוה</span></td><td><span class="pill med">בינוני</span></td><td><span class="pill med">בינוני</span></td><td><span class="pill high">גבוה</span></td><td><span class="pill high">קצר</span></td><td><span class="pill med">בינוני</span></td><td><span class="pill continue">המשך</span></td></tr>
-          <tr><td>CTIS / פנאומטיקה ביטחונית</td><td><span class="pill high">גבוה</span></td><td><span class="pill low">לא ברור</span></td><td><span class="pill med">בינוני</span></td><td><span class="pill high">גבוה</span></td><td><span class="pill med">בינוני</span></td><td><span class="pill med">בינוני</span></td><td><span class="pill cond">מותנה</span></td></tr>
-          <tr><td>מים תעשייתיים / חקלאיים</td><td><span class="pill med">בינוני</span></td><td><span class="pill med">בינוני</span></td><td><span class="pill high">נמוך</span></td><td><span class="pill low">נמוך</span></td><td><span class="pill med">בינוני</span></td><td><span class="pill high">נמוך</span></td><td><span class="pill cond">מותנה</span></td></tr>
-          <tr><td>כיבוי אש</td><td><span class="pill med">בינוני</span></td><td><span class="pill low">נמוך</span></td><td><span class="pill low">גבוה</span></td><td><span class="pill high">גבוה</span></td><td><span class="pill low">ארוך</span></td><td><span class="pill med">בינוני</span></td><td><span class="pill cond">מותנה</span></td></tr>
-          <tr><td>אנרגיה / גז</td><td><span class="pill med">בינוני</span></td><td><span class="pill low">נמוך</span></td><td><span class="pill low">גבוה מאוד</span></td><td><span class="pill high">גבוה</span></td><td><span class="pill low">ארוך</span></td><td><span class="pill high">גבוה</span></td><td><span class="pill skip">נמוך</span></td></tr>
-          <tr><td>מרכזי נתונים / סמיקונדקטורס</td><td><span class="pill low">נמוך</span></td><td><span class="pill low">נמוך</span></td><td><span class="pill med">בינוני</span></td><td><span class="pill med">בינוני</span></td><td><span class="pill low">ארוך</span></td><td><span class="pill high">גבוה</span></td><td><span class="pill skip">נמוך</span></td></tr>
+          <tr>
+            <td>השקיה חכמה</td>
+            <td><span class="pill high">גבוה</span></td>
+            <td><span class="pill high">גבוה</span></td>
+            <td><span class="pill high">נמוך</span></td>
+            <td><span class="pill med">בינוני</span></td>
+            <td><span class="pill high">קצר</span></td>
+            <td><span class="pill med">בינוני</span></td>
+            <td><span class="pill continue">המשך</span></td>
+          </tr>
+          <tr>
+            <td>Valve Actuation / סחר טכני</td>
+            <td><span class="pill high">גבוה</span></td>
+            <td><span class="pill med">בינוני</span></td>
+            <td><span class="pill med">בינוני</span></td>
+            <td><span class="pill high">גבוה</span></td>
+            <td><span class="pill high">קצר</span></td>
+            <td><span class="pill med">בינוני</span></td>
+            <td><span class="pill continue">המשך</span></td>
+          </tr>
+          <tr>
+            <td>CTIS / פנאומטיקה ביטחונית</td>
+            <td><span class="pill high">גבוה</span></td>
+            <td><span class="pill low">לא ברור</span></td>
+            <td><span class="pill med">בינוני</span></td>
+            <td><span class="pill high">גבוה</span></td>
+            <td><span class="pill med">בינוני</span></td>
+            <td><span class="pill med">בינוני</span></td>
+            <td><span class="pill cond">מותנה</span></td>
+          </tr>
+          <tr>
+            <td>מים תעשייתיים / חקלאיים</td>
+            <td><span class="pill med">בינוני</span></td>
+            <td><span class="pill med">בינוני</span></td>
+            <td><span class="pill high">נמוך</span></td>
+            <td><span class="pill low">נמוך</span></td>
+            <td><span class="pill med">בינוני</span></td>
+            <td><span class="pill high">נמוך</span></td>
+            <td><span class="pill cond">מותנה</span></td>
+          </tr>
+          <tr>
+            <td>כיבוי אש</td>
+            <td><span class="pill med">בינוני</span></td>
+            <td><span class="pill low">נמוך</span></td>
+            <td><span class="pill low">גבוה</span></td>
+            <td><span class="pill high">גבוה</span></td>
+            <td><span class="pill low">ארוך</span></td>
+            <td><span class="pill med">בינוני</span></td>
+            <td><span class="pill cond">מותנה</span></td>
+          </tr>
+          <tr>
+            <td>אנרגיה / גז</td>
+            <td><span class="pill med">בינוני</span></td>
+            <td><span class="pill low">נמוך</span></td>
+            <td><span class="pill low">גבוה מאוד</span></td>
+            <td><span class="pill high">גבוה</span></td>
+            <td><span class="pill low">ארוך</span></td>
+            <td><span class="pill high">גבוה</span></td>
+            <td><span class="pill skip">נמוך</span></td>
+          </tr>
+          <tr>
+            <td>מרכזי נתונים / סמיקונדקטורס</td>
+            <td><span class="pill low">נמוך</span></td>
+            <td><span class="pill low">נמוך</span></td>
+            <td><span class="pill med">בינוני</span></td>
+            <td><span class="pill med">בינוני</span></td>
+            <td><span class="pill low">ארוך</span></td>
+            <td><span class="pill high">גבוה</span></td>
+            <td><span class="pill skip">נמוך</span></td>
+          </tr>
         </tbody>
       </table>
     </div>
@@ -486,41 +1941,124 @@
 
 <div class="slide-divider"></div>
 
+<!-- ════════════════════════════════════════════════════
+     SLIDE 12 — INFORMATION GAPS
+════════════════════════════════════════════════════ -->
 <div id="gaps" class="slide">
   <div class="slide-inner">
     <div class="slide-number">11 · INFORMATION GAPS</div>
     <div class="section-eyebrow">פערי מידע</div>
     <h2 class="section-title">מה עוד צריך לדעת לפני השלב הבא?</h2>
     <p class="section-lead">פערים אלו מקובצים לפי סוג — כדי לאפשר הקצאה יעילה של מאמץ לאיסוף מידע.</p>
+
     <div class="gaps-grid">
-      <div class="gap-group"><div class="gap-group-header">בעלות וזמינות לרכישה</div><div class="gap-group-body"><div class="gap-item">האם הבעלים שוקלים אקזיט?</div><div class="gap-item">מבנה בעלות — משפחתי / מוסדי / VCs?</div><div class="gap-item">האם קיים תהליך מכירה פעיל?</div><div class="gap-item">[פלייסהולדר — פערים נוספים]</div></div></div>
-      <div class="gap-group"><div class="gap-group-header">מרווח גולמי אמיתי</div><div class="gap-group-body"><div class="gap-item">gross margin ממוצע בזירה</div><div class="gap-item">מרווח ספציפי לשחקנים מזוהים</div><div class="gap-item">מרכיב COGS עיקרי — ייצור / רכש / שירות</div><div class="gap-item">[פלייסהולדר — פערים נוספים]</div></div></div>
-      <div class="gap-group"><div class="gap-group-header">אישורים ורשימות AVL</div><div class="gap-group-body"><div class="gap-item">האם האישורים ניתנים להעברה ברכישה?</div><div class="gap-item">האם ה-AVL רשום על שם החברה או הפרט?</div><div class="gap-item">זמן ועלות חידוש אישורים</div><div class="gap-item">[פלייסהולדר — פערים לכיבוי אש / גז]</div></div></div>
-      <div class="gap-group"><div class="gap-group-header">ניידות נציגות ספקים</div><div class="gap-group-body"><div class="gap-item">האם הסכמי נציגות ניידים עם שינוי בעלות?</div><div class="gap-item">מה עמדת הספק הגלובלי?</div><div class="gap-item">האם קיים סעיף שינוי שליטה?</div><div class="gap-item">[פלייסהולדר — רלוונטי ל-Valve Actuation]</div></div></div>
-      <div class="gap-group"><div class="gap-group-header">חשיפת SMC</div><div class="gap-group-body"><div class="gap-item">מה נתח SMC בתיק ההכנסות של כל יעד?</div><div class="gap-item">האם SMC מוכרת ישירות לאותם לקוחות?</div><div class="gap-item">מה רמת תחרות SMC בישראל?</div><div class="gap-item">[פלייסהולדר — פערים נוספים]</div></div></div>
-      <div class="gap-group"><div class="gap-group-header">ביטחון בגודל השוק</div><div class="gap-group-body"><div class="gap-item">האם הנתונים ממקורות ראשוניים?</div><div class="gap-item">כיצד מוגדר TAM לעומת SAM?</div><div class="gap-item">האם הצמיחה מוצדקת בנתוני ענף?</div><div class="gap-item">[פלייסהולדר — לכל זירה בנפרד]</div></div></div>
+      <div class="gap-group">
+        <div class="gap-group-header">בעלות וזמינות לרכישה</div>
+        <div class="gap-group-body">
+          <div class="gap-item">האם הבעלים שוקלים אקזיט?</div>
+          <div class="gap-item">מבנה בעלות — משפחתי / מוסדי / VCs?</div>
+          <div class="gap-item">האם קיים תהליך מכירה פעיל?</div>
+          <div class="gap-item">[פלייסהולדר — פערים נוספים לזירות ספציפיות]</div>
+        </div>
+      </div>
+
+      <div class="gap-group">
+        <div class="gap-group-header">מרווח גולמי אמיתי</div>
+        <div class="gap-group-body">
+          <div class="gap-item">gross margin ממוצע בזירה</div>
+          <div class="gap-item">מרווח ספציפי לשחקנים מזוהים</div>
+          <div class="gap-item">מרכיב COGS עיקרי — ייצור / רכש / שירות</div>
+          <div class="gap-item">[פלייסהולדר — פערים נוספים לזירות ספציפיות]</div>
+        </div>
+      </div>
+
+      <div class="gap-group">
+        <div class="gap-group-header">אישורים ורשימות AVL</div>
+        <div class="gap-group-body">
+          <div class="gap-item">האם האישורים ניתנים להעברה ברכישה?</div>
+          <div class="gap-item">האם ה-AVL רשום על שם החברה או הפרט?</div>
+          <div class="gap-item">זמן ועלות חידוש אישורים רלוונטיים</div>
+          <div class="gap-item">[פלייסהולדר — פערים ספציפיים לכיבוי אש / גז]</div>
+        </div>
+      </div>
+
+      <div class="gap-group">
+        <div class="gap-group-header">ניידות נציגות ספקים</div>
+        <div class="gap-group-body">
+          <div class="gap-item">האם הסכמי נציגות ניידים עם שינוי בעלות?</div>
+          <div class="gap-item">מה עמדת הספק הגלובלי על שינוי בעלות?</div>
+          <div class="gap-item">האם קיים סעיף שינוי שליטה בהסכמים?</div>
+          <div class="gap-item">[פלייסהולדר — רלוונטי במיוחד ל-Valve Actuation]</div>
+        </div>
+      </div>
+
+      <div class="gap-group">
+        <div class="gap-group-header">חשיפת SMC</div>
+        <div class="gap-group-body">
+          <div class="gap-item">מה נתח SMC בתיק ההכנסות של כל יעד?</div>
+          <div class="gap-item">האם SMC מוכרת ישירות לאותם לקוחות?</div>
+          <div class="gap-item">מה רמת תחרות ה-SMC בישראל לאחר שינויים?</div>
+          <div class="gap-item">[פלייסהולדר — פערים נוספים]</div>
+        </div>
+      </div>
+
+      <div class="gap-group">
+        <div class="gap-group-header">ביטחון בגודל השוק</div>
+        <div class="gap-group-body">
+          <div class="gap-item">האם הנתונים מגיעים ממקורות ראשוניים?</div>
+          <div class="gap-item">כיצד מוגדר ה-TAM לעומת ה-SAM?</div>
+          <div class="gap-item">האם הצמיחה המוערכת מוצדקת בנתוני ענף?</div>
+          <div class="gap-item">[פלייסהולדר — לכל זירה בנפרד]</div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
 <div class="slide-divider"></div>
 
+<!-- ════════════════════════════════════════════════════
+     SLIDE 13 — CLOSING
+════════════════════════════════════════════════════ -->
 <div id="closing" class="slide">
   <div class="closing-inner">
     <div class="slide-number" style="color:rgba(255,255,255,0.3);text-align:center">12 · CONCLUSION</div>
-    <div class="closing-eyebrow">מסקנת הסינון הראשוני</div>
-    <div class="closing-message">בשלב הסינון הראשוני, ההיגיון האסטרטגי תומך בהמשך בחינה של <strong>השקיה חכמה</strong> ו-<strong>Valve Actuation</strong> כזירות ראשונות, תוך השארת יתר הזירות כמותנות או נמוכות עד להוכחת תנאי סף.</div>
-    <div class="closing-next-steps">
-      <div class="next-step-box"><span class="step-num">1</span>מיפוי שחקנים ספציפיים בשתי הזירות הראשונות</div>
-      <div class="next-step-box"><span class="step-num">2</span>אימות תנאי סף לזירות המותנות</div>
-      <div class="next-step-box"><span class="step-num">3</span>בחינת מבנה עסקה ומימון לזירות המובילות</div>
-      <div class="next-step-box"><span class="step-num">4</span>עדכון תעדוף לאחר השלמת פערי מידע</div>
+    <div class="closing-eyebrow">ממצא ראשוני — כיוון לבחינה המשך</div>
+
+    <div class="closing-message">
+      בשלב הסינון הראשוני, ההיגיון האסטרטגי תומך בהמשך בחינה של
+      <strong>השקיה חכמה</strong> ו-<strong>Valve Actuation</strong> כזירות ראשונות,
+      תוך השארת יתר הזירות כמותנות או נמוכות
+      עד להוכחת תנאי סף.
     </div>
-    <div class="closing-footer-line">בקרה גבע · סקר שוק ותעדוף זירות M&A · טיוטה ראשונה לדיון פנימי · אין להפיץ ללא אישור</div>
+
+    <div class="closing-next-steps">
+      <div class="next-step-box">
+        <span class="step-num">1</span>
+        מיפוי שחקנים ספציפיים בשתי הזירות הראשונות
+      </div>
+      <div class="next-step-box">
+        <span class="step-num">2</span>
+        אימות תנאי סף לזירות המותנות
+      </div>
+      <div class="next-step-box">
+        <span class="step-num">3</span>
+        בחינת מבנה עסקה ומימון לזירות המובילות
+      </div>
+      <div class="next-step-box">
+        <span class="step-num">4</span>
+        עדכון תעדוף לאחר השלמת פערי מידע
+      </div>
+    </div>
+
+    <div class="closing-footer-line">
+      בקרה גבע · סקר שוק ותעדוף זירות M&A · טיוטה ראשונה לדיון פנימי · אין להפיץ ללא אישור
+    </div>
   </div>
 </div>
 
 <script>
+  // Smooth scroll offset for fixed nav
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
       const target = document.querySelector(a.getAttribute('href'));
@@ -530,6 +2068,9 @@
       window.scrollTo({ top, behavior: 'smooth' });
     });
   });
+
+  // Active nav highlight on scroll
+  const slides = document.querySelectorAll('[id]');
   const navLinks = document.querySelectorAll('.nav-links a');
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -540,7 +2081,9 @@
       }
     });
   }, { threshold: 0.4 });
-  document.querySelectorAll('[id]').forEach(s => observer.observe(s));
+
+  slides.forEach(s => observer.observe(s));
 </script>
+
 </body>
 </html>
