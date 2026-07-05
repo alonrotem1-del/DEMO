@@ -1253,553 +1253,498 @@
 ════════════════════════════════════════════════════ -->
 <div id="irrigation" class="slide gray-bg">
   <div class="slide-inner">
-    <div class="slide-number">06 · ARENA A — DEEP DIVE</div>
+    <div class="slide-number">06 · השקיה חכמה — מיפוי שוק</div>
 
-    <!-- Status tags -->
+    <!-- Status tags — no emojis -->
     <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.5rem;">
-      <div style="display:inline-flex;align-items:center;gap:0.4rem;background:var(--amber-pale);border:1.5px solid var(--amber);border-radius:20px;padding:0.28rem 0.85rem;font-size:0.7rem;font-weight:700;color:var(--amber);letter-spacing:0.5px;">⚠ טיוטת מיפוי ראשונית</div>
-      <div style="display:inline-flex;align-items:center;gap:0.4rem;background:var(--red-pale);border:1.5px solid var(--red);border-radius:20px;padding:0.28rem 0.85rem;font-size:0.7rem;font-weight:700;color:var(--red);letter-spacing:0.5px;">! דורש אימות</div>
-      <div style="display:inline-flex;align-items:center;gap:0.4rem;background:var(--gray-bg);border:1.5px solid var(--border);border-radius:20px;padding:0.28rem 0.85rem;font-size:0.7rem;font-weight:700;color:var(--gray-dark);letter-spacing:0.5px;">לא רשימת יעדי רכישה</div>
-      <div style="display:inline-flex;align-items:center;gap:0.4rem;background:var(--gray-bg);border:1.5px solid var(--border);border-radius:20px;padding:0.28rem 0.85rem;font-size:0.7rem;font-weight:700;color:var(--gray-dark);letter-spacing:0.5px;">לא המלצת עסקה</div>
+      <div style="display:inline-flex;align-items:center;gap:0.4rem;background:var(--amber-pale);border:1.5px solid var(--amber);border-radius:20px;padding:0.28rem 0.85rem;font-size:0.7rem;font-weight:700;color:var(--amber);letter-spacing:0.5px;">טיוטת מיפוי ראשונית — לא גרסה סופית</div>
+      <div style="display:inline-flex;align-items:center;gap:0.4rem;background:var(--red-pale);border:1.5px solid var(--red);border-radius:20px;padding:0.28rem 0.85rem;font-size:0.7rem;font-weight:700;color:var(--red);letter-spacing:0.5px;">נתונים דורשים אימות מקורות</div>
+      <div style="display:inline-flex;align-items:center;gap:0.4rem;background:var(--gray-bg);border:1.5px solid var(--border);border-radius:20px;padding:0.28rem 0.85rem;font-size:0.7rem;font-weight:700;color:#4B5563;letter-spacing:0.5px;">מסמך מיפוי שוק — לא המלצת עסקה</div>
     </div>
 
-    <div class="arena-header">
-      <div class="arena-icon">💧</div>
-      <div class="arena-title-block">
-        <div class="section-eyebrow">דוגמת עומק למיפוי זירה</div>
-        <h2>השקיה — דוגמת עומק למיפוי זירה</h2>
-      </div>
-    </div>
-
-    <p style="font-size:0.95rem;color:var(--gray-mid);margin-bottom:2rem;line-height:1.6;">מיפוי ראשוני של שחקנים, שרשרת ערך, סוגי מהלכים אפשריים ופערי מידע</p>
-
-    <!-- ── A. MANAGEMENT TAKEAWAY ── -->
-    <div style="background:var(--navy);border-radius:12px;padding:2rem 2.5rem;margin-bottom:2rem;">
-      <div style="font-size:0.65rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal-light);margin-bottom:1rem;">תובנת הנהלה — ראשונית</div>
-      <p style="font-size:1rem;color:rgba(255,255,255,0.9);line-height:1.75;margin-bottom:1.5rem;">
-        זירת ההשקיה אינה שוק של "שחקן אחד לרכישה", אלא <strong style="color:var(--teal-light);">אקוסיסטם</strong> של רכיבים, מערכות השקיה, בקרה, IoT, סינון, Fertigation, סחר והפצה.
+    <!-- ─── SECTION 1: פתיח + caveat ─── -->
+    <div style="margin-bottom:2.5rem;">
+      <div class="section-eyebrow">מיפוי עומק — זירה א</div>
+      <h2 class="section-title" style="margin-bottom:0.75rem;">השקיה חכמה — Smart Irrigation</h2>
+      <p class="section-lead" style="max-width:72ch;">
+        פרק זה ממפה את שוק ציוד ההשקיה בישראל: מבנה השוק, שרשרת הערך, שחקנים מרכזיים לפי קטגוריה ומיצוב בקרה גבע אל מול הנוף התחרותי. הפרק מהווה בסיס לדיון אסטרטגי, ואינו ממליץ על עסקה כלשהי.
       </p>
-      <div style="display:flex;flex-direction:column;gap:0.55rem;">
-        <div style="display:flex;align-items:flex-start;gap:0.6rem;font-size:0.85rem;color:rgba(255,255,255,0.75);">
-          <span style="color:var(--teal-light);font-weight:700;flex-shrink:0;margin-top:0.1rem;">·</span>
-          <span>בקרה גבע נמצאת כיום בעיקר בשכבת <strong style="color:rgba(255,255,255,0.9);">הסולנואידים / שסתומים / רכיבי בקרת זרימה</strong></span>
+      <div style="background:#FEF9EC;border-right:3px solid var(--amber);padding:0.75rem 1rem;border-radius:0 6px 6px 0;font-size:0.8rem;color:#6B4C00;max-width:72ch;margin-top:0.75rem;">
+        <strong>כלל עבודה:</strong> כל נתון שאינו ממקור פומבי מאומת מסומן במפורש. מידע שמקורו בצוות הפנימי מסומן "[נתון פנימי — לאימות]". נתוני שוק גלובליים אינם מוצגים כנתוני שוק ישראלי. היכן שמידע חסר — מצוין "לא זמין במקורות הפומביים".
+      </div>
+    </div>
+
+    <div class="slide-divider" style="margin:0 0 2.5rem;"></div>
+
+    <!-- ─── SECTION 2: מבט על — חקלאות vs גינון ─── -->
+    <div style="margin-bottom:2.5rem;">
+      <div class="section-eyebrow">מבנה השוק</div>
+      <h3 style="font-size:1.15rem;font-weight:700;color:var(--navy);margin:0 0 0.35rem;">מבט על: חקלאות מול גינון ונוף</h3>
+      <p style="font-size:0.82rem;color:#4B5563;margin:0 0 1.25rem;">שוק ציוד ההשקיה בישראל מורכב משני סגמנטים שונים מהותית בטיב הלקוח, בדרישות המוצר ובמבנה התחרות.</p>
+      <div class="three-col" style="gap:1rem;margin-bottom:0.75rem;">
+        <div class="card" style="border-top:3px solid var(--teal);">
+          <div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--teal);margin-bottom:0.5rem;">סגמנט א — חקלאות</div>
+          <div style="font-size:1.6rem;font-weight:800;color:var(--navy);line-height:1;">~90%</div>
+          <div style="font-size:0.68rem;color:#6B7280;margin-bottom:0.75rem;">מהפעילות הענפית <sup style="font-size:0.6rem;">[נתון פנימי — לאימות]</sup></div>
+          <div style="font-size:0.8rem;color:#374151;line-height:1.55;">
+            <div style="margin-bottom:0.3rem;"><strong>לקוחות:</strong> מגדלים, קיבוצים, מושבים, אגרונומים</div>
+            <div style="margin-bottom:0.3rem;"><strong>מוצרים:</strong> טפטפות, אמיטרים, ראשי ספרינקלר, בקרה אגרונומית, הזרעה</div>
+            <div style="margin-bottom:0.3rem;"><strong>דרישה:</strong> עמידות שדה, דיוק, תחזוקה נמוכה, תאימות מערכת</div>
+            <div><strong>ערוץ:</strong> מפיצים חקלאיים, ישיר לחוות גדולות</div>
+          </div>
         </div>
-        <div style="display:flex;align-items:flex-start;gap:0.6rem;font-size:0.85rem;color:rgba(255,255,255,0.75);">
-          <span style="color:var(--red);font-weight:700;flex-shrink:0;margin-top:0.1rem;">·</span>
-          <span>הפער המרכזי הוא בשכבת <strong style="color:rgba(255,255,255,0.9);">controllers / timers / IoT / smart irrigation</strong></span>
+        <div class="card" style="border-top:3px solid #7C3AED;">
+          <div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#7C3AED;margin-bottom:0.5rem;">סגמנט ב — גינון, נוף ועירוני</div>
+          <div style="font-size:1.6rem;font-weight:800;color:var(--navy);line-height:1;">~10%</div>
+          <div style="font-size:0.68rem;color:#6B7280;margin-bottom:0.75rem;">מהפעילות הענפית <sup style="font-size:0.6rem;">[נתון פנימי — לאימות]</sup></div>
+          <div style="font-size:0.8rem;color:#374151;line-height:1.55;">
+            <div style="margin-bottom:0.3rem;"><strong>לקוחות:</strong> רשויות מקומיות, קבלני נוף, גנני פרטי, מגזר ציבורי</div>
+            <div style="margin-bottom:0.3rem;"><strong>מוצרים:</strong> ספרינקלרים לנוף, בקרי הגינה, טפטפות גינה, שסתומים</div>
+            <div style="margin-bottom:0.3rem;"><strong>דרישה:</strong> מראה, נוחות שימוש, אינטגרציה ספ"כ, מחיר</div>
+            <div><strong>ערוץ:</strong> קמעונאות (Home Center, ACE), מפיצי נוף</div>
+          </div>
         </div>
-        <div style="display:flex;align-items:flex-start;gap:0.6rem;font-size:0.85rem;color:rgba(255,255,255,0.75);">
-          <span style="color:var(--amber);font-weight:700;flex-shrink:0;margin-top:0.1rem;">·</span>
-          <span>חלק גדול מהשחקנים הישראליים ההיסטוריים <strong style="color:rgba(255,255,255,0.9);">כבר עברו קונסולידציה</strong> או נמצאים תחת קבוצות גדולות</span>
-        </div>
-        <div style="display:flex;align-items:flex-start;gap:0.6rem;font-size:0.85rem;color:rgba(255,255,255,0.75);">
-          <span style="color:var(--teal-light);font-weight:700;flex-shrink:0;margin-top:0.1rem;">·</span>
-          <span>יש להבחין בין: <strong style="color:rgba(255,255,255,0.9);">יעד בדיקה, שותף, ערוץ, לקוח, מתחרה ו-benchmark</strong> — לא כולם שווים</span>
+        <div class="card" style="border-top:3px solid var(--amber);background:var(--amber-pale);">
+          <div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--amber);margin-bottom:0.5rem;">מסקנה למיפוי</div>
+          <div style="font-size:0.82rem;color:#374151;line-height:1.6;">
+            <div style="margin-bottom:0.5rem;">שני הסגמנטים שונים מהותית: שחקן חזק בחקלאות אינו בהכרח שחקן בגינון, ולהפך.</div>
+            <div style="margin-bottom:0.5rem;">מפת השחקנים בפרק זה מסווגת לפי סגמנט וקטגוריית מוצר — לא על-פי גודל בלבד.</div>
+            <div style="font-size:0.75rem;color:#92400E;">הפיצול 90%/10% הועבר על-ידי הצוות הפנימי ומשמש לצורכי מיפוי בלבד — נדרש אימות נתוני שוק חיצוניים.</div>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- ── B. VALUE CHAIN ── -->
-    <div style="margin-bottom:2rem;">
-      <div style="font-size:0.68rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--teal);margin-bottom:0.5rem;">שרשרת הערך — השקיה</div>
-      <div style="font-size:0.75rem;color:var(--gray-mid);margin-bottom:0.75rem;font-weight:600;">בקרה גבע כיום: שכבת הסולנואידים / שסתומים / רכיבי בקרת זרימה</div>
+    <div class="slide-divider" style="margin:0 0 2.5rem;"></div>
+
+    <!-- ─── SECTION 3: מגמות שוק ─── -->
+    <div style="margin-bottom:2.5rem;">
+      <div class="section-eyebrow">הקשר שוק</div>
+      <h3 style="font-size:1.15rem;font-weight:700;color:var(--navy);margin:0 0 0.35rem;">מגמות ואינדיקציות שוק</h3>
+      <p style="font-size:0.82rem;color:#4B5563;margin:0 0 1rem;">מגמות המשפיעות על הביקוש לציוד השקיה חכמה בישראל — נכון לתחילת 2025. נתונים גלובליים מסומנים; נתונים ישראליים ממקורות פומביים בלבד.</p>
       <div style="overflow-x:auto;">
-        <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:3px;background:var(--border);border-radius:10px;overflow:hidden;min-width:800px;">
-
-          <div style="background:var(--white);padding:1rem 0.75rem;display:flex;flex-direction:column;gap:0.35rem;border-bottom:3px solid var(--teal);">
-            <div style="font-size:0.6rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--teal);">① רכיבים / IP</div>
-            <div style="font-size:0.75rem;color:var(--navy);font-weight:700;line-height:1.3;">סולנואידים, מגופים, שסתומים</div>
-            <div style="font-size:0.7rem;color:var(--gray-mid);line-height:1.35;">רכיבי בקרה וידע הנדסי</div>
-            <div style="margin-top:auto;padding-top:0.5rem;font-size:0.62rem;font-weight:700;color:var(--teal);">✓ ליבת בקרה גבע</div>
-          </div>
-
-          <div style="background:var(--white);padding:1rem 0.75rem;display:flex;flex-direction:column;gap:0.35rem;border-bottom:3px solid var(--gray-light);">
-            <div style="font-size:0.6rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gray-mid);">② מוצרים ומערכות</div>
-            <div style="font-size:0.75rem;color:var(--navy);font-weight:700;line-height:1.3;">טפטוף, מיקרו, ראשי מערכת</div>
-            <div style="font-size:0.7rem;color:var(--gray-mid);line-height:1.35;">Netafim, Rivulis, NaanDanJain</div>
-            <div style="margin-top:auto;padding-top:0.5rem;font-size:0.62rem;font-weight:700;color:var(--gray-mid);">חסר / מחוץ לליבה</div>
-          </div>
-
-          <div style="background:#EDFAF9;padding:1rem 0.75rem;display:flex;flex-direction:column;gap:0.35rem;border-bottom:3px solid var(--red);">
-            <div style="font-size:0.6rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--teal);">③ בקרה, אוטומציה ו-IoT</div>
-            <div style="font-size:0.75rem;color:var(--navy);font-weight:700;line-height:1.3;">בקרים, timers, smart valves</div>
-            <div style="font-size:0.7rem;color:var(--gray-mid);line-height:1.35;">Galcon, Rain Bird, Hunter, Mottech</div>
-            <div style="margin-top:auto;padding-top:0.5rem;font-size:0.62rem;font-weight:700;color:var(--red);">✗ פער מרכזי</div>
-          </div>
-
-          <div style="background:var(--white);padding:1rem 0.75rem;display:flex;flex-direction:column;gap:0.35rem;border-bottom:3px solid var(--teal);">
-            <div style="font-size:0.6rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--teal);">④ שסתומים / Flow Control</div>
-            <div style="font-size:0.75rem;color:var(--navy);font-weight:700;line-height:1.3;">מגופי בקרה, לחץ, זרימה</div>
-            <div style="font-size:0.7rem;color:var(--gray-mid);line-height:1.35;">Bermad, Dorot/Aquestia</div>
-            <div style="margin-top:auto;padding-top:0.5rem;font-size:0.62rem;font-weight:700;color:var(--teal);">✓ נוכחות חזקה (ליבה)</div>
-          </div>
-
-          <div style="background:var(--white);padding:1rem 0.75rem;display:flex;flex-direction:column;gap:0.35rem;border-bottom:3px solid var(--gray-light);">
-            <div style="font-size:0.6rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gray-mid);">⑤ סינון / Fertigation</div>
-            <div style="font-size:0.75rem;color:var(--navy);font-weight:700;line-height:1.3;">סינון, משאבות מינון, דישון</div>
-            <div style="font-size:0.7rem;color:var(--gray-mid);line-height:1.35;">Amiad, Dosatron, Irritec</div>
-            <div style="margin-top:auto;padding-top:0.5rem;font-size:0.62rem;font-weight:700;color:var(--gray-mid);">חסר / הרחבת סל</div>
-          </div>
-
-          <div style="background:var(--amber-pale);padding:1rem 0.75rem;display:flex;flex-direction:column;gap:0.35rem;border-bottom:3px solid var(--amber);">
-            <div style="font-size:0.6rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--amber);">⑥ סחר, גינון והפצה</div>
-            <div style="font-size:0.75rem;color:var(--navy);font-weight:700;line-height:1.3;">ערוצי שוק, התקנה, שירות</div>
-            <div style="font-size:0.7rem;color:var(--gray-mid);line-height:1.35;">קמחי, שר-גל, Eldar Shany</div>
-            <div style="margin-top:auto;padding-top:0.5rem;font-size:0.62rem;font-weight:700;color:var(--amber);">~ חלקי — ערוץ לבדיקה</div>
-          </div>
-
-          <div style="background:var(--white);padding:1rem 0.75rem;display:flex;flex-direction:column;gap:0.35rem;border-bottom:3px solid var(--gray-light);">
-            <div style="font-size:0.6rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gray-mid);">⑦ לקוחות ופרויקטים</div>
-            <div style="font-size:0.75rem;color:var(--navy);font-weight:700;line-height:1.3;">חקלאים, רשויות, קבלנים</div>
-            <div style="font-size:0.7rem;color:var(--gray-mid);line-height:1.35;">פרויקטים, לקוחות מוסדיים</div>
-            <div style="margin-top:auto;padding-top:0.5rem;font-size:0.62rem;font-weight:700;color:var(--gray-mid);">שוק קצה</div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-    <!-- ── C. PLAYER MAPPING TABLE ── -->
-    <div style="margin-bottom:2rem;">
-      <div style="font-size:0.68rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--teal);margin-bottom:0.35rem;">מיפוי שחקנים ראשוני — השקיה</div>
-      <div style="font-size:0.8rem;color:var(--gray-mid);margin-bottom:0.6rem;">לא רשימת יעדי רכישה; מיפוי תפקידים, בעלות, רלוונטיות ופערי מידע</div>
-      <div style="background:var(--amber-pale);border:1.5px solid var(--amber);border-radius:8px;padding:0.65rem 1rem;margin-bottom:0.75rem;font-size:0.78rem;color:var(--gray-dark);line-height:1.55;">
-        <strong style="color:var(--amber);">⚠ הבהרה:</strong> הטבלה אינה רשימת יעדי רכישה. היא מפת שחקנים ראשונית שמטרתה להפריד בין <strong>יעד בדיקה, שותף, ערוץ, לקוח, מתחרה ו-benchmark</strong>. כל סיווג דורש אימות לפני שימוש.
-      </div>
-      <div style="overflow-x:auto;">
-        <table style="width:100%;border-collapse:collapse;font-size:0.75rem;min-width:1050px;">
+        <table style="width:100%;border-collapse:collapse;font-size:0.8rem;">
           <thead>
-            <tr>
-              <th style="background:var(--navy);color:rgba(255,255,255,0.8);font-size:0.6rem;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;padding:0.65rem 0.75rem;text-align:right;border:1px solid rgba(255,255,255,0.1);white-space:nowrap;">שחקן</th>
-              <th style="background:var(--navy);color:rgba(255,255,255,0.8);font-size:0.6rem;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;padding:0.65rem 0.75rem;text-align:right;border:1px solid rgba(255,255,255,0.1);">שכבה</th>
-              <th style="background:var(--navy);color:rgba(255,255,255,0.8);font-size:0.6rem;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;padding:0.65rem 0.75rem;text-align:right;border:1px solid rgba(255,255,255,0.1);">סוג שחקן</th>
-              <th style="background:var(--navy);color:rgba(255,255,255,0.8);font-size:0.6rem;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;padding:0.65rem 0.75rem;text-align:right;border:1px solid rgba(255,255,255,0.1);">מעמד בעלות</th>
-              <th style="background:var(--navy);color:rgba(255,255,255,0.8);font-size:0.6rem;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;padding:0.65rem 0.75rem;text-align:right;border:1px solid rgba(255,255,255,0.1);">רלוונטיות ראשונית לבקרה</th>
-              <th style="background:var(--navy);color:rgba(255,255,255,0.8);font-size:0.6rem;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;padding:0.65rem 0.75rem;text-align:center;border:1px solid rgba(255,255,255,0.1);white-space:nowrap;">רמת ביטחון</th>
-              <th style="background:var(--navy);color:rgba(255,255,255,0.8);font-size:0.6rem;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;padding:0.65rem 0.75rem;text-align:right;border:1px solid rgba(255,255,255,0.1);">פער מידע / בדיקה נדרשת</th>
+            <tr style="background:var(--navy);color:white;">
+              <th style="padding:0.6rem 0.75rem;text-align:right;font-weight:600;width:22%;">מגמה</th>
+              <th style="padding:0.6rem 0.75rem;text-align:right;font-weight:600;width:10%;">כיוון</th>
+              <th style="padding:0.6rem 0.75rem;text-align:right;font-weight:600;width:38%;">תיאור ורלוונטיות</th>
+              <th style="padding:0.6rem 0.75rem;text-align:right;font-weight:600;width:15%;">מקור / הסתייגות</th>
+              <th style="padding:0.6rem 0.75rem;text-align:right;font-weight:600;width:15%;">השפעה על הזירה</th>
             </tr>
           </thead>
           <tbody>
-
-            <!-- Galcon — highlighted -->
-            <tr style="background:#EDFAF9;">
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);font-weight:800;color:var(--teal);white-space:nowrap;">Galcon ★</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-dark);">Controllers / Solenoids / IoT</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-dark);">יצרן + בעל IP</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-dark);">עצמאי לפי מידע ראשוני</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-dark);line-height:1.5;"><strong style="color:var(--teal);">שחקן בקרה מרכזי לבדיקה.</strong> רלוונטי לבחינת שותפות / JV / M&A רק לאחר אימות בעלות, נכונות בעלים, חפיפה תחרותית וכלכליות</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);text-align:center;"><span style="background:#D1FAE5;color:#059669;border-radius:12px;padding:0.15rem 0.5rem;font-size:0.67rem;font-weight:700;">HIGH</span></td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-dark);line-height:1.5;">לבדוק עצמאות עדכנית, GP controllers, סיכון קניבליזם</td>
+            <tr style="background:white;">
+              <td style="padding:0.6rem 0.75rem;border-bottom:1px solid var(--border);font-weight:600;color:var(--navy);">לחץ מים וצמצום מכסות</td>
+              <td style="padding:0.6rem 0.75rem;border-bottom:1px solid var(--border);color:var(--green);font-weight:700;">גבוה</td>
+              <td style="padding:0.6rem 0.75rem;border-bottom:1px solid var(--border);">רשות המים ממשיכה להצר מכסות השקיה לחקלאות. לחץ על מגדלים לשפר יעילות, מניע מעבר לטפטוף ולבקרה מדויקת.</td>
+              <td style="padding:0.6rem 0.75rem;border-bottom:1px solid var(--border);font-size:0.72rem;color:#6B7280;">רשות המים, פרסומים פומביים</td>
+              <td style="padding:0.6rem 0.75rem;border-bottom:1px solid var(--border);font-size:0.75rem;">מגדיל ביקוש לטפטוף ולבקרה</td>
             </tr>
-
-            <tr>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);font-weight:700;color:var(--navy);white-space:nowrap;">BERMAD</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-dark);">Flow / Pressure Control Valves</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-dark);">יצרן + בעל IP</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-dark);">עצמאי לפי מידע ראשוני</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-dark);line-height:1.5;">Benchmark / שותפות טכנית / הרחבת סל אפשרית</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);text-align:center;"><span style="background:#D1FAE5;color:#059669;border-radius:12px;padding:0.15rem 0.5rem;font-size:0.67rem;font-weight:700;">MED-HIGH</span></td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-dark);line-height:1.5;">לבדוק היקף פעילות השקיה מול מים / כיבוי / תעשייה</td>
-            </tr>
-
-            <tr style="background:var(--amber-pale);">
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);font-weight:700;color:var(--navy);white-space:nowrap;">Dorot / Aquestia</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-dark);">Diaphragm valves / Flow control</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-dark);">יצרן + בעל IP (בקבוצה)</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--amber);font-weight:700;">חלק מ-Aquestia</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-dark);line-height:1.5;">Benchmark / שותפות — בכפוף למבנה בעלות. לא שחקן עצמאי פשוט</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);text-align:center;"><span style="background:var(--amber-pale);color:var(--amber);border:1px solid var(--amber);border-radius:12px;padding:0.15rem 0.5rem;font-size:0.67rem;font-weight:700;">MEDIUM</span></td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-dark);line-height:1.5;">לבדוק מבנה בעלות ופעילות עדכנית בישראל</td>
-            </tr>
-
-            <tr>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);font-weight:700;color:var(--navy);white-space:nowrap;">Netafim / Orbia</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-dark);">מערכות השקיה מלאות</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-dark);">שחקן מערכת גלובלי</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-dark);">חלק מ-Orbia / מבנה קבוצתי</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-mid);">Benchmark ושחקן מערכת. לא יעד M&A ישיר לבקרה</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);text-align:center;"><span style="background:#D1FAE5;color:#059669;border-radius:12px;padding:0.15rem 0.5rem;font-size:0.67rem;font-weight:700;">HIGH</span></td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-mid);">—</td>
-            </tr>
-
-            <tr style="background:var(--amber-pale);">
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);font-weight:700;color:var(--navy);white-space:nowrap;">NaanDanJain / Jain IIB</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-dark);">ממטרים / מיקרו-השקיה</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-dark);">חלק מפעילות Jain שנרכשה ע"י Rivulis</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--amber);font-weight:700;">לא שחקן ישראלי עצמאי</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-mid);">Benchmark בלבד</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);text-align:center;"><span style="background:var(--amber-pale);color:var(--amber);border:1px solid var(--amber);border-radius:12px;padding:0.15rem 0.5rem;font-size:0.67rem;font-weight:700;">MED-HIGH</span></td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-mid);">לבדוק מבנה בעלות עדכני תחת Rivulis</td>
-            </tr>
-
-            <tr>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);font-weight:700;color:var(--navy);white-space:nowrap;">Rivulis</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-dark);">טפטוף / micro-irrigation</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-dark);">שחקן מערכת</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-dark);">בעלות גלובלית / חלק מקבוצה</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-mid);">Benchmark בלבד</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);text-align:center;"><span style="background:var(--amber-pale);color:var(--amber);border:1px solid var(--amber);border-radius:12px;padding:0.15rem 0.5rem;font-size:0.67rem;font-weight:700;">MEDIUM</span></td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-mid);">—</td>
-            </tr>
-
-            <tr>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);font-weight:700;color:var(--navy);white-space:nowrap;">Amiad</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-dark);">סינון מים</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-dark);">יצרן + בעל IP</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--amber);">דורש אימות בעלות עדכני</td>
-              <td style="padding:0.65rem 0.75rm;border:1px solid var(--border);color:var(--gray-dark);">שכבה משלימה / הרחבת סל / benchmark</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);text-align:center;"><span style="background:var(--amber-pale);color:var(--amber);border:1px solid var(--amber);border-radius:12px;padding:0.15rem 0.5rem;font-size:0.67rem;font-weight:700;">MEDIUM</span></td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-dark);">לבדוק חפיפה לערוצי בקרה, בעלות עדכנית</td>
-            </tr>
-
-            <tr>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);font-weight:700;color:var(--navy);white-space:nowrap;">Metzerplas</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-dark);">פייפ / emitters / השקיה</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-dark);">יצרן</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-dark);">—</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-mid);">Benchmark / הרחבת סל נמוכה</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);text-align:center;"><span style="background:var(--amber-pale);color:var(--amber);border:1px solid var(--amber);border-radius:12px;padding:0.15rem 0.5rem;font-size:0.67rem;font-weight:700;">MEDIUM</span></td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-mid);">—</td>
-            </tr>
-
-            <tr>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);font-weight:700;color:var(--navy);white-space:nowrap;">Plasson</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-dark);">Fittings / couplings</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-dark);">יצרן אביזרים</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-dark);">—</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-mid);">Benchmark / הרחבת סל נמוכה</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);text-align:center;"><span style="background:var(--amber-pale);color:var(--amber);border:1px solid var(--amber);border-radius:12px;padding:0.15rem 0.5rem;font-size:0.67rem;font-weight:700;">MEDIUM</span></td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-mid);">—</td>
-            </tr>
-
             <tr style="background:var(--gray-bg);">
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);font-weight:700;color:var(--navy);white-space:nowrap;">Dosatron</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-dark);">Fertigation / משאבות מינון</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-dark);">יצרן גלובלי</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-dark);">—</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-dark);">זכויות שיווק / ייצוג / שותפות ערוצית — בכפוף לבדיקת בלעדיות פעילה</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);text-align:center;"><span style="background:var(--amber-pale);color:var(--amber);border:1px solid var(--amber);border-radius:12px;padding:0.15rem 0.5rem;font-size:0.67rem;font-weight:700;">MEDIUM</span></td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--amber);font-weight:600;">מי מפיץ Dosatron בישראל?</td>
+              <td style="padding:0.6rem 0.75rem;border-bottom:1px solid var(--border);font-weight:600;color:var(--navy);">דיגיטציה חקלאית</td>
+              <td style="padding:0.6rem 0.75rem;border-bottom:1px solid var(--border);color:var(--green);font-weight:700;">גבוה</td>
+              <td style="padding:0.6rem 0.75rem;border-bottom:1px solid var(--border);">שילוב חיישנים, IoT ובקרת ענן בחוות. בישראל: מספר סטארטאפים ופרויקטים פיילוט. אימוץ רחב עדיין מוגבל.</td>
+              <td style="padding:0.6rem 0.75rem;border-bottom:1px solid var(--border);font-size:0.72rem;color:#6B7280;">מקורות ענפיים; גלובלי — לא ישראלי</td>
+              <td style="padding:0.6rem 0.75rem;border-bottom:1px solid var(--border);font-size:0.75rem;">פותח שוק בקרה ואינטגרציה</td>
             </tr>
-
+            <tr style="background:white;">
+              <td style="padding:0.6rem 0.75rem;border-bottom:1px solid var(--border);font-weight:600;color:var(--navy);">עלויות אנרגיה ועבודה</td>
+              <td style="padding:0.6rem 0.75rem;border-bottom:1px solid var(--border);color:var(--amber);font-weight:700;">בינוני</td>
+              <td style="padding:0.6rem 0.75rem;border-bottom:1px solid var(--border);">עלייה בעלות אנרגיה מגבירה עניין בהשקיה יעילה. מחסור בעבודה חקלאית מאיץ אוטומציה.</td>
+              <td style="padding:0.6rem 0.75rem;border-bottom:1px solid var(--border);font-size:0.72rem;color:#6B7280;">כלכלי כללי; לא נתוני שוק ספציפיים</td>
+              <td style="padding:0.6rem 0.75rem;border-bottom:1px solid var(--border);font-size:0.75rem;">מניע אוטומציה ובקרה מרוחקת</td>
+            </tr>
             <tr style="background:var(--gray-bg);">
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);font-weight:700;color:var(--navy);white-space:nowrap;">Irritec / Mixtron</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-dark);">Fertigation / ציוד מינון</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-dark);">יצרן גלובלי</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-dark);">—</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-mid);">זכויות שיווק / ייצוג — בדיקה נדרשת</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);text-align:center;"><span style="background:var(--gray-bg);color:var(--gray-mid);border:1px solid var(--border);border-radius:12px;padding:0.15rem 0.5rem;font-size:0.67rem;font-weight:700;">LOW</span></td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--amber);font-weight:600;">מי מפיץ בישראל?</td>
+              <td style="padding:0.6rem 0.75rem;border-bottom:1px solid var(--border);font-weight:600;color:var(--navy);">רגולציה ותקינה</td>
+              <td style="padding:0.6rem 0.75rem;border-bottom:1px solid var(--border);color:var(--amber);font-weight:700;">בינוני</td>
+              <td style="padding:0.6rem 0.75rem;border-bottom:1px solid var(--border);">דרישות תקן ישראלי (מכון התקנים) ל- fitting, אטימות ועמידות. מחייב השקעה ב-R&D ואישורים.</td>
+              <td style="padding:0.6rem 0.75rem;border-bottom:1px solid var(--border);font-size:0.72rem;color:#6B7280;">מכון התקנים הישראלי</td>
+              <td style="padding:0.6rem 0.75rem;border-bottom:1px solid var(--border);font-size:0.75rem;">חסם כניסה; תומך בשחקנים מבוססים</td>
             </tr>
-
-            <tr>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);font-weight:700;color:var(--navy);white-space:nowrap;">Mottech</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-dark);">IoT / SW ניהול השקיה</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-dark);">בעל IP תוכנה</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--amber);">בעלות לא מאומתת</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-dark);">כיוון בדיקה טכנולוגי — עלול להיות scope creep אם תוכנה בלבד</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);text-align:center;"><span style="background:var(--gray-bg);color:var(--gray-mid);border:1px solid var(--border);border-radius:12px;padding:0.15rem 0.5rem;font-size:0.67rem;font-weight:700;">LOW</span></td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--amber);font-weight:600;">לבדוק מבנה בעלות ואם HW כלול</td>
+            <tr style="background:white;">
+              <td style="padding:0.6rem 0.75rem;border-bottom:1px solid var(--border);font-weight:600;color:var(--navy);">חדירת יבואן זול</td>
+              <td style="padding:0.6rem 0.75rem;border-bottom:1px solid var(--border);color:var(--red);font-weight:700;">לחץ</td>
+              <td style="padding:0.6rem 0.75rem;border-bottom:1px solid var(--border);">יבוא מסין ומזרח אירופה בסגמנט גינון ונוף — לחץ מחיר. בחקלאות: מפרטים קריטיים מגנים על יצרנים ישראלים.</td>
+              <td style="padding:0.6rem 0.75rem;border-bottom:1px solid var(--border);font-size:0.72rem;color:#6B7280;">תצפית שוק כללית; לא נתון מדויק</td>
+              <td style="padding:0.6rem 0.75rem;border-bottom:1px solid var(--border);font-size:0.75rem;">לחץ מרווח בגינון; פחות בחקלאות</td>
             </tr>
-
-            <tr style="background:var(--amber-pale);">
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);font-weight:700;color:var(--navy);white-space:nowrap;">Eldar Shany</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-dark);">סחר / גינון / הפצה</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-dark);">יבואן + מפיץ</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-dark);">—</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-dark);">הרחבת סחר / שותפות ערוצית</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);text-align:center;"><span style="background:var(--amber-pale);color:var(--amber);border:1px solid var(--amber);border-radius:12px;padding:0.15rem 0.5rem;font-size:0.67rem;font-weight:700;">MEDIUM</span></td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-dark);">לבדוק היקף, עצמאות ותיק מותגים</td>
-            </tr>
-
-            <tr style="background:var(--amber-pale);">
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);font-weight:700;color:var(--navy);white-space:nowrap;">קמחי חקלאות</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-dark);">הפצה סיטונאית</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-dark);">חברת סחר</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-dark);">—</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-dark);">ערוץ הפצה / לקוח</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);text-align:center;"><span style="background:var(--amber-pale);color:var(--amber);border:1px solid var(--amber);border-radius:12px;padding:0.15rem 0.5rem;font-size:0.67rem;font-weight:700;">MEDIUM</span></td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--amber);">אין P&amp;L ציבורי</td>
-            </tr>
-
-            <tr style="background:var(--amber-pale);">
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);font-weight:700;color:var(--navy);white-space:nowrap;">שר-גל</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-dark);">הפצה לגינון ומשתלות</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-dark);">חברת סחר</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-dark);">—</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-dark);">ערוץ / לקוח</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);text-align:center;"><span style="background:var(--amber-pale);color:var(--amber);border:1px solid var(--amber);border-radius:12px;padding:0.15rem 0.5rem;font-size:0.67rem;font-weight:700;">MEDIUM</span></td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--amber);">אין P&amp;L ציבורי</td>
-            </tr>
-
-            <tr>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);font-weight:700;color:var(--navy);white-space:nowrap;">Rain Bird Israel</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-dark);">בקרים / valves / ספרינקלרים</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-dark);">נציגות מותג גלובלי</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--amber);">זהות נציג מקומי לא מאומתת</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-mid);">Benchmark / מתחרה בערוץ</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);text-align:center;"><span style="background:var(--gray-bg);color:var(--gray-mid);border:1px solid var(--border);border-radius:12px;padding:0.15rem 0.5rem;font-size:0.67rem;font-weight:700;">LOW-MED</span></td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--amber);">מי מחזיק ייצוג Rain Bird בישראל?</td>
-            </tr>
-
-            <tr>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);font-weight:700;color:var(--navy);white-space:nowrap;">Hunter Industries Israel</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-dark);">בקרים / ספרינקלרים</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-dark);">נציגות מותג גלובלי</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--amber);">זהות נציג מקומי לא מאומתת</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-mid);">Benchmark / מתחרה בערוץ</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);text-align:center;"><span style="background:var(--gray-bg);color:var(--gray-mid);border:1px solid var(--border);border-radius:12px;padding:0.15rem 0.5rem;font-size:0.67rem;font-weight:700;">LOW-MED</span></td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--amber);">מי מחזיק ייצוג Hunter בישראל?</td>
-            </tr>
-
             <tr style="background:var(--gray-bg);">
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);font-weight:700;color:var(--navy);white-space:nowrap;">ACE / Home Center</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-dark);">קמעונאות DIY</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-dark);">ערוץ קמעונאי</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-dark);">—</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-mid);">לקוח ערוצי בלבד — לא יעד M&A</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);text-align:center;"><span style="background:#D1FAE5;color:#059669;border-radius:12px;padding:0.15rem 0.5rem;font-size:0.67rem;font-weight:700;">HIGH</span></td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-mid);">—</td>
-            </tr>
-
-            <tr style="background:var(--gray-bg);">
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);font-weight:700;color:var(--gray-mid);white-space:nowrap;font-size:0.72rem;">טל-גיא / מי-גן / צמח-גד / כ.נ.ח.</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-mid);">הפצה קטנה</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-mid);">חברות סחר קטנות</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-mid);">—</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-mid);">כיוון בדיקה בלבד</td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);text-align:center;"><span style="background:var(--gray-bg);color:var(--gray-mid);border:1px solid var(--border);border-radius:12px;padding:0.15rem 0.5rem;font-size:0.67rem;font-weight:700;">SPECULATIVE</span></td>
-              <td style="padding:0.65rem 0.75rem;border:1px solid var(--border);color:var(--gray-mid);">פחות מ-3 מקורות לכל שחקן</td>
-            </tr>
-
-          </tbody>
-        </table>
-      </div>
-      <div style="margin-top:0.6rem;font-size:0.75rem;color:var(--gray-mid);line-height:1.5;">
-        הטבלה אינה רשימת יעדי רכישה. היא מפת שחקנים ראשונית שמטרתה להפריד בין יעד בדיקה, שותף, ערוץ, לקוח, מתחרה ו-benchmark.
-      </div>
-    </div>
-
-    <!-- ── D. CAPABILITY GAP TABLE ── -->
-    <div style="margin-bottom:2rem;">
-      <div style="font-size:0.68rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--teal);margin-bottom:0.4rem;">איפה בקרה גבע נמצאת כיום — ואיפה הפער</div>
-      <div style="font-size:0.78rem;color:var(--gray-mid);margin-bottom:0.75rem;">ראשוני — לאימות מול נתוני החברה</div>
-      <div style="overflow-x:auto;">
-        <table style="width:100%;border-collapse:collapse;font-size:0.78rem;min-width:700px;">
-          <thead>
-            <tr>
-              <th style="background:var(--navy);color:rgba(255,255,255,0.8);font-size:0.62rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:0.65rem 0.9rem;text-align:right;border:1px solid rgba(255,255,255,0.1);">שכבה</th>
-              <th style="background:var(--navy);color:rgba(255,255,255,0.8);font-size:0.62rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:0.65rem 0.9rem;text-align:right;border:1px solid rgba(255,255,255,0.1);">שחקנים לדוגמה</th>
-              <th style="background:var(--navy);color:rgba(255,255,255,0.8);font-size:0.62rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:0.65rem 0.9rem;text-align:center;border:1px solid rgba(255,255,255,0.1);">בקרה גבע כיום</th>
-              <th style="background:var(--navy);color:rgba(255,255,255,0.8);font-size:0.62rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:0.65rem 0.9rem;text-align:right;border:1px solid rgba(255,255,255,0.1);">פער / הזדמנות</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td style="padding:0.6rem 0.9rem;border:1px solid var(--border);font-weight:700;color:var(--navy);background:#EDFAF9;">סולנואידים ורכיבי בקרה</td>
-              <td style="padding:0.6rem 0.9rem;border:1px solid var(--border);color:var(--gray-dark);">בקרה גבע, Galcon (חלק)</td>
-              <td style="padding:0.6rem 0.9rem;border:1px solid var(--border);text-align:center;"><span style="background:var(--green-pale);color:var(--green);border-radius:20px;padding:0.15rem 0.6rem;font-size:0.7rem;font-weight:700;">נוכחות חזקה</span></td>
-              <td style="padding:0.6rem 0.9rem;border:1px solid var(--border);color:var(--gray-dark);">ליבה קיימת</td>
-            </tr>
-            <tr>
-              <td style="padding:0.6rem 0.9rem;border:1px solid var(--border);font-weight:700;color:var(--navy);background:var(--red-pale);">Controllers / Timers</td>
-              <td style="padding:0.6rem 0.9rem;border:1px solid var(--border);color:var(--gray-dark);">Galcon, Rain Bird, Hunter</td>
-              <td style="padding:0.6rem 0.9rem;border:1px solid var(--border);text-align:center;"><span style="background:var(--red-pale);color:var(--red);border-radius:20px;padding:0.15rem 0.6rem;font-size:0.7rem;font-weight:700;">חסר</span></td>
-              <td style="padding:0.6rem 0.9rem;border:1px solid var(--border);color:var(--red);font-weight:700;">פער מרכזי</td>
-            </tr>
-            <tr>
-              <td style="padding:0.6rem 0.9rem;border:1px solid var(--border);font-weight:700;color:var(--navy);background:var(--amber-pale);">Smart valves / flow control</td>
-              <td style="padding:0.6rem 0.9rem;border:1px solid var(--border);color:var(--gray-dark);">BERMAD, Dorot/Aquestia</td>
-              <td style="padding:0.6rem 0.9rem;border:1px solid var(--border);text-align:center;"><span style="background:var(--amber-pale);color:var(--amber);border-radius:20px;padding:0.15rem 0.6rem;font-size:0.7rem;font-weight:700;">חלקי</span></td>
-              <td style="padding:0.6rem 0.9rem;border:1px solid var(--border);color:var(--gray-dark);">שכבה משלימה</td>
-            </tr>
-            <tr>
-              <td style="padding:0.6rem 0.9rem;border:1px solid var(--border);font-weight:700;color:var(--navy);background:var(--red-pale);">IoT / ניהול מרחוק</td>
-              <td style="padding:0.6rem 0.9rem;border:1px solid var(--border);color:var(--gray-dark);">Galcon, Mottech, Rain Bird</td>
-              <td style="padding:0.6rem 0.9rem;border:1px solid var(--border);text-align:center;"><span style="background:var(--red-pale);color:var(--red);border-radius:20px;padding:0.15rem 0.6rem;font-size:0.7rem;font-weight:700;">חסר</span></td>
-              <td style="padding:0.6rem 0.9rem;border:1px solid var(--border);color:var(--red);font-weight:700;">פער גבוה</td>
-            </tr>
-            <tr>
-              <td style="padding:0.6rem 0.9rem;border:1px solid var(--border);font-weight:700;color:var(--navy);background:var(--gray-bg);">סינון</td>
-              <td style="padding:0.6rem 0.9rem;border:1px solid var(--border);color:var(--gray-dark);">Amiad</td>
-              <td style="padding:0.6rem 0.9rem;border:1px solid var(--border);text-align:center;"><span style="background:var(--gray-bg);color:var(--gray-mid);border:1px solid var(--border);border-radius:20px;padding:0.15rem 0.6rem;font-size:0.7rem;font-weight:700;">חסר</span></td>
-              <td style="padding:0.6rem 0.9rem;border:1px solid var(--border);color:var(--gray-dark);">הרחבת סל אפשרית</td>
-            </tr>
-            <tr>
-              <td style="padding:0.6rem 0.9rem;border:1px solid var(--border);font-weight:700;color:var(--navy);background:var(--gray-bg);">טפטוף / מיקרו-השקיה</td>
-              <td style="padding:0.6rem 0.9rem;border:1px solid var(--border);color:var(--gray-dark);">Netafim, Rivulis, Metzer</td>
-              <td style="padding:0.6rem 0.9rem;border:1px solid var(--border);text-align:center;"><span style="background:var(--gray-bg);color:var(--gray-mid);border:1px solid var(--border);border-radius:20px;padding:0.15rem 0.6rem;font-size:0.7rem;font-weight:700;">חסר</span></td>
-              <td style="padding:0.6rem 0.9rem;border:1px solid var(--border);color:var(--gray-mid);">כנראה מחוץ לליבה</td>
-            </tr>
-            <tr>
-              <td style="padding:0.6rem 0.9rem;border:1px solid var(--border);font-weight:700;color:var(--navy);background:var(--amber-pale);">סחר והפצה</td>
-              <td style="padding:0.6rem 0.9rem;border:1px solid var(--border);color:var(--gray-dark);">קמחי, שר-גל, Eldar Shany</td>
-              <td style="padding:0.6rem 0.9rem;border:1px solid var(--border);text-align:center;"><span style="background:var(--amber-pale);color:var(--amber);border-radius:20px;padding:0.15rem 0.6rem;font-size:0.7rem;font-weight:700;">חלקי</span></td>
-              <td style="padding:0.6rem 0.9rem;border:1px solid var(--border);color:var(--amber);font-weight:700;">ערוץ לבדיקה</td>
+              <td style="padding:0.6rem 0.75rem;font-weight:600;color:var(--navy);">יצוא וגלובליזציה</td>
+              <td style="padding:0.6rem 0.75rem;color:var(--green);font-weight:700;">הזדמנות</td>
+              <td style="padding:0.6rem 0.75rem;">יצרנים ישראלים (Netafim, Bermad, Galcon) מוכרים גלובלית. שוק ההשקיה החכמה הגלובלי צומח — אך נתוני גודל גלובלי אינם נתוני שוק ישראלי.</td>
+              <td style="padding:0.6rem 0.75rem;font-size:0.72rem;color:#6B7280;">מקורות חברות; גלובלי — לא ישראלי</td>
+              <td style="padding:0.6rem 0.75rem;font-size:0.75rem;">יצוא כמנוע צמיחה לשחקנים גדולים</td>
             </tr>
           </tbody>
         </table>
       </div>
-      <div style="margin-top:0.5rem;font-size:0.7rem;color:var(--gray-mid);">ראשוני — לאימות מול נתוני החברה</div>
     </div>
 
-    <!-- ── E. MARKET INDICATORS ── -->
-    <div style="margin-bottom:2rem;">
-      <div style="font-size:0.68rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--teal);margin-bottom:0.4rem;">אינדיקציות שוק ראשוניות — השקיה</div>
-      <div style="font-size:0.78rem;color:var(--gray-mid);margin-bottom:1rem;">אינדיקציות שוק ומדדי benchmark בלבד — לא נתוני בקרה גבע</div>
-      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;margin-bottom:1rem;">
+    <div class="slide-divider" style="margin:0 0 2.5rem;"></div>
 
-        <div style="background:var(--white);border:1px solid var(--border);border-radius:10px;padding:1.1rem 0.9rem;text-align:center;">
-          <div style="font-size:1.6rem;font-weight:900;color:var(--navy);line-height:1.1;margin-bottom:0.35rem;">₪60–80M</div>
-          <div style="font-size:0.72rem;color:var(--gray-dark);line-height:1.45;margin-bottom:0.5rem;">שוק ממוקד controllers + smart valves בישראל</div>
-          <div style="display:flex;flex-direction:column;gap:0.2rem;">
-            <span style="background:var(--red-pale);color:var(--red);border-radius:20px;padding:0.12rem 0.5rem;font-size:0.62rem;font-weight:700;">ESTIMATED</span>
-            <span style="background:var(--gray-bg);color:var(--gray-mid);border-radius:20px;padding:0.12rem 0.5rem;font-size:0.62rem;font-weight:700;">LOW CONFIDENCE</span>
+    <!-- ─── SECTION 4: שרשרת ערך ו-GTM ─── -->
+    <div style="margin-bottom:2.5rem;">
+      <div class="section-eyebrow">מבנה שוק</div>
+      <h3 style="font-size:1.15rem;font-weight:700;color:var(--navy);margin:0 0 0.35rem;">שרשרת ערך וערוצי GTM</h3>
+      <p style="font-size:0.82rem;color:#4B5563;margin:0 0 1.25rem;">שרשרת הערך שונה בין חקלאות לגינון — הן בדמות המפיץ והן בקבלן ההחלטות הסופי.</p>
+
+      <div class="two-col" style="gap:1.5rem;margin-bottom:1.5rem;">
+        <div>
+          <div style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--teal);margin-bottom:0.6rem;">חקלאות — שרשרת ערך</div>
+          <div style="display:flex;flex-direction:column;gap:0.35rem;">
+            <div style="background:var(--navy);color:white;padding:0.45rem 0.75rem;border-radius:5px;font-size:0.78rem;font-weight:600;">יצרן / יבואן ראשי</div>
+            <div style="text-align:center;font-size:0.75rem;color:#6B7280;">הפצה ישירה / מפיץ אזורי</div>
+            <div style="background:#1A5276;color:white;padding:0.45rem 0.75rem;border-radius:5px;font-size:0.78rem;font-weight:600;">מפיץ חקלאי מתמחה</div>
+            <div style="text-align:center;font-size:0.75rem;color:#6B7280;">ייעוץ אגרונומי + מכירה</div>
+            <div style="background:#2471A3;color:white;padding:0.45rem 0.75rem;border-radius:5px;font-size:0.78rem;font-weight:600;">קבלן מערכות / אינסטלטור</div>
+            <div style="text-align:center;font-size:0.75rem;color:#6B7280;">התקנה + שירות</div>
+            <div style="background:var(--teal);color:white;padding:0.45rem 0.75rem;border-radius:5px;font-size:0.78rem;font-weight:600;">מגדל / חווה / קיבוץ</div>
           </div>
         </div>
-
-        <div style="background:var(--white);border:1px solid var(--border);border-radius:10px;padding:1.1rem 0.9rem;text-align:center;">
-          <div style="font-size:1.6rem;font-weight:900;color:var(--navy);line-height:1.1;margin-bottom:0.35rem;">40–55%</div>
-          <div style="font-size:0.72rem;color:var(--gray-dark);line-height:1.45;margin-bottom:0.5rem;">GP benchmark ליצרני controllers / timers</div>
-          <div style="display:flex;flex-direction:column;gap:0.2rem;">
-            <span style="background:var(--teal-pale);color:var(--teal);border-radius:20px;padding:0.12rem 0.5rem;font-size:0.62rem;font-weight:700;">BENCHMARK-BASED</span>
-            <span style="background:var(--amber-pale);color:var(--amber);border-radius:20px;padding:0.12rem 0.5rem;font-size:0.62rem;font-weight:700;">MEDIUM CONFIDENCE</span>
+        <div>
+          <div style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#7C3AED;margin-bottom:0.6rem;">גינון ונוף — שרשרת ערך</div>
+          <div style="display:flex;flex-direction:column;gap:0.35rem;">
+            <div style="background:var(--navy);color:white;padding:0.45rem 0.75rem;border-radius:5px;font-size:0.78rem;font-weight:600;">יצרן / יבואן / מותג בינלאומי</div>
+            <div style="text-align:center;font-size:0.75rem;color:#6B7280;">קמעונאות / מפיץ נוף</div>
+            <div style="background:#6D28D9;color:white;padding:0.45rem 0.75rem;border-radius:5px;font-size:0.78rem;font-weight:600;">שרשרת קמעונאית (Home Center, ACE)</div>
+            <div style="text-align:center;font-size:0.75rem;color:#6B7280;">מכירה ישירה ללקוח</div>
+            <div style="background:#7C3AED;color:white;padding:0.45rem 0.75rem;border-radius:5px;font-size:0.78rem;font-weight:600;">גנן / קבלן נוף</div>
+            <div style="text-align:center;font-size:0.75rem;color:#6B7280;">ייעוץ + התקנה</div>
+            <div style="background:#8B5CF6;color:white;padding:0.45rem 0.75rem;border-radius:5px;font-size:0.78rem;font-weight:600;">רשות / בית פרטי / מגזר ציבורי</div>
           </div>
         </div>
-
-        <div style="background:var(--white);border:1px solid var(--border);border-radius:10px;padding:1.1rem 0.9rem;text-align:center;">
-          <div style="font-size:1.6rem;font-weight:900;color:var(--navy);line-height:1.1;margin-bottom:0.35rem;">50–60%</div>
-          <div style="font-size:0.72rem;color:var(--gray-dark);line-height:1.45;margin-bottom:0.5rem;">GP benchmark לשכבת שסתומים / רכיבי השקיה</div>
-          <div style="display:flex;flex-direction:column;gap:0.2rem;">
-            <span style="background:var(--teal-pale);color:var(--teal);border-radius:20px;padding:0.12rem 0.5rem;font-size:0.62rem;font-weight:700;">BENCHMARK-BASED</span>
-            <span style="background:var(--green-pale);color:var(--green);border-radius:20px;padding:0.12rem 0.5rem;font-size:0.62rem;font-weight:700;">MED-HIGH CONFIDENCE</span>
-          </div>
-        </div>
-
-        <div style="background:var(--white);border:1px solid var(--border);border-radius:10px;padding:1.1rem 0.9rem;text-align:center;">
-          <div style="font-size:1.6rem;font-weight:900;color:var(--navy);line-height:1.1;margin-bottom:0.35rem;">15–25%</div>
-          <div style="font-size:0.72rem;color:var(--gray-dark);line-height:1.45;margin-bottom:0.5rem;">GP benchmark למפיצים מקומיים</div>
-          <div style="display:flex;flex-direction:column;gap:0.2rem;">
-            <span style="background:var(--teal-pale);color:var(--teal);border-radius:20px;padding:0.12rem 0.5rem;font-size:0.62rem;font-weight:700;">BENCHMARK-BASED</span>
-            <span style="background:var(--gray-bg);color:var(--gray-mid);border-radius:20px;padding:0.12rem 0.5rem;font-size:0.62rem;font-weight:700;">LOW CONFIDENCE</span>
-          </div>
-        </div>
-
-        <div style="background:var(--white);border:1px solid var(--border);border-radius:10px;padding:1.1rem 0.9rem;text-align:center;">
-          <div style="font-size:1.6rem;font-weight:900;color:var(--navy);line-height:1.1;margin-bottom:0.35rem;">20–35%</div>
-          <div style="font-size:0.72rem;color:var(--gray-dark);line-height:1.45;margin-bottom:0.5rem;">GP benchmark לאינטגרטורים</div>
-          <div style="display:flex;flex-direction:column;gap:0.2rem;">
-            <span style="background:var(--teal-pale);color:var(--teal);border-radius:20px;padding:0.12rem 0.5rem;font-size:0.62rem;font-weight:700;">BENCHMARK-BASED</span>
-            <span style="background:var(--gray-bg);color:var(--gray-mid);border-radius:20px;padding:0.12rem 0.5rem;font-size:0.62rem;font-weight:700;">LOW CONFIDENCE</span>
-          </div>
-        </div>
-
       </div>
-      <div style="background:var(--red-pale);border:1px solid var(--red);border-radius:8px;padding:0.65rem 1rem;font-size:0.75rem;color:var(--gray-dark);line-height:1.55;">
-        <strong style="color:var(--red);">⚠ הבהרה:</strong> המספרים הם אינדיקציות שוק ראשוניות בלבד. אין להשתמש בהם כבסיס ל-valuation, תעדוף סופי או המלצת עסקה לפני אימות מקורות, שיחות שוק ונתונים פיננסיים ישירים.
+
+      <div style="overflow-x:auto;">
+        <table style="width:100%;border-collapse:collapse;font-size:0.78rem;">
+          <thead>
+            <tr style="background:#374151;color:white;">
+              <th style="padding:0.55rem 0.75rem;text-align:right;font-weight:600;">שלב שרשרת</th>
+              <th style="padding:0.55rem 0.75rem;text-align:right;font-weight:600;">חקלאות</th>
+              <th style="padding:0.55rem 0.75rem;text-align:right;font-weight:600;">גינון ונוף</th>
+              <th style="padding:0.55rem 0.75rem;text-align:right;font-weight:600;">הערה</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="background:white;"><td style="padding:0.5rem 0.75rem;border-bottom:1px solid var(--border);font-weight:600;">יצרן מוביל</td><td style="padding:0.5rem 0.75rem;border-bottom:1px solid var(--border);">Netafim, Bermad, Galcon, Arad, John Deere Water</td><td style="padding:0.5rem 0.75rem;border-bottom:1px solid var(--border);">Hunter, Rain Bird, Toro, Gardena, Netafim גינה</td><td style="padding:0.5rem 0.75rem;border-bottom:1px solid var(--border);font-size:0.72rem;color:#6B7280;">חפיפה חלקית — שחקנים שונים לרוב</td></tr>
+            <tr style="background:var(--gray-bg);"><td style="padding:0.5rem 0.75rem;border-bottom:1px solid var(--border);font-weight:600;">מפיץ</td><td style="padding:0.5rem 0.75rem;border-bottom:1px solid var(--border);">מפיצים חקלאיים מתמחים; לפעמים ישיר</td><td style="padding:0.5rem 0.75rem;border-bottom:1px solid var(--border);">Home Center, ACE, מפיצי נוף, כלבו</td><td style="padding:0.5rem 0.75rem;border-bottom:1px solid var(--border);font-size:0.72rem;color:#6B7280;">ערוצים שונים לחלוטין</td></tr>
+            <tr style="background:white;"><td style="padding:0.5rem 0.75rem;border-bottom:1px solid var(--border);font-weight:600;">קבלן ההחלטות</td><td style="padding:0.5rem 0.75rem;border-bottom:1px solid var(--border);">אגרונום, מנהל חווה, קיבוץ/מושב</td><td style="padding:0.5rem 0.75rem;border-bottom:1px solid var(--border);">גנן, קבלן נוף, רשות מקומית</td><td style="padding:0.5rem 0.75rem;border-bottom:1px solid var(--border);font-size:0.72rem;color:#6B7280;">אסטרטגיית מכירה שונה</td></tr>
+            <tr style="background:var(--gray-bg);"><td style="padding:0.5rem 0.75rem;font-weight:600;">רגישות מחיר</td><td style="padding:0.5rem 0.75rem;">בינונית — איכות ותמיכה חשובים</td><td style="padding:0.5rem 0.75rem;">גבוהה — לחץ על מחיר מסין/מותגים זולים</td><td style="padding:0.5rem 0.75rem;font-size:0.72rem;color:#6B7280;">מרווח גבוה יותר בחקלאות</td></tr>
+          </tbody>
+        </table>
       </div>
     </div>
 
-    <!-- ── F. INSIGHT CARDS ── -->
-    <div style="margin-bottom:2rem;">
-      <div style="font-size:0.68rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--teal);margin-bottom:1rem;">תובנות ראשוניות מזירת ההשקיה</div>
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;">
+    <div class="slide-divider" style="margin:0 0 2.5rem;"></div>
 
-        <div style="background:var(--white);border:1px solid var(--border);border-radius:10px;padding:1.1rem;">
-          <div style="font-size:0.72rem;font-weight:800;color:var(--navy);margin-bottom:0.45rem;">קונסולידציה כבר התרחשה</div>
-          <div style="font-size:0.78rem;color:var(--gray-dark);line-height:1.55;">חלק מהשחקנים הישראליים ההיסטוריים אינם יעדי M&A פשוטים, אלא חלק מקבוצות גדולות או מבנה בעלות מורכב.</div>
-          <div style="margin-top:0.5rem;display:flex;flex-direction:column;gap:0.2rem;">
-            <div style="font-size:0.7rem;color:var(--gray-mid);">· Netafim ← Orbia</div>
-            <div style="font-size:0.7rem;color:var(--gray-mid);">· Rivulis ← Jain</div>
-            <div style="font-size:0.7rem;color:var(--gray-mid);">· NaanDanJain ← Jain / Rivulis</div>
-            <div style="font-size:0.7rem;color:var(--gray-mid);">· Dorot ← Aquestia</div>
-          </div>
-          <div style="margin-top:0.5rem;font-size:0.68rem;color:var(--amber);font-style:italic;">אינדיקציה ראשונית — לאימות</div>
+    <!-- ─── SECTION 5: מפת מוצרים ─── -->
+    <div style="margin-bottom:2.5rem;">
+      <div class="section-eyebrow">מוצרים</div>
+      <h3 style="font-size:1.15rem;font-weight:700;color:var(--navy);margin:0 0 0.35rem;">מפת מוצרים — קטגוריות עיקריות</h3>
+      <p style="font-size:0.82rem;color:#4B5563;margin:0 0 1.25rem;">שוק ציוד ההשקיה מכיל 10 קטגוריות מוצר. הקטגוריות שונות בפרופיל הלקוח, מורכבות ההטמעה וצורת התחרות.</p>
+
+      <!-- System map — CSS only -->
+      <div style="border:1.5px solid var(--border);border-radius:8px;padding:1.25rem;background:white;margin-bottom:1.25rem;">
+        <div style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#6B7280;margin-bottom:1rem;">שרשרת מוצרים — מקור מים עד לקוח קצה</div>
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:0.4rem;justify-content:flex-start;font-size:0.75rem;">
+          <div style="background:var(--navy);color:white;padding:0.4rem 0.65rem;border-radius:5px;font-weight:600;white-space:nowrap;">מקור מים</div>
+          <div style="color:#9CA3AF;font-weight:700;">&#8592;</div>
+          <div style="background:#1A5276;color:white;padding:0.4rem 0.65rem;border-radius:5px;font-weight:600;white-space:nowrap;">שאיבה ולחץ</div>
+          <div style="color:#9CA3AF;font-weight:700;">&#8592;</div>
+          <div style="background:#2471A3;color:white;padding:0.4rem 0.65rem;border-radius:5px;font-weight:600;white-space:nowrap;">סינון</div>
+          <div style="color:#9CA3AF;font-weight:700;">&#8592;</div>
+          <div style="background:var(--teal);color:white;padding:0.4rem 0.65rem;border-radius:5px;font-weight:600;white-space:nowrap;">הזרעה / Fertigation</div>
+          <div style="color:#9CA3AF;font-weight:700;">&#8592;</div>
+          <div style="background:#0D6B6B;color:white;padding:0.4rem 0.65rem;border-radius:5px;font-weight:600;white-space:nowrap;">שסתומים ובקרה</div>
+          <div style="color:#9CA3AF;font-weight:700;">&#8592;</div>
+          <div style="background:#1F7A78;color:white;padding:0.4rem 0.65rem;border-radius:5px;font-weight:600;white-space:nowrap;">בקר / קונטרולר</div>
+          <div style="color:#9CA3AF;font-weight:700;">&#8592;</div>
+          <div style="background:#28A097;color:white;padding:0.4rem 0.65rem;border-radius:5px;font-weight:600;white-space:nowrap;">הולכה וחיבורים</div>
+          <div style="color:#9CA3AF;font-weight:700;">&#8592;</div>
+          <div style="background:#35B8B0;color:white;padding:0.4rem 0.65rem;border-radius:5px;font-weight:600;white-space:nowrap;">פיזור — טפטוף / ספרינקלר</div>
+          <div style="color:#9CA3AF;font-weight:700;">&#8592;</div>
+          <div style="background:#059669;color:white;padding:0.4rem 0.65rem;border-radius:5px;font-weight:600;white-space:nowrap;">חיישנים ו-IoT</div>
+          <div style="color:#9CA3AF;font-weight:700;">&#8592;</div>
+          <div style="background:#047857;color:white;padding:0.4rem 0.65rem;border-radius:5px;font-weight:600;white-space:nowrap;">תוכנה / ענן</div>
         </div>
+        <div style="font-size:0.7rem;color:#9CA3AF;margin-top:0.75rem;text-align:left;">הזרימה: מקור מים &#8592; עד לקוח קצה</div>
+      </div>
 
-        <div style="background:#EDFAF9;border:1px solid var(--teal);border-radius:10px;padding:1.1rem;">
-          <div style="font-size:0.72rem;font-weight:800;color:var(--teal);margin-bottom:0.45rem;">הפער המרכזי הוא Controller / IoT</div>
-          <div style="font-size:0.78rem;color:var(--gray-dark);line-height:1.55;">בקרה גבע נמצאת בליבת הרכיב, אך חסרה שכבת בקרה וניהול מרחוק שמאפשרת bundle מלא.</div>
-        </div>
-
-        <div style="background:var(--white);border:1px solid var(--border);border-radius:10px;padding:1.1rem;">
-          <div style="font-size:0.72rem;font-weight:800;color:var(--navy);margin-bottom:0.45rem;">Fertigation הוא תת-מסלול משלים</div>
-          <div style="font-size:0.78rem;color:var(--gray-dark);line-height:1.55;">הערך אינו בהכרח רכישת יצרן ציוד מינון, אלא השלמת סל: solenoid + valve + controller + dosing.</div>
-        </div>
-
-        <div style="background:var(--amber-pale);border:1px solid var(--amber);border-radius:10px;padding:1.1rem;">
-          <div style="font-size:0.72rem;font-weight:800;color:var(--amber);margin-bottom:0.45rem;">ערוצי הפצה הם ערוצים, לא בהכרח נכסים</div>
-          <div style="font-size:0.78rem;color:var(--gray-dark);line-height:1.55;">חברות סחר וגינון עשויות לפתוח גישה ללקוחות, אך אינן בהכרח נכס טכנולוגי או יעד רכישה.</div>
-        </div>
-
-        <div style="background:var(--white);border:1px solid var(--border);border-radius:10px;padding:1.1rem;">
-          <div style="font-size:0.72rem;font-weight:800;color:var(--navy);margin-bottom:0.45rem;">להפריד בין יעד, benchmark, לקוח ומתחרה</div>
-          <div style="font-size:0.78rem;color:var(--gray-dark);line-height:1.55;">לא כל שחקן חשוב הוא יעד עסקה. חלקם benchmarks, חלקם לקוחות, חלקם מתחרים וחלקם רק כיווני בדיקה.</div>
-        </div>
-
+      <div style="overflow-x:auto;">
+        <table style="width:100%;border-collapse:collapse;font-size:0.78rem;">
+          <thead>
+            <tr style="background:var(--navy);color:white;">
+              <th style="padding:0.55rem 0.75rem;text-align:right;font-weight:600;">#</th>
+              <th style="padding:0.55rem 0.75rem;text-align:right;font-weight:600;">קטגוריה</th>
+              <th style="padding:0.55rem 0.75rem;text-align:right;font-weight:600;">סגמנט עיקרי</th>
+              <th style="padding:0.55rem 0.75rem;text-align:right;font-weight:600;">מאפיין מרכזי</th>
+              <th style="padding:0.55rem 0.75rem;text-align:right;font-weight:600;">מורכבות הטמעה</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="background:white;"><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);color:#6B7280;">A</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-weight:600;">טפטפות ואמיטרים</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">חקלאות</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">דיוק, עמידות, anti-clog</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">בינונית</td></tr>
+            <tr style="background:var(--gray-bg);"><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);color:#6B7280;">B</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-weight:600;">ספרינקלרים</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">חקלאות + גינון</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">כיסוי, עוצמה, חיסכון במים</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">נמוכה–בינונית</td></tr>
+            <tr style="background:white;"><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);color:#6B7280;">C</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-weight:600;">שסתומים ו-actuators</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">חקלאות + תשתיות</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">אמינות, לחץ, חומרים</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">גבוהה</td></tr>
+            <tr style="background:var(--gray-bg);"><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);color:#6B7280;">D</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-weight:600;">בקרים / קונטרולרים</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">חקלאות + גינון</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">תכנות, Wi-Fi, שילוב חיישנים</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">בינונית–גבוהה</td></tr>
+            <tr style="background:white;"><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);color:#6B7280;">E</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-weight:600;">הזרעה / Fertigation</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">חקלאות</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">דיוק הזרקה, pH, EC</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">גבוהה מאוד</td></tr>
+            <tr style="background:var(--gray-bg);"><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);color:#6B7280;">F</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-weight:600;">סינון</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">חקלאות</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">גודל חלקיקים, תחזוקה</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">בינונית</td></tr>
+            <tr style="background:white;"><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);color:#6B7280;">G</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-weight:600;">הולכה וצנרת</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">חקלאות + גינון</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">חומרים, קוטר, עמידות UV</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">נמוכה</td></tr>
+            <tr style="background:var(--gray-bg);"><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);color:#6B7280;">H</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-weight:600;">חיישנים (לחות, עצמת פריקה)</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">חקלאות</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">דיוק, רשת, תאימות בקר</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">גבוהה</td></tr>
+            <tr style="background:white;"><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);color:#6B7280;">I</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-weight:600;">תוכנה / ניהול ענן</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">חקלאות</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">UX, אינטגרציה, SaaS</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">גבוהה מאוד</td></tr>
+            <tr style="background:var(--gray-bg);"><td style="padding:0.45rem 0.75rem;color:#6B7280;">J</td><td style="padding:0.45rem 0.75rem;font-weight:600;">מוצרי גינון ונוף ייעודיים</td><td style="padding:0.45rem 0.75rem;">גינון ונוף</td><td style="padding:0.45rem 0.75rem;">מראה, מחיר, מותג</td><td style="padding:0.45rem 0.75rem;">נמוכה</td></tr>
+          </tbody>
+        </table>
       </div>
     </div>
 
-    <!-- ── G. INFORMATION GAPS ── -->
-    <div style="border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:2rem;">
-      <div style="background:var(--navy);padding:0.65rem 1.25rem;font-size:0.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.75);">פערי מידע להשלמה</div>
-      <div style="padding:1rem 1.25rem;display:grid;grid-template-columns:1fr 1fr;gap:0.35rem 1.5rem;">
-        <div style="display:flex;align-items:flex-start;gap:0.5rem;font-size:0.82rem;color:var(--gray-dark);line-height:1.5;padding:0.3rem 0;border-bottom:1px solid var(--border);">
-          <span style="color:var(--amber);font-weight:700;flex-shrink:0;">?</span>
-          <span>מבנה שליטה עדכני ב-Aquestia / Dorot</span>
+    <div class="slide-divider" style="margin:0 0 2.5rem;"></div>
+
+    <!-- ─── SECTION 6: שחקנים לפי קטגוריה ─── -->
+    <div style="margin-bottom:2.5rem;">
+      <div class="section-eyebrow">מפת שחקנים</div>
+      <h3 style="font-size:1.15rem;font-weight:700;color:var(--navy);margin:0 0 0.35rem;">שחקנים מרכזיים לפי קטגוריית מוצר</h3>
+      <p style="font-size:0.82rem;color:#4B5563;margin:0 0 0.5rem;">הרשימה מבוססת על מקורות פומביים וידע ענפי. אינה ממצה ואינה מדורגת לפי עדיפות. פירוט נוסף — ראיונות ומחקר עומק.</p>
+      <div style="background:var(--amber-pale);border-right:3px solid var(--amber);padding:0.55rem 0.85rem;border-radius:0 5px 5px 0;font-size:0.75rem;color:#92400E;margin-bottom:1.25rem;">
+        אזהרת נתונים: הכנסות, נתחי שוק ומרווחים — לא זמינים במקורות פומביים לרוב השחקנים. מידע שגוי ספציפי יסומן. אין להסיק על גודל שוק ישראלי מנתונים גלובליים.
+      </div>
+
+      <!-- Group A: Drip/Emitters -->
+      <div style="margin-bottom:1.25rem;">
+        <div style="background:#E0F2F1;border-right:3px solid var(--teal);padding:0.45rem 0.75rem;border-radius:0 5px 5px 0;margin-bottom:0.6rem;">
+          <span style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--teal);">קטגוריה A — טפטפות ואמיטרים (חקלאות)</span>
         </div>
-        <div style="display:flex;align-items:flex-start;gap:0.5rem;font-size:0.82rem;color:var(--gray-dark);line-height:1.5;padding:0.3rem 0;border-bottom:1px solid var(--border);">
-          <span style="color:var(--amber);font-weight:700;flex-shrink:0;">?</span>
-          <span>מי מפיץ Dosatron בישראל</span>
+        <div style="overflow-x:auto;">
+          <table style="width:100%;border-collapse:collapse;font-size:0.77rem;">
+            <thead><tr style="background:#F3F4F6;"><th style="padding:0.45rem 0.7rem;text-align:right;font-weight:600;color:#374151;">שחקן</th><th style="padding:0.45rem 0.7rem;text-align:right;font-weight:600;color:#374151;">בסיס / בעלות</th><th style="padding:0.45rem 0.7rem;text-align:right;font-weight:600;color:#374151;">מוצר עיקרי</th><th style="padding:0.45rem 0.7rem;text-align:right;font-weight:600;color:#374151;">הכנסות / גודל</th><th style="padding:0.45rem 0.7rem;text-align:right;font-weight:600;color:#374151;">הערה</th></tr></thead>
+            <tbody>
+              <tr style="background:white;"><td style="padding:0.4rem 0.7rem;border-bottom:1px solid var(--border);font-weight:600;">Netafim</td><td style="padding:0.4rem 0.7rem;border-bottom:1px solid var(--border);">ישראל — בבעלות Mexichem/Orbia</td><td style="padding:0.4rem 0.7rem;border-bottom:1px solid var(--border);">מובילת עולם — solution provider: טפטוף, מערכות מלאות, בקרה, אינטגרציה, שירות</td><td style="padding:0.4rem 0.7rem;border-bottom:1px solid var(--border);font-size:0.72rem;color:#6B7280;">לא זמין במקורות פומביים</td><td style="padding:0.4rem 0.7rem;border-bottom:1px solid var(--border);font-size:0.72rem;">אינטגרטור מערכת — לא רק יצרן מוצר; 80% נמכרה ל-Mexichem 2011</td></tr>
+              <tr style="background:var(--gray-bg);"><td style="padding:0.4rem 0.7rem;border-bottom:1px solid var(--border);font-weight:600;">John Deere Water / JAIN</td><td style="padding:0.4rem 0.7rem;border-bottom:1px solid var(--border);">גלובלי</td><td style="padding:0.4rem 0.7rem;border-bottom:1px solid var(--border);">טפטוף, מיקרו-השקיה</td><td style="padding:0.4rem 0.7rem;border-bottom:1px solid var(--border);font-size:0.72rem;color:#6B7280;">לא זמין במקורות פומביים</td><td style="padding:0.4rem 0.7rem;border-bottom:1px solid var(--border);font-size:0.72rem;">Jain רכשה את פעילות John Deere Water</td></tr>
+              <tr style="background:white;"><td style="padding:0.4rem 0.7rem;font-weight:600;">NaanDanJain</td><td style="padding:0.4rem 0.7rem;">ישראל — בבעלות Rivulis</td><td style="padding:0.4rem 0.7rem;">טפטוף, מיקרו, ספרינקלרים</td><td style="padding:0.4rem 0.7rem;font-size:0.72rem;color:#6B7280;">לא זמין במקורות פומביים</td><td style="padding:0.4rem 0.7rem;font-size:0.72rem;">Rivulis רכשה — בעלות לאימות</td></tr>
+            </tbody>
+          </table>
         </div>
-        <div style="display:flex;align-items:flex-start;gap:0.5rem;font-size:0.82rem;color:var(--gray-dark);line-height:1.5;padding:0.3rem 0;border-bottom:1px solid var(--border);">
-          <span style="color:var(--amber);font-weight:700;flex-shrink:0;">?</span>
-          <span>מי מפיץ Irritec / Mixtron בישראל</span>
+      </div>
+
+      <!-- Group B: Sprinklers -->
+      <div style="margin-bottom:1.25rem;">
+        <div style="background:#EDE9FE;border-right:3px solid #7C3AED;padding:0.45rem 0.75rem;border-radius:0 5px 5px 0;margin-bottom:0.6rem;">
+          <span style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#7C3AED;">קטגוריה B — ספרינקלרים (חקלאות + גינון)</span>
         </div>
-        <div style="display:flex;align-items:flex-start;gap:0.5rem;font-size:0.82rem;color:var(--gray-dark);line-height:1.5;padding:0.3rem 0;border-bottom:1px solid var(--border);">
-          <span style="color:var(--amber);font-weight:700;flex-shrink:0;">?</span>
-          <span>מי מחזיק ייצוג Rain Bird / Hunter בישראל</span>
+        <div style="overflow-x:auto;">
+          <table style="width:100%;border-collapse:collapse;font-size:0.77rem;">
+            <thead><tr style="background:#F3F4F6;"><th style="padding:0.45rem 0.7rem;text-align:right;font-weight:600;color:#374151;">שחקן</th><th style="padding:0.45rem 0.7rem;text-align:right;font-weight:600;color:#374151;">בסיס</th><th style="padding:0.45rem 0.7rem;text-align:right;font-weight:600;color:#374151;">מוצר עיקרי</th><th style="padding:0.45rem 0.7rem;text-align:right;font-weight:600;color:#374151;">סגמנט</th><th style="padding:0.45rem 0.7rem;text-align:right;font-weight:600;color:#374151;">הערה</th></tr></thead>
+            <tbody>
+              <tr style="background:white;"><td style="padding:0.4rem 0.7rem;border-bottom:1px solid var(--border);font-weight:600;">Hunter Industries</td><td style="padding:0.4rem 0.7rem;border-bottom:1px solid var(--border);">ארה"ב</td><td style="padding:0.4rem 0.7rem;border-bottom:1px solid var(--border);">ספרינקלרים לנוף + גינה</td><td style="padding:0.4rem 0.7rem;border-bottom:1px solid var(--border);">גינון / נוף</td><td style="padding:0.4rem 0.7rem;border-bottom:1px solid var(--border);font-size:0.72rem;">מוביל גלובלי בגינון</td></tr>
+              <tr style="background:var(--gray-bg);"><td style="padding:0.4rem 0.7rem;border-bottom:1px solid var(--border);font-weight:600;">Rain Bird</td><td style="padding:0.4rem 0.7rem;border-bottom:1px solid var(--border);">ארה"ב</td><td style="padding:0.4rem 0.7rem;border-bottom:1px solid var(--border);">ספרינקלרים, בקרים</td><td style="padding:0.4rem 0.7rem;border-bottom:1px solid var(--border);">גינון / נוף</td><td style="padding:0.4rem 0.7rem;border-bottom:1px solid var(--border);font-size:0.72rem;">נוכחות ישראל — לאימות</td></tr>
+              <tr style="background:white;"><td style="padding:0.4rem 0.7rem;border-bottom:1px solid var(--border);font-weight:600;">Toro</td><td style="padding:0.4rem 0.7rem;border-bottom:1px solid var(--border);">ארה"ב</td><td style="padding:0.4rem 0.7rem;border-bottom:1px solid var(--border);">ספרינקלרים, גינון</td><td style="padding:0.4rem 0.7rem;border-bottom:1px solid var(--border);">גינון / נוף</td><td style="padding:0.4rem 0.7rem;border-bottom:1px solid var(--border);font-size:0.72rem;">פעיל בישראל — לאימות</td></tr>
+              <tr style="background:var(--gray-bg);"><td style="padding:0.4rem 0.7rem;font-weight:600;">Gardena</td><td style="padding:0.4rem 0.7rem;">גרמניה — Husqvarna Group</td><td style="padding:0.4rem 0.7rem;">ספרינקלרים לגינה, בקרי גינה</td><td style="padding:0.4rem 0.7rem;">גינון פרטי</td><td style="padding:0.4rem 0.7rem;font-size:0.72rem;">ערוץ קמעונאי</td></tr>
+            </tbody>
+          </table>
         </div>
-        <div style="display:flex;align-items:flex-start;gap:0.5rem;font-size:0.82rem;color:var(--gray-dark);line-height:1.5;padding:0.3rem 0;border-bottom:1px solid var(--border);">
-          <span style="color:var(--amber);font-weight:700;flex-shrink:0;">?</span>
-          <span>עצמאות ונכונות בעלי Galcon</span>
+      </div>
+
+      <!-- Group C: Valves -->
+      <div style="margin-bottom:1.25rem;">
+        <div style="background:#FEF3C7;border-right:3px solid var(--amber);padding:0.45rem 0.75rem;border-radius:0 5px 5px 0;margin-bottom:0.6rem;">
+          <span style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#92400E;">קטגוריה C — שסתומים ו-actuators</span>
         </div>
-        <div style="display:flex;align-items:flex-start;gap:0.5rem;font-size:0.82rem;color:var(--gray-dark);line-height:1.5;padding:0.3rem 0;border-bottom:1px solid var(--border);">
-          <span style="color:var(--amber);font-weight:700;flex-shrink:0;">?</span>
-          <span>GP controllers / smart valves בישראל</span>
+        <div style="overflow-x:auto;">
+          <table style="width:100%;border-collapse:collapse;font-size:0.77rem;">
+            <thead><tr style="background:#F3F4F6;"><th style="padding:0.45rem 0.7rem;text-align:right;font-weight:600;color:#374151;">שחקן</th><th style="padding:0.45rem 0.7rem;text-align:right;font-weight:600;color:#374151;">בסיס / בעלות</th><th style="padding:0.45rem 0.7rem;text-align:right;font-weight:600;color:#374151;">מוצר עיקרי</th><th style="padding:0.45rem 0.7rem;text-align:right;font-weight:600;color:#374151;">הכנסות / גודל</th><th style="padding:0.45rem 0.7rem;text-align:right;font-weight:600;color:#374151;">הערה</th></tr></thead>
+            <tbody>
+              <tr style="background:white;"><td style="padding:0.4rem 0.7rem;border-bottom:1px solid var(--border);font-weight:600;">Bermad</td><td style="padding:0.4rem 0.7rem;border-bottom:1px solid var(--border);">ישראל — קיבוץ עברון וקיבוץ סעד; Tama נכנסה בשנים האחרונות <span style="font-size:0.68rem;color:#6B7280;">(לפי מידע שהועבר בצוות / לאימות מקור רשמי)</span></td><td style="padding:0.4rem 0.7rem;border-bottom:1px solid var(--border);">מגופים, שסתומי בקרה, flow control — מוצר משלים קרוב לליבה</td><td style="padding:0.4rem 0.7rem;border-bottom:1px solid var(--border);font-size:0.72rem;color:#6B7280;">לא זמין במקורות פומביים</td><td style="padding:0.4rem 0.7rem;border-bottom:1px solid var(--border);font-size:0.72rem;">שחקן לבדיקה בתחום flow control / benchmark — לא יעד רכישה</td></tr>
+              <tr style="background:var(--gray-bg);"><td style="padding:0.4rem 0.7rem;border-bottom:1px solid var(--border);font-weight:600;">Arad Technologies</td><td style="padding:0.4rem 0.7rem;border-bottom:1px solid var(--border);">ישראל</td><td style="padding:0.4rem 0.7rem;border-bottom:1px solid var(--border);">מוני מים, שסתומים חכמים</td><td style="padding:0.4rem 0.7rem;border-bottom:1px solid var(--border);font-size:0.72rem;color:#6B7280;">לא זמין במקורות פומביים</td><td style="padding:0.4rem 0.7rem;border-bottom:1px solid var(--border);font-size:0.72rem;">מוביל בתשתיות מים חכמות</td></tr>
+              <tr style="background:white;"><td style="padding:0.4rem 0.7rem;font-weight:600;">Plasson</td><td style="padding:0.4rem 0.7rem;">ישראל — קיבוץ מעגן מיכאל</td><td style="padding:0.4rem 0.7rem;">חיבורים, פיטינגים, שסתומים; Galcon כחברת בת (בקרי השקיה)</td><td style="padding:0.4rem 0.7rem;font-size:0.72rem;color:#6B7280;">לא זמין במקורות פומביים</td><td style="padding:0.4rem 0.7rem;font-size:0.72rem;">קבוצת Plasson — Galcon כחברת בת; חיבורים ופיטינגים כפעילות נוספת (לפי מידע שהועבר בצוות)</td></tr>
+            </tbody>
+          </table>
         </div>
-        <div style="display:flex;align-items:flex-start;gap:0.5rem;font-size:0.82rem;color:var(--gray-dark);line-height:1.5;padding:0.3rem 0;border-bottom:1px solid var(--border);">
-          <span style="color:var(--amber);font-weight:700;flex-shrink:0;">?</span>
-          <span>האם הסכמי ייצוג עוברים עם רכישה</span>
+      </div>
+
+      <!-- Group D: Controllers -->
+      <div style="margin-bottom:1.25rem;">
+        <div style="background:#DCFCE7;border-right:3px solid var(--green);padding:0.45rem 0.75rem;border-radius:0 5px 5px 0;margin-bottom:0.6rem;">
+          <span style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#065F46;">קטגוריה D — בקרים / קונטרולרים</span>
         </div>
-        <div style="display:flex;align-items:flex-start;gap:0.5rem;font-size:0.82rem;color:var(--gray-dark);line-height:1.5;padding:0.3rem 0;border-bottom:1px solid var(--border);">
-          <span style="color:var(--amber);font-weight:700;flex-shrink:0;">?</span>
-          <span>היקף פעילות Bermad בהשקיה לעומת מים / כיבוי</span>
+        <div style="overflow-x:auto;">
+          <table style="width:100%;border-collapse:collapse;font-size:0.77rem;">
+            <thead><tr style="background:#F3F4F6;"><th style="padding:0.45rem 0.7rem;text-align:right;font-weight:600;color:#374151;">שחקן</th><th style="padding:0.45rem 0.7rem;text-align:right;font-weight:600;color:#374151;">בסיס</th><th style="padding:0.45rem 0.7rem;text-align:right;font-weight:600;color:#374151;">מוצר עיקרי</th><th style="padding:0.45rem 0.7rem;text-align:right;font-weight:600;color:#374151;">סגמנט</th><th style="padding:0.45rem 0.7rem;text-align:right;font-weight:600;color:#374151;">הערה</th></tr></thead>
+            <tbody>
+              <tr style="background:white;"><td style="padding:0.4rem 0.7rem;border-bottom:1px solid var(--border);font-weight:600;">Galcon</td><td style="padding:0.4rem 0.7rem;border-bottom:1px solid var(--border);">ישראל — בבעלות Plasson <span style="font-size:0.68rem;color:#6B7280;">(לפי מידע שהועבר בצוות)</span></td><td style="padding:0.4rem 0.7rem;border-bottom:1px solid var(--border);">בקרי השקיה, timers, סולנואידים, פתרונות השקיה חכמה</td><td style="padding:0.4rem 0.7rem;border-bottom:1px solid var(--border);">חקלאות + גינון</td><td style="padding:0.4rem 0.7rem;border-bottom:1px solid var(--border);font-size:0.72rem;">שחקן משלים / מתחרה לבדיקה: controller + solenoid bundle — לא יעד רכישה</td></tr>
+              <tr style="background:var(--gray-bg);"><td style="padding:0.4rem 0.7rem;border-bottom:1px solid var(--border);font-weight:600;">Talgil</td><td style="padding:0.4rem 0.7rem;border-bottom:1px solid var(--border);">ישראל</td><td style="padding:0.4rem 0.7rem;border-bottom:1px solid var(--border);">בקרי השקיה חקלאיים</td><td style="padding:0.4rem 0.7rem;border-bottom:1px solid var(--border);">חקלאות</td><td style="padding:0.4rem 0.7rem;border-bottom:1px solid var(--border);font-size:0.72rem;">בקרה אגרונומית מתקדמת</td></tr>
+              <tr style="background:white;"><td style="padding:0.4rem 0.7rem;border-bottom:1px solid var(--border);font-weight:600;">Rain Bird (בקרים)</td><td style="padding:0.4rem 0.7rem;border-bottom:1px solid var(--border);">ארה"ב</td><td style="padding:0.4rem 0.7rem;border-bottom:1px solid var(--border);">בקרי גינון, Smart controllers</td><td style="padding:0.4rem 0.7rem;border-bottom:1px solid var(--border);">גינון / נוף</td><td style="padding:0.4rem 0.7rem;border-bottom:1px solid var(--border);font-size:0.72rem;">Wi-Fi, אינטגרציה ספ"כ</td></tr>
+              <tr style="background:var(--gray-bg);"><td style="padding:0.4rem 0.7rem;font-weight:600;">Hunter (בקרים)</td><td style="padding:0.4rem 0.7rem;">ארה"ב</td><td style="padding:0.4rem 0.7rem;">X-Core, Pro-C, Hydrawise</td><td style="padding:0.4rem 0.7rem;">גינון / נוף</td><td style="padding:0.4rem 0.7rem;font-size:0.72rem;">ניהול ענן, אינטגרציה</td></tr>
+            </tbody>
+          </table>
         </div>
-        <div style="display:flex;align-items:flex-start;gap:0.5rem;font-size:0.82rem;color:var(--gray-dark);line-height:1.5;padding:0.3rem 0;">
-          <span style="color:var(--amber);font-weight:700;flex-shrink:0;">?</span>
-          <span>היקף פעילות חברות סחר: קמחי, שר-גל ו-Eldar Shany</span>
+      </div>
+
+      <!-- Group E: Fertigation -->
+      <div style="margin-bottom:1.25rem;">
+        <div style="background:#FEE2E2;border-right:3px solid var(--red);padding:0.45rem 0.75rem;border-radius:0 5px 5px 0;margin-bottom:0.6rem;">
+          <span style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--red);">קטגוריה E — הזרעה / Fertigation</span>
+        </div>
+        <div style="overflow-x:auto;">
+          <table style="width:100%;border-collapse:collapse;font-size:0.77rem;">
+            <thead><tr style="background:#F3F4F6;"><th style="padding:0.45rem 0.7rem;text-align:right;font-weight:600;color:#374151;">שחקן</th><th style="padding:0.45rem 0.7rem;text-align:right;font-weight:600;color:#374151;">בסיס</th><th style="padding:0.45rem 0.7rem;text-align:right;font-weight:600;color:#374151;">מוצר עיקרי</th><th style="padding:0.45rem 0.7rem;text-align:right;font-weight:600;color:#374151;">הכנסות / גודל</th><th style="padding:0.45rem 0.7rem;text-align:right;font-weight:600;color:#374151;">הערה</th></tr></thead>
+            <tbody>
+              <tr style="background:white;"><td style="padding:0.4rem 0.7rem;border-bottom:1px solid var(--border);font-weight:600;">Tefen</td><td style="padding:0.4rem 0.7rem;border-bottom:1px solid var(--border);">ישראל — קיבוץ תפן</td><td style="padding:0.4rem 0.7rem;border-bottom:1px solid var(--border);">מזרקי Venturi, ציוד הזרעה</td><td style="padding:0.4rem 0.7rem;border-bottom:1px solid var(--border);font-size:0.72rem;color:#6B7280;">לא זמין במקורות פומביים</td><td style="padding:0.4rem 0.7rem;border-bottom:1px solid var(--border);font-size:0.72rem;">שחקן מוכר בישראל ובגלובלי</td></tr>
+              <tr style="background:var(--gray-bg);"><td style="padding:0.4rem 0.7rem;border-bottom:1px solid var(--border);font-weight:600;">נחשולים (Nachalolim)</td><td style="padding:0.4rem 0.7rem;border-bottom:1px solid var(--border);">ישראל — קיבוצי</td><td style="padding:0.4rem 0.7rem;border-bottom:1px solid var(--border);">ציוד הזרעה, מזרקים</td><td style="padding:0.4rem 0.7rem;border-bottom:1px solid var(--border);font-size:0.72rem;color:#6B7280;">לא זמין במקורות פומביים</td><td style="padding:0.4rem 0.7rem;border-bottom:1px solid var(--border);font-size:0.72rem;">שחקן ישראלי בתחום</td></tr>
+              <tr style="background:white;"><td style="padding:0.4rem 0.7rem;font-weight:600;">MixRite (Tefen)</td><td style="padding:0.4rem 0.7rem;">ישראל</td><td style="padding:0.4rem 0.7rem;">מזרקי יחס, הזרעה אוטומטית</td><td style="padding:0.4rem 0.7rem;font-size:0.72rem;color:#6B7280;">לא זמין במקורות פומביים</td><td style="padding:0.4rem 0.7rem;font-size:0.72rem;">מוצר MixRite של Tefen — פעיל גלובלית</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div style="font-size:0.75rem;color:#6B7280;background:var(--gray-bg);border:1px solid var(--border);padding:0.6rem 0.85rem;border-radius:5px;">
+        קטגוריות F (סינון), G (הולכה), H (חיישנים), I (תוכנה) ו-J (גינון ייעודי) — שחקנים נוספים יופו בגרסה מורחבת בהתבסס על ראיונות ומחקר עומק. לא זמין במקורות הפומביים כרגע.
+      </div>
+    </div>
+
+    <div class="slide-divider" style="margin:0 0 2.5rem;"></div>
+
+    <!-- ─── SECTION 7: בקרה גבע היום ─── -->
+    <div style="margin-bottom:2.5rem;">
+      <div class="section-eyebrow">מיצוב נוכחי</div>
+      <h3 style="font-size:1.15rem;font-weight:700;color:var(--navy);margin:0 0 0.35rem;">בקרה גבע — מיצוב נוכחי לפי קטגוריה</h3>
+      <p style="font-size:0.82rem;color:#4B5563;margin:0 0 0.5rem;">מיפוי ראשוני של נוכחות בקרה גבע בכל קטגוריה — בהתבסס על מידע שהועבר לצוות. נדרש אימות ודיוק ידני.</p>
+      <div style="background:var(--amber-pale);border-right:3px solid var(--amber);padding:0.55rem 0.85rem;border-radius:0 5px 5px 0;font-size:0.75rem;color:#92400E;margin-bottom:1rem;">
+        עמודות עם סימון [יושלם ידנית — נתוני בקרה] מיועדות להשלמה על-ידי הצוות על בסיס נתוני CRM, הכנסות וקטלוגים פנימיים.
+      </div>
+      <div style="overflow-x:auto;">
+        <table style="width:100%;border-collapse:collapse;font-size:0.78rem;">
+          <thead>
+            <tr style="background:var(--navy);color:white;">
+              <th style="padding:0.55rem 0.75rem;text-align:right;font-weight:600;">קטגוריה</th>
+              <th style="padding:0.55rem 0.75rem;text-align:right;font-weight:600;">נוכחות היום</th>
+              <th style="padding:0.55rem 0.75rem;text-align:right;font-weight:600;">מוצרים / שירותים</th>
+              <th style="padding:0.55rem 0.75rem;text-align:right;font-weight:600;">נתח שוק משוער</th>
+              <th style="padding:0.55rem 0.75rem;text-align:right;font-weight:600;">ערוץ הפצה</th>
+              <th style="padding:0.55rem 0.75rem;text-align:right;font-weight:600;">יתרון תחרותי</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="background:white;"><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-weight:600;">A — טפטפות</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);"><span style="background:var(--green-pale);color:#065F46;padding:0.15rem 0.5rem;border-radius:3px;font-size:0.7rem;font-weight:600;">פעיל</span></td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-size:0.72rem;color:#6B7280;">[יושלם ידנית — נתוני בקרה]</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-size:0.72rem;color:#6B7280;">[יושלם ידנית — נתוני בקרה]</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-size:0.72rem;color:#6B7280;">[יושלם ידנית — נתוני בקרה]</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-size:0.72rem;color:#6B7280;">[יושלם ידנית — נתוני בקרה]</td></tr>
+            <tr style="background:var(--gray-bg);"><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-weight:600;">B — ספרינקלרים</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);"><span style="background:var(--green-pale);color:#065F46;padding:0.15rem 0.5rem;border-radius:3px;font-size:0.7rem;font-weight:600;">פעיל</span></td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-size:0.72rem;color:#6B7280;">[יושלם ידנית — נתוני בקרה]</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-size:0.72rem;color:#6B7280;">[יושלם ידנית — נתוני בקרה]</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-size:0.72rem;color:#6B7280;">[יושלם ידנית — נתוני בקרה]</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-size:0.72rem;color:#6B7280;">[יושלם ידנית — נתוני בקרה]</td></tr>
+            <tr style="background:white;"><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-weight:600;">C — שסתומים</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);"><span style="background:var(--amber-pale);color:#92400E;padding:0.15rem 0.5rem;border-radius:3px;font-size:0.7rem;font-weight:600;">חלקי</span></td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-size:0.72rem;color:#6B7280;">[יושלם ידנית — נתוני בקרה]</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-size:0.72rem;color:#6B7280;">[יושלם ידנית — נתוני בקרה]</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-size:0.72rem;color:#6B7280;">[יושלם ידנית — נתוני בקרה]</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-size:0.72rem;color:#6B7280;">[יושלם ידנית — נתוני בקרה]</td></tr>
+            <tr style="background:var(--gray-bg);"><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-weight:600;">D — בקרים</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);"><span style="background:var(--red-pale);color:var(--red);padding:0.15rem 0.5rem;border-radius:3px;font-size:0.7rem;font-weight:600;">לא פעיל</span></td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-size:0.72rem;color:#6B7280;">[יושלם ידנית — נתוני בקרה]</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-size:0.72rem;color:#6B7280;">[יושלם ידנית — נתוני בקרה]</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-size:0.72rem;color:#6B7280;">[יושלם ידנית — נתוני בקרה]</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-size:0.72rem;color:#6B7280;">[יושלם ידנית — נתוני בקרה]</td></tr>
+            <tr style="background:white;"><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-weight:600;">E — הזרעה</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);"><span style="background:var(--red-pale);color:var(--red);padding:0.15rem 0.5rem;border-radius:3px;font-size:0.7rem;font-weight:600;">לא פעיל</span></td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-size:0.72rem;color:#6B7280;">[יושלם ידנית — נתוני בקרה]</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-size:0.72rem;color:#6B7280;">[יושלם ידנית — נתוני בקרה]</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-size:0.72rem;color:#6B7280;">[יושלם ידנית — נתוני בקרה]</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-size:0.72rem;color:#6B7280;">[יושלם ידנית — נתוני בקרה]</td></tr>
+            <tr style="background:var(--gray-bg);"><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-weight:600;">F — סינון</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);"><span style="background:var(--amber-pale);color:#92400E;padding:0.15rem 0.5rem;border-radius:3px;font-size:0.7rem;font-weight:600;">חלקי</span></td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-size:0.72rem;color:#6B7280;">[יושלם ידנית — נתוני בקרה]</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-size:0.72rem;color:#6B7280;">[יושלם ידנית — נתוני בקרה]</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-size:0.72rem;color:#6B7280;">[יושלם ידנית — נתוני בקרה]</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-size:0.72rem;color:#6B7280;">[יושלם ידנית — נתוני בקרה]</td></tr>
+            <tr style="background:white;"><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-weight:600;">G — הולכה</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);"><span style="background:var(--green-pale);color:#065F46;padding:0.15rem 0.5rem;border-radius:3px;font-size:0.7rem;font-weight:600;">פעיל</span></td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-size:0.72rem;color:#6B7280;">[יושלם ידנית — נתוני בקרה]</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-size:0.72rem;color:#6B7280;">[יושלם ידנית — נתוני בקרה]</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-size:0.72rem;color:#6B7280;">[יושלם ידנית — נתוני בקרה]</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-size:0.72rem;color:#6B7280;">[יושלם ידנית — נתוני בקרה]</td></tr>
+            <tr style="background:var(--gray-bg);"><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-weight:600;">H — חיישנים</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);"><span style="background:var(--red-pale);color:var(--red);padding:0.15rem 0.5rem;border-radius:3px;font-size:0.7rem;font-weight:600;">לא פעיל</span></td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-size:0.72rem;color:#6B7280;">[יושלם ידנית — נתוני בקרה]</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-size:0.72rem;color:#6B7280;">[יושלם ידנית — נתוני בקרה]</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-size:0.72rem;color:#6B7280;">[יושלם ידנית — נתוני בקרה]</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-size:0.72rem;color:#6B7280;">[יושלם ידנית — נתוני בקרה]</td></tr>
+            <tr style="background:white;"><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-weight:600;">I — תוכנה</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);"><span style="background:var(--red-pale);color:var(--red);padding:0.15rem 0.5rem;border-radius:3px;font-size:0.7rem;font-weight:600;">לא פעיל</span></td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-size:0.72rem;color:#6B7280;">[יושלם ידנית — נתוני בקרה]</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-size:0.72rem;color:#6B7280;">[יושלם ידנית — נתוני בקרה]</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-size:0.72rem;color:#6B7280;">[יושלם ידנית — נתוני בקרה]</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-size:0.72rem;color:#6B7280;">[יושלם ידנית — נתוני בקרה]</td></tr>
+            <tr style="background:var(--gray-bg);"><td style="padding:0.45rem 0.75rem;font-weight:600;">J — גינון</td><td style="padding:0.45rem 0.75rem;"><span style="background:var(--amber-pale);color:#92400E;padding:0.15rem 0.5rem;border-radius:3px;font-size:0.7rem;font-weight:600;">חלקי</span></td><td style="padding:0.45rem 0.75rem;font-size:0.72rem;color:#6B7280;">[יושלם ידנית — נתוני בקרה]</td><td style="padding:0.45rem 0.75rem;font-size:0.72rem;color:#6B7280;">[יושלם ידנית — נתוני בקרה]</td><td style="padding:0.45rem 0.75rem;font-size:0.72rem;color:#6B7280;">[יושלם ידנית — נתוני בקרה]</td><td style="padding:0.45rem 0.75rem;font-size:0.72rem;color:#6B7280;">[יושלם ידנית — נתוני בקרה]</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="slide-divider" style="margin:0 0 2.5rem;"></div>
+
+    <!-- ─── SECTION 8: אינדיקציות ראשוניות ─── -->
+    <div style="margin-bottom:2.5rem;">
+      <div class="section-eyebrow">הערכה ראשונית</div>
+      <h3 style="font-size:1.15rem;font-weight:700;color:var(--navy);margin:0 0 0.35rem;">אינדיקציות ראשוניות לפי קטגוריית מוצר</h3>
+      <p style="font-size:0.82rem;color:#4B5563;margin:0 0 0.5rem;">הטבלה מציגה הערכה איכותית ראשונית — לא תעדוף סופי ולא המלצה. מטרתה לסמן אילו קטגוריות מחייבות עומק מחקר נוסף.</p>
+      <div style="background:var(--red-pale);border-right:3px solid var(--red);padding:0.55rem 0.85rem;border-radius:0 5px 5px 0;font-size:0.75rem;color:#7F1D1D;margin-bottom:1rem;">
+        אזהרה: הערכות אלו אינן מבוססות על בדיקת נאותות פיננסית. אין לפרש כהמלצת עדיפות בין קטגוריות — זהו כלי עבודה ראשוני בלבד.
+      </div>
+      <div style="overflow-x:auto;">
+        <table style="width:100%;border-collapse:collapse;font-size:0.78rem;">
+          <thead>
+            <tr style="background:#374151;color:white;">
+              <th style="padding:0.55rem 0.75rem;text-align:right;font-weight:600;">קטגוריה</th>
+              <th style="padding:0.55rem 0.75rem;text-align:right;font-weight:600;">גודל שוק ישראל</th>
+              <th style="padding:0.55rem 0.75rem;text-align:right;font-weight:600;">עוצמת תחרות</th>
+              <th style="padding:0.55rem 0.75rem;text-align:right;font-weight:600;">נוכחות בקרה גבע</th>
+              <th style="padding:0.55rem 0.75rem;text-align:right;font-weight:600;">פוטנציאל פיתוח</th>
+              <th style="padding:0.55rem 0.75rem;text-align:right;font-weight:600;">הערה / הסתייגות</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="background:white;"><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-weight:600;">A — טפטפות</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">גדול (משוער)</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">גבוהה — Netafim דומיננטית</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">פעיל</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">לאימות</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-size:0.72rem;color:#6B7280;">גודל שוק — לא זמין במקורות פומביים</td></tr>
+            <tr style="background:var(--gray-bg);"><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-weight:600;">B — ספרינקלרים</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">בינוני (משוער)</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">בינונית–גבוהה</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">פעיל</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">לאימות</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-size:0.72rem;color:#6B7280;">גודל שוק — לא זמין במקורות פומביים</td></tr>
+            <tr style="background:white;"><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-weight:600;">C — שסתומים</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">לא זמין</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">גבוהה</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">חלקי</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">לאימות</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-size:0.72rem;color:#6B7280;">Bermad דומיננטית — נדרש עומק</td></tr>
+            <tr style="background:var(--gray-bg);"><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-weight:600;">D — בקרים</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">לא זמין</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">בינונית</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">לא פעיל</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">לאימות</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-size:0.72rem;color:#6B7280;">Galcon, Talgil — שחקנים מרכזיים</td></tr>
+            <tr style="background:white;"><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-weight:600;">E — הזרעה</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">לא זמין</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">בינונית</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">לא פעיל</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">לאימות</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-size:0.72rem;color:#6B7280;">Tefen, נחשולים — שחקנים מוכרים</td></tr>
+            <tr style="background:var(--gray-bg);"><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-weight:600;">F–J (נוספות)</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">לא זמין</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">לא זמין</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">חלקי / לא פעיל</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">נדרש מחקר</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);font-size:0.72rem;color:#6B7280;">יושלם בגרסה מורחבת</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="slide-divider" style="margin:0 0 2.5rem;"></div>
+
+    <!-- ─── SECTION 9: פערי מידע ─── -->
+    <div style="margin-bottom:2.5rem;">
+      <div class="section-eyebrow">פערי מידע</div>
+      <h3 style="font-size:1.15rem;font-weight:700;color:var(--navy);margin:0 0 0.35rem;">פערי מידע קריטיים ושאלות לראיונות</h3>
+      <p style="font-size:0.82rem;color:#4B5563;margin:0 0 1rem;">שאלות מרכזיות שנותרו פתוחות. חלקן נדרשות לאימות מול מקורות פנימיים; חלקן ידרשו ראיונות עם שחקני שוק.</p>
+      <div style="overflow-x:auto;">
+        <table style="width:100%;border-collapse:collapse;font-size:0.78rem;">
+          <thead>
+            <tr style="background:var(--navy);color:white;">
+              <th style="padding:0.55rem 0.75rem;text-align:right;font-weight:600;">#</th>
+              <th style="padding:0.55rem 0.75rem;text-align:right;font-weight:600;">פער / שאלה</th>
+              <th style="padding:0.55rem 0.75rem;text-align:right;font-weight:600;">רלוונטי ל-</th>
+              <th style="padding:0.55rem 0.75rem;text-align:right;font-weight:600;">מקור מידע מומלץ</th>
+              <th style="padding:0.55rem 0.75rem;text-align:right;font-weight:600;">דחיפות</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="background:white;"><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);color:#6B7280;font-weight:600;">1</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">גודל שוק ציוד השקיה בישראל — לפי קטגוריה וסגמנט</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">כל הקטגוריות</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">ראיונות שוק, דוחות ענפיים, רשות המים</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);"><span style="background:var(--red-pale);color:var(--red);padding:0.1rem 0.45rem;border-radius:3px;font-size:0.7rem;font-weight:600;">גבוהה</span></td></tr>
+            <tr style="background:var(--gray-bg);"><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);color:#6B7280;font-weight:600;">2</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">Galcon/Plasson — היקף החפיפה המסחרית עם בקרה גבע: overlap מוצרי, ערוץ הפצה, לקוחות משותפים, ומשמעות ה-bundle (controller + solenoid)</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">D — בקרים</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">ראיונות שוק, מפיצים, נתוני CRM פנימיים</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);"><span style="background:var(--amber-pale);color:#92400E;padding:0.1rem 0.45rem;border-radius:3px;font-size:0.7rem;font-weight:600;">בינונית</span></td></tr>
+            <tr style="background:white;"><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);color:#6B7280;font-weight:600;">3</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">Bermad — היקף פעילות ישראלי: מוצרים, נתח שוק, ערוץ, ותפקיד Tama לאחר כניסתה לבעלות; השלכות על flow control כשוק משלים לבקרה</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">C — שסתומים</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">ראיונות ענפיים, מפיצים, דוחות פומביים</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);"><span style="background:var(--amber-pale);color:#92400E;padding:0.1rem 0.45rem;border-radius:3px;font-size:0.7rem;font-weight:600;">בינונית</span></td></tr>
+            <tr style="background:var(--gray-bg);"><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);color:#6B7280;font-weight:600;">4</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">הכנסות ומרווח גולמי של בקרה גבע לפי קטגוריית מוצר</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">כל הקטגוריות</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">נתוני CRM פנימיים, חשבות</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);"><span style="background:var(--red-pale);color:var(--red);padding:0.1rem 0.45rem;border-radius:3px;font-size:0.7rem;font-weight:600;">גבוהה</span></td></tr>
+            <tr style="background:white;"><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);color:#6B7280;font-weight:600;">5</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">ערוצי ההפצה הנוכחיים של בקרה גבע — מפיצים, לקוחות ישירים</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">כל הקטגוריות</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">CRM פנימי, ראיון מנהלי מכירות</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);"><span style="background:var(--amber-pale);color:#92400E;padding:0.1rem 0.45rem;border-radius:3px;font-size:0.7rem;font-weight:600;">בינונית</span></td></tr>
+            <tr style="background:var(--gray-bg);"><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);color:#6B7280;font-weight:600;">6</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">נתחי שוק של שחקנים מרכזיים בטפטפות — Netafim vs NaanDanJain</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">A — טפטפות</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">ראיונות ענפיים, דוחות פומביים</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);"><span style="background:var(--amber-pale);color:#92400E;padding:0.1rem 0.45rem;border-radius:3px;font-size:0.7rem;font-weight:600;">בינונית</span></td></tr>
+            <tr style="background:white;"><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);color:#6B7280;font-weight:600;">7</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">מגמות אימוץ IoT וחיישנים בחקלאות ישראלית — קצב ומקטעים</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">H — חיישנים, I — תוכנה</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">ראיונות, משרד החקלאות, סטארטאפים</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);"><span style="background:var(--amber-pale);color:#92400E;padding:0.1rem 0.45rem;border-radius:3px;font-size:0.7rem;font-weight:600;">בינונית</span></td></tr>
+            <tr style="background:var(--gray-bg);"><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);color:#6B7280;font-weight:600;">8</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">חסמי מעבר ורגולציה — תקנות מכון התקנים לקטגוריות ספציפיות</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">C, D, E</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">מכון התקנים, עורכי דין תקינה</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);"><span style="background:var(--gray-bg);color:#4B5563;padding:0.1rem 0.45rem;border-radius:3px;font-size:0.7rem;font-weight:600;">נמוכה</span></td></tr>
+            <tr style="background:white;"><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);color:#6B7280;font-weight:600;">9</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">אופי פעילות גינון ונוף של בקרה גבע — היקף, לקוחות, מרווח</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">J — גינון</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);">נתוני CRM פנימיים</td><td style="padding:0.45rem 0.75rem;border-bottom:1px solid var(--border);"><span style="background:var(--amber-pale);color:#92400E;padding:0.1rem 0.45rem;border-radius:3px;font-size:0.7rem;font-weight:600;">בינונית</span></td></tr>
+            <tr style="background:var(--gray-bg);"><td style="padding:0.45rem 0.75rem;color:#6B7280;font-weight:600;">10</td><td style="padding:0.45rem 0.75rem;">תמחור ומרווח ממוצע לקטגוריה — benchmark ענפי</td><td style="padding:0.45rem 0.75rem;">כל הקטגוריות</td><td style="padding:0.45rem 0.75rem;">ראיונות, בנצ'מארקינג ענפי</td><td style="padding:0.45rem 0.75rem;"><span style="background:var(--gray-bg);color:#4B5563;padding:0.1rem 0.45rem;border-radius:3px;font-size:0.7rem;font-weight:600;">נמוכה</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="slide-divider" style="margin:0 0 2.5rem;"></div>
+
+    <!-- ─── SECTION 10: סיכום פרק ─── -->
+    <div>
+      <div class="section-eyebrow">סיכום פרק</div>
+      <h3 style="font-size:1.15rem;font-weight:700;color:var(--navy);margin:0 0 0.35rem;">מה למדנו — וצעדי המשך</h3>
+      <p style="font-size:0.82rem;color:#4B5563;margin:0 0 1.25rem;">ארבעה לקחים עיקריים מהמיפוי הראשוני. אינם המלצות — הם שאלות עבודה לשלב הבא.</p>
+
+      <div class="two-col" style="gap:1rem;margin-bottom:1.25rem;">
+        <div class="card" style="border-right:3px solid var(--teal);">
+          <div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--teal);margin-bottom:0.5rem;">לקח 1 — פיצול שוק</div>
+          <div style="font-size:0.82rem;color:#374151;line-height:1.55;">שוק ההשקיה אינו הומוגני. חקלאות וגינון שונים מהותית — ניתוח אחד לשניהם יוביל למסקנות שגויות. כל קטגוריית מוצר דורשת ניתוח עצמאי.</div>
+        </div>
+        <div class="card" style="border-right:3px solid var(--amber);">
+          <div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--amber);margin-bottom:0.5rem;">לקח 2 — פערי מידע</div>
+          <div style="font-size:0.82rem;color:#374151;line-height:1.55;">נתוני שוק ישראליים ספציפיים (גדלים, נתחים, מרווחים) אינם זמינים במקורות פומביים. ראיונות עם שחקני שוק ונתוני CRM פנימיים חיוניים לשלב הבא.</div>
+        </div>
+        <div class="card" style="border-right:3px solid #7C3AED;">
+          <div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#7C3AED;margin-bottom:0.5rem;">לקח 3 — נוכחות בקרה גבע</div>
+          <div style="font-size:0.82rem;color:#374151;line-height:1.55;">בקרה גבע פעילה בחלק מהקטגוריות אך נעדרת מאחרות (בקרים, הזרעה, חיישנים, תוכנה). לפני כל מסקנה — נדרש אימות נתוני CRM ומרווח פנימיים.</div>
+        </div>
+        <div class="card" style="border-right:3px solid var(--green);">
+          <div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--green);margin-bottom:0.5rem;">לקח 4 — צעדי המשך</div>
+          <div style="font-size:0.82rem;color:#374151;line-height:1.55;">השלמת נתוני CRM פנימיים, בירור היקף החפיפה המסחרית מול שחקנים מרכזיים (Galcon/Plasson, Bermad), וביצוע ראיונות ענפיים — אלו התנאים למעבר מ"מיפוי ראשוני" ל"ניתוח עומק".</div>
+        </div>
+      </div>
+
+      <div style="background:var(--teal-pale);border:1.5px solid var(--teal);border-radius:7px;padding:1rem 1.25rem;">
+        <div style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--teal);margin-bottom:0.4rem;">הגדרת שלב הבא</div>
+        <div style="font-size:0.82rem;color:#0C4A4A;line-height:1.6;">
+          מיפוי זה הוא שלב ראשון. המשך ידרש: (1) השלמת נתוני CRM ומרווח של בקרה גבע לפי קטגוריה — צוות פנימי; (2) בירור היקף החפיפה המסחרית מול שחקנים מרכזיים (Galcon/Plasson, Bermad) — ראיונות ומקורות; (3) 5–8 ראיונות עם שחקני שוק ומפיצים; (4) ניתוח תחרותי עומק לקטגוריות בעלות עניין.
+        </div>
+        <div style="font-size:0.78rem;color:#0C4A4A;margin-top:0.75rem;border-top:1px solid rgba(14,124,123,0.25);padding-top:0.6rem;">
+          בכפוף להשלמת נתונים אלו, ניתן יהיה להעריך — לפי הצורך — האם קיימות הזדמנויות לבדיקה אסטרטגית נוספת בתחום ציוד ההשקיה, לרבות שיתופי פעולה, הרחבת סל, ערוצי הפצה או בחינת היתכנות למהלך M&A עתידי. שאלות אלו אינן חלק ממסמך זה ומחייבות שלב נפרד של DD.
         </div>
       </div>
     </div>
 
-    <!-- ── H. BRIDGE TO PRIORITIZATION ── -->
-    <div style="background:var(--navy);border-radius:12px;padding:1.75rem 2rem;margin-bottom:1.75rem;">
-      <div style="font-size:0.65rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal-light);margin-bottom:0.75rem;">איך המיפוי יתורגם בהמשך לתעדוף?</div>
-      <p style="font-size:0.88rem;color:rgba(255,255,255,0.8);line-height:1.75;margin-bottom:1.25rem;">לאחר השלמת מיפוי השחקנים בכל הזירות, ניתן יהיה לתעדף לא לפי תחושת אטרקטיביות כללית, אלא לפי שאלות קונקרטיות: האם קיימים שחקנים עצמאיים ורלוונטיים? האם הזירה קרובה לליבת בקרה גבע? האם רכישה או שותפות יכולות לקצר חסמי כניסה? האם קיימים ערוץ, נציגות או נכס מסחרי שניתן לגשת אליהם? ומה רמת הביטחון במידע?</p>
-      <div style="display:flex;flex-wrap:wrap;gap:0.5rem;">
-        <div style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:20px;padding:0.3rem 0.85rem;font-size:0.75rem;font-weight:600;color:rgba(255,255,255,0.75);">קיום שחקנים עצמאיים ורלוונטיים</div>
-        <div style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:20px;padding:0.3rem 0.85rem;font-size:0.75rem;font-weight:600;color:rgba(255,255,255,0.75);">קרבה לליבת בקרה גבע</div>
-        <div style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:20px;padding:0.3rem 0.85rem;font-size:0.75rem;font-weight:600;color:rgba(255,255,255,0.75);">יכולת לקצר חסמי כניסה</div>
-        <div style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:20px;padding:0.3rem 0.85rem;font-size:0.75rem;font-weight:600;color:rgba(255,255,255,0.75);">נגישות מסחרית: ערוץ / נציגות / שותפות</div>
-        <div style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:20px;padding:0.3rem 0.85rem;font-size:0.75rem;font-weight:600;color:rgba(255,255,255,0.75);">רמת ביטחון במידע</div>
-      </div>
-    </div>
-
-    <div class="verdict-banner continue">
-      <span style="font-size:1.2rem">✓</span>
-      <span>Continue — subject to validation of the bundle / control-layer hypothesis and target-level economics</span>
-    </div>
   </div>
 </div>
 
