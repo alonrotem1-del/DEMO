@@ -1206,6 +1206,7 @@
   .pflow-box svg { width: 18px; height: 18px; color: var(--gray-mid); flex-shrink: 0; }
   .pflow-box.core { border-color: var(--teal); background: var(--teal-pale); }
   .pflow-box.core svg { color: var(--teal); }
+  .pflow-box.ext { background: var(--gray-bg); }
   .pflow-box.adj { border-color: var(--amber); background: var(--amber-pale); }
   .pflow-box.adj svg { color: var(--amber); }
   .pflow-box.ext { border-style: dashed; border-color: var(--gray-light); }
@@ -1241,7 +1242,7 @@
   </div>
   <ul class="nav-links">
     <li><a href="#background">רקע ומטרות</a></li>
-    <li><a href="#scope">היקף העבודה</a></li>
+    <li><a href="#scope">תחולת המיפוי</a></li>
     <li><a href="#question">שאלת ההנהלה</a></li>
     <li><a href="#irrigation">השקיה — מיפוי זירה</a></li>
     <li><a href="#actuation">אוטומציה</a></li>
@@ -1307,14 +1308,14 @@
         <div>
           <div style="height:26px;"></div>
           <div style="border:1.5px dashed var(--gray-light);border-radius:10px;padding:1.1rem;background:var(--gray-bg);opacity:0.85;"><div style="font-size:1.3rem;font-weight:900;color:var(--gray-mid);margin-bottom:0.3rem;">4</div>
-          <div style="display:inline-block;background:var(--gray-bg);border:1px dashed var(--gray-light);border-radius:20px;padding:0.1rem 0.6rem;font-size:0.62rem;font-weight:700;color:var(--gray-mid);margin-bottom:0.45rem;">אופציונלי — לא כלול בתכולה הנוכחית</div><div class="card-title" style="font-size:0.88rem;">בנקאות השקעות / איתור אקטיבי וגיבוש עסקה</div>
-          <div class="card-body" style="font-size:0.78rem;">שלב המשך אפשרי — בכפוף לאישור דירקטוריון והחלטה נפרדת.</div></div>
+          <div style="display:inline-block;background:var(--gray-bg);border:1px dashed var(--gray-light);border-radius:20px;padding:0.1rem 0.6rem;font-size:0.62rem;font-weight:700;color:var(--gray-mid);margin-bottom:0.45rem;">שלב המשך אופציונלי — לא כלול בתכולה הנוכחית</div><div class="card-title" style="font-size:0.88rem;">בנקאות השקעות / ליווי עסקה</div>
+          <div class="card-body" style="font-size:0.78rem;">שלב המשך אפשרי לאחר אישור דירקטוריון והחלטה נפרדת. השלב עשוי לכלול איתור אקטיבי של חברות / גופים מתאימים, פנייה ראשונית לבעלי מניות, גיבוש מבנה עסקה אפשרי, ליווי מגעים ראשוניים ותמיכה בתהליך בדיקת נאותות, בכפוף להחלטת החברה ולהתקשרות נפרדת.<br><br><span style="color:var(--gray-mid);font-weight:600;">אינו חלק מהעבודה הנוכחית.</span></div></div>
         </div>
         <div>
           <div style="height:26px;"></div>
           <div style="border:1.5px dashed var(--gray-light);border-radius:10px;padding:1.1rem;background:var(--gray-bg);opacity:0.85;"><div style="font-size:1.3rem;font-weight:900;color:var(--gray-mid);margin-bottom:0.3rem;">5</div>
-          <div style="display:inline-block;background:var(--gray-bg);border:1px dashed var(--gray-light);border-radius:20px;padding:0.1rem 0.6rem;font-size:0.62rem;font-weight:700;color:var(--gray-mid);margin-bottom:0.45rem;">אופציונלי — לא כלול בתכולה הנוכחית</div><div class="card-title" style="font-size:0.88rem;">ליווי ליישום</div>
-          <div class="card-body" style="font-size:0.78rem;">שלב המשך אפשרי — בכפוף לאישור דירקטוריון והחלטה נפרדת.</div></div>
+          <div style="display:inline-block;background:var(--gray-bg);border:1px dashed var(--gray-light);border-radius:20px;padding:0.1rem 0.6rem;font-size:0.62rem;font-weight:700;color:var(--gray-mid);margin-bottom:0.45rem;">שלב המשך אופציונלי — לא כלול בתכולה הנוכחית</div><div class="card-title" style="font-size:0.88rem;">ליווי יישום / תוכנית עבודה</div>
+          <div class="card-body" style="font-size:0.78rem;">שלב המשך אפשרי לאחר החלטה על כיוון פעולה או עסקה. השלב עשוי לכלול ליווי יישום, בניית תוכנית עבודה מפורטת, גיבוש מודל הפעלה, תוכנית עסקית, תוכנית אינטגרציה, היבטים ארגוניים וליווי פיננסי, בהתאם לצורך ולהחלטת החברה.<br><br><span style="color:var(--gray-mid);font-weight:600;">אינו חלק מהעבודה הנוכחית.</span></div></div>
         </div>
       </div>
     </div>
@@ -1331,10 +1332,11 @@
       <p style="font-size:0.85rem;color:var(--gray-dark);line-height:1.7;">עבודה זו היא כלי למיפוי ראשוני של זירות, שחקנים ופערי מידע. היא אינה המלצת רכישה ואינה תעדוף סופי. בכל זירה מוצגים מבנה השוק, גבולות הסקופ, מוצרים, שרשרת ערך, שחקנים, רלוונטיות אפשרית לבקרה גבע ופערי מידע להשלמה.</p>
     </div>
 
-    <!-- מעבר -->
-    <div style="border-top:1px solid var(--border);padding-top:1.25rem;">
-      <div style="font-size:0.95rem;font-weight:800;color:var(--navy);margin-bottom:0.4rem;">השלב הנוכחי באתר: מיפוי זירות אסטרטגיות</div>
-      <p style="font-size:0.85rem;color:var(--gray-mid);line-height:1.65;">שלב זה מציג את שלב המיפוי והבחינה הראשונית: הבנת זירות, שחקנים, ערוצים, פערי מידע ורלוונטיות אפשרית לבקרה גבע — לפני תעדוף סופי ולפני המלצה על מהלך רכישה.</p>
+    <!-- מעבר — שער לחלק הבא -->
+    <div style="border-top:2px solid var(--navy);margin-top:2.5rem;padding:3rem 0 1rem;text-align:center;">
+      <div class="section-eyebrow" style="justify-content:center;text-align:center;">השלב הנוכחי באתר</div>
+      <div style="font-size:clamp(1.7rem,3.2vw,2.6rem);font-weight:900;color:var(--navy);letter-spacing:-0.5px;line-height:1.2;margin-bottom:0.9rem;">מיפוי זירות אסטרטגיות</div>
+      <p style="font-size:0.9rem;color:var(--gray-mid);line-height:1.7;max-width:640px;margin:0 auto;">שלב זה מציג את שלב המיפוי והבחינה הראשונית: הבנת זירות, שחקנים, ערוצים, פערי מידע ורלוונטיות אפשרית לבקרה גבע — לפני תעדוף סופי ולפני המלצה על מהלך רכישה.</p>
     </div>
   </div>
 </div>
@@ -1347,9 +1349,8 @@
 <div id="scope" class="slide">
   <div class="slide-inner">
     <div class="slide-number">02 · SCOPE</div>
-    <div class="section-eyebrow">היקף העבודה</div>
-    <h2 class="section-title">היקף העבודה</h2>
-    <p class="section-lead">פרק זה מגדיר את גבולות העבודה הנוכחית: מה היא כוללת, מה אינה כוללת, ומהו שלב העבודה הנוכחי. מטרת התהליך המלאה מפורטת בפרק "רקע ומטרות".</p>
+    <div class="section-eyebrow">תחולת המיפוי</div>
+    <h2 class="section-title">תחולת המיפוי</h2>
 
     <div class="scope-grid">
       <div class="scope-box is">
@@ -1395,17 +1396,17 @@
       <div class="mgmt-q-label">שאלת ניהול מרכזית</div>
       <div class="mgmt-q-text">
         אילו זירות נראות רלוונטיות להמשך בחינה ראשונית עבור בקרה גבע —<br>
-        על בסיס (1) התאמה לשוק הישראלי וקיום שחקן ישראלי רלוונטי,<br>
+        על בסיס (1) התאמה ליכולות הליבה של בקרה גבע וקיום שחקן ישראלי רלוונטי,<br>
         ו-(2) פוטנציאל לאפקט חיובי מיידי על החברה?
       </div>
     </div>
 
     <div class="two-col">
       <div class="card navy-top">
-        <div class="card-title"><span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:var(--navy);color:var(--white);font-size:0.8rem;margin-left:0.5rem;">1</span>התאמה לשוק הישראלי וקיומו של שחקן ישראלי רלוונטי</div>
+        <div class="card-title"><span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:var(--navy);color:var(--white);font-size:0.8rem;margin-left:0.5rem;">1</span>חיפוש זירה בישראל בעלת התאמה ליכולות הליבה של בקרה גבע</div>
         <div class="card-body">
           <strong>מה נחשב מתאים לליבה:</strong> התאמה ללוגיקת הפעולה של בקרה גבע — שסתומים, סולנואידים ומנגנוני בקרת נוזלים; וגם התאמה לערוצים, לקוחות ומבנה ה-BOM.<br><br>
-          <strong>מה נחשב שחקן ישראלי רלוונטי:</strong> חברה, נציגות, מפיץ או ערוץ ישראלי רלוונטי — קיום בישראל של שחקנים, נכסים, IP, ייצור, צוות, ערוץ, לקוחות, נציגות או פעילות רלוונטית.
+          • רק שחקן ישראלי
         </div>
       </div>
       <div class="card teal-top">
@@ -1414,16 +1415,6 @@
       </div>
     </div>
 
-    <p style="font-size:0.92rem;font-weight:700;color:var(--navy);margin:1.5rem 0 1rem;">הזירות יימדדו על בסיס שני פרמטרים אלה.</p>
-
-    <div style="font-size:0.72rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray-mid);margin-bottom:0.5rem;">ממדי משנה שישמשו בתעדוף בהמשך</div>
-    <div class="criteria-chips" style="margin-top:0;">
-      <div class="crit-chip" style="background:var(--gray-bg);border-color:var(--border);color:var(--gray-mid);">נגישות ביקוש</div>
-      <div class="crit-chip" style="background:var(--gray-bg);border-color:var(--border);color:var(--gray-mid);">חסמי כניסה</div>
-      <div class="crit-chip" style="background:var(--gray-bg);border-color:var(--border);color:var(--gray-mid);">פוטנציאל מרווח</div>
-      <div class="crit-chip" style="background:var(--gray-bg);border-color:var(--border);color:var(--gray-mid);">זמן לתרומה</div>
-      <div class="crit-chip" style="background:var(--gray-bg);border-color:var(--border);color:var(--gray-mid);">סיכון פיזור</div>
-    </div>
   </div>
 </div>
 
@@ -1443,18 +1434,11 @@
     <div class="section-eyebrow">מיפוי עומק — זירת ההשקיה</div>
     <h2 class="section-title" style="margin-bottom:0.5rem;">זירת ההשקיה — מיפוי שוק, מוצרים, שחקנים ורלוונטיות לבקרה גבע</h2>
 
-    <!-- מקרא רמות ביטחון -->
-    <div style="display:flex;gap:1.25rem;flex-wrap:wrap;font-size:0.75rem;color:var(--gray-mid);margin-bottom:1.75rem;">
-      <span><span class="conf" style="color:var(--teal);">●</span> מאומת</span>
-      <span><span class="conf" style="color:var(--amber);">◐</span> חלקי / לאימות</span>
-      <span><span class="conf" style="color:var(--gray-light);">○</span> פער מידע</span>
-    </div>
-
     <!-- ═══ 1. פתיח — שני כרטיסים ═══ -->
     <div id="irrigation-1" class="irr-block">
       <div class="two-col">
         <div class="card teal-top">
-          <div class="card-title" style="display:flex;align-items:center;gap:0.55rem;"><span style="display:inline-flex;width:30px;height:30px;border-radius:8px;background:var(--teal-pale);color:var(--teal);align-items:center;justify-content:center;flex-shrink:0;"><span style="display:inline-flex;width:16px;height:16px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/><path d="M9 4v14M15 6v14"/></svg></span></span>מה הפרק עושה</div>
+          <div class="card-title" style="display:flex;align-items:center;gap:0.55rem;"><span style="display:inline-flex;width:30px;height:30px;border-radius:8px;background:var(--teal-pale);color:var(--teal);align-items:center;justify-content:center;flex-shrink:0;"><span style="display:inline-flex;width:16px;height:16px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/><path d="M9 4v14M15 6v14"/></svg></span></span>תוכן הפרק</div>
           <div class="card-body">הפרק ממפה את עולם ההשקיה בישראל — חקלאות מקצועית וגינון / נוף / עירוני — כדי להבין מבנה שוק, מוצרים, שרשרת ערך, שחקנים ואפשרויות ראשוניות עבור בקרה גבע. הפרק אינו ממליץ על רכישה ואינו מדרג את הזירה מול זירות אחרות; הוא בסיס לדיון, להשלמת מידע ולראיונות מומחים.</div>
         </div>
         <div class="card navy-top">
@@ -1470,18 +1454,17 @@
     <!-- ═══ 2. חקלאות מול גינון ═══ -->
     <div id="irrigation-2" class="irr-block">
       <div class="section-eyebrow">מבט על — מבנה השוק</div>
-      <h3 class="irr-h3">שני עולמות ביקוש נפרדים — ערוץ ומקבל החלטה שונים; ניתוח שמאחד אותם יטעה</h3>
-      <p class="irr-sub">הפרק בוחן שני עולמות ביקוש שונים — חקלאות מקצועית וגינון / נוף / עירוני — שבהם פועלות חברות ישראליות או שחקנים ישראליים רלוונטיים, בישראל ובשווקים בינלאומיים.</p>
-      <div class="three-col" style="margin-top:1.1rem;">
+      <h3 class="irr-h3">שוק ההשקיה מתחלק לשוק החקלאות ולשוק הגינון. למרות שמדובר בשני ערוצי ביקוש נפרדים, חלק מהיצרנים הישראלים פועלים בשניהם.</h3>
+      <div class="two-col" style="margin-top:1.1rem;">
         <div class="card teal-top">
           <div class="card-title">חקלאות מקצועית</div>
           <div class="card-body">
             <strong>מאפייני הביקוש:</strong> אמינות, דיוק, חיסכון במים, דישון מדויק, עלות כוללת לאורך חיי המוצר.<br>
             <strong>סוגי המערכות:</strong> מערכות מורכבות בתכנון מקצועי, פרויקטליות.<br>
-            <strong>ערוץ Go-to-Market:</strong> יצרן / ספק מערכת ← מפיץ מקצועי / קבלן השקיה / אינטגרטור.<br>
+            <strong>Go-to-Market:</strong> יצרן / ספק מערכת ← מפיץ מקצועי / קבלן השקיה / אינטגרטור.<br>
             <strong>שומר הסף:</strong> מהנדס ההשקיה / קבלן הביצוע.<br>
             <strong>משמעות לבקרה:</strong> מרכז הכובד הנוכחי — כ-90% ממכירות בקרה גבע בעולם ההשקיה (נתון פנימי, צוות בקרה).
-            <div style="margin-top:0.6rem;font-size:0.72rem;color:var(--gray-mid);border-top:1px dashed var(--border);padding-top:0.5rem;">Benchmark גלובלי עדכני לשוק Smart Irrigation מצביע על חקלאות כפלח מוביל — מעל 64.2% ב-2024 (Market.us). זהו נתון גלובלי ל-Smart Irrigation ואינו מייצג את שוק ציוד ההשקיה בישראל.</div>
+            <div style="margin-top:0.6rem;font-size:0.72rem;color:var(--gray-mid);border-top:1px dashed var(--border);padding-top:0.5rem;">Benchmark גלובלי עדכני מצביע על חקלאות כפלח מוביל — מעל 64.2% ב-2024 (Market.us). זהו נתון גלובלי ואינו מייצג את שוק ציוד ההשקיה בישראל.</div>
           </div>
         </div>
         <div class="card navy-top">
@@ -1489,21 +1472,42 @@
           <div class="card-body">
             <strong>מאפייני הביקוש:</strong> נוחות שימוש, מחיר, זמינות; הבקר / timer הוא "הפנים" ללקוח והסולנואיד רכיב שקוף.<br>
             <strong>סוגי המערכות:</strong> מערכות קטנות, מוצרי מדף.<br>
-            <strong>ערוץ Go-to-Market:</strong> מותג / יבואן ← מפיץ / חנות מקצועית / קבלן גינון / DIY.<br>
+            <strong>Go-to-Market:</strong> מותג / יבואן ← מפיץ / חנות מקצועית / קבלן גינון / DIY.<br>
             <strong>שומר הסף:</strong> קבלן הגינון / המתקין; בציבורי — הרשות והיועץ.<br>
             <strong>משמעות לבקרה:</strong> קיימת אך נמוכה כיום — כ-10% (נתון פנימי); ערוץ משלים לבדיקה.
-            <div style="margin-top:0.6rem;font-size:0.72rem;color:var(--gray-mid);border-top:1px dashed var(--border);padding-top:0.5rem;">מקור ישן יותר לשוק הבקרים הצביע בעבר על משקל גבוה לגינון, אך מקורות עדכניים לשוק Smart Irrigation מגדירים את השוק אחרת ולכן אינם ברי השוואה ישירה.</div>
-          </div>
-        </div>
-        <div class="card amber-top">
-          <div class="card-title">המשמעות לבקרה גבע</div>
-          <div class="card-body">
-            ישראל היא שוק ביתי, לא שוק כניסה. השאלה אינה "האם להיכנס להשקיה" אלא <strong>באילו קטגוריות מוצר וערוצים להרחיב נוכחות</strong>.<br><br>
-            מאחר שכ-90% ממכירות בקרה גבע בתחום ההשקיה הן לחקלאות, המשך הפרק נותן משקל גבוה יותר לעולם החקלאות המקצועית, תוך שמירה על גינון / נוף כערוץ משלים לבדיקה — לא כי השוק כולו מוטה כך, אלא כי בקרה מוטה כיום לחקלאות.
+            <div style="margin-top:0.6rem;font-size:0.72rem;color:var(--gray-mid);border-top:1px dashed var(--border);padding-top:0.5rem;">מקור ישן יותר לשוק הבקרים הצביע בעבר על משקל גבוה לגינון, אך מקורות עדכניים מגדירים את השוק אחרת ולכן אינם ברי השוואה ישירה.</div>
           </div>
         </div>
       </div>
-      <p class="irr-note">מקור ישן לשוק בקרי ההשקיה העולמי הצביע על כ-64% גינון וכ-36% חקלאות. מקורות עדכניים יותר לשוק ה-Smart Irrigation מציגים תמונה מעורבת ותלויה בהגדרת השוק: בחלקם החקלאות היא פלח משמעותי ואף מוביל, ובחלקם הגינון / non-agriculture מוצג כפלח נפרד וצומח. לכן הנתון משמש כאן כאינדיקציה בלבד לכך שבקרים אינם שוק חקלאי בלבד — לא כחלוקת שוק מחייבת.</p>
+      <p class="irr-note">מקור ישן לשוק בקרי ההשקיה העולמי הצביע על כ-64% גינון וכ-36% חקלאות. מקורות עדכניים יותר מציגים תמונה מעורבת ותלויה בהגדרת השוק: בחלקם החקלאות היא פלח משמעותי ואף מוביל, ובחלקם הגינון / non-agriculture מוצג כפלח נפרד וצומח. לכן הנתון משמש כאן כאינדיקציה בלבד לכך שבקרים אינם שוק חקלאי בלבד — לא כחלוקת שוק מחייבת.</p>
+      <p class="irr-note">מאחר שכ-90% ממכירות בקרה גבע בתחום ההשקיה הן לחקלאות (נתון פנימי / לפי הנהלת בקרה גבע), המשך הפרק נותן משקל גבוה יותר לעולם החקלאות המקצועית, תוך שמירה על גינון / נוף כערוץ משלים לבדיקה — לא כי השוק כולו מוטה כך, אלא כי בקרה מוטה כיום לחקלאות.</p>
+
+      <!-- ═══ סוגי מערכות השקיה ═══ -->
+      <h4 class="irr-h4" style="margin-top:2rem;">סוגי מערכות השקיה</h4>
+      <p class="irr-sub">מבט קצר על סוגי מערכות ההשקיה העיקריות, והיכן נמצאות נקודות החיבור לרכיבי ההפעלה של בקרה גבע.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0.8rem;margin-top:1rem;">
+        <div class="card teal-top">
+          <div class="card-title" style="font-size:0.85rem;">השקיה בטפטוף</div>
+          <div class="card-body" style="font-size:0.76rem;">אספקת מים מדויקת ישירות לבית השורשים דרך טפטפות לאורך שלוחות. נפוצה מאוד בחקלאות המקצועית בישראל — מטעים, ירקות, גידולי שדה מושקים.<br><br><strong style="color:var(--teal);">רלוונטיות לבקרה: גבוהה</strong> — מערכות מבוקרות עם סולנואידים, מגופים ובקרים.</div>
+        </div>
+        <div class="card teal-top">
+          <div class="card-title" style="font-size:0.85rem;">מיקרו-מתזים</div>
+          <div class="card-body" style="font-size:0.76rem;">פיזור מים מקומי בספיקות נמוכות סביב הצמח. נפוץ במטעים, חממות ומשתלות.<br><br><strong style="color:var(--teal);">רלוונטיות לבקרה: גבוהה-בינונית</strong> — מערכות מבוקרות הכוללות שכבת הפעלה.</div>
+        </div>
+        <div class="card navy-top">
+          <div class="card-title" style="font-size:0.85rem;">ממטרות</div>
+          <div class="card-body" style="font-size:0.76rem;">פיזור מים רחב בשטח. נפוץ בגידולי שדה, מדשאות וגינון ציבורי.<br><br><strong style="color:var(--navy);">רלוונטיות לבקרה: בינונית</strong> — תלוי במידת הבקרה והאוטומציה של המערכת.</div>
+        </div>
+        <div class="card navy-top">
+          <div class="card-title" style="font-size:0.85rem;">השקיה תת-קרקעית</div>
+          <div class="card-body" style="font-size:0.76rem;">טפטוף טמון מתחת לפני הקרקע. נפוץ בגידולי שדה מסוימים ובחלק מהגינון הציבורי.<br><br><strong style="color:var(--navy);">רלוונטיות לבקרה: בינונית-גבוהה</strong> — וריאציה של עולם הטפטוף המבוקר.</div>
+        </div>
+        <div class="card gray-top">
+          <div class="card-title" style="font-size:0.85rem;">השקיה עילית / הצפה</div>
+          <div class="card-body" style="font-size:0.76rem;">הצפת שטחים או השקיה גרביטציונית מסורתית, ללא בקרה מדויקת. נפוצה בעולם בגידולים כמו אורז; בישראל מצומצמת.<br><br><strong style="color:var(--gray-mid);">רלוונטיות לבקרה: נמוכה</strong> — מעט רכיבי הפעלה ובקרה.</div>
+        </div>
+      </div>
+      <p class="irr-note">בקרה גבע פועלת בעיקר בעולם הטפטוף וההשקיה המבוקרת, שבהם קיימים רכיבי הפעלה כמו סולנואידים, מגופים ובקרים. הקשר לבקרה נמוך יותר בהשקיה עילית / הצפה מסורתית.</p>
     </div>
 
     <div class="slide-divider" style="margin:0 0 2.5rem;"></div>
@@ -1512,30 +1516,24 @@
     <div id="irrigation-3" class="irr-block">
       <div class="section-eyebrow">מגמות</div>
       <h3 class="irr-h3">מגמות מרכזיות והשפעה אפשרית על בקרה גבע</h3>
-      <p class="irr-sub">Smart Irrigation אינו מוצר אחד אלא מערכת של שכבות — בקרים / timers, חיישנים, מדי זרימה, רכיבי תקשורת ותוכנה. תגי ההשפעה מציינים רלוונטיות ראשונית לבקרה גבע — לא תעדוף.</p>
+            <h4 class="irr-h4" style="margin:1.5rem 0 0.9rem;">מגמות חקלאות</h4>
       <div class="trend-grid">
         <div class="trend-card">
-          <div class="trend-head"><div class="trend-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c3.5 4.5 6 7.8 6 11a6 6 0 0 1-12 0c0-3.2 2.5-6.5 6-11z"/></svg></div><div class="trend-title">חיסכון במים והשקיה מדויקת</div></div>
-          <div class="trend-body">שוק ההשקיה החכמה וההשקיה המדויקת צומח על רקע מחסור במים, צורך בשיפור יעילות שימוש במים, אוטומציה וניהול מרחוק. מקורות עדכניים מצביעים על צמיחה דו-ספרתית בשוק ה-Smart Irrigation העולמי.</div>
-          <div class="trend-meaning"><strong>משמעות לבקרה גבע:</strong> המגמה מחזקת את החשיבות של רכיבי הפעלה אמינים — סולנואידים, מגופים ושכבות בקרה — אך גם מעלה את חשיבות הממשק לבקר / מערכת.</div>
-          <div class="trend-src">MarketsandMarkets, Smart Irrigation Market: צמיחה מ-1.59 מיליארד דולר ב-2025 ל-2.65 מיליארד דולר ב-2030, CAGR של 10.8%.</div><div class="trend-foot"><span class="pill high">השפעה גבוהה על בקרה</span></div>
-        </div>
-        <div class="trend-card">
-          <div class="trend-head"><div class="trend-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></svg></div><div class="trend-title">בקרים, timers, IoT וניהול מרחוק</div></div>
-          <div class="trend-body">ב-Smart Irrigation, הבקר הוא שכבת השליטה והאינטגרציה במערכת: הוא מתזמן, מקבל קלט מחיישנים, מפעיל אזורים ומחבר בין המשתמש לבין רכיבי השטח. בשוק הגינון הבקר הוא לעיתים "המוצר הנראה" ללקוח, בעוד שהסולנואיד הוא רכיב פחות גלוי. שכבת התקשורת אינה סטנדרט אחד — בחירת פתרון תלויה בטווח, עלות, צריכת חשמל, אמינות, רגולציה וסוג יישום.</div>
-          <div class="trend-meaning"><strong>משמעות לבקרה גבע:</strong> עבור יצרן רכיב כמו בקרה גבע, השאלה אינה רק האם למכור רכיב טוב יותר, אלא האם ואיך להתחבר לשכבת הבקר / המערכת. שכבת הבקרים עשויה גם להימכר דרך גורמים מקצועיים שונים משכבת הסולנואידים — הרחבה לבקרים היא גם שינוי אפשרי בערוץ המכירה וביכולות הדרושות. שכבת בדיקה — לא מסקנה אסטרטגית.</div>
+          <div class="trend-head"><div class="trend-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M21 13V7h-6"/></svg></div><div class="trend-title">צמיחת שוק ההשקיה — טפטוף והשקיה מדויקת</div></div>
+          <div class="trend-body">שוק ההשקיה ממשיך לצמוח על רקע צורך גלובלי בשיפור יעילות השימוש במים, מעבר להשקיה מדויקת (Precision Irrigation) והתרחבות פתרונות טפטוף (Drip Irrigation). הצמיחה אינה מוגבלת רק להשקיה חכמה / דיגיטלית, אלא כוללת גם הרחבה של מערכות השקיה מבוקרות ורכיבי שטח.</div>
+          <div class="trend-meaning"><strong>משמעות לבקרה גבע:</strong> צמיחת מערכות השקיה מבוקרות מחזקת את החשיבות של רכיבי הפעלה אמינים — סולנואידים, מגופים ובקרים — במיוחד במערכות טפטוף וחקלאות מקצועית.</div>
           <div class="trend-foot"><span class="pill high">השפעה גבוהה על בקרה</span></div>
         </div>
         <div class="trend-card">
-          <div class="trend-head"><div class="trend-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="16" r="2.5"/><path d="M7.5 11.5a6.5 6.5 0 0 1 9 0M4.5 8.5a10.5 10.5 0 0 1 15 0"/></svg></div><div class="trend-title">חיישנים ודאטה</div></div>
-          <div class="trend-body">שימוש בחיישני לחות, זרימה, לחץ, מזג אוויר ודאטה תפעולית לשיפור החלטות השקיה. Smart Irrigation אינו מוצר אחד אלא מערכת של שכבות: בקרים, חיישנים, מדי זרימה, רכיבי תקשורת ותוכנה.</div>
-          <div class="trend-meaning"><strong>משמעות לבקרה גבע:</strong> רלוונטי בעיקר אם בקרה מתחברת לשכבת בקרה / מערכת, פחות כרכיב standalone.</div>
-          <div class="trend-foot"><span class="pill med">השפעה בינונית</span></div>
+          <div class="trend-head"><div class="trend-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c3.5 4.5 6 7.8 6 11a6 6 0 0 1-12 0c0-3.2 2.5-6.5 6-11z"/></svg></div><div class="trend-title">חיסכון במים והשקיה מדויקת</div></div>
+          <div class="trend-body">שוק ההשקיה החכמה וההשקיה המדויקת צומח על רקע מחסור במים, צורך בשיפור יעילות שימוש במים, אוטומציה וניהול מרחוק. מקורות עדכניים מצביעים על צמיחה דו-ספרתית בשוק ההשקיה החכמה העולמי.</div>
+          <div class="trend-meaning"><strong>משמעות לבקרה גבע:</strong> המגמה מחזקת את החשיבות של רכיבי הפעלה אמינים — סולנואידים, מגופים ושכבות בקרה — אך גם מעלה את חשיבות הממשק לבקר / מערכת.</div>
+          <div class="trend-src">MarketsandMarkets, שוק ההשקיה החכמה: צמיחה מ-1.59 מיליארד דולר ב-2025 ל-2.65 מיליארד דולר ב-2030, CAGR של 10.8%.</div><div class="trend-foot"><span class="pill high">השפעה גבוהה על בקרה</span></div>
         </div>
         <div class="trend-card">
-          <div class="trend-head"><div class="trend-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></div><div class="trend-title">מעבר מרכיב בודד לפתרון / bundle</div></div>
-          <div class="trend-body">יותר ערך עובר מספק רכיב בודד לספקי מערכת שמחברים רכיבים, בקרה, שירות, תוכנה וערוץ מכירה. ככל שחברה מחוברת ליותר רכיבים תפעוליים — סולנואידים, מגופים, מדי זרימה, סינון, דישון, בקרים וחיישנים — כך גדלה יכולתה להפוך מרכיב בודד לחלק ממערכת בעלת ערך גבוה יותר. אינדיקציות בישראל: Netafim כספק מערכת, Galcon סביב בקרים, Talgil בבקרי השקיה מקצועיים.</div>
-          <div class="trend-meaning"><strong>משמעות לבקרה גבע:</strong> הסיכון הוא להישאר רכיב נסתר בתוך מערכת שמישהו אחר שולט בה; ההזדמנות היא להתחבר מסחרית לשחקן מערכת, בקר או ערוץ. שאלת הבדיקה אינה בהכרח רכישה, אלא חיבור מסחרי סביב סולנואיד + בקר / מגוף / דישון / ערוץ.</div>
+          <div class="trend-head"><div class="trend-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4.5"/></svg></div><div class="trend-title">דרישה לאמינות ועמידות רכיבים</div></div>
+          <div class="trend-body">במערכות חקלאיות מקצועיות — אמינות, עמידות, שירות והפחתת תקלות חשובים במיוחד. אימוץ השקיה חכמה בחקלאות הוא הדרגתי ותלוי ROI, אמינות, פשטות תפעולית ויכולת פעולה גם כשהתקשורת אינה זמינה — כשל תקשורת לא יכול לעצור השקיה.</div>
+          <div class="trend-meaning"><strong>משמעות לבקרה גבע:</strong> מתחבר ישירות לליבת הסולנואיד והמגופים ומחזק את חשיבות אמינות רכיבי ההפעלה; במקביל מזהיר מפני הצגת IoT כפתרון פשוט מדי.</div>
           <div class="trend-foot"><span class="pill high">השפעה גבוהה על בקרה</span></div>
         </div>
         <div class="trend-card">
@@ -1545,34 +1543,52 @@
           <div class="trend-foot"><span class="pill med">השפעה בינונית</span></div>
         </div>
         <div class="trend-card">
+          <div class="trend-head"><div class="trend-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="16" r="2.5"/><path d="M7.5 11.5a6.5 6.5 0 0 1 9 0M4.5 8.5a10.5 10.5 0 0 1 15 0"/></svg></div><div class="trend-title">חיישנים ודאטה</div></div>
+          <div class="trend-body">שימוש בחיישני לחות, זרימה, לחץ, מזג אוויר ודאטה תפעולית לשיפור החלטות השקיה. השקיה חכמה אינה מוצר אחד אלא מערכת של שכבות: בקרים, חיישנים, מדי זרימה, רכיבי תקשורת ותוכנה.</div>
+          <div class="trend-meaning"><strong>משמעות לבקרה גבע:</strong> רלוונטי בעיקר אם בקרה מתחברת לשכבת בקרה / מערכת, פחות כרכיב standalone.</div>
+          <div class="trend-foot"><span class="pill med">השפעה בינונית</span></div>
+        </div>
+      </div>
+      <h4 class="irr-h4" style="margin:1.5rem 0 0.9rem;">מגמות משותפות</h4>
+      <div class="trend-grid">
+        <div class="trend-card">
+          <div class="trend-head"><div class="trend-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></svg></div><div class="trend-title">בקרים, timers, IoT וניהול מרחוק</div></div>
+          <div class="trend-body">במערכות השקיה חכמות, הבקר הוא שכבת השליטה והאינטגרציה במערכת: הוא מתזמן, מקבל קלט מחיישנים, מפעיל אזורים ומחבר בין המשתמש לבין רכיבי השטח. בשוק הגינון הבקר הוא לעיתים "המוצר הנראה" ללקוח, בעוד שהסולנואיד הוא רכיב פחות גלוי. שכבת התקשורת אינה סטנדרט אחד — בחירת פתרון תלויה בטווח, עלות, צריכת חשמל, אמינות, רגולציה וסוג יישום.</div>
+          <div class="trend-meaning"><strong>משמעות לבקרה גבע:</strong> עבור יצרן רכיב כמו בקרה גבע, השאלה אינה רק האם למכור רכיב טוב יותר, אלא האם ואיך להתחבר לשכבת הבקר / המערכת. שכבת הבקרים עשויה גם להימכר דרך גורמים מקצועיים שונים משכבת הסולנואידים — הרחבה לבקרים היא גם שינוי אפשרי בערוץ המכירה וביכולות הדרושות. שכבת בדיקה — לא מסקנה אסטרטגית.</div>
+          <div class="trend-foot"><span class="pill high">השפעה גבוהה על בקרה</span></div>
+        </div>
+        <div class="trend-card">
+          <div class="trend-head"><div class="trend-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></div><div class="trend-title">מעבר מרכיב בודד לפתרון / bundle</div></div>
+          <div class="trend-body">יותר ערך עובר מספק רכיב בודד לספקי מערכת שמחברים רכיבים, בקרה, שירות, תוכנה וערוץ מכירה. ככל שחברה מחוברת ליותר רכיבים תפעוליים — סולנואידים, מגופים, מדי זרימה, סינון, דישון, בקרים וחיישנים — כך גדלה יכולתה להפוך מרכיב בודד לחלק ממערכת בעלת ערך גבוה יותר. אינדיקציות בישראל: Netafim כספק מערכת, Galcon סביב בקרים, Talgil בבקרי השקיה מקצועיים.</div>
+          <div class="trend-meaning"><strong>משמעות לבקרה גבע:</strong> הסיכון הוא להישאר רכיב נסתר בתוך מערכת שמישהו אחר שולט בה; ההזדמנות היא להתחבר מסחרית לשחקן מערכת, בקר או ערוץ. שאלת הבדיקה אינה בהכרח רכישה, אלא חיבור מסחרי סביב סולנואיד + בקר / מגוף / דישון / ערוץ.</div>
+          <div class="trend-foot"><span class="pill high">השפעה גבוהה על בקרה</span></div>
+        </div>
+        <div class="trend-card">
           <div class="trend-head"><div class="trend-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="12" r="2.5"/><path d="M8.5 6H12c2 0 3 1 3.5 3M8.5 18H12c2 0 3-1 3.5-3"/></svg></div><div class="trend-title">קונסולידציה ושחקני מערכת גדולים</div></div>
           <div class="trend-body">בשוק ההשקיה בישראל ובעולם קיימת קונסולידציה וחיבור של שחקנים לקבוצות גדולות: Netafim כחלק מ-Orbia, Rivulis עם Jain Irrigation, Galcon תחת Plasson, Dorot כחלק מ-Aquestia, ולצדם Bermad ו-Amiad כשחקני flow-control / filtration משמעותיים.</div>
           <div class="trend-meaning"><strong>משמעות לבקרה גבע:</strong> מרחב רכישה ישיר של שחקנים גדולים עלול להיות מוגבל, אך נפתחות שאלות של שותפות, ערוץ, לקוח, benchmark או חיבור רכיב לשחקן מערכת.</div>
           <div class="trend-foot"><span class="pill high">השפעה גבוהה על בקרה</span></div>
         </div>
         <div class="trend-card">
-          <div class="trend-head"><div class="trend-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v6M12 9l-6 5v7M12 9l6 5v7"/></svg></div><div class="trend-title">מאפיין שוק: פיצול בין חקלאות מקצועית לגינון / נוף</div></div>
-          <div class="trend-body">ההבדל בין חקלאות לגינון אינו מגמה אלא עקרון מבני: בחקלאות הערוץ מקצועי ופרויקטלי יותר; בגינון יש משקל גבוה יותר למפיצים, קמעונאות, קבלני גינון ומוצרי timer / controller.</div>
-          <div class="trend-meaning"><strong>משמעות לבקרה גבע:</strong> המשך הפרק מתייחס לחקלאות כמרכז הכובד הנוכחי של בקרה, ולגינון כערוץ משלים לבדיקה — לא כזירה זהה.</div>
-          <div class="trend-foot"><span class="pill high">השפעה גבוהה על בקרה</span></div>
+          <div class="trend-head"><div class="trend-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 6.5a4.5 4.5 0 0 0-6 6L3 18v3h3l5.5-5.5a4.5 4.5 0 0 0 6-6L14 13l-3-3 3.5-3.5z"/></svg></div><div class="trend-title">שירות, תמיכה ואינטגרציה</div></div>
+          <div class="trend-body">המעבר להשקיה חכמה מגדיל את חשיבות האינטגרציה, ההדרכה, התמיכה מרחוק, פתרון תקלות ושירות השדה. פתרון חכם אינו רק חומרה נוספת; הוא דורש יכולת להפעיל, לתמוך ולפתור תקלות לאורך זמן.</div>
+          <div class="trend-meaning"><strong>משמעות לבקרה גבע:</strong> רלוונטי אם בקרה בוחנת הרחבה לשכבות חכמות — זהו גם חסם יכולות ולא רק הזדמנות.</div>
+          <div class="trend-foot"><span class="pill med">השפעה בינונית-גבוהה</span></div>
         </div>
+        <div class="trend-card">
+          <div class="trend-head"><div class="trend-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M5 8l7-5 7 5M7 21V11M17 21V11"/></svg></div><div class="trend-title">תחרות גוברת מצד יצרנים סיניים</div></div>
+          <div class="trend-body">בחלק מקטגוריות המוצרים הסטנדרטיים בשוק ההשקיה קיימת תחרות גוברת מצד יצרנים סיניים ויצרני low-cost. התוצאה היא לחץ על מחירים, שחיקת רווחיות ו-Commoditization של חלק מהמוצרים — קושי לבדל מוצרים שאינם מבוססים על איכות, אמינות, שירות או חיבור למערכת רחבה יותר.</div>
+          <div class="trend-meaning"><strong>משמעות לבקרה גבע:</strong> בקרה צריכה להבחין בין קטגוריות שבהן יש לה יתרון אמיתי לבין קטגוריות שבהן היא עלולה להיכנס לתחרות קומודיטי עם רווחיות נמוכה.</div>
+          <div class="trend-foot"><span class="pill med">השפעה בינונית-גבוהה</span></div>
+        </div>
+      </div>
+      <h4 class="irr-h4" style="margin:1.5rem 0 0.9rem;">מגמות גינון</h4>
+      <div class="trend-grid">
         <div class="trend-card">
           <div class="trend-head"><div class="trend-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8l1.5-4h13L20 8M4 8h16M4 8v12h16V8"/><path d="M9 20v-6h6v6"/></svg></div><div class="trend-title">התחזקות ערוצי קמעונאות / DIY בגינון</div></div>
           <div class="trend-body">בגינון יש חשיבות גוברת למפיצים, קמעונאות, אריזה ומוצרי מדף — timers, ברזים, אביזרים וטפטפות.</div>
           <div class="trend-meaning"><strong>משמעות לבקרה גבע:</strong> רלוונטי בעיקר אם בקרה תרצה להעמיק בגינון; כיום ערוץ משלים לבדיקה.</div>
           <div class="trend-foot"><span class="pill low">השפעה נמוכה-בינונית</span></div>
-        </div>
-        <div class="trend-card">
-          <div class="trend-head"><div class="trend-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4.5"/></svg></div><div class="trend-title">דרישה לאמינות ועמידות רכיבים</div></div>
-          <div class="trend-body">במערכות חקלאיות מקצועיות — אמינות, עמידות, שירות והפחתת תקלות חשובים במיוחד. אימוץ Smart Irrigation בחקלאות הוא הדרגתי ותלוי ROI, אמינות, פשטות תפעולית ויכולת פעולה גם כשהתקשורת אינה זמינה — כשל תקשורת לא יכול לעצור השקיה.</div>
-          <div class="trend-meaning"><strong>משמעות לבקרה גבע:</strong> מתחבר ישירות לליבת הסולנואיד והמגופים ומחזק את חשיבות אמינות רכיבי ההפעלה; במקביל מזהיר מפני הצגת IoT כפתרון פשוט מדי.</div>
-          <div class="trend-foot"><span class="pill high">השפעה גבוהה על בקרה</span></div>
-        </div>
-        <div class="trend-card">
-          <div class="trend-head"><div class="trend-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 6.5a4.5 4.5 0 0 0-6 6L3 18v3h3l5.5-5.5a4.5 4.5 0 0 0 6-6L14 13l-3-3 3.5-3.5z"/></svg></div><div class="trend-title">שירות, תמיכה ואינטגרציה</div></div>
-          <div class="trend-body">מעבר ל-Smart Irrigation מגדיל את חשיבות האינטגרציה, ההדרכה, התמיכה מרחוק, פתרון תקלות ושירות השדה. פתרון חכם אינו רק חומרה נוספת; הוא דורש יכולת להפעיל, לתמוך ולפתור תקלות לאורך זמן.</div>
-          <div class="trend-meaning"><strong>משמעות לבקרה גבע:</strong> רלוונטי אם בקרה בוחנת הרחבה לשכבות חכמות — זהו גם חסם יכולות ולא רק הזדמנות.</div>
-          <div class="trend-foot"><span class="pill med">השפעה בינונית-גבוהה</span></div>
         </div>
         <div class="trend-card">
           <div class="trend-head"><div class="trend-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12l9-9 9 9-9 9-9-9z"/><path d="M12 8v8M9.5 10.5h5"/></svg></div><div class="trend-title">לחץ על מחיר ותחרות במוצרים סטנדרטיים</div></div>
@@ -1595,7 +1611,7 @@
       <div class="vchain">
         <div class="vc-box core">
           <div class="vc-core-badge">כאן נמצאת ליבת בקרה גבע — סולנואידים / שכבת הפעלה</div>
-          <div class="vc-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V9l5 3V9l5 3V9l5 3v9H3z"/><path d="M18 9V4h3v17"/></svg>יצרן רכיב / בעל IP</div>
+          <div class="vc-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V9l5 3V9l5 3V9l5 3v9H3z"/><path d="M18 9V4h3v17"/></svg>יצרן / יבואן</div>
           <div class="vc-role">ייצור רכיבים: סולנואידים, מגופים, בקרים, סינון, דישון. שסתומי הבקרה הם שכבה סמוכה לליבה — לא הליבה עצמה.</div>
           <div class="vc-players"><strong>שחקנים עיקריים:</strong> בקרה גבע, Bermad, Galcon, Talgil, Amiad, Tefen</div>
         </div>
@@ -1603,7 +1619,7 @@
         <div class="vc-box">
           <div class="vc-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="12" height="10" rx="1"/><path d="M14 10h4l3 3v3h-7"/><circle cx="6.5" cy="18" r="1.8"/><circle cx="17" cy="18" r="1.8"/></svg>מפיץ / אינטגרטור / ספק מערכת</div>
           <div class="vc-role">חיבור רכיבים לפתרון, מכירה מקצועית, תכנון מערכת ואספקה לפרויקטים.</div>
-          <div class="vc-players"><strong>שחקנים עיקריים:</strong> Netafim, Rivulis, NaanDanJain, קמחי, שר-גל</div>
+          <div class="vc-players"><strong>שחקנים עיקריים:</strong> Netafim, Rivulis, NaanDanJain</div>
         </div>
         <div class="vc-arrow">&#8592;</div>
         <div class="vc-box">
@@ -1622,7 +1638,7 @@
       <h4 class="irr-h4" style="margin-top:1.75rem;color:var(--navy-mid);">שרשרת הערך — גינון / נוף / עירוני</h4>
       <div class="vchain">
         <div class="vc-box">
-          <div class="vc-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V9l5 3V9l5 3V9l5 3v9H3z"/><path d="M18 9V4h3v17"/></svg>מותג / יבואן / יצרן</div>
+          <div class="vc-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V9l5 3V9l5 3V9l5 3v9H3z"/><path d="M18 9V4h3v17"/></svg>יצרן / יבואן</div>
           <div class="vc-role">מוצרי מדף: timers, בקרים, סולנואידים ואביזרי השקיה.</div>
           <div class="vc-players"><strong>שחקנים עיקריים:</strong> Galcon, Rain Bird, Hunter, Elgo, בקרה גבע במידה מוגבלת</div>
         </div>
@@ -1630,7 +1646,7 @@
         <div class="vc-box">
           <div class="vc-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8l1.5-4h13L20 8M4 8h16M4 8v12h16V8"/><path d="M9 20v-6h6v6"/></svg>מפיץ / קמעונאות / משתלה</div>
           <div class="vc-role">הפצה לשוק המקצועי והביתי, מכירת מוצרי מדף, זמינות ואריזה.</div>
-          <div class="vc-players"><strong>שחקנים עיקריים:</strong> Eldar Shany, שר-גל, משתלות, ACE / Home Center</div>
+          <div class="vc-players"><strong>שחקנים עיקריים:</strong> משתלות, חנויות מתמחות</div>
         </div>
         <div class="vc-arrow">&#8592;</div>
         <div class="vc-box">
@@ -1653,44 +1669,97 @@
     <div id="irrigation-5" class="irr-block">
       <div class="section-eyebrow">מפת מוצרים</div>
       <h3 class="irr-h3">מפת מוצרים ורכיבי מערכת השקיה</h3>
-      <p class="irr-sub">המפה מציגה את רכיבי המערכת לפי סדר זרימת המים, ואת נקודת החיבור האפשרית לליבת בקרה גבע.</p>
+      <p class="irr-sub">הפרק מציג תחילה כיצד בנויה מערכת השקיה בפועל, לאחר מכן את תפקיד כל רכיב, ולסיום מפה מסכמת של הרכיבים ביחס לליבת בקרה גבע.</p>
 
-      <div class="pflow-wrap">
-        <div class="pflow">
-          <div class="pflow-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c3.5 4.5 6 7.8 6 11a6 6 0 0 1-12 0c0-3.2 2.5-6.5 6-11z"/></svg>מקור מים /<br>כניסה למערכת</div>
-          <div class="pflow-arrow">&#8592;</div>
-          <div class="pflow-box ext"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h18l-7 8v6l-4 2v-8L3 5z"/></svg>סינון</div>
-          <div class="pflow-arrow">&#8592;</div>
-          <div class="pflow-box ext"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v5l-4.5 8A3.5 3.5 0 0 0 8.5 21h7a3.5 3.5 0 0 0 3-5L14 8V3"/><path d="M7 15h10"/></svg>דישון /<br>Fertigation</div>
-          <div class="pflow-arrow">&#8592;</div>
-          <div class="pflow-box adj"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M4 8v8M20 8v8M12 12V5M9 5h6"/></svg>מגופים /<br>שסתומי בקרה</div>
-          <div class="pflow-arrow">&#8592;</div>
-          <div class="pflow-box ext"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></svg>בקר / Timer /<br>IoT</div>
-          <div class="pflow-arrow">&#8592;</div>
-          <div class="pflow-box core"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="8" width="10" height="12" rx="2"/><path d="M12 8V3M9 5h6M10 12h4M10 16h4"/></svg>סולנואיד /<br>שכבת הפעלה</div>
-          <div class="pflow-arrow">&#8592;</div>
-          <div class="pflow-box ext"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9h13a5 5 0 0 1 5 5v7"/><path d="M3 14h12a1 1 0 0 1 1 1v6"/></svg>צנרת /<br>fittings</div>
-          <div class="pflow-arrow">&#8592;</div>
-          <div class="pflow-box ext"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16M8 4v4M16 4v4M8 12c0 1.5 1 2.5 1 4a1.5 1.5 0 0 1-3 0c0-1.5 1-2.5 1-4h1zM17 12c0 1.5 1 2.5 1 4a1.5 1.5 0 0 1-3 0c0-1.5 1-2.5 1-4h1z"/></svg>טפטפות / מתזים /<br>ממטרות</div>
-          <div class="pflow-arrow">&#8592;</div>
-          <div class="pflow-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21v-8M12 13c0-3.5-2.5-6-6-6 0 3.5 2.5 6 6 6zM12 10c0-3 2-5.5 5.5-5.5C17.5 8 15.5 10 12 10z"/></svg>שטח / גידול /<br>גינה</div>
-        </div>
+      <!-- תרשים מערכת השקיה -->
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:12px;padding:1.25rem;overflow-x:auto;">
+        <svg viewBox="0 0 980 400" style="min-width:820px;width:100%;height:auto;direction:ltr;" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="תרשים מערכת השקיה">
+          <defs>
+            <marker id="irArrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#6B7A8D"/></marker>
+          </defs>
+          <!-- main water line -->
+          <path d="M60 210 H870" stroke="#0F2243" stroke-width="6" fill="none" opacity="0.15"/>
+          <!-- water source -->
+          <circle cx="60" cy="210" r="30" fill="#E6F4F4" stroke="#0E7C7B" stroke-width="2"/>
+          <path d="M60 195c8 10 13 17 13 24a13 13 0 0 1-26 0c0-7 5-14 13-24z" fill="#0E7C7B" opacity="0.7"/>
+          <text x="60" y="262" text-anchor="middle" font-size="13" font-weight="700" fill="#0F2243">מקור מים</text>
+          <!-- pipe segment arrows -->
+          <path d="M95 210 H135" stroke="#6B7A8D" stroke-width="2" marker-end="url(#irArrow)"/>
+          <!-- filter -->
+          <rect x="140" y="180" width="70" height="60" rx="8" fill="#F4F6F9" stroke="#6B7A8D" stroke-width="1.5"/>
+          <path d="M155 195 h40 l-14 16 v14 l-12 6 v-20 z" fill="none" stroke="#3A4A5C" stroke-width="1.8"/>
+          <text x="175" y="262" text-anchor="middle" font-size="13" font-weight="700" fill="#0F2243">סינון</text>
+          <path d="M215 210 H255" stroke="#6B7A8D" stroke-width="2" marker-end="url(#irArrow)"/>
+          <!-- fertigation: tank above injection point -->
+          <rect x="262" y="90" width="56 " height="52" rx="8" fill="#F4F6F9" stroke="#6B7A8D" stroke-width="1.5"/>
+          <path d="M276 104 h28 M280 104 v24 a10 10 0 0 0 20 0 v-24" stroke="#3A4A5C" stroke-width="1.7" fill="none"/>
+          <text x="290" y="80" text-anchor="middle" font-size="12" font-weight="700" fill="#0F2243">מיכל דשן</text>
+          <path d="M290 142 V178" stroke="#6B7A8D" stroke-width="2" marker-end="url(#irArrow)"/>
+          <rect x="260" y="180" width="60" height="60" rx="8" fill="#F4F6F9" stroke="#6B7A8D" stroke-width="1.5"/>
+          <circle cx="290" cy="210" r="14" fill="none" stroke="#3A4A5C" stroke-width="1.8"/>
+          <path d="M290 200v20M283 210h14" stroke="#3A4A5C" stroke-width="1.6"/>
+          <text x="290" y="262" text-anchor="middle" font-size="13" font-weight="700" fill="#0F2243">משאבת מינון</text>
+          <text x="290" y="278" text-anchor="middle" font-size="11" fill="#6B7A8D">דישון / Fertigation</text>
+          <path d="M325 210 H365" stroke="#6B7A8D" stroke-width="2" marker-end="url(#irArrow)"/>
+          <!-- main valve (מגוף) -->
+          <rect x="370" y="180" width="66" height="60" rx="8" fill="#FEF3C7" stroke="#D97706" stroke-width="1.6"/>
+          <path d="M385 225 h36 M403 225 V202 M394 202 h18 M389 194 a14 8 0 0 1 28 0" stroke="#92500a" stroke-width="1.8" fill="none"/>
+          <text x="403" y="262" text-anchor="middle" font-size="13" font-weight="700" fill="#0F2243">מגוף ראשי</text>
+          <text x="403" y="278" text-anchor="middle" font-size="11" fill="#6B7A8D">שסתום בקרה</text>
+          <path d="M441 210 H481" stroke="#6B7A8D" stroke-width="2" marker-end="url(#irArrow)"/>
+          <!-- controller above, wires to solenoids -->
+          <rect x="500" y="60" width="120" height="72" rx="10" fill="#FEF3C7" stroke="#D97706" stroke-width="1.6"/>
+          <rect x="514" y="74" width="92" height="26" rx="4" fill="#fff" stroke="#D97706" stroke-width="1"/>
+          <circle cx="524" cy="114" r="4" fill="#D97706"/><circle cx="540" cy="114" r="4" fill="#D97706"/><circle cx="556" cy="114" r="4" fill="#D97706"/>
+          <text x="560" y="52" text-anchor="middle" font-size="13" font-weight="700" fill="#0F2243">בקר השקיה / Timer</text>
+          <!-- control wires (dashed) to solenoids -->
+          <path d="M530 132 C520 160 512 172 510 178" stroke="#D97706" stroke-width="1.6" stroke-dasharray="4 3" fill="none"/>
+          <path d="M560 132 C580 160 606 170 622 178" stroke="#D97706" stroke-width="1.6" stroke-dasharray="4 3" fill="none"/>
+          <path d="M590 132 C650 158 716 170 734 178" stroke="#D97706" stroke-width="1.6" stroke-dasharray="4 3" fill="none"/>
+          <text x="668" y="120" text-anchor="middle" font-size="11" fill="#B45309">פקודת פתיחה / סגירה</text>
+          <!-- three solenoid valves on manifold -->
+          <g>
+            <rect x="486" y="180" width="48" height="60" rx="8" fill="#E6F4F4" stroke="#0E7C7B" stroke-width="2"/>
+            <rect x="500" y="188" width="20" height="16" rx="3" fill="none" stroke="#0E7C7B" stroke-width="1.7"/>
+            <path d="M510 204 v14 M502 226 a9 9 0 0 1 16 0" stroke="#0E7C7B" stroke-width="1.7" fill="none"/>
+            <rect x="598" y="180" width="48" height="60" rx="8" fill="#E6F4F4" stroke="#0E7C7B" stroke-width="2"/>
+            <rect x="612" y="188" width="20" height="16" rx="3" fill="none" stroke="#0E7C7B" stroke-width="1.7"/>
+            <path d="M622 204 v14 M614 226 a9 9 0 0 1 16 0" stroke="#0E7C7B" stroke-width="1.7" fill="none"/>
+            <rect x="710" y="180" width="48" height="60" rx="8" fill="#E6F4F4" stroke="#0E7C7B" stroke-width="2"/>
+            <rect x="724" y="188" width="20" height="16" rx="3" fill="none" stroke="#0E7C7B" stroke-width="1.7"/>
+            <path d="M734 204 v14 M726 226 a9 9 0 0 1 16 0" stroke="#0E7C7B" stroke-width="1.7" fill="none"/>
+          </g>
+          <path d="M534 210 H594" stroke="#6B7A8D" stroke-width="2"/>
+          <path d="M646 210 H706" stroke="#6B7A8D" stroke-width="2"/>
+          <text x="622" y="262" text-anchor="middle" font-size="13" font-weight="700" fill="#0E7C7B">סולנואידים — הפעלת אזורי השקיה</text>
+          <text x="622" y="278" text-anchor="middle" font-size="11" fill="#0E7C7B">ליבת בקרה גבע</text>
+          <!-- laterals down to drippers -->
+          <path d="M510 240 V300" stroke="#6B7A8D" stroke-width="2"/>
+          <path d="M622 240 V300" stroke="#6B7A8D" stroke-width="2"/>
+          <path d="M734 240 V300" stroke="#6B7A8D" stroke-width="2"/>
+          <path d="M470 300 H780" stroke="#3A4A5C" stroke-width="2.5"/>
+          <text x="452" y="304" text-anchor="end" font-size="12" font-weight="700" fill="#0F2243">שלוחות טפטוף / צנרת</text>
+          <!-- drippers -->
+          <g fill="#0E7C7B" opacity="0.75">
+            <path d="M500 306c4 5 6 8 6 11a6 6 0 0 1-12 0c0-3 2-6 6-11z"/>
+            <path d="M560 306c4 5 6 8 6 11a6 6 0 0 1-12 0c0-3 2-6 6-11z"/>
+            <path d="M620 306c4 5 6 8 6 11a6 6 0 0 1-12 0c0-3 2-6 6-11z"/>
+            <path d="M680 306c4 5 6 8 6 11a6 6 0 0 1-12 0c0-3 2-6 6-11z"/>
+            <path d="M740 306c4 5 6 8 6 11a6 6 0 0 1-12 0c0-3 2-6 6-11z"/>
+          </g>
+          <text x="622" y="345" text-anchor="middle" font-size="12" font-weight="700" fill="#0F2243">טפטפות / מתזים — אספקת מים לגידול</text>
+          <!-- crops -->
+          <g stroke="#059669" stroke-width="2" fill="none" stroke-linecap="round">
+            <path d="M530 378 v-14 M530 368 c-6-2-9-7-9-12 5 0 9 3 9 8 M530 364 c6-2 9-7 9-12 -5 0 -9 3 -9 8"/>
+            <path d="M650 378 v-14 M650 368 c-6-2-9-7-9-12 5 0 9 3 9 8 M650 364 c6-2 9-7 9-12 -5 0 -9 3 -9 8"/>
+            <path d="M710 378 v-14 M710 368 c-6-2-9-7-9-12 5 0 9 3 9 8 M710 364 c6-2 9-7 9-12 -5 0 -9 3 -9 8"/>
+          </g>
+          <text x="835" y="386" text-anchor="middle" font-size="12" font-weight="700" fill="#059669">שטח / גידול</text>
+          <!-- flow direction label -->
+          <text x="130" y="160" font-size="11" fill="#6B7A8D">כיוון זרימת המים ←</text>
+        </svg>
       </div>
-
-      <!-- מקרא -->
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.75rem;margin-top:1rem;">
-        <div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:0.7rem 0.9rem;font-size:0.73rem;color:var(--gray-dark);line-height:1.5;">
-          <span style="display:inline-block;width:11px;height:11px;border-radius:3px;background:var(--teal-pale);border:1.5px solid var(--teal);vertical-align:middle;margin-left:0.35rem;"></span><strong style="color:var(--navy);">ליבת בקרה גבע</strong><br>רכיבים שבהם נמצאת ליבת הפעילות של בקרה גבע כיום — בעיקר סולנואידים / שכבת הפעלה.
-        </div>
-        <div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:0.7rem 0.9rem;font-size:0.73rem;color:var(--gray-dark);line-height:1.5;">
-          <span style="display:inline-block;width:11px;height:11px;border-radius:3px;background:var(--amber-pale);border:1.5px solid var(--amber);vertical-align:middle;margin-left:0.35rem;"></span><strong style="color:var(--navy);">שכבות סמוכות לליבה</strong><br>רכיבים בעלי חפיפה ישירה לעולם ההפעלה, השסתומים וה-flow-control, אך אינם הליבה עצמה — למשל מגופים / שסתומי בקרה.
-        </div>
-        <div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:0.7rem 0.9rem;font-size:0.73rem;color:var(--gray-dark);line-height:1.5;">
-          <span style="display:inline-block;width:11px;height:11px;border-radius:3px;background:var(--white);border:1.5px dashed var(--gray-light);vertical-align:middle;margin-left:0.35rem;"></span><strong style="color:var(--navy);">שכבות להשלמת סל / הרחבת פתרון</strong><br>רכיבים ותתי-מערכות שיכולים להרחיב את הצעת הערך או להשתלב ב-bundle / פתרון רחב יותר, אך אינם בהכרח סמוכים לליבה — למשל בקרים, IoT, חיישנים, Fertigation, סינון, צנרת, fittings, טפטפות, מתזים וממטרות.
-        </div>
-      </div>
-      <p class="irr-note">הסיווג מציין את מיקום הרכיב ביחס לליבת הפעילות של בקרה גבע ואת סוג שאלת הבדיקה. הוא אינו מבטא תעדוף, המלצה או התאמה לרכישה. הצבעים אינם תעדוף ואינם המלצה.</p>
-      <p class="irr-note">מפת הרכיבים משקפת את שכבות מערכת ההשקיה שבהן בקרה גבע כבר מציגה פעילות או זיקה באתר החברה — סינון, השקיה, דישון, גינון, מגופים, בקרים ואביזרים — לצד שכבות מערכת רחבות יותר הדרושות להבנת השוק.</p>
+      <p class="irr-note">תרשים סכמטי של מערכת השקיה חקלאית מבוקרת: המים עוברים סינון ודישון, נשלטים על ידי מגוף ראשי, ומחולקים לאזורי השקיה באמצעות סולנואידים המופעלים על ידי בקר — ומשם דרך שלוחות הטפטוף אל הגידול.</p>
 
       <h4 class="irr-h4" style="margin-top:1.5rem;">רכיבי המערכת — תפקיד, שימוש ומיקום ביחס לליבה</h4>
       <div class="irr-wrap">
@@ -1699,7 +1768,7 @@
           <tbody>
             <tr><td style="font-weight:700;color:var(--navy);">סולנואידים / רכיבי הפעלה</td><td>פתיחה וסגירה חשמלית של קווי מים</td><td>חקלאות וגינון</td><td>ליבת בקרה</td></tr>
             <tr><td style="font-weight:700;color:var(--navy);">מגופים / שסתומי בקרה</td><td>ויסות לחץ וזרימה</td><td>חקלאות וגינון</td><td>שכבה סמוכה לליבה</td></tr>
-            <tr><td style="font-weight:700;color:var(--navy);">בקרים / timers</td><td>שכבת השליטה והאינטגרציה: תזמון, הפעלת אזורים, קלט מחיישנים וממשק המשתמש</td><td>חקלאות וגינון</td><td>שכבת השלמת סל</td></tr>
+            <tr><td style="font-weight:700;color:var(--navy);">בקרים / timers</td><td>שכבת השליטה והאינטגרציה: תזמון, הפעלת אזורים, קלט מחיישנים וממשק המשתמש</td><td>חקלאות וגינון</td><td>שכבה סמוכה לליבה</td></tr>
             <tr><td style="font-weight:700;color:var(--navy);">חיישנים / מדי זרימה</td><td>מדידת לחות, זרימה, לחץ ומזג אוויר לתמיכה בהחלטות השקיה</td><td>חקלאות</td><td>שכבת השלמת סל</td></tr>
             <tr><td style="font-weight:700;color:var(--navy);">רכיבי תקשורת / gateways</td><td>חיבור בין בקרים, חיישנים ומערכות ניהול מרחוק</td><td>חקלאות</td><td>שכבת השלמת סל</td></tr>
             <tr><td style="font-weight:700;color:var(--navy);">תוכנה / ניהול / אפליקציה</td><td>ממשק ניהול, ניטור ודוחות מעל שכבת החומרה</td><td>חקלאות וגינון</td><td>שכבת השלמת סל</td></tr>
@@ -1711,6 +1780,55 @@
           </tbody>
         </table>
       </div>
+
+      <h4 class="irr-h4" style="margin-top:2rem;">מפה מסכמת — הרכיבים ביחס לליבת בקרה גבע</h4>
+      <div class="pflow-wrap">
+        <div class="pflow">
+          <div class="pflow-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c3.5 4.5 6 7.8 6 11a6 6 0 0 1-12 0c0-3.2 2.5-6.5 6-11z"/></svg>מקור מים /<br>כניסה למערכת</div>
+          <div class="pflow-arrow">&#8592;</div>
+          <div class="pflow-box ext"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h18l-7 8v6l-4 2v-8L3 5z"/></svg>סינון</div>
+          <div class="pflow-arrow">&#8592;</div>
+          <div class="pflow-box ext"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v5l-4.5 8A3.5 3.5 0 0 0 8.5 21h7a3.5 3.5 0 0 0 3-5L14 8V3"/><path d="M7 15h10"/></svg>דישון /<br>Fertigation</div>
+          <div class="pflow-arrow">&#8592;</div>
+          <div class="pflow-box adj"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M4 8v8M20 8v8M12 12V5M9 5h6"/></svg>מגופים /<br>שסתומי בקרה</div>
+          <div class="pflow-arrow">&#8592;</div>
+          <div class="pflow-box adj"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></svg>בקר / Timer /<br>IoT</div>
+          <div class="pflow-arrow">&#8592;</div>
+          <div class="pflow-box core"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="8" width="10" height="12" rx="2"/><path d="M12 8V3M9 5h6M10 12h4M10 16h4"/></svg>סולנואיד /<br>שכבת הפעלה</div>
+          <div class="pflow-arrow">&#8592;</div>
+          <div class="pflow-box ext"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9h13a5 5 0 0 1 5 5v7"/><path d="M3 14h12a1 1 0 0 1 1 1v6"/></svg>צנרת /<br>fittings</div>
+          <div class="pflow-arrow">&#8592;</div>
+          <div class="pflow-box ext"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16M8 4v4M16 4v4M8 12c0 1.5 1 2.5 1 4a1.5 1.5 0 0 1-3 0c0-1.5 1-2.5 1-4h1zM17 12c0 1.5 1 2.5 1 4a1.5 1.5 0 0 1-3 0c0-1.5 1-2.5 1-4h1z"/></svg>טפטפות / מתזים /<br>ממטרות</div>
+          <div class="pflow-arrow">&#8592;</div>
+          <div class="pflow-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21v-8M12 13c0-3.5-2.5-6-6-6 0 3.5 2.5 6 6 6zM12 10c0-3 2-5.5 5.5-5.5C17.5 8 15.5 10 12 10z"/></svg>שטח / גידול /<br>גינה</div>
+        </div>
+      </div>
+      <!-- מקרא -->
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.75rem;margin-top:1rem;">
+        <div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:0.7rem 0.9rem;font-size:0.73rem;color:var(--gray-dark);line-height:1.5;">
+          <span style="display:inline-block;width:11px;height:11px;border-radius:3px;background:var(--teal-pale);border:1.5px solid var(--teal);vertical-align:middle;margin-left:0.35rem;"></span><strong style="color:var(--navy);">ליבת בקרה גבע</strong><br>רכיבים שבהם נמצאת ליבת הפעילות של בקרה גבע כיום — בעיקר סולנואידים / שכבת הפעלה.
+        </div>
+        <div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:0.7rem 0.9rem;font-size:0.73rem;color:var(--gray-dark);line-height:1.5;">
+          <span style="display:inline-block;width:11px;height:11px;border-radius:3px;background:var(--amber-pale);border:1.5px solid var(--amber);vertical-align:middle;margin-left:0.35rem;"></span><strong style="color:var(--navy);">שכבות סמוכות לליבה</strong><br>רכיבים בעלי חפיפה ישירה לעולם ההפעלה והשסתומים, אך אינם הליבה עצמה — למשל מגופים / שסתומי בקרה ובקרים. בהקשר של פרק זה, מגופים ושסתומי בקרה הם משפחה אחת: פתרונות ויסות, פתיחה וסגירה בקווי השקיה.
+        </div>
+        <div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:0.7rem 0.9rem;font-size:0.73rem;color:var(--gray-dark);line-height:1.5;">
+          <span style="display:inline-block;width:11px;height:11px;border-radius:3px;background:var(--gray-bg);border:1.5px dashed var(--gray-light);vertical-align:middle;margin-left:0.35rem;"></span><strong style="color:var(--navy);">שכבות להשלמת סל / הרחבת פתרון</strong><br>רכיבים ותתי-מערכות שיכולים להרחיב את הצעת הערך או להשתלב ב-bundle / פתרון רחב יותר, אך אינם בהכרח סמוכים לליבה — למשל סינון ודישון.
+        </div>
+      </div>
+      <p class="irr-note">הסיווג מציין את מיקום הרכיב ביחס לליבת הפעילות של בקרה גבע ואת סוג שאלת הבדיקה. הוא אינו מבטא תעדוף, המלצה או התאמה לרכישה. הצבעים אינם תעדוף ואינם המלצה.</p>
+      <p class="irr-note">מפת הרכיבים משקפת את שכבות מערכת ההשקיה שבהן בקרה גבע כבר מציגה פעילות או זיקה באתר החברה — סינון, השקיה, דישון, גינון, מגופים, בקרים ואביזרים — לצד שכבות מערכת רחבות יותר הדרושות להבנת השוק.</p>
+
+      <!-- קרבה לבקרה גבע לפי קטגוריה -->
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:0.6rem;margin-top:1rem;">
+        <div style="background:var(--teal-pale);border:1px solid var(--teal);border-radius:8px;padding:0.6rem 0.9rem;font-size:0.75rem;color:var(--gray-dark);"><strong style="color:var(--navy);">סולנואידים</strong> — ליבת בקרה גבע</div>
+        <div style="background:var(--amber-pale);border:1px solid var(--amber);border-radius:8px;padding:0.6rem 0.9rem;font-size:0.75rem;color:var(--gray-dark);"><strong style="color:var(--navy);">מגופים</strong> — נוכחות קיימת, אך מוגבלת; לפי הנהלת בקרה, בקרה מייצרת מגופי פלסטיק בלבד / סל מצומצם</div>
+        <div style="background:var(--amber-pale);border:1px solid var(--amber);border-radius:8px;padding:0.6rem 0.9rem;font-size:0.75rem;color:var(--gray-dark);"><strong style="color:var(--navy);">בקרים</strong> — קיים בקר פשוט / בסיסי; מקור ייצור, היקף פעילות ורלוונטיות מסחרית דורשים אימות מול בקרה</div>
+        <div style="background:var(--gray-bg);border:1px dashed var(--gray-light);border-radius:8px;padding:0.6rem 0.9rem;font-size:0.75rem;color:var(--gray-dark);"><strong style="color:var(--navy);">סינון</strong> — אין נוכחות מזוהה של בקרה</div>
+        <div style="background:var(--gray-bg);border:1px dashed var(--gray-light);border-radius:8px;padding:0.6rem 0.9rem;font-size:0.75rem;color:var(--gray-dark);"><strong style="color:var(--navy);">דישון / Fertigation</strong> — אין נוכחות מזוהה של בקרה</div>
+        <div style="background:var(--gray-bg);border:1px dashed var(--gray-light);border-radius:8px;padding:0.6rem 0.9rem;font-size:0.75rem;color:var(--gray-dark);"><strong style="color:var(--navy);">צנרת / fittings / טפטוף</strong> — רחוק מליבת בקרה; רלוונטי בעיקר כאקוסיסטם / benchmark</div>
+        <div style="background:var(--gray-bg);border:1px dashed var(--gray-light);border-radius:8px;padding:0.6rem 0.9rem;font-size:0.75rem;color:var(--gray-dark);"><strong style="color:var(--navy);">חיישנים / דאטה / מוני מים</strong> — אין נוכחות מזוהה של בקרה; שכבה סמוכה להבנת השוק בלבד</div>
+      </div>
+      <p class="irr-note">בקרה גבע נמצאת בליבת הסולנואידים, קיימת באופן מוגבל במגופי פלסטיק, ייתכן שקיים מוצר בקר בסיסי שדורש אימות, ואינה נוכחת כיום באופן מזוהה בסינון, דישון, חיישנים, דאטה או מוני מים.</p>
     </div>
 
     <div class="slide-divider" style="margin:0 0 2.5rem;"></div>
@@ -1719,65 +1837,141 @@
     <div id="irrigation-6" class="irr-block">
       <div class="section-eyebrow">ניתוח שחקנים</div>
       <h3 class="irr-h3">שחקנים לפי קטגוריית מוצר</h3>
-      <p class="irr-sub">מפת שחקנים — לא רשימת יעדי רכישה. הסיווגים מפרידים בין יעד בדיקה, שותף אפשרי, ערוץ, לקוח, מתחרה ו-benchmark, וכולם כפופים לאימות. חשוב להבחין בין שני סוגי שחקנים: שחקני השקיה קלאסיים המרחיבים לדיגיטל (למשל Galcon, Talgil, Netafim) לבין שחקני טכנולוגיה / תוכנה הנכנסים להשקיה דרך בקר, אפליקציה או דאטה (למשל Mottech, CropX כשותפת אינטגרציה) — לא כל שחקן רלוונטי לבקרה באותו אופן.</p>
+      <p class="irr-sub">מפת שחקנים — לא רשימת יעדי רכישה. הסיווגים מפרידים בין יעד בדיקה, שותף אפשרי, ערוץ, לקוח, מתחרה ו-benchmark, וכולם כפופים לאימות. הטבלאות כוללות שחקנים ישראליים או בעלי פעילות / נציגות ישראלית; מותגים גלובליים ללא נציגות מזוהה מוצגים כ-benchmark או כפער מידע בלבד. חשוב להבחין בין שחקני השקיה קלאסיים המרחיבים לדיגיטל (למשל Galcon, Talgil, Netafim) לבין שחקני טכנולוגיה / דאטה הנכנסים להשקיה דרך בקר, אפליקציה או חיישן — לא כל שחקן רלוונטי לבקרה באותו אופן.</p>
+      <h4 class="irr-h4" style="margin-top:1.75rem;">A · סולנואידים</h4>
       <div class="irr-wrap">
         <table class="irr-table">
-          <thead><tr><th>שחקן</th><th>סגמנט</th><th>מוצר / פעילות</th><th>תפקיד בשרשרת</th><th>בעלות / חלק מקבוצה</th><th>הכנסות</th><th>רלוונטיות ראשונית</th><th>פער מידע</th><th>ביטחון</th></tr></thead>
+          <thead><tr><th>שחקן</th><th>סגמנט</th><th>מוצר / פעילות</th><th>תפקיד בשרשרת</th><th>בעלות / קבוצה</th><th>רלוונטיות לבקרה</th><th>פער מידע / הערה</th></tr></thead>
           <tbody>
-            <tr class="cat-row"><td colspan="9">A · סולנואידים / רכיבי הפעלה</td></tr>
-            <tr><td style="font-weight:700;color:var(--navy);">בקרה גבע</td><td>חקלאות + גינון (90/10 פנימי)</td><td>סולנואידים / שכבת הפעלה — יצרן + IP</td><td>יצרן רכיב</td><td>—</td><td>נתון פנימי</td><td><span class="tag t-core">ליבה — החברה עצמה</span></td><td>—</td><td><span class="conf" style="color:var(--teal);">●</span></td></tr>
-            <tr><td style="font-weight:700;color:var(--navy);">Galcon (גלקון)</td><td>חקלאות + גינון</td><td>בקרים / timers / IoT; מוכרת גם סולנואידים ושסתומים כחלק מהמערכת</td><td>יצרן + מותג</td><td>נרכשה על ידי Plasson; חלק מקבוצת Plasson</td><td>לא פומבי</td><td><span class="tag t-comp">מתחרה</span><span class="tag t-partner">שותף אפשרי</span></td><td>סיכון קניבליזם בסולנואידים — לבדיקה מוקדמת</td><td>בעלות <span class="conf" style="color:var(--teal);">●</span></td></tr>
-            <tr><td style="font-weight:700;color:var(--navy);">גבע סול (Geva Sol)</td><td>חקלאות + גינון</td><td>יצרנית סולנואידים ישראלית — מתחרה ישירה של בקרה גבע</td><td>יצרן רכיב</td><td>ישראלית</td><td>לא פומבי</td><td><span class="tag t-comp">מתחרה</span></td><td>היקף, בעלות, סל מוצרים</td><td><span class="conf" style="color:var(--gray-light);">○</span></td></tr>
-            <tr><td style="font-weight:700;color:var(--navy);">Rain Bird / Hunter</td><td>גינון בעיקר</td><td>מותגים גלובליים דרך נציגויות</td><td>מותג גלובלי</td><td>ציבוריות / פרטיות בחו"ל</td><td>לא רלוונטי</td><td><span class="tag t-bench">benchmark בלבד</span><span class="tag t-comp">מתחרה</span></td><td>זהות הנציג בישראל</td><td><span class="conf" style="color:var(--gray-light);">○</span></td></tr>
-            <tr><td colspan="9" style="background:var(--white);font-size:0.73rem;color:var(--gray-mid);">שוק יצרני הסולנואידים בישראל דליל — בעיקר בקרה גבע וגבע סול (ועוד יצרני נישה לסולנואידים מיוחדים ללחץ גבוה, הרלוונטיים לזירת התעשייה ולא להשקיה). Bermad אינה מייצרת את הסולנואידים שלה בישראל — הייצור בסין / הודו (לפי הנהלת בקרה; לאימות) — מה שמחזק את הערכת ה-overlap כנמוכה. מקור: הנהלת בקרה גבע.</td></tr>
+            <tr style="background:var(--gray-bg);"><td style="font-weight:700;color:var(--navy);">בקרה גבע</td><td>חקלאות + גינון (90/10 — נתון פנימי)</td><td>סולנואידים / שכבת הפעלה — יצרן + IP</td><td>יצרן רכיב</td><td>—</td><td><span class="tag t-core">ליבה — החברה עצמה</span></td><td>—</td></tr>
+            <tr><td style="font-weight:700;color:var(--navy);">גבע סול (Geva Sol)</td><td>חקלאות + גינון</td><td>לפי הבנה ראשונית, ייתכן שפועלת יותר כחברת פרויקטים / אינטגרציה עבור לקוחות, ואף רוכשת סולנואידים מבקרה גבע — לא בהכרח יצרנית</td><td>לאימות — יצרן או אינטגרטור</td><td>ישראלית</td><td><span class="tag t-gap">פער מידע</span></td><td>אופי הפעילות, היקף, סל מוצרים — לאימות</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="irr-note">בקטגוריית הסולנואידים, בקרה גבע נראית כיום כשחקן הישראלי המרכזי שזוהה. יתר השחקנים דורשים אימות: Galcon רלוונטית בעיקר כבקרים / timers ועשויה למכור רכיבים כחלק ממערכת, אך אינה יצרנית סולנואידים מרכזית (ראו קטגוריה C); Geva Sol עשויה להיות אינטגרטור / חברת פרויקטים ולא בהכרח יצרן; Rain Bird הוא מותג גלובלי ולא שחקן ישראלי — מוצג כ-benchmark בלבד, וזהות נציגות בישראל היא פער מידע.</p>
+      <p class="irr-note">שוק יצרני הסולנואידים בישראל דליל — בעיקר בקרה גבע וגבע סול (ועוד יצרני נישה לסולנואידים מיוחדים ללחץ גבוה, הרלוונטיים לזירת התעשייה ולא להשקיה). Bermad אינה מייצרת את הסולנואידים שלה בישראל — הייצור בסין / הודו (נתון פנימי / לפי הנהלת בקרה גבע — לאימות) — מה שמחזק את הערכת ה-overlap כנמוכה.</p>
 
-            <tr class="cat-row"><td colspan="9">B · מגופים / שסתומי בקרה / Flow control</td></tr>
-            <tr><td style="font-weight:700;color:var(--navy);">Bermad (ברמד)</td><td>חקלאות + תשתיות</td><td>שסתומי בקרת לחץ / זרימה; בחלק מהיישומים שחקן מערכת / פתרונות flow-control</td><td>יצרן + שחקן מערכת</td><td>בבעלות קיבוץ עברון וקיבוץ סעד; Tama / תמה נכנסה / השקיעה בשנים האחרונות — לפי מידע צוות; לאימות מקור רשמי</td><td>לא פומבי</td><td><span class="tag t-partner">שותף אפשרי</span><span class="tag t-test">יעד בדיקה</span></td><td>היקף השקיה מול מים / כיבוי; חפיפה מול בקרה נמוכה — לבדיקה</td><td>בעלות <span class="conf" style="color:var(--amber);">◐</span></td></tr>
-            <tr><td style="font-weight:700;color:var(--navy);">Dorot / Aquestia (דורות)</td><td>חקלאות + תשתיות</td><td>שסתומי ממברנה / בקרה</td><td>יצרן</td><td>חלק מ-Aquestia — לא ישות עצמאית; מבנה עדכני לאימות</td><td>לא פומבי</td><td><span class="tag t-bench">benchmark בלבד</span><span class="tag t-partner">שותף אפשרי</span></td><td>שותפות אפשרית דרך Aquestia בלבד</td><td><span class="conf" style="color:var(--amber);">◐</span></td></tr>
-            <tr><td style="font-weight:700;color:var(--navy);">בקרה גבע</td><td>חקלאות + גינון</td><td>מגופים בייצור עצמי — סל מצומצם &#190;"–2"; &#190;"–1" לגינון, 1.5"–2" לחקלאות</td><td>יצרן רכיב</td><td>—</td><td>[יושלם ידנית — נתוני בקרה]</td><td><span class="tag t-core">נוכחות קיימת</span></td><td>לפי הנהלת בקרה גבע; נתוני מכירות להשלמה</td><td>נוכחות <span class="conf" style="color:var(--teal);">●</span> / היקף <span class="conf" style="color:var(--gray-light);">○</span></td></tr>
-            <tr><td style="font-weight:700;color:var(--navy);">א.ר.י (A.R.I)</td><td>חקלאות + תשתיות מים</td><td>משחררי אוויר לקווי השקיה והולכת מים — קיבוץ כפר חרוב</td><td>יצרן רכיב משלים</td><td>קיבוצית</td><td>לא פומבי</td><td><span class="tag t-bench">benchmark בלבד</span><span class="tag t-gap">פער מידע</span></td><td>היקף, בעלות עדכנית, רלוונטיות</td><td><span class="conf" style="color:var(--gray-light);">○</span></td></tr>
+      <h4 class="irr-h4" style="margin-top:1.75rem;">B · מגופים / שסתומי בקרה</h4>
+      <div class="irr-wrap">
+        <table class="irr-table">
+          <thead><tr><th>שחקן</th><th>סגמנט</th><th>מוצר / פעילות</th><th>תפקיד בשרשרת</th><th>בעלות / קבוצה</th><th>רלוונטיות לבקרה</th><th>פער מידע / הערה</th></tr></thead>
+          <tbody>
+            <tr style="background:var(--gray-bg);"><td style="font-weight:700;color:var(--navy);">בקרה גבע</td><td>חקלאות + גינון</td><td>מגופים בייצור עצמי — סל מצומצם &#190;"–2"; &#190;"–1" לגינון, 1.5"–2" לחקלאות (נתון פנימי / לפי הנהלת בקרה גבע)</td><td>יצרן רכיב</td><td>—</td><td><span class="tag t-core">נוכחות קיימת — שכבה סמוכה לליבה, לא הליבה</span></td><td>נתוני מכירות ופילוח ערוצים — להשלמה מנתוני בקרה</td></tr>
+            <tr><td style="font-weight:700;color:var(--navy);">Bermad (ברמד)</td><td>חקלאות + תשתיות</td><td>שסתומי בקרת לחץ / זרימה; בחלק מהיישומים שחקן מערכת / פתרונות בקרת זרימה</td><td>יצרן + שחקן מערכת</td><td>בבעלות קיבוץ עברון וקיבוץ סעד; מעורבות Tama / תמה — לפי מידע צוות, לאימות מקור רשמי</td><td><span class="tag t-partner">שותף אפשרי</span><span class="tag t-test">יעד בדיקה</span></td><td>היקף השקיה מול מים / כיבוי; חפיפה מול בקרה נמוכה — לבדיקה</td></tr>
+            <tr><td style="font-weight:700;color:var(--navy);">Aquestia — באמצעות Dorot (דורות)</td><td>חקלאות + תשתיות</td><td>מגופים / שסתומי ממברנה ובקרה — תחת קבוצת Aquestia</td><td>יצרן</td><td>חלק מ-Aquestia — לא ישות עצמאית; מבנה עדכני לאימות</td><td><span class="tag t-bench">benchmark בלבד</span><span class="tag t-partner">שותף אפשרי</span></td><td>שותפות אפשרית דרך Aquestia בלבד</td></tr>
+            <tr><td style="font-weight:700;color:var(--navy);">Aquestia — באמצעות A.R.I (א.ר.י)</td><td>חקלאות + תשתיות מים</td><td>שסתומי אוויר / אביזרי קו לקווי השקיה והולכת מים — תחת קבוצת Aquestia</td><td>יצרן רכיב משלים</td><td>לפי מקור קודם — קיבוץ כפר חרוב; המסגור הקבוצתי תחת Aquestia — לאימות</td><td><span class="tag t-bench">benchmark בלבד</span><span class="tag t-gap">פער מידע</span></td><td>היקף, מבנה בעלות עדכני, רלוונטיות</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="irr-note">בהקשר של פרק זה, מגופים ושסתומי בקרה הם משפחה אחת: פתרונות ויסות, פתיחה וסגירה בקווי השקיה. עבור בקרה גבע זו שכבה סמוכה לליבה — לא הליבה עצמה כמו סולנואידים.</p>
 
-            <tr class="cat-row"><td colspan="9">C · בקרים / Controllers / Timers</td></tr>
-            <tr><td style="font-weight:700;color:var(--navy);">Galcon (גלקון)</td><td>חקלאות + גינון</td><td>שחקן מרכזי בבקרים / timers; רלוונטי לשאלת bundle של controller + solenoid</td><td>יצרן + מותג</td><td>נרכשה על ידי Plasson; חלק מקבוצת Plasson</td><td>לא פומבי</td><td><span class="tag t-test">יעד בדיקה</span></td><td>רלוונטיות מסחרית ו-overlap מול בקרה — לבירור (לא בירור בעלות)</td><td>בעלות <span class="conf" style="color:var(--teal);">●</span></td></tr>
-            <tr><td style="font-weight:700;color:var(--navy);">Talgil (תלגיל)</td><td>חקלאות</td><td>יצרן ישראלי של בקרי השקיה מקצועיים / אוטומציה חקלאית; אינטגרציה מתועדת עם CropX</td><td>יצרן</td><td>ישראלית; עצמאות ובעלות לאימות</td><td>לא פומבי</td><td><span class="tag t-test">יעד בדיקה</span><span class="tag t-gap">פער מידע</span></td><td>היקף, בעלות, לקוחות, ממשקים</td><td><span class="conf" style="color:var(--gray-light);">○</span></td></tr>
-            <tr><td style="font-weight:700;color:var(--navy);">Rain Bird / Hunter</td><td>גינון</td><td>Benchmark גלובלי בבקרים</td><td>מותג גלובלי</td><td>—</td><td>לא רלוונטי</td><td><span class="tag t-bench">benchmark בלבד</span><span class="tag t-comp">מתחרה</span></td><td>נציגות בישראל</td><td><span class="conf" style="color:var(--gray-light);">○</span></td></tr>
-            <tr><td style="font-weight:700;color:var(--navy);">Mottech (מוטק)</td><td>חקלאות + עירוני</td><td>תוכנה / ניהול IoT — לא רכיב פיזי</td><td>ספק תוכנה</td><td>בעלות לא מאומתת (זיקה היסטורית ל-Rain Bird — לאימות)</td><td>לא פומבי</td><td><span class="tag t-gap">פער מידע</span></td><td>סיווג זהיר — רחוק מליבת רכיב</td><td><span class="conf" style="color:var(--gray-light);">○</span></td></tr>
+      <h4 class="irr-h4" style="margin-top:1.75rem;">C · בקרים / Timers / IoT</h4>
+      <div class="irr-wrap">
+        <table class="irr-table">
+          <thead><tr><th>שחקן</th><th>סגמנט</th><th>מוצר / פעילות</th><th>תפקיד בשרשרת</th><th>בעלות / קבוצה</th><th>רלוונטיות לבקרה</th><th>פער מידע / הערה</th></tr></thead>
+          <tbody>
+            <tr><td style="font-weight:700;color:var(--navy);">Galcon (גלקון)</td><td>גינון בעיקר + חקלאות</td><td>שחקן מרכזי בבקרים / timers / IoT; רלוונטי לשאלת bundle של controller + solenoid</td><td>יצרן + מותג</td><td>נרכשה על ידי Plasson; חלק מקבוצת Plasson</td><td><span class="tag t-test">יעד בדיקה</span></td><td>מחזור / גודל פעילות — דורש אימות עם מקור; רלוונטיות מסחרית ו-overlap מול בקרה — לבירור</td></tr>
+            <tr><td style="font-weight:700;color:var(--navy);">Talgil (תלגיל)</td><td>חקלאות</td><td>יצרן ישראלי של בקרי השקיה מקצועיים / אוטומציה חקלאית; אינטגרציה מתועדת עם CropX</td><td>יצרן</td><td>ישראלית; עצמאות ובעלות לאימות</td><td><span class="tag t-test">יעד בדיקה</span><span class="tag t-gap">פער מידע</span></td><td>מחזור / הכנסות — לא פומבי / דורש אימות; לקוחות וממשקים</td></tr>
+            <tr><td style="font-weight:700;color:var(--navy);">Mottech (מוטק)</td><td>חקלאות + עירוני</td><td>תוכנה / ניהול IoT — לא רכיב פיזי</td><td>ספק תוכנה</td><td>בעלות ותחום פעילות עדכני — לא מאומתים (זיקה היסטורית ל-Motorola / Rain Bird — לאימות)</td><td><span class="tag t-gap">פער מידע</span></td><td>לא להציג כשחקן ישראלי רלוונטי ודאי ללא מקור עדכני</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="irr-note">Rain Bird ו-Hunter הם מותגים גלובליים ואינם שחקנים ישראליים — הם מוצגים כ-benchmark בלבד; זהות נציגות / מפיץ בישראל היא פער מידע.</p>
+      <p class="irr-note">Nisko Telematics — טלמטריה וקריאת מדי מים (AMR/AMI); רלוונטיות ישירה להשקיה דורשת אימות. לא מוצגת בטבלה זו ואין להציגה כבקר השקיה ללא מקור נוסף.</p>
 
-            <tr class="cat-row"><td colspan="9">D · IoT / חיישנים / ניהול</td></tr>
-            <tr><td style="font-weight:700;color:var(--navy);">Galcon, Talgil, Mottech, Rain Bird / Hunter</td><td>חקלאות + גינון</td><td>שכבת ניהול, חיישנים וניהול מרחוק — אותם שחקנים משכבת הבקרים</td><td>שכבת ניהול</td><td>ראו שורות לעיל</td><td>לא פומבי</td><td><span class="tag t-gap">פער מידע</span></td><td>פער אפשרי לבדיקה; אין להפוך ל"כיוון אסטרטגי" ללא נתוני מכירות וערוץ</td><td><span class="conf" style="color:var(--gray-light);">○</span></td></tr>
+      <h4 class="irr-h4" style="margin-top:1.75rem;">D · חיישנים / דאטה / השקיה מדויקת</h4>
+      <div class="irr-wrap">
+        <table class="irr-table">
+          <thead><tr><th>שחקן</th><th>סגמנט</th><th>מוצר / פעילות</th><th>תפקיד בשרשרת</th><th>בעלות / קבוצה</th><th>רלוונטיות לבקרה</th><th>פער מידע / הערה</th></tr></thead>
+          <tbody>
+            <tr><td style="font-weight:700;color:var(--navy);">SupPlant</td><td>חקלאות</td><td>חברת AgTech ישראלית בתחום השקיה מדויקת — חיישנים / דאטה / המלצות השקיה</td><td>שכבת דאטה / החלטה</td><td>ישראלית</td><td><span class="tag t-bench">benchmark</span><span class="tag t-gap">שכבת דאטה</span></td><td>רחוקה יחסית מליבת בקרה גבע הפיזית</td></tr>
+            <tr><td style="font-weight:700;color:var(--navy);">CropX</td><td>חקלאות</td><td>חיישני קרקע, ניטור והמלצות השקיה — חברה ישראלית; אינטגרציה מתועדת עם Talgil</td><td>שכבת דאטה</td><td>ישראלית</td><td><span class="tag t-bench">benchmark</span></td><td>היקף פעילות בישראל — לאימות</td></tr>
+            <tr><td style="font-weight:700;color:var(--navy);">Phytech</td><td>חקלאות</td><td>חיישני צמח וניטור לתמיכה בהחלטות השקיה — חברה ישראלית</td><td>שכבת דאטה</td><td>ישראלית</td><td><span class="tag t-bench">benchmark</span></td><td>רלוונטיות ישירה לרכיבי הפעלה — נמוכה</td></tr>
+            <tr><td style="font-weight:700;color:var(--navy);">Saturas</td><td>חקלאות</td><td>חיישני גזע (SWP) להשקיה מדויקת — חברה ישראלית</td><td>שכבת דאטה</td><td>ישראלית</td><td><span class="tag t-gap">פער מידע</span></td><td>סטטוס והיקף פעילות עדכניים — לאימות</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="irr-note">קטגוריית החיישנים אינה כיוון אסטרטגי סופי — היא שכבת דאטה / benchmark / פער בדיקה, הרחוקה מליבת רכיבי ההפעלה של בקרה גבע.</p>
 
-            <tr class="cat-row"><td colspan="9">E · Fertigation / דישון / משאבות מינון</td></tr>
-            <tr><td style="font-weight:700;color:var(--navy);">Tefen / נחשולים / MixRite (תפן)</td><td>חקלאות</td><td>משאבות מינון הידראוליות לכימיקלים / דשן (MixRite), flow products, fittings. מערכות הידראוליות — לא מבוססות חשמל, בשונה מהסולנואידים החשמליים של בקרה</td><td>יצרן</td><td>ישראלית — תפן של קיבוץ נחשולים (אושר בשיחת צוות)</td><td>לא פומבי</td><td><span class="tag t-partner">שותף אפשרי</span></td><td>פתיחות היסטורית נמוכה למכירה — רלוונטי לבחינת שותפות; תקדים שת"פ מוצרי עם שחקן מגופים סביב תקינה אירופית (פרטים לאימות); הקשר בין הישויות — לאימות</td><td><span class="conf" style="color:var(--amber);">◐</span></td></tr>
-            <tr><td style="font-weight:700;color:var(--navy);">Dosatron</td><td>חקלאות</td><td>יצרן גלובלי (צרפת) של משאבות מינון הידראוליות</td><td>יצרן גלובלי</td><td>קבוצה גלובלית</td><td>לא רלוונטי</td><td><span class="tag t-channel">נציגות</span><span class="tag t-gap">פער מידע</span></td><td>זכויות שיווק / ייצוג — אם אין בלעדיות פעילה; מי המפיץ בישראל — לא ידוע</td><td><span class="conf" style="color:var(--gray-light);">○</span></td></tr>
-            <tr><td style="font-weight:700;color:var(--navy);">Irritec / Mixtron</td><td>חקלאות</td><td>יצרן גלובלי (איטליה) של ציוד מינון / מיקרו</td><td>יצרן גלובלי</td><td>פרטית</td><td>לא רלוונטי</td><td><span class="tag t-channel">נציגות</span><span class="tag t-gap">פער מידע</span></td><td>נציגות בישראל — לבדיקה</td><td><span class="conf" style="color:var(--gray-light);">○</span></td></tr>
-            <tr><td style="font-weight:700;color:var(--navy);">Netafim (נטפים)</td><td>חקלאות</td><td>Fertigation כחלק ממערכת שלמה</td><td>ספק מערכת</td><td>Orbia</td><td>בתוך קבוצה</td><td><span class="tag t-bench">benchmark בלבד</span></td><td>—</td><td><span class="conf" style="color:var(--teal);">●</span></td></tr>
-            <tr><td colspan="9" style="background:var(--white);font-size:0.73rem;color:var(--gray-mid);">ממצא (שלילי) מרכזי: לא זוהה יצרן ישראלי עצמאי של משאבות מינון מלבד תפן / MixRite.</td></tr>
+      <h4 class="irr-h4" style="margin-top:1.75rem;">מוני מים / מדידת מים / טלמטריה</h4>
+      <div class="irr-wrap">
+        <table class="irr-table">
+          <thead><tr><th>שחקן</th><th>סגמנט</th><th>מוצר / פעילות</th><th>תפקיד בשרשרת</th><th>בעלות / קבוצה</th><th>רלוונטיות לבקרה</th><th>פער מידע / הערה</th></tr></thead>
+          <tbody>
+            <tr><td style="font-weight:700;color:var(--navy);">Arad (ארד)</td><td>מים / תאגידים / חקלאות</td><td>חברה ישראלית בתחום מדי מים, hydrometers, מדידת מים, טלמטריה ופתרונות water management — שכבת מדידה סמוכה למערכות השקיה</td><td>שכבת מדידה / ניטור</td><td>ישראלית</td><td><span class="tag t-bench">benchmark</span><span class="tag t-gap">שחקן סמוך / פער בדיקה</span></td><td>האם קיימת רלוונטיות ישירה למערכות השקיה חקלאית ולערוצי ההפצה של בקרה, או שהפעילות בעיקר במדידת מים כללית / תאגידי מים / utilities</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="irr-note">Arad אינה חברת חיישני השקיה, אינה בקר השקיה ואינה ליבת בקרה גבע — היא שכבת מדידת מים / טלמטריה סמוכה, הרלוונטית להבנת צריכת מים, בקרה על זרימה וחיבור אפשרי למערכות ניהול השקיה.</p>
 
-            <tr class="cat-row"><td colspan="9">F · סינון</td></tr>
-            <tr><td style="font-weight:700;color:var(--navy);">Amiad (עמיעד)</td><td>חקלאות + מים + תעשייה</td><td>שחקן ישראלי מרכזי בסינון מים</td><td>יצרן</td><td>בבעלות קרן / גוף PE — לאימות עדכני</td><td>לא פומבי</td><td><span class="tag t-partner">שותף אפשרי</span><span class="tag t-bench">benchmark בלבד</span></td><td>מבנה בעלות עדכני</td><td><span class="conf" style="color:var(--amber);">◐</span></td></tr>
-            <tr><td colspan="9" style="background:var(--white);font-size:0.73rem;color:var(--gray-mid);">תקדים bundle חשוב (הנהלת בקרה): לנטפים הסכם בלעדיות היסטורי עם עמיעד על מערכות סינון מסוימות הנכנסות לפרויקטים הגדולים של נטפים — הוכחה שמודל "רכיב משלים דרך שחקן מערכת" עובד בשוק הזה, ותמיכה בהשערת ה-bundle.</td></tr>
+      <h4 class="irr-h4" style="margin-top:1.75rem;">E · דישון / Fertigation / משאבות מינון</h4>
+      <div class="irr-wrap">
+        <table class="irr-table">
+          <thead><tr><th>שחקן</th><th>סגמנט</th><th>מוצר / פעילות</th><th>תפקיד בשרשרת</th><th>בעלות / קבוצה</th><th>רלוונטיות לבקרה</th><th>פער מידע / הערה</th></tr></thead>
+          <tbody>
+            <tr><td style="font-weight:700;color:var(--navy);">Tefen / נחשולים / MixRite (תפן)</td><td>חקלאות</td><td>משאבות מינון הידראוליות לכימיקלים / דשן (MixRite), flow products, fittings. מערכות הידראוליות — לא מבוססות חשמל, בשונה מהסולנואידים החשמליים של בקרה</td><td>יצרן</td><td>ישראלית — תפן של קיבוץ נחשולים (אושר בשיחת צוות)</td><td><span class="tag t-partner">שותף אפשרי</span></td><td>פתיחות היסטורית נמוכה למכירה — רלוונטי לבחינת שותפות; תקדים שת"פ מוצרי סביב תקינה אירופית (פרטים לאימות); הקשר בין הישויות — לאימות</td></tr>
+            <tr><td style="font-weight:700;color:var(--navy);">Dosatron</td><td>חקלאות</td><td>יצרנית צרפתית של משאבות מינון / dosing pumps — מותג גלובלי, לא חברה ישראלית</td><td>יצרן גלובלי</td><td>קבוצה גלובלית</td><td><span class="tag t-bench">benchmark</span></td><td>נציגות / מפיץ בישראל — פער מידע</td></tr>
+            <tr><td style="font-weight:700;color:var(--navy);">Irritec</td><td>חקלאות</td><td>יצרנית איטלקית של מערכות השקיה — טפטוף, ממטרות, סינון, אוטומציה ו-fertigation, fittings ושסתומים — מותג גלובלי, לא חברה ישראלית</td><td>יצרן גלובלי</td><td>פרטית</td><td><span class="tag t-bench">benchmark</span></td><td>נציגות / מפיץ בישראל — פער מידע</td></tr>
+            <tr><td style="font-weight:700;color:var(--navy);">Netafim (נטפים)</td><td>חקלאות</td><td>Fertigation כחלק ממערכת שלמה</td><td>ספק מערכת</td><td>Orbia</td><td><span class="tag t-bench">benchmark בלבד</span></td><td>—</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="irr-note">ממצא (שלילי) מרכזי: לא זוהה יצרן ישראלי עצמאי של משאבות מינון מלבד תפן / MixRite. השחקן הישראלי המרכזי לבדיקה בקטגוריה זו הוא Tefen / MixRite / נחשולים.</p>
 
-            <tr class="cat-row"><td colspan="9">G · צנרת / fittings / טפטוף / emitters</td></tr>
-            <tr><td style="font-weight:700;color:var(--navy);">Plasson (פלסאון)</td><td>חקלאות + גינון</td><td>Fittings, couplings, צנרת</td><td>יצרן</td><td>קיבוץ מעגן מיכאל; רכשה את Galcon — בעלת השליטה בה</td><td>ציבורית</td><td><span class="tag t-bench">benchmark בלבד</span></td><td>חשובה בעיקר דרך זיקת Galcon; הרחבת סל — נמוכה</td><td><span class="conf" style="color:var(--teal);">●</span></td></tr>
-            <tr><td style="font-weight:700;color:var(--navy);">Metzerplas (מצרפלס)</td><td>חקלאות</td><td>צנרת / טפטוף</td><td>יצרן</td><td>ישראלית עצמאית</td><td>לא פומבי</td><td><span class="tag t-bench">benchmark בלבד</span></td><td>חפיפה נמוכה</td><td><span class="conf" style="color:var(--amber);">◐</span></td></tr>
-            <tr><td style="font-weight:700;color:var(--navy);">Netafim (נטפים)</td><td>חקלאות</td><td>טפטוף + ספק מערכת</td><td>יצרן + אינטגרטור</td><td>Orbia (2018)</td><td>בתוך קבוצה</td><td><span class="tag t-bench">benchmark בלבד</span><span class="tag t-customer">לקוח</span></td><td>לקוח פוטנציאלי לרכיבים</td><td><span class="conf" style="color:var(--teal);">●</span></td></tr>
-            <tr><td style="font-weight:700;color:var(--navy);">NaanDanJain (נען דן ג'יין)</td><td>חקלאות</td><td>ממטרות / מיקרו-השקיה</td><td>יצרן + ספק מערכת</td><td>חלק מקבוצת Jain; פעילות ההשקיה הבינלאומית של Jain מוזגה עם Rivulis (בשליטת Temasek / Mitsui) — מבנה שליטה עדכני לאימות</td><td>בתוך קבוצה</td><td><span class="tag t-bench">benchmark בלבד</span></td><td>מבנה שליטה עדכני</td><td><span class="conf" style="color:var(--amber);">◐</span></td></tr>
-            <tr><td style="font-weight:700;color:var(--navy);">Rivulis (ריבוליס)</td><td>חקלאות</td><td>טפטוף / מיקרו</td><td>יצרן + ספק מערכת</td><td>Temasek / Mitsui (+ מיזוג פעילות Jain)</td><td>בתוך קבוצה</td><td><span class="tag t-bench">benchmark בלבד</span></td><td>—</td><td><span class="conf" style="color:var(--teal);">●</span></td></tr>
-            <tr><td style="font-weight:700;color:var(--navy);">Tefen (תפן)</td><td>חקלאות</td><td>Fittings / flow products</td><td>יצרן</td><td>ראו קטגוריה E</td><td>לא פומבי</td><td><span class="tag t-partner">שותף אפשרי</span></td><td>ראו קטגוריה E</td><td><span class="conf" style="color:var(--amber);">◐</span></td></tr>
+      <h4 class="irr-h4" style="margin-top:1.75rem;">F · סינון</h4>
+      <div class="irr-wrap">
+        <table class="irr-table">
+          <thead><tr><th>שחקן</th><th>סגמנט</th><th>מוצר / פעילות</th><th>תפקיד בשרשרת</th><th>בעלות / קבוצה</th><th>רלוונטיות לבקרה</th><th>פער מידע / הערה</th></tr></thead>
+          <tbody>
+            <tr><td style="font-weight:700;color:var(--navy);">Amiad (עמיעד)</td><td>חקלאות + מים + תעשייה</td><td>שחקן ישראלי מרכזי בסינון מים</td><td>יצרן</td><td>בבעלות קרן / גוף PE — לאימות עדכני</td><td><span class="tag t-partner">שותף אפשרי</span><span class="tag t-bench">benchmark בלבד</span></td><td>מבנה בעלות עדכני</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="irr-note">תקדים bundle חשוב (נתון פנימי / לפי הנהלת בקרה גבע): לנטפים הסכם בלעדיות היסטורי עם עמיעד על מערכות סינון מסוימות בפרויקטים הגדולים — הוכחה שמודל "רכיב משלים דרך שחקן מערכת" עובד בשוק הזה.</p>
 
-            <tr class="cat-row"><td colspan="9">H · מפיצים / חברות סחר / נציגויות / קבלנים</td></tr>
-            <tr><td style="font-weight:700;color:var(--navy);">קמחי חקלאות</td><td>חקלאות</td><td>חברת סחר / מפיץ סיטונאי</td><td>מפיץ</td><td>פרטית</td><td>אין P&amp;L ציבורי</td><td><span class="tag t-channel">ערוץ הפצה</span><span class="tag t-customer">לקוח</span></td><td>אין P&amp;L ציבורי</td><td><span class="conf" style="color:var(--gray-light);">○</span></td></tr>
-            <tr><td style="font-weight:700;color:var(--navy);">שר-גל</td><td>חקלאות + גינון</td><td>חברת סחר / מפיץ</td><td>מפיץ</td><td>פרטית</td><td>אין P&amp;L ציבורי</td><td><span class="tag t-channel">ערוץ הפצה</span><span class="tag t-customer">לקוח</span></td><td>אין P&amp;L ציבורי</td><td><span class="conf" style="color:var(--gray-light);">○</span></td></tr>
-            <tr><td style="font-weight:700;color:var(--navy);">Eldar Shany (אלדר שני)</td><td>גינון בעיקר</td><td>יבואן + מפיץ ציוד גינון והשקיה</td><td>יבואן / מפיץ</td><td>פרטית</td><td>לא פומבי</td><td><span class="tag t-channel">ערוץ הפצה</span><span class="tag t-gap">פער מידע</span></td><td>היקף, עצמאות, תיק מותגים</td><td><span class="conf" style="color:var(--gray-light);">○</span></td></tr>
-            <tr><td style="font-weight:700;color:var(--navy);">ACE / Home Center</td><td>גינון — DIY</td><td>קמעונאות</td><td>קמעונאי</td><td>רשתות</td><td>—</td><td><span class="tag t-customer">לקוח</span></td><td>לקוח ערוצי בלבד</td><td><span class="conf" style="color:var(--teal);">●</span></td></tr>
-            <tr><td style="font-weight:700;color:var(--navy);">אלגו (Elgo) ומותגי ייבוא-ואריזה לגינון ביתי</td><td>גינון</td><td>ייבוא קומפוננטות (בקרים, ברזים), אריזה ומכירה לשוק הישראלי — מהמובילים בפלח הגינון הביתי (לפי הנהלת בקרה)</td><td>יבואן / מותג</td><td>פרטית</td><td>לא פומבי</td><td><span class="tag t-comp">מתחרה</span><span class="tag t-bench">benchmark בלבד</span></td><td>שמות מלאים של יתר השחקנים בפלח, היקפים</td><td><span class="conf" style="color:var(--gray-light);">○</span></td></tr>
-            <tr><td style="font-weight:700;color:var(--navy);">קבלני השקיה / קבלני גינון</td><td>חקלאות / גינון</td><td>שומרי סף וערוץ השפעה — קטגוריה, לא שחקן יחיד</td><td>קבלן / מתקין</td><td>—</td><td>—</td><td><span class="tag t-channel">ערוץ הפצה</span></td><td>אין רשימת קבלנים מרכזיים</td><td><span class="conf" style="color:var(--gray-light);">○</span></td></tr>
-            <tr><td style="font-weight:700;color:var(--navy);">טל-גיא, מי-גן, צמח-גד, כ.נ.ח.</td><td>—</td><td>חברות סחר קטנות</td><td>מפיץ</td><td>פרטיות</td><td>לא פומבי</td><td><span class="tag t-gap">פער מידע</span></td><td>כיוון בדיקה בלבד — פחות מ-3 מקורות, ספקולטיבי</td><td><span class="conf" style="color:var(--gray-light);">○</span></td></tr>
+      <h4 class="irr-h4" style="margin-top:1.75rem;">G · צנרת / fittings / טפטוף / emitters</h4>
+      <div class="irr-wrap">
+        <table class="irr-table">
+          <thead><tr><th>שחקן</th><th>סגמנט</th><th>מוצר / פעילות</th><th>תפקיד בשרשרת</th><th>בעלות / קבוצה</th><th>רלוונטיות לבקרה</th><th>פער מידע / הערה</th></tr></thead>
+          <tbody>
+            <tr><td style="font-weight:700;color:var(--navy);">Plasson (פלסאון)</td><td>חקלאות + גינון</td><td>Fittings, couplings, צנרת</td><td>יצרן</td><td>קיבוץ מעגן מיכאל; בעלת השליטה ב-Galcon</td><td><span class="tag t-bench">benchmark בלבד</span></td><td>חשובה בעיקר דרך זיקת Galcon; הרחבת סל — נמוכה</td></tr>
+            <tr><td style="font-weight:700;color:var(--navy);">Metzerplas (מצרפלס)</td><td>חקלאות</td><td>צנרת / טפטוף</td><td>יצרן</td><td>ישראלית עצמאית</td><td><span class="tag t-bench">benchmark בלבד</span></td><td>חפיפה נמוכה</td></tr>
+            <tr><td style="font-weight:700;color:var(--navy);">Netafim (נטפים)</td><td>חקלאות</td><td>טפטוף + ספק מערכת</td><td>יצרן + אינטגרטור</td><td>Orbia (2018)</td><td><span class="tag t-bench">benchmark בלבד</span><span class="tag t-customer">לקוח</span></td><td>לקוח פוטנציאלי לרכיבים</td></tr>
+            <tr><td style="font-weight:700;color:var(--navy);">NaanDanJain (נען דן ג'יין)</td><td>חקלאות</td><td>ממטרות / מיקרו-השקיה</td><td>יצרן + ספק מערכת</td><td>חלק מקבוצת Jain; פעילות ההשקיה הבינלאומית מוזגה עם Rivulis (בשליטת Temasek / Mitsui) — מבנה שליטה עדכני לאימות</td><td><span class="tag t-bench">benchmark בלבד</span></td><td>מבנה שליטה עדכני</td></tr>
+            <tr><td style="font-weight:700;color:var(--navy);">Rivulis (ריבוליס)</td><td>חקלאות</td><td>טפטוף / מיקרו</td><td>יצרן + ספק מערכת</td><td>Temasek / Mitsui (+ מיזוג פעילות Jain)</td><td><span class="tag t-bench">benchmark בלבד</span></td><td>—</td></tr>
+            <tr><td style="font-weight:700;color:var(--navy);">Tefen (תפן)</td><td>חקלאות</td><td>Fittings / flow products</td><td>יצרן</td><td>ראו קטגוריה E</td><td><span class="tag t-partner">שותף אפשרי</span></td><td>ראו קטגוריה E</td></tr>
+            <tr><td style="font-weight:700;color:var(--navy);">Sagiv (שגיב)</td><td>תעשייה / מים / השקיה</td><td>חברה ישראלית בתחום ball valves, fittings ואביזרי זרימה — רלוונטית להבנת שכבת המגופים הפשוטים / fittings / אביזרי מערכת, אך אינה ליבת בקרה גבע</td><td>יצרן</td><td>ישראלית</td><td><span class="tag t-bench">אקוסיסטם / benchmark</span></td><td>האם קיימת פעילות משמעותית בערוצי השקיה בישראל, או שהפעילות רחבה יותר לתעשייה / מים / אינסטלציה</td></tr>
+            <tr><td style="font-weight:700;color:var(--navy);">Plas-Fit (פלס-פיט)</td><td>מים / השקיה / גינון / תשתיות</td><td>יצרנית ישראלית של מחברי PE / compression fittings ואביזרי צנרת למערכות מים, השקיה, גינון ותשתיות — רלוונטית להבנת שכבת ה-fittings והחיבור הפיזי, אך רחוקה מליבת בקרה גבע</td><td>יצרן</td><td>ישראלית</td><td><span class="tag t-bench">אקוסיסטם / benchmark</span></td><td>האם קיימת פעילות משמעותית מול ערוצי השקיה חקלאית בישראל, או בעיקר fittings לתשתיות / גינון / מים</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="irr-note">Sagiv ו-Plas-Fit מוצגים כשחקני אקוסיסטם / benchmark בשכבת ה-fittings ואביזרי הצנרת בלבד — לא כשחקני ליבה ולא כחלק מקטגוריית המגופים / שסתומי הבקרה המרכזית.</p>
 
-            <tr class="cat-row"><td colspan="9">I · אינטגרטורים / ספקי מערכת</td></tr>
-            <tr><td style="font-weight:700;color:var(--navy);">Netafim (נטפים)</td><td>חקלאות</td><td>ספק פתרון / אינטגרטור פרויקטים — הייצור העיקרי טפטוף, אך בפועל אינטגרטור, בעבר אף כולל מימון ללקוחות (לפי הנהלת בקרה)</td><td>אינטגרטור</td><td>Orbia</td><td>בתוך קבוצה</td><td><span class="tag t-bench">benchmark בלבד</span><span class="tag t-customer">לקוח</span></td><td>—</td><td><span class="conf" style="color:var(--teal);">●</span></td></tr>
-            <tr><td style="font-weight:700;color:var(--navy);">Rivulis, NaanDanJain</td><td>חקלאות</td><td>ספקי מערכת גלובליים / ישראל-רלוונטיים</td><td>אינטגרטור</td><td>ראו קטגוריה G</td><td>בתוך קבוצה</td><td><span class="tag t-bench">benchmark בלבד</span></td><td>—</td><td><span class="conf" style="color:var(--amber);">◐</span></td></tr>
-            <tr><td style="font-weight:700;color:var(--navy);">Bermad (ברמד)</td><td>חקלאות + תשתיות</td><td>שחקן מערכת / פתרונות flow-control בחלק מהיישומים — לא EPC כללי</td><td>שחקן מערכת</td><td>ראו קטגוריה B</td><td>לא פומבי</td><td><span class="tag t-partner">שותף אפשרי</span></td><td>ראו קטגוריה B</td><td><span class="conf" style="color:var(--amber);">◐</span></td></tr>
+      <h4 class="irr-h4" style="margin-top:1.75rem;">H · מפיצים / סחר / נציגויות / ערוצי הפצה</h4>
+      <div class="irr-wrap">
+        <table class="irr-table">
+          <thead><tr><th>שחקן</th><th>סגמנט</th><th>מוצר / פעילות</th><th>תפקיד בשרשרת</th><th>בעלות / קבוצה</th><th>רלוונטיות לבקרה</th><th>פער מידע / הערה</th></tr></thead>
+          <tbody>
+            <tr><td style="font-weight:700;color:var(--navy);">קמחי חקלאות</td><td>חקלאות</td><td>חברת סחר ומפיץ סיטונאי לציוד חקלאי והשקיה; קטגוריות המוצר המופצות — רכיבי השקיה, צנרת ואביזרים (פירוט מלא דורש אימות)</td><td>מפיץ</td><td>פרטית</td><td><span class="tag t-channel">ערוץ הפצה</span><span class="tag t-customer">לקוח</span><span class="tag t-partner">שותף אפשרי</span></td><td>מותגים / נציגויות — דורש אימות; אין P&amp;L ציבורי</td></tr>
+            <tr><td style="font-weight:700;color:var(--navy);">שר-גל</td><td>חקלאות + גינון</td><td>חברת סחר ומפיץ לציוד השקיה וגינון בשני הסגמנטים; קטגוריות המוצר המופצות — פירוט דורש אימות</td><td>מפיץ</td><td>פרטית</td><td><span class="tag t-channel">ערוץ הפצה</span><span class="tag t-customer">לקוח</span><span class="tag t-partner">שותף אפשרי</span></td><td>מותגים / נציגויות — דורש אימות; אין P&amp;L ציבורי</td></tr>
+            <tr><td style="font-weight:700;color:var(--navy);">Eldar Shany (אלדר שני)</td><td>גינון בעיקר</td><td>יבואן ומפיץ ציוד גינון והשקיה לשוק המקצועי והקמעונאי; קטגוריות — בקרים, אביזרי השקיה וציוד גינון (פירוט דורש אימות)</td><td>יבואן / מפיץ</td><td>פרטית</td><td><span class="tag t-channel">ערוץ הפצה</span><span class="tag t-gap">פער מידע</span></td><td>מותגים / נציגויות — דורש אימות; היקף ועצמאות</td></tr>
+            <tr><td style="font-weight:700;color:var(--navy);">אלגו (Elgo) ומותגי ייבוא-ואריזה לגינון ביתי</td><td>גינון</td><td>ייבוא קומפוננטות (בקרים, ברזים), אריזה ומכירה לשוק הישראלי — מהמובילים בפלח הגינון הביתי (נתון פנימי / לפי הנהלת בקרה גבע)</td><td>יבואן / מותג</td><td>פרטית</td><td><span class="tag t-comp">מתחרה</span><span class="tag t-bench">benchmark בלבד</span></td><td>שמות מלאים של יתר השחקנים בפלח, היקפים</td></tr>
+            <tr><td style="font-weight:700;color:var(--navy);">משתלות / חנויות מתמחות</td><td>גינון</td><td>קטגוריית ערוץ — הפצה קמעונאית ומקצועית של מוצרי השקיה לגינון; לא שחקן יחיד</td><td>קמעונאות / ערוץ</td><td>—</td><td><span class="tag t-channel">ערוץ הפצה</span></td><td>מיפוי הערוץ — ברמת קטגוריה בלבד</td></tr>
+            <tr><td style="font-weight:700;color:var(--navy);">קבלני השקיה / קבלני גינון</td><td>חקלאות / גינון</td><td>שומרי סף וערוץ השפעה — קטגוריה, לא שחקן יחיד</td><td>קבלן / מתקין</td><td>—</td><td><span class="tag t-channel">ערוץ הפצה</span></td><td>אין רשימת קבלנים מרכזיים</td></tr>
+            <tr><td style="font-weight:700;color:var(--navy);">טל-גיא, מי-גן, צמח-גד, כ.נ.ח.</td><td>—</td><td>חברות סחר קטנות</td><td>מפיץ</td><td>פרטיות</td><td><span class="tag t-gap">פער מידע</span></td><td>כיוון בדיקה בלבד — ספקולטיבי</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="irr-note">חברות הפצה וסחר אינן מוצגות כיעדי בדיקה אוטומטיים לרכישה. ברירת המחדל: ערוץ הפצה / לקוח / שותף אפשרי / פער מידע.</p>
+
+      <h4 class="irr-h4" style="margin-top:1.75rem;">I · אינטגרטורים / ספקי מערכת</h4>
+      <div class="irr-wrap">
+        <table class="irr-table">
+          <thead><tr><th>שחקן</th><th>סגמנט</th><th>מוצר / פעילות</th><th>תפקיד בשרשרת</th><th>בעלות / קבוצה</th><th>רלוונטיות לבקרה</th><th>פער מידע / הערה</th></tr></thead>
+          <tbody>
+            <tr><td style="font-weight:700;color:var(--navy);">Netafim (נטפים)</td><td>חקלאות</td><td>ספק פתרון / אינטגרטור פרויקטים — הייצור העיקרי טפטוף, אך בפועל אינטגרטור, בעבר אף כולל מימון ללקוחות (נתון פנימי / לפי הנהלת בקרה גבע)</td><td>אינטגרטור</td><td>Orbia</td><td><span class="tag t-bench">benchmark בלבד</span><span class="tag t-customer">לקוח</span></td><td>—</td></tr>
+            <tr><td style="font-weight:700;color:var(--navy);">Rivulis, NaanDanJain</td><td>חקלאות</td><td>ספקי מערכת גלובליים / ישראל-רלוונטיים</td><td>אינטגרטור</td><td>ראו קטגוריה G</td><td><span class="tag t-bench">benchmark בלבד</span></td><td>—</td></tr>
+            <tr><td style="font-weight:700;color:var(--navy);">Bermad (ברמד)</td><td>חקלאות + תשתיות</td><td>שחקן מערכת / פתרונות בקרת זרימה בחלק מהיישומים — לא EPC כללי</td><td>שחקן מערכת</td><td>ראו קטגוריה B</td><td><span class="tag t-partner">שותף אפשרי</span></td><td>ראו קטגוריה B</td></tr>
           </tbody>
         </table>
       </div>
@@ -1785,54 +1979,71 @@
 
     <div class="slide-divider" style="margin:0 0 2.5rem;"></div>
 
-    <!-- ═══ 7. מיצוב בקרה גבע ═══ -->
-    <div id="irrigation-7" class="irr-block">
-      <div class="section-eyebrow">מיצוב בקרה גבע</div>
-      <h3 class="irr-h3">מיצוב בקרה גבע לפי מוצר</h3>
-      <p class="irr-sub">נוכחות מלאה בסולנואידים, סל מצומצם במגופים, ושכבות שטרם זוהתה בהן פעילות.</p>
-      <div class="irr-wrap">
-        <table class="irr-table">
-          <thead><tr><th>קטגוריה</th><th>נוכחות בקרה כיום</th><th>חקלאות / גינון</th><th>נתון מכירות / חשיפה</th><th>קרבה לליבה</th><th>מה חסר</th><th>אפקט מיידי אפשרי</th><th>ביטחון</th></tr></thead>
-          <tbody>
-            <tr><td style="font-weight:700;color:var(--navy);">סולנואידים / רכיבי הפעלה</td><td>כן — ליבה</td><td>כ-90% חקלאות / כ-10% גינון (נתון פנימי)</td><td>[יושלם ידנית — נתוני בקרה]</td><td>ליבת בקרה</td><td>פילוח מכירות לפי ערוץ ולקוח</td><td>חיזוק ערוצים, הרחבת שימוש, bundle עם משלימים</td><td><span class="conf" style="color:var(--teal);">●</span></td></tr>
-            <tr><td style="font-weight:700;color:var(--navy);">מגופים / שסתומי בקרה</td><td>נוכחות קיימת — סל מצומצם בייצור עצמי, &#190;"–2"; הקטנים (&#190;"–1") לגינון, 1.5"–2" לחקלאות (לפי הנהלת בקרה)</td><td>חקלאות + גינון לפי גודל</td><td>[יושלם ידנית — נתוני בקרה]</td><td>שכבה סמוכה לליבה</td><td>נתוני מכירות, פילוח ערוצים</td><td>הרחבת סל על בסיס נוכחות קיימת — לבדיקה</td><td>נוכחות <span class="conf" style="color:var(--teal);">●</span> / היקף <span class="conf" style="color:var(--gray-light);">○</span></td></tr>
-            <tr><td style="font-weight:700;color:var(--navy);">בקרים / timers</td><td>לא זוהתה פעילות בחומרים שסופקו / יושלם ידנית</td><td>—</td><td>[יושלם ידנית — נתוני בקרה]</td><td>שכבת השלמת סל</td><td>אימות נוכחות; שאלת ה-bundle</td><td>תלוי אימות — השערת עבודה בלבד</td><td><span class="conf" style="color:var(--gray-light);">○</span></td></tr>
-            <tr><td style="font-weight:700;color:var(--navy);">IoT / ניהול</td><td>לא זוהתה פעילות בחומרים שסופקו / יושלם ידנית</td><td>—</td><td>[יושלם ידנית — נתוני בקרה]</td><td>שכבת השלמת סל</td><td>אימות נוכחות</td><td>תלוי אימות</td><td><span class="conf" style="color:var(--gray-light);">○</span></td></tr>
-            <tr><td style="font-weight:700;color:var(--navy);">Fertigation / דישון</td><td>לא זוהתה פעילות בחומרים שסופקו / יושלם ידנית</td><td>—</td><td>[יושלם ידנית — נתוני בקרה]</td><td>שכבת השלמת סל</td><td>אימות נוכחות; מיפוי נציגויות</td><td>תלוי אימות</td><td><span class="conf" style="color:var(--gray-light);">○</span></td></tr>
-            <tr><td style="font-weight:700;color:var(--navy);">סינון</td><td>לא זוהתה פעילות בחומרים שסופקו / יושלם ידנית</td><td>—</td><td>[יושלם ידנית — נתוני בקרה]</td><td>שכבת השלמת סל</td><td>אימות נוכחות</td><td>תלוי אימות</td><td><span class="conf" style="color:var(--gray-light);">○</span></td></tr>
-            <tr><td style="font-weight:700;color:var(--navy);">Fittings / צנרת / טפטוף</td><td>רחוק מהליבה</td><td>—</td><td>—</td><td>שכבת השלמת סל</td><td>—</td><td>נמוך</td><td><span class="conf" style="color:var(--amber);">◐</span></td></tr>
-            <tr><td style="font-weight:700;color:var(--navy);">ערוצי הפצה (קמחי / שר-גל / Eldar Shany / קבלנים)</td><td>[יושלם ידנית — נתוני בקרה]</td><td>—</td><td>[יושלם ידנית — נתוני בקרה]</td><td>שכבת GTM</td><td>מיפוי ערוצי המכירה הנוכחיים של בקרה</td><td>גבוה אם קיימים ערוצים פעילים — לאימות</td><td><span class="conf" style="color:var(--gray-light);">○</span></td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <div class="slide-divider" style="margin:0 0 2.5rem;"></div>
-
-    <!-- ═══ 8. גודל שוק ואינדיקציות ═══ -->
+    <!-- ═══ 8. אינדיקציות לגודל שוק ═══ -->
     <div id="irrigation-8" class="irr-block">
-      <div class="section-eyebrow">גודל שוק ואינדיקציות</div>
-      <h3 class="irr-h3">גודל שוק ואינדיקציות לפי קטגוריה וסגמנט</h3>
-      <p class="irr-sub">יש אינדיקציות נקודתיות בעיקר בבקרי גינון — אבל אין כיום sizing פומבי מלא לכל שוק ציוד ההשקיה בישראל לפי קטגוריה. הטבלה מפרידה במפורש בין נתון ישראלי, אומדן ישראלי, benchmark גלובלי ופער מידע.</p>
+      <div class="section-eyebrow">אינדיקציות לגודל שוק</div>
+      <h3 class="irr-h3">אינדיקציות לגודל שוק</h3>
+      <p class="irr-sub">אינדיקציות כמותיות קצרות עבור קטגוריות המוצר שעלו בניתוח השחקנים — לא TAM מלא ולא sizing של כל שוק ההשקיה בישראל.</p>
       <div class="irr-wrap">
         <table class="irr-table">
-          <thead><tr><th>קטגוריה</th><th>סגמנט</th><th>נתון / אינדיקציה</th><th>ישראלי או גלובלי</th><th>מה זה אומר</th><th>ביטחון</th></tr></thead>
+          <thead><tr><th>קטגוריה</th><th>נתון</th><th>ישראלי או גלובלי</th><th>מה זה אומר / משמעות עבור בקרה גבע</th></tr></thead>
           <tbody>
-            <tr><td style="font-weight:700;color:var(--navy);">בקרי גינון בישראל — כמות</td><td>גינון / נוף / פרטי</td><td>כ-80 אלף בקרים בשנה</td><td>ישראלי — אומדן לפי מצגת גלקון-פלסאון / BDO</td><td>אחד המקומות היחידים עם אומדן ישראלי קונקרטי יחסית</td><td><span class="conf" style="color:var(--amber);">◐</span> אומדן / לאימות</td></tr>
-            <tr><td style="font-weight:700;color:var(--navy);">שוק בקרי גינון בישראל — גודל כספי</td><td>גינון / נוף / פרטי</td><td>כ-21–27 מ' ₪ בשנים 2020–2023; סביב 25 מ' ₪ ב-2023</td><td>ישראלי — לפי מצגת גלקון-פלסאון / BDO</td><td>מתייחס לבקרי גינון בלבד — לא לכל שוק ציוד ההשקיה</td><td><span class="conf" style="color:var(--amber);">◐</span> אומדן / לאימות</td></tr>
-            <tr><td style="font-weight:700;color:var(--navy);">Smart Irrigation עולמי — חקלאות</td><td>Smart Irrigation — גלובלי</td><td>מעל 64.2% מהשוק ב-2024</td><td>גלובלי</td><td>חקלאות היא פלח משמעותי ואף מוביל לפי מקור עדכני יותר; אינו נתון ישראלי ואינו חלוקת שוק ציוד השקיה בישראל</td><td><span class="conf" style="color:var(--amber);">◐</span> benchmark גלובלי</td></tr>
-            <tr><td style="font-weight:700;color:var(--navy);">שוק בקרי השקיה עולמי — benchmark ישן</td><td>בקרים — גלובלי</td><td>כ-64% גינון / כ-36% חקלאות</td><td>גלובלי, מקור ישן</td><td>ממחיש שבשוק הבקרים יש גם משקל משמעותי לגינון, אך המקור ישן ואינו בר השוואה ישירה ל-Smart Irrigation</td><td><span class="conf" style="color:var(--gray-light);">○</span> מקור ישן / להיזהר בשימוש</td></tr>
-            <tr><td style="font-weight:700;color:var(--navy);">Controllers + smart valves בישראל</td><td>בקרים / שסתומים חכמים</td><td>כ-60–80 מ' ₪</td><td>ישראלי — אומדן ראשוני בביטחון נמוך</td><td>אינדיקציה בלבד לשכבת בקרה / שסתומים חכמים; לא TAM של כל שוק ההשקיה</td><td><span class="conf" style="color:var(--gray-light);">○</span> אומדן נמוך ביטחון</td></tr>
-            <tr><td style="font-weight:700;color:var(--navy);">סולנואידים / רכיבי הפעלה בישראל</td><td>חקלאות + גינון</td><td>לא זמין במקורות פומביים</td><td>—</td><td>נדרש נתון פנימי של בקרה + ראיונות מפיצים / שחקנים</td><td><span class="conf" style="color:var(--gray-light);">○</span> פער מידע</td></tr>
-            <tr><td style="font-weight:700;color:var(--navy);">מגופים / שסתומי בקרה / flow-control</td><td>חקלאות / מים / תשתיות</td><td>לא זמין במקורות פומביים</td><td>—</td><td>קרוב לליבת בקרה אך חסר sizing</td><td><span class="conf" style="color:var(--gray-light);">○</span> פער מידע</td></tr>
-            <tr><td style="font-weight:700;color:var(--navy);">Fertigation / דישון / משאבות מינון</td><td>בעיקר חקלאות מקצועית</td><td>לא זמין במקורות פומביים בישראל</td><td>—</td><td>מוצר משלים לבדיקה; לזהות מפיצים ונציגויות</td><td><span class="conf" style="color:var(--gray-light);">○</span> פער מידע</td></tr>
-            <tr><td style="font-weight:700;color:var(--navy);">סינון</td><td>חקלאות / מים / תעשייה</td><td>לא זמין במקורות פומביים לפי קטגוריה</td><td>—</td><td>מוצר משלים רחוק יותר מליבת בקרה</td><td><span class="conf" style="color:var(--gray-light);">○</span> פער מידע</td></tr>
-            <tr><td style="font-weight:700;color:var(--navy);">טפטוף / צנרת / fittings / ממטרות</td><td>חקלאות + גינון</td><td>אין sizing מאוחד מתוך החומרים</td><td>—</td><td>חשוב להבנת האקוסיסטם, אך ברובו רחוק יותר מליבת בקרה</td><td><span class="conf" style="color:var(--gray-light);">○</span> פער מידע</td></tr>
+            <tr><td style="font-weight:700;color:var(--navy);">A · סולנואידים</td><td>אין sizing פומבי אמין לסולנואידים להשקיה בישראל</td><td>—</td><td>זו ליבת בקרה גבע — המידע צריך להגיע מנתוני בקרה פנימיים וראיונות שוק, לא מנתון שוק כללי לא קשור.</td></tr>
+            <tr><td style="font-weight:700;color:var(--navy);">B · מגופים / שסתומי בקרה</td><td>אין נתון אמין לשוק מגופי / שסתומי השקיה בישראל</td><td>—</td><td>שכבה סמוכה לליבה, רלוונטית דרך שחקנים כמו Bermad / Aquestia / Raphael Valves — נדרש אימות שוק ולא נתון כללי של בקרת זרימה.</td></tr>
+            <tr><td style="font-weight:700;color:var(--navy);">C · בקרים / Timers / IoT</td><td>כ-80 אלף בקרי גינון בשנה<br>כ-21–27 מ' ₪ בשנים 2020–2023; סביב 25 מ' ₪ ב-2023</td><td>ישראלי — אומדן ממקור קודם / מצגת קודמת, דורש אימות עדכני</td><td>רלוונטי בעיקר להבנת שוק הבקרים בגינון ו-Galcon. המשמעות הישירה לבקרה מוגבלת — Galcon חזקה מאוד בתחום ונמצאת תחת Plasson. אינדיקציה לשכבת בקרים / גינון, לא בהכרח הזדמנות ישירה.</td></tr>
+            <tr><td style="font-weight:700;color:var(--navy);">D · חיישנים / דאטה / מוני מים</td><td>לא אותר נתון שוק ממוקד הרלוונטי לשחקנים שנבדקו</td><td>—</td><td>הקטגוריה רלוונטית להבנת SupPlant, CropX, Phytech, Saturas ו-Arad. לגבי Arad — זו קטגוריית מוני מים / מדידת מים / טלמטריה, לא חיישני השקיה. פער מידע.</td></tr>
+            <tr><td style="font-weight:700;color:var(--navy);">E · דישון / Fertigation / משאבות מינון</td><td>לא אותר נתון ממוקד לשוק ציוד fertigation / dosing בישראל</td><td>—</td><td>רלוונטי בעיקר סביב Tefen / MixRite / Dosatron / Irritec כשכבת מוצר משלימה — לא כליבת בקרה. פער מידע.</td></tr>
+            <tr><td style="font-weight:700;color:var(--navy);">F · סינון</td><td>לא אותר נתון ממוקד לשוק סינון השקיה (להבדיל מסינון מים כללי)</td><td>—</td><td>רלוונטי להבנת Amiad ו-SI Irrigation Systems כשחקנים משלימים / שחקני מערכת — לא כליבה. פער מידע.</td></tr>
           </tbody>
         </table>
       </div>
-      <p class="irr-note">נדרש מקור עדכני או ראיון מומחה כדי לאמת את חלוקת הביקוש בין חקלאות לגינון בשוק הבקרים. שני מקורות ה-benchmark מודדים ככל הנראה שווקים שונים — Smart Irrigation לעומת בקרי השקיה / controllers — ואין ליישב ביניהם בכוח. מקורות עדכניים נוספים מציגים תמונה מעורבת (SNS Insider 2025: חקלאות כ-35% ב-2023; Mordor Intelligence 2025: חקלאות כ-62% ב-2024; Market.us: חקלאות 64.2%) — ההבדלים נובעים מהגדרת השוק.</p>
-      <div class="irr-sowhat">אז מה: המידע הכמותי הזמין כיום חזק יותר סביב בקרי גינון מאשר סביב שאר קטגוריות ציוד ההשקיה. לכן הפרק אינו מציג גודל שוק כולל אחד, אלא אינדיקציות לפי קטגוריה וסגמנט, לצד פערי מידע להשלמה בראיונות ובנתוני בקרה.</div>
+      <p class="irr-note">הטבלה מציגה אינדיקציות בלבד, ולא sizing מלא של שוק ההשקיה בישראל. רוב הנתונים הזמינים הם נקודתיים או גלובליים, ולכן הם משמשים להבנת סדרי גודל וכיווני בדיקה בלבד. אין להסיק מהם גודל הזדמנות ישיר לבקרה גבע ללא אימות בנתוני חברה וראיונות שוק.</p>
+    </div>
+
+    <div class="slide-divider" style="margin:0 0 2.5rem;"></div>
+
+    <!-- ═══ 8ב. מפת מוצרי השקיה — התאמה לליבה מול אפקט מיידי ═══ -->
+    <div id="irrigation-8b" class="irr-block">
+      <div class="section-eyebrow">מיצוב קטגוריות מוצר</div>
+      <h3 class="irr-h3">מפת מוצרי השקיה — התאמה לליבה מול אפקט מיידי</h3>
+      <p class="irr-sub">המפה מציגה אינדיקציה ראשונית בלבד למיקום קטגוריות מוצר בזירת ההשקיה ביחס לליבת בקרה גבע ולפוטנציאל אפקט חיובי קצר-טווח. המיקום יתעדכן לאחר השלמת נתוני בקרה, ראיונות שוק ואימות השחקנים.</p>
+
+      <div class="outer-matrix-wrap">
+        <div class="y-axis-label">אפקט חיובי מיידי פוטנציאלי על בקרה גבע ↑</div>
+        <div class="matrix-grid-2x2">
+          <div class="matrix-cell-2x2 top-right" style="order:1">
+            <div class="matrix-quadrant-label">התאמה גבוהה · אפקט מיידי גבוה-בינוני</div>
+            <div class="arena-dot priority">סולנואידים</div>
+            <div class="arena-dot conditional">מגופים / שסתומי בקרה</div>
+          </div>
+          <div class="matrix-cell-2x2 top-left" style="order:2">
+            <div class="matrix-quadrant-label">התאמה בינונית-נמוכה · אפקט מיידי בינוני</div>
+            <div class="arena-dot conditional">IoT / ניהול מרחוק</div>
+            <div class="arena-dot conditional">מוני מים / טלמטריה</div>
+          </div>
+          <div class="matrix-cell-2x2 bottom-right" style="order:3">
+            <div class="matrix-quadrant-label">התאמה בינונית · אפקט מיידי בינוני</div>
+            <div class="arena-dot conditional">בקרים / Timers</div>
+            <div class="arena-dot conditional">דישון / Fertigation</div>
+          </div>
+          <div class="matrix-cell-2x2 bottom-left" style="order:4">
+            <div class="matrix-quadrant-label">התאמה נמוכה · אפקט מיידי נמוך</div>
+            <div class="arena-dot low">חיישנים / דאטה</div>
+            <div class="arena-dot low">סינון</div>
+            <div class="arena-dot low">צנרת / fittings</div>
+            <div class="arena-dot low">טפטפות / emitters</div>
+          </div>
+        </div>
+        <div class="matrix-axis-x">← התאמה לליבת בקרה גבע →</div>
+      </div>
+
+      <div style="display:flex;gap:1rem;justify-content:center;margin-top:1.5rem;flex-wrap:wrap;font-size:0.75rem;font-weight:600;">
+        <div style="display:flex;align-items:center;gap:0.4rem;color:var(--teal);"><div style="width:11px;height:11px;border-radius:50%;background:var(--teal);"></div> ליבה — סולנואידים</div>
+        <div style="display:flex;align-items:center;gap:0.4rem;color:var(--amber);"><div style="width:11px;height:11px;border-radius:50%;background:var(--amber);"></div> שכבה סמוכה / הרחבה אפשרית — מגופים, בקרים, IoT, דישון, מוני מים</div>
+        <div style="display:flex;align-items:center;gap:0.4rem;color:var(--gray-mid);"><div style="width:11px;height:11px;border-radius:50%;background:var(--gray-light);"></div> אקוסיסטם / benchmark — סינון, חיישנים, צנרת, טפטפות</div>
+      </div>
+
+      <div class="irr-sowhat" style="margin-top:1.25rem;">הקרבה הגבוהה ביותר לליבת בקרה נמצאת בסולנואידים ובשכבת המגופים / שסתומי הבקרה. בקרים, IoT, דישון ומוני מים עשויים לייצר הרחבות אפשריות, אך דורשים אימות של יכולת מסחרית, ערוץ וגודל שוק. צנרת, fittings וטפטפות חשובים להבנת האקוסיסטם, אך אינם עומדים בליבת ההזדמנות עבור בקרה גבע.</div>
     </div>
 
     <div class="slide-divider" style="margin:0 0 2.5rem;"></div>
