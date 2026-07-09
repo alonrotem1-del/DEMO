@@ -962,6 +962,17 @@
     line-height: 1.6;
   }
   .irr-wrap { overflow-x: auto; }
+  /* Table A (automation) — sticky column headers; desktop only, mobile keeps horizontal scroll */
+  @media (min-width: 900px) {
+    .automation-table-a { overflow-x: visible; }
+    .automation-table-a .irr-table thead th {
+      position: sticky;
+      top: 54px; /* height of the fixed top nav */
+      z-index: 20;
+      background: var(--navy);
+      box-shadow: 0 1px 0 rgba(255,255,255,0.08);
+    }
+  }
   .irr-table {
     width: 100%;
     border-collapse: collapse;
@@ -2651,7 +2662,7 @@
 
       <h4 class="irr-h4" style="margin-top:1.75rem;">A · חברות סחר ישראליות</h4>
       <p class="irr-sub">חברות ישראליות שמוכרות סל מוצרים טכני, מחזיקות מותגים / נציגויות / לקוחות / מלאי / מכירה טכנית.</p>
-      <div class="irr-wrap">
+      <div class="irr-wrap automation-table-a">
         <table class="irr-table">
           <thead><tr><th>שחקן</th><th>פנאומטיקה</th><th>הינע ובקרה</th><th>קרוב למודל One Stop Shop</th><th>מותגים</th><th>קטגוריות מוצר</th><th>הכנסות / סדר גודל</th><th>רלוונטיות לבקרה</th><th>משמעות לבקרה</th></tr></thead>
           <tbody>
