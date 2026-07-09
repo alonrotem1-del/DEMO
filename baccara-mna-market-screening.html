@@ -1600,7 +1600,7 @@
         <div class="trend-card">
           <div class="trend-head"><div class="trend-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></svg></div><div class="trend-title">בקרים, timers, IoT וניהול מרחוק</div></div>
           <div class="trend-body">במערכות השקיה חכמות, הבקר הוא שכבת השליטה והאינטגרציה במערכת: הוא מתזמן, מקבל קלט מחיישנים, מפעיל אזורים ומחבר בין המשתמש לבין רכיבי השטח. שכבת התקשורת אינה סטנדרט אחד — בחירת פתרון תלויה בטווח, עלות, צריכת חשמל, אמינות, רגולציה וסוג יישום.</div>
-          <div class="trend-meaning"><strong>משמעות לבקרה גבע:</strong> עבור יצרן רכיב כמו בקרה גבע, השאלה אינה רק האם למכור רכיב טוב יותר, אלא האם ואיך להתחבר לשכבת הבקר / המערכת. שכבת הבקרים עשויה גם להימכר דרך גורמים מקצועיים שונים משכבת הסולנואידים — הרחבה לבקרים היא גם שינוי אפשרי בערוץ המכירה וביכולות הדרושות. שכבת בדיקה — לא מסקנה אסטרטגית.</div>
+          <div class="trend-meaning"><strong>משמעות לבקרה גבע:</strong> עבור יצרן רכיב כמו בקרה גבע, השאלה אינה רק האם למכור רכיב טוב יותר, אלא האם ואיך להתחבר לשכבת הבקר / המערכת. שכבת הבקרים עשויה גם להימכר דרך גורמים מקצועיים שונים משכבת הסולנואידים — הרחבה לבקרים היא גם שינוי אפשרי בערוץ המכירה וביכולות הדרושות. נושא רלוונטי לבדיקה.</div>
           <div class="trend-foot"><span class="pill high">השפעה גבוהה על בקרה</span></div>
         </div>
         <div class="trend-card">
@@ -2308,20 +2308,21 @@
         <div style="margin-top:0.9rem;border-top:1px solid var(--border);padding-top:0.7rem;font-size:0.8rem;color:var(--gray-dark);line-height:1.6;">הערך המסחרי אינו נוצר רק ממכירת רכיב, אלא מהיכולת לחבר בין רכיב, תמיכה, זמינות, התאמה הנדסית ומכלול.</div>
       </div>
 
+      <h4 class="irr-h4" style="margin-top:1.75rem;">רכיבי מערכת האוטומציה — תפקיד וקרבה לבקרה</h4>
       <div class="irr-wrap" style="margin-top:1rem;">
         <table class="irr-table">
-          <thead><tr><th style="width:2.2rem;">#</th><th>עולם</th><th>רכיב</th><th>מה הוא עושה</th><th>קרבה לבקרה</th><th>הערה עסקית</th></tr></thead>
+          <thead><tr><th>עולם</th><th style="width:2.2rem;">#</th><th>רכיב</th><th>מה הוא עושה</th><th>קרבה לבקרה</th><th>הערה עסקית</th></tr></thead>
           <tbody>
-            <tr><td>1</td><td style="font-size:0.72rem;color:var(--gray-mid);white-space:nowrap;">פנאומטיקה</td><td style="font-weight:700;color:var(--navy);">מקור אוויר / מדחס</td><td>מספק אוויר דחוס למערכת</td><td style="background:#fff;">רחוק</td><td>נמכר בערוצים נפרדים; חלק מהמתחרים (ירוחם) מציעים גם אותו</td></tr>
-            <tr><td>2</td><td style="font-size:0.72rem;color:var(--gray-mid);white-space:nowrap;">פנאומטיקה</td><td style="font-weight:700;color:var(--navy);">FRL / הכנת אוויר</td><td>סינון, ויסות ושימון האוויר</td><td style="background:#EDF4FB;">שכבת סל</td><td>רכיב משלים בסל פנאומטיקה</td></tr>
-            <tr><td>3</td><td style="font-size:0.72rem;color:var(--gray-mid);white-space:nowrap;">פנאומטיקה</td><td style="font-weight:700;color:var(--navy);">שסתום / manifold</td><td>ניתוב האוויר לערוצי הפעולה</td><td style="background:var(--amber-pale);">קרוב — בסיס פנאומטיקה</td><td>הקטגוריה שנפגעה מאובדן SMC</td></tr>
-            <tr><td>4</td><td style="font-size:0.72rem;color:var(--gray-mid);white-space:nowrap;">פנאומטיקה</td><td style="font-weight:700;color:var(--navy);">סולנואיד</td><td>מתרגם פקודה חשמלית לפעולה</td><td style="background:var(--teal-pale);">ליבת בקרה גבע</td><td>נקודת החוזק ההיסטורית מול בוני מכונות</td></tr>
-            <tr><td>5</td><td style="font-size:0.72rem;color:var(--gray-mid);white-space:nowrap;">פנאומטיקה</td><td style="font-weight:700;color:var(--navy);">בוכנה / אקטואטור</td><td>מבצע את הפעולה הפיזית</td><td style="background:var(--amber-pale);">קרוב — בסיס פנאומטיקה</td><td>נדרש סל / נציגות להשלמה</td></tr>
-            <tr><td>6</td><td style="font-size:0.72rem;color:var(--gray-mid);white-space:nowrap;">הינע ובקרה</td><td style="font-weight:700;color:var(--navy);">בקר / PLC</td><td>מוח המערכת — מתזמן ומפקד</td><td style="background:#fff;">פער</td><td>נשלט על ידי מותגים גלובליים ונציגויות</td></tr>
-            <tr><td>7</td><td style="font-size:0.72rem;color:var(--gray-mid);white-space:nowrap;">הינע ובקרה</td><td style="font-weight:700;color:var(--navy);">דרייבר</td><td>מתרגם פקודת בקרה לזרם מנוע</td><td style="background:#fff;">פער</td><td>שכבת הינע — פער הסל המרכזי</td></tr>
-            <tr><td>8</td><td style="font-size:0.72rem;color:var(--gray-mid);white-space:nowrap;">הינע ובקרה</td><td style="font-weight:700;color:var(--navy);">מנוע / סרוו</td><td>מייצר את התנועה החשמלית</td><td style="background:#fff;">פער (למעט צירים לינאריים — ISEL, TBI, GTEN, CPC — נוכחות קיימת)</td><td>שכבת הינע — פער בסל המנועים והדרייברים</td></tr>
-            <tr><td>9</td><td style="font-size:0.72rem;color:var(--gray-mid);white-space:nowrap;">הינע ובקרה</td><td style="font-weight:700;color:var(--navy);">חיישן / HMI</td><td>חישה, משוב וממשק מפעיל</td><td style="background:var(--amber-pale);">נוכחות קיימת (Panasonic, Contrinex — סנסורים)</td><td>נכס נציגות קיים שאפשר למנף</td></tr>
-            <tr><td>10</td><td style="font-size:0.72rem;color:var(--gray-mid);white-space:nowrap;">מכלולים / פתרון</td><td style="font-weight:700;color:var(--navy);">Sub-assembly / מכלול</td><td>שילוב רכיבים לפתרון מוכן להרכבה</td><td style="background:#EDF4FB;">פוטנציאל — יכולת ייצור קיימת</td><td>מנוע מרווח ונאמנות; דורש הנדסה, רכש ותפעול</td></tr>
+            <tr><td rowspan="5" style="font-size:0.74rem;font-weight:700;color:var(--navy);white-space:nowrap;vertical-align:middle;text-align:center;background:var(--white);">פנאומטיקה</td><td>1</td><td style="font-weight:700;color:var(--navy);">מקור אוויר / מדחס</td><td>מספק אוויר דחוס למערכת</td><td style="background:#fff;">רחוק</td><td>נמכר בערוצים נפרדים; חלק מהמתחרים (ירוחם) מציעים גם אותו</td></tr>
+            <tr><td>2</td><td style="font-weight:700;color:var(--navy);">FRL / הכנת אוויר</td><td>סינון, ויסות ושימון האוויר</td><td style="background:#EDF4FB;">שכבת סל</td><td>רכיב משלים בסל פנאומטיקה</td></tr>
+            <tr><td>3</td><td style="font-weight:700;color:var(--navy);">שסתום / manifold</td><td>ניתוב האוויר לערוצי הפעולה</td><td style="background:var(--amber-pale);">קרוב — בסיס פנאומטיקה</td><td>הקטגוריה שנפגעה מאובדן SMC</td></tr>
+            <tr><td>4</td><td style="font-weight:700;color:var(--navy);">סולנואיד</td><td>מתרגם פקודה חשמלית לפעולה</td><td style="background:var(--teal-pale);">ליבת בקרה גבע</td><td>נקודת החוזק ההיסטורית מול בוני מכונות</td></tr>
+            <tr><td>5</td><td style="font-weight:700;color:var(--navy);">בוכנה / אקטואטור</td><td>מבצע את הפעולה הפיזית</td><td style="background:var(--amber-pale);">קרוב — בסיס פנאומטיקה</td><td>נדרש סל / נציגות להשלמה</td></tr>
+            <tr><td rowspan="4" style="font-size:0.74rem;font-weight:700;color:var(--navy);white-space:nowrap;vertical-align:middle;text-align:center;background:var(--white);">הינע ובקרה</td><td>6</td><td style="font-weight:700;color:var(--navy);">בקר / PLC</td><td>מוח המערכת — מתזמן ומפקד</td><td style="background:#fff;">פער</td><td>נשלט על ידי מותגים גלובליים ונציגויות</td></tr>
+            <tr><td>7</td><td style="font-weight:700;color:var(--navy);">דרייבר</td><td>מתרגם פקודת בקרה לזרם מנוע</td><td style="background:#fff;">פער</td><td>שכבת הינע — פער הסל המרכזי</td></tr>
+            <tr><td>8</td><td style="font-weight:700;color:var(--navy);">מנוע / סרוו</td><td>מייצר את התנועה החשמלית</td><td style="background:#fff;">פער (למעט צירים לינאריים — ISEL, TBI, GTEN, CPC — נוכחות קיימת)</td><td>שכבת הינע — פער בסל המנועים והדרייברים</td></tr>
+            <tr><td>9</td><td style="font-weight:700;color:var(--navy);">חיישן / HMI</td><td>חישה, משוב וממשק מפעיל</td><td style="background:var(--amber-pale);">נוכחות קיימת (Panasonic, Contrinex — סנסורים)</td><td>נכס נציגות קיים שאפשר למנף</td></tr>
+            <tr><td style="font-size:0.74rem;font-weight:700;color:var(--navy);white-space:nowrap;vertical-align:middle;text-align:center;background:var(--white);">מכלולים / פתרון</td><td>10</td><td style="font-weight:700;color:var(--navy);">Sub-assembly / מכלול</td><td>שילוב רכיבים לפתרון מוכן להרכבה</td><td style="background:#EDF4FB;">פוטנציאל — יכולת ייצור קיימת</td><td>מנוע מרווח ונאמנות; דורש הנדסה, רכש ותפעול</td></tr>
           </tbody>
         </table>
       </div>
@@ -2684,78 +2685,33 @@
   </div>
 </div>
 
+<div class="slide-divider"></div>
+
 <!-- ════════════════════════════════════════════════════
-     SLIDE 9 — CONDITIONAL ARENAS
+     SLIDE 9 — DEFENSE / INDUSTRY / DATA CENTERS
 ════════════════════════════════════════════════════ -->
-<div id="conditional" class="slide gray-bg">
+<div id="defense" class="slide gray-bg" style="min-height:auto;scroll-margin-top:70px;">
   <div class="slide-inner">
-    <div class="slide-number">08 · CONDITIONAL</div>
-    <div class="section-eyebrow">זירות מותנות</div>
-    <h2 class="section-title">זירות מותנות — מיפוי ראשוני</h2>
-    <p class="section-lead">שלוש זירות מציגות היגיון אסטרטגי חלקי, אך עם חסמים ספציפיים שיש לאמת לפני השקעת משאבי חקירה נוספים.</p>
+    <h2 class="section-title">ביטחון</h2>
+    <p class="irr-note">להשלמה בהמשך.</p>
+  </div>
+</div>
 
-    <div class="cond-row" id="defense" style="scroll-margin-top:70px;">
-      <div class="cond-header">
-        <div class="cond-arena-name">CTIS / פנאומטיקה ביטחונית</div>
-        <div class="cond-badge">מותנה</div>
-      </div>
-      <div class="cond-body">
-        <div class="cond-col">
-          <div class="cond-col-label">מדוע מעניין</div>
-          [פלייסהולדר — ביקוש ביטחוני עקבי, קרבה לפנאומטיקה תעשייתית, חסמי כניסה שיוצרים ערך ומגינים מתחרות.]
-        </div>
-        <div class="cond-col">
-          <div class="cond-col-label">מה חוסם</div>
-          [פלייסהולדר — ספק לגבי עומק אקוסיסטם M&A ישראלי, חשיפה לבירוקרטיה ביטחונית, תלות בלקוח ממשלתי בודד.]
-        </div>
-        <div class="cond-col">
-          <div class="cond-col-label">תנאי להמשך</div>
-          [פלייסהולדר — מיפוי שחקנים ישראליים ספציפיים הניתנים לרכישה, אימות שוק גודל, ובדיקת מגבלות ביטחוניות על העברת בעלות.]
-        </div>
-      </div>
-    </div>
+<div class="slide-divider"></div>
 
-    <div class="cond-row" id="industry" style="scroll-margin-top:70px;">
-      <div class="cond-header">
-        <div class="cond-arena-name">מים תעשייתיים / חקלאיים</div>
-        <div class="cond-badge">מותנה</div>
-      </div>
-      <div class="cond-body">
-        <div class="cond-col">
-          <div class="cond-col-label">מדוע מעניין</div>
-          [פלייסהולדר — חפיפה טכנולוגית עם קו השסתומים, שוק יציב ומקומי, פוטנציאל לקוחות חוזרים ו-service contracts.]
-        </div>
-        <div class="cond-col">
-          <div class="cond-col-label">מה חוסם</div>
-          [פלייסהולדר — שוק מפוצל עם שולים נמוכים, תחרות גבוהה מיבואנים סיניים, ספק לגבי גודל שחקן ישראלי ניתן לרכישה.]
-        </div>
-        <div class="cond-col">
-          <div class="cond-col-label">תנאי להמשך</div>
-          [פלייסהולדר — לזהות שחקן ישראלי עם gross margin >35% ויכולת ייחודית שמצדיקה פרמיית רכישה.]
-        </div>
-      </div>
-    </div>
+<div id="industry" class="slide" style="min-height:auto;scroll-margin-top:70px;">
+  <div class="slide-inner">
+    <h2 class="section-title">תעשייה</h2>
+    <p class="irr-note">להשלמה בהמשך.</p>
+  </div>
+</div>
 
-    <div class="cond-row">
-      <div class="cond-header">
-        <div class="cond-arena-name">כיבוי אש</div>
-        <div class="cond-badge">מותנה</div>
-      </div>
-      <div class="cond-body">
-        <div class="cond-col">
-          <div class="cond-col-label">מדוע מעניין</div>
-          [פלייסהולדר — קרבה גבוהה לשסתומים, שוק מוסדר ויציב, לקוחות B2B חוזרים, מרווח גבוה יחסית.]
-        </div>
-        <div class="cond-col">
-          <div class="cond-col-label">מה חוסם</div>
-          [פלייסהולדר — אישורי EN12845, FM/UL אינם ניתנים להעברה. נדרשת בחינה אם M&A של ישות מאושרת מעביר את רישיונות האישור.]
-        </div>
-        <div class="cond-col">
-          <div class="cond-col-label">תנאי להמשך</div>
-          [פלייסהולדר — לאמת עם עו"ד ייעוץ רגולטורי — האם רכישה מעבירה אישורים? אם כן, הזירה עולה בסדר העדיפויות.]
-        </div>
-      </div>
-    </div>
+<div class="slide-divider"></div>
+
+<div id="datacenters" class="slide gray-bg" style="min-height:auto;scroll-margin-top:70px;">
+  <div class="slide-inner">
+    <h2 class="section-title">דאטה סנטרים</h2>
+    <p class="irr-note">להשלמה בהמשך.</p>
   </div>
 </div>
 
@@ -2784,7 +2740,7 @@
         </div>
       </div>
 
-      <div class="card gray-top" id="datacenters" style="scroll-margin-top:70px;">
+      <div class="card gray-top">
         <div class="card-title">מרכזי נתונים / סמיקונדקטורס</div>
         <div class="card-body" style="margin-bottom:1rem">
           <strong style="display:block;font-size:0.72rem;letter-spacing:1px;color:var(--gray-light);text-transform:uppercase;margin-bottom:0.4rem">למה לא עכשיו</strong>
