@@ -2708,10 +2708,261 @@
 
 <div class="slide-divider"></div>
 
-<div id="datacenters" class="slide gray-bg" style="min-height:auto;scroll-margin-top:70px;">
+<div id="datacenters" class="slide gray-bg" style="scroll-margin-top:70px;">
   <div class="slide-inner">
-    <h2 class="section-title">דאטה סנטרים</h2>
-    <p class="irr-note">להשלמה בהמשך.</p>
+    <div class="section-eyebrow">מיפוי זירה — דאטה סנטרים</div>
+    <h2 class="section-title" style="margin-bottom:0.6rem;">דאטה סנטרים — מיפוי אקוסיסטם הקירור ומיקום בקרה גבע בתוכו</h2>
+    <p class="section-lead" style="margin-bottom:1.75rem;font-weight:600;color:var(--navy);">הפרק ממפה את שוק חוות השרתים בישראל דרך עדשה אחת: מערכת הקירור. המטרה — להבין את האקוסיסטם, את שרשרת הערך ואת הנקודות שבהן רכיבי בקרת זרימה מופיעים, לפני כל דיון עסקי.</p>
+
+    <!-- 1. what is the market -->
+    <div class="irr-block">
+      <div class="section-eyebrow">מהו השוק</div>
+      <h3 class="irr-h3">מהי חוות שרתים, ולמה הקירור הפך לקריטי?</h3>
+      <p class="irr-sub">חוות שרתים (Data Center) היא מבנה ייעודי שמרכז אלפי שרתים ומריץ את שירותי הענן, הבינה המלאכותית והמחשוב של הכלכלה. כל שרת פולט חום — וככל שהמעבדים חזקים וצפופים יותר (בעיקר בעידן ה-AI), פינוי החום הופך ממערכת שירות למערכת קריטית: בלי קירור, החווה מושבתת.</p>
+      <div class="two-col" style="margin-top:1rem;">
+        <div class="card teal-top">
+          <div class="card-title" style="font-size:0.9rem;">למה השוק צומח מהר?</div>
+          <div class="card-body" style="font-size:0.78rem;">
+            <ul style="padding-right:1.05rem;margin:0;line-height:1.75;">
+              <li><strong>AI וענן</strong> — דרישות המחשוב גדלות פי ~4 בשנה, מהר בהרבה משיפור המעבדים</li>
+              <li><strong>צפיפות חום מזנקת</strong> — ארון שרתים ממוצע צפוי לצרוך כ-50KW ב-2030; ארון AI — מאות KW</li>
+              <li><strong>השקעה גלובלית</strong> — כ-2 טריליון דולר בתשתיות חוות שרתים עד 2030 (הערכת Bain)</li>
+              <li>ככל שהחום גדל — <strong>ההשקעה בקירור גדלה</strong>, והטכנולוגיות מתחלפות מהר יותר</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card navy-top">
+          <div class="card-title" style="font-size:0.9rem;">למה ישראל אטרקטיבית?</div>
+          <div class="card-body" style="font-size:0.78rem;">
+            <ul style="padding-right:1.05rem;margin:0;line-height:1.75;">
+              <li><strong>צומת קישוריות</strong> — כבלים תת-ימיים חדשים המחברים אסיה–אירופה–אפריקה</li>
+              <li><strong>אקוסיסטם טכנולוגי</strong> — ענקיות ענן וטכנולוגיה רואות בישראל מוקד אזורי</li>
+              <li><strong>אנרגיה יציבה יחסית</strong> — רשת אמינה, גז טבעי מקומי ועלות KW נוחה יחסית לאירופה</li>
+              <li><strong>ביקוש ממשלתי-ביטחוני</strong> — פרויקטי ענן ממשלתיים ותשתיות מוגנות</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:0.7rem;margin-top:1rem;">
+<div style="background:var(--white);border:1px solid var(--border);border-radius:10px;padding:0.9rem 1rem;text-align:center;"><div style="font-size:1.35rem;font-weight:800;color:var(--teal);line-height:1.2;">כ-60</div><div style="font-size:0.72rem;color:var(--gray-dark);line-height:1.45;margin-top:0.3rem;">חוות פעילות בישראל; כ-30 נוספות בבנייה / תכנון</div></div><div style="background:var(--white);border:1px solid var(--border);border-radius:10px;padding:0.9rem 1rem;text-align:center;"><div style="font-size:1.35rem;font-weight:800;color:var(--teal);line-height:1.2;">כ-3 מיליארד ₪</div><div style="font-size:0.72rem;color:var(--gray-dark);line-height:1.45;margin-top:0.3rem;">השקעה שנתית בתשתיות (2025) — צפי 5.2 מיליארד ב-2030</div></div><div style="background:var(--white);border:1px solid var(--border);border-radius:10px;padding:0.9rem 1rem;text-align:center;"><div style="font-size:1.35rem;font-weight:800;color:var(--teal);line-height:1.2;">240 ← 860 MW</div><div style="font-size:0.72rem;color:var(--gray-dark);line-height:1.45;margin-top:0.3rem;">קיבולת חשמל 2025 ← 2030 (צמיחה ~29% בשנה)</div></div><div style="background:var(--white);border:1px solid var(--border);border-radius:10px;padding:0.9rem 1rem;text-align:center;"><div style="font-size:1.35rem;font-weight:800;color:var(--teal);line-height:1.2;">כ-250 מ׳ ₪</div><div style="font-size:0.72rem;color:var(--gray-dark);line-height:1.45;margin-top:0.3rem;">שוק ציוד הקירור הייעודי (2025) — צפי ~500 מ׳ ב-2030</div></div><div style="background:var(--white);border:1px solid var(--border);border-radius:10px;padding:0.9rem 1rem;text-align:center;"><div style="font-size:1.35rem;font-weight:800;color:var(--teal);line-height:1.2;">כ-100 מ׳ ₪</div><div style="font-size:0.72rem;color:var(--gray-dark);line-height:1.45;margin-top:0.3rem;">שוק הצנרת והאביזרים סביב הקירור — צפי ~200 מ׳ ב-2030</div></div>
+      </div>
+      <p class="irr-note">נתונים: מחקר BDO, דצמבר 2025 (אינטגרציה של מחקרי שוק וראיונות עומק).</p>
+    </div>
+
+    <div class="slide-divider" style="margin:0 0 2.5rem;"></div>
+
+    <!-- 2. architecture -->
+    <div class="irr-block">
+      <div class="section-eyebrow">מבנה החווה</div>
+      <h3 class="irr-h3">ממה מורכבת חוות שרתים? חמש מערכות-על</h3>
+      <p class="irr-sub">מפה כללית להתמצאות בלבד — כל מערכת היא עולם תכנון, רכש ותחזוקה נפרד.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:0.7rem;margin-top:1rem;">
+        <div style="background:var(--white);border:1px solid var(--border);border-radius:10px;padding:0.85rem 0.95rem;"><div style="font-size:0.8rem;font-weight:800;color:var(--navy);margin-bottom:0.3rem;">ציוד IT</div><div style="font-size:0.72rem;color:var(--gray-dark);line-height:1.55;">שרתים, אחסון ורשת — "המוח" של החווה. שייך ללקוח / חברת הענן, לא ליזם.</div></div>
+        <div style="background:var(--white);border:1px solid var(--border);border-radius:10px;padding:0.85rem 0.95rem;"><div style="font-size:0.8rem;font-weight:800;color:var(--navy);margin-bottom:0.3rem;">חשמל ואנרגיה</div><div style="font-size:0.72rem;color:var(--gray-dark);line-height:1.55;">קווי חשמל, גיבוי (UPS, גנרטורים), לוחות והגנות — אספקה רציפה ובטוחה.</div></div>
+        <div style="background:var(--white);border:1.5px solid var(--teal);border-radius:10px;padding:0.85rem 0.95rem;"><div style="font-size:0.8rem;font-weight:800;color:var(--teal);margin-bottom:0.3rem;">קירור ותשתיות מכניות</div><div style="font-size:0.72rem;color:var(--gray-dark);line-height:1.55;">יחידות קירור, צנרת מים / גליקול, משאבות, שסתומים וניקוז — מוקד הפרק הזה.</div></div>
+        <div style="background:var(--white);border:1px solid var(--border);border-radius:10px;padding:0.85rem 0.95rem;"><div style="font-size:0.8rem;font-weight:800;color:var(--navy);margin-bottom:0.3rem;">מבנה ותשתית פיזית</div><div style="font-size:0.72rem;color:var(--gray-dark);line-height:1.55;">שלד מחוזק, רצפה מוגבהת, עומסים, הגנות פיזיות.</div></div>
+        <div style="background:var(--white);border:1px solid var(--border);border-radius:10px;padding:0.85rem 0.95rem;"><div style="font-size:0.8rem;font-weight:800;color:var(--navy);margin-bottom:0.3rem;">ניטור, בקרה ואבטחה</div><div style="font-size:0.72rem;color:var(--gray-dark);line-height:1.55;">בקרת טמפרטורות, צריכה, אזעקות וכניסה — העיניים של המפעיל.</div></div>
+      </div>
+      <div class="irr-sowhat" style="margin-top:1.1rem;">הפרויקט מתמקד בכוונה <strong>באקוסיסטם הקירור בלבד</strong> — לא בחשמל, לא בשרתים, לא ברשתות ולא בנדל"ן. הקירור הוא המערכת שבה זורמים נוזלים — ולכן היחידה שבה רכיבי בקרת זרימה רלוונטיים.</div>
+    </div>
+
+    <div class="slide-divider" style="margin:0 0 2.5rem;"></div>
+
+    <!-- 4. cooling architectures -->
+    <div class="irr-block">
+      <div class="section-eyebrow">ארכיטקטורות קירור</div>
+      <h3 class="irr-h3">איך מקררים חוות שרתים? שתי לולאות, כמה דורות של טכנולוגיה</h3>
+      <p class="irr-sub">לכל מערכת קירור שני תפקידים: לקרר את האולם, ולפלוט את החום החוצה. כל תפקיד מתבצע בלולאת נוזל נפרדת — וזה המפתח להבנת כל הארכיטקטורות.</p>
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:12px;padding:1.25rem;overflow-x:auto;margin-top:1rem;">
+<svg viewBox="0 0 980 300" style="min-width:820px;width:100%;height:auto;direction:ltr;" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="תרשים קירור מים צוננים — שתי לולאות">
+  <defs><marker id="dcArr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#6B7A8D"/></marker></defs>
+  <text x="950" y="30" text-anchor="end" font-size="14" font-weight="800" fill="#0F2243">לולאה 1 — קירור אולם השרתים</text>
+  <rect x="640" y="60" width="160" height="56" rx="9" fill="#FFFFFF" stroke="#D8DEE6" stroke-width="1.4"/><text x="720" y="84" text-anchor="middle" font-size="12" font-weight="700" fill="#0F2243">ארונות שרתים</text><text x="720" y="100" text-anchor="middle" font-size="11" font-weight="600" fill="#6B7A8D">מקור החום</text>
+  <rect x="430" y="60" width="160" height="56" rx="9" fill="#EDF4FB" stroke="#8FB8E0" stroke-width="1.4"/><text x="510" y="84" text-anchor="middle" font-size="12" font-weight="700" fill="#0F2243">יחידת קירור אולם</text><text x="510" y="100" text-anchor="middle" font-size="11" font-weight="600" fill="#6B7A8D">CRAH — סוללת מים</text>
+  <rect x="240" y="60" width="140" height="56" rx="9" fill="#F4F6F9" stroke="#6B7A8D" stroke-width="1.4"/><text x="310" y="84" text-anchor="middle" font-size="12" font-weight="700" fill="#0F2243">משאבות</text><text x="310" y="100" text-anchor="middle" font-size="11" font-weight="600" fill="#6B7A8D">הנעת המים</text>
+  <rect x="60" y="60" width="130" height="56" rx="9" fill="#E6F4F4" stroke="#0E7C7B" stroke-width="1.4"/><text x="125" y="84" text-anchor="middle" font-size="12" font-weight="700" fill="#0F2243">צ'ילר</text><text x="125" y="100" text-anchor="middle" font-size="11" font-weight="600" fill="#6B7A8D">מקרר את המים</text>
+  <path d="M240 78 H196" stroke="#6B7A8D" stroke-width="2" marker-end="url(#dcArr)"/>
+  <path d="M430 78 H386" stroke="#6B7A8D" stroke-width="2" marker-end="url(#dcArr)"/>
+  <path d="M640 78 H596" stroke="#6B7A8D" stroke-width="2" marker-end="url(#dcArr)"/>
+  <path d="M125 116 V150 H720 V120" stroke="#8FB8E0" stroke-width="2" stroke-dasharray="5 4" fill="none" marker-end="url(#dcArr)" transform="scale(1,1)"/>
+  <text x="420" y="144" text-anchor="middle" font-size="10.5" fill="#6B7A8D">מים קרים יוצאים מהצ'ילר אל האולם; מים חמים חוזרים אליו (קו מקווקו)</text>
+  <text x="950" y="200" text-anchor="end" font-size="14" font-weight="800" fill="#0F2243">לולאה 2 — פליטת החום החוצה</text>
+  <rect x="430" y="220" width="160" height="56" rx="9" fill="#EDF4FB" stroke="#8FB8E0" stroke-width="1.4"/><text x="510" y="244" text-anchor="middle" font-size="12" font-weight="700" fill="#0F2243">מגדל קירור</text><text x="510" y="260" text-anchor="middle" font-size="11" font-weight="600" fill="#6B7A8D">פליטת חום באידוי</text>
+  <rect x="60" y="220" width="130" height="56" rx="9" fill="#E6F4F4" stroke="#0E7C7B" stroke-width="1.4"/><text x="125" y="244" text-anchor="middle" font-size="12" font-weight="700" fill="#0F2243">צ'ילר</text><text x="125" y="260" text-anchor="middle" font-size="11" font-weight="600" fill="#6B7A8D">מוסר את החום</text>
+  <path d="M430 238 H196" stroke="#6B7A8D" stroke-width="2" marker-end="url(#dcArr)"/>
+  <path d="M190 262 H424" stroke="#6B7A8D" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#dcArr)"/>
+  <text x="310" y="232" text-anchor="middle" font-size="10.5" fill="#6B7A8D">מים חמים אל המגדל</text>
+  <text x="310" y="284" text-anchor="middle" font-size="10.5" fill="#6B7A8D">מים קרים יותר חוזרים</text>
+  <rect x="650" y="220" width="300" height="56" rx="9" fill="#F4F6F9" stroke="#6B7A8D" stroke-width="1.4"/><text x="800" y="244" text-anchor="middle" font-size="12" font-weight="700" fill="#0F2243">Free Cooling — "רגל" נוספת</text><text x="800" y="260" text-anchor="middle" font-size="11" font-weight="600" fill="#6B7A8D">ניצול אוויר / מים קרים מהסביבה כשמזג האוויר מאפשר</text>
+</svg>
+      </div>
+      <h4 class="irr-h4" style="margin-top:1.75rem;">הדור המתקדם — הנוזל מגיע עד המעבד</h4>
+      <p class="irr-sub">כשארון צורך מאות KW, קירור אוויר לא מספיק. בקירור נוזלי ישיר הנוזל זורם עד פלטה שצמודה למעבד עצמו.</p>
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:12px;padding:1.25rem;overflow-x:auto;">
+<svg viewBox="0 0 980 190" style="min-width:820px;width:100%;height:auto;direction:ltr;" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="תרשים קירור נוזלי ישיר">
+  <defs><marker id="dcArr2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#6B7A8D"/></marker></defs>
+  <rect x="760" y="40" width="200" height="56" rx="9" fill="#FFFFFF" stroke="#D8DEE6" stroke-width="1.4"/><text x="860" y="64" text-anchor="middle" font-size="12" font-weight="700" fill="#0F2243">Cold Plate על המעבד</text><text x="860" y="80" text-anchor="middle" font-size="11" font-weight="600" fill="#6B7A8D">הנוזל קולט את החום בשרת</text>
+  <rect x="540" y="40" width="180" height="56" rx="9" fill="#E6F4F4" stroke="#0E7C7B" stroke-width="1.4"/><text x="630" y="64" text-anchor="middle" font-size="12" font-weight="700" fill="#0F2243">Manifold בארון</text><text x="630" y="80" text-anchor="middle" font-size="11" font-weight="600" fill="#6B7A8D">מחלק את הנוזל לשרתים</text>
+  <rect x="300" y="40" width="200" height="56" rx="9" fill="#E6F4F4" stroke="#0E7C7B" stroke-width="1.4"/><text x="400" y="64" text-anchor="middle" font-size="12" font-weight="700" fill="#0F2243">CDU</text><text x="400" y="80" text-anchor="middle" font-size="11" font-weight="600" fill="#6B7A8D">יחידת חלוקת נוזל קירור</text>
+  <rect x="60" y="40" width="200" height="56" rx="9" fill="#EDF4FB" stroke="#8FB8E0" stroke-width="1.4"/><text x="160" y="64" text-anchor="middle" font-size="12" font-weight="700" fill="#0F2243">לולאת המים של המתקן</text><text x="160" y="80" text-anchor="middle" font-size="11" font-weight="600" fill="#6B7A8D">צ'ילר + מגדל קירור</text>
+  <path d="M540 58 H504" stroke="#6B7A8D" stroke-width="2" marker-end="url(#dcArr2)"/>
+  <path d="M760 58 H724" stroke="#6B7A8D" stroke-width="2" marker-end="url(#dcArr2)"/>
+  <path d="M300 58 H264" stroke="#6B7A8D" stroke-width="2" marker-end="url(#dcArr2)"/>
+  <path d="M860 96 V130 H160 V100" stroke="#8FB8E0" stroke-width="2" stroke-dasharray="5 4" fill="none" marker-end="url(#dcArr2)"/>
+  <text x="500" y="124" text-anchor="middle" font-size="10.5" fill="#6B7A8D">הנוזל החם חוזר דרך ה-CDU; ה-CDU מעביר את החום ללולאת המים של המתקן</text>
+  <text x="500" y="170" text-anchor="middle" font-size="11" font-weight="700" fill="#0F2243">ה-CDU מפריד בין לולאת המתקן ללולאה העדינה של השרתים — נקודת מפגש עתירת שסתומים, מניפולדים ובקרת זרימה</text>
+</svg>
+      </div>
+
+      <h4 class="irr-h4" style="margin-top:1.75rem;">מפת הארכיטקטורות — מה כל שיטה עושה ואיפה הנוזלים</h4>
+      <div class="two-col" style="margin-top:0.9rem;">
+<div class="card teal-top"><div class="card-title" style="font-size:0.9rem;">מים צוננים (Chilled Water) + CRAH</div><div class="card-body" style="font-size:0.78rem;">הארכיטקטורה הנפוצה בחוות גדולות (כ-75% מהשוק): צ'ילר מקרר מים, משאבות מזרימות אותם ליחידות קירור באולם, והאוויר החם נקלט בסוללות המים. יעילה עד ~15–20KW לארון.<div style="margin-top:0.55rem;background:var(--gray-bg);border-radius:8px;padding:0.5rem 0.7rem;font-size:0.74rem;color:var(--navy);"><strong>איפה רכיבי בקרת הזרימה:</strong> שסתומי ניתוק, שסתומי איזון, מגופים ובקרת זרימה לאורך כל קווי המים — בעיקר בצד המערכת המשלימה שנרכשת בשוק הפתוח.</div></div></div><div class="card gray-top"><div class="card-title" style="font-size:0.9rem;">CRAC — מיזוג ישיר מבוסס גז</div><div class="card-body" style="font-size:0.78rem;">יחידות קירור שמבוססות על גז קירור (כמו מזגן תעשייתי) במקום מים. נפוץ בחדרי שרתים קטנים ובחוות ותיקות; פחות מתאים לעומסי AI.<div style="margin-top:0.55rem;background:var(--gray-bg);border-radius:8px;padding:0.5rem 0.7rem;font-size:0.74rem;color:var(--navy);"><strong>איפה רכיבי בקרת הזרימה:</strong> מעט מים — רלוונטיות נמוכה יחסית לרכיבי בקרת זרימה של מים.</div></div></div><div class="card navy-top"><div class="card-title" style="font-size:0.9rem;">קירור ממוקד — In-Row / In-Rack</div><div class="card-body" style="font-size:0.78rem;">יחידות קירור בין הארונות או בתוכם, שמקצרות את המרחק בין מקור החום למקור הקור. מדרגת ביניים: עד ~30–80KW לארון. צמיחה שנתית צפויה ~18%.<div style="margin-top:0.55rem;background:var(--gray-bg);border-radius:8px;padding:0.5rem 0.7rem;font-size:0.74rem;color:var(--navy);"><strong>איפה רכיבי בקרת הזרימה:</strong> צנרת מים מגיעה עד שורת הארונות — יותר נקודות חיבור, ניתוק וויסות בתוך האולם.</div></div></div><div class="card teal-top"><div class="card-title" style="font-size:0.9rem;">קירור נוזלי ישיר — Direct-to-Chip + CDU</div><div class="card-body" style="font-size:0.78rem;">הנוזל מגיע עד Cold Plate על המעבד, דרך CDU (יחידת חלוקת נוזל) ומניפולדים בארון. מפנה 100KW+ לארון; הסגמנט הצומח ביותר (~21% בשנה, כ-22% מהחוות כבר משתמשות).<div style="margin-top:0.55rem;background:var(--gray-bg);border-radius:8px;padding:0.5rem 0.7rem;font-size:0.74rem;color:var(--navy);"><strong>איפה רכיבי בקרת הזרימה:</strong> ה-CDU והמניפולדים הם ריכוז של שסתומים, שסתומי ניתוק מהיר ובקרת זרימה מדויקת — לרוב בתוך ציוד ה-OEM.</div></div></div><div class="card navy-top"><div class="card-title" style="font-size:0.9rem;">קירור בטבילה — Immersion</div><div class="card-body" style="font-size:0.78rem;">השרתים טובלים בנוזל דיאלקטרי שאינו מוליך חשמל. יכולת פינוי החום הגבוהה ביותר; עדיין נישתי, צפוי לצמוח בעומסי AI קיצוניים.<div style="margin-top:0.55rem;background:var(--gray-bg);border-radius:8px;padding:0.5rem 0.7rem;font-size:0.74rem;color:var(--navy);"><strong>איפה רכיבי בקרת הזרימה:</strong> מערכות סירקולציה של נוזל — משאבות, שסתומים ומחלפי חום סביב האמבטיות.</div></div></div><div class="card gray-top"><div class="card-title" style="font-size:0.9rem;">מגדלי קירור + Free Cooling</div><div class="card-body" style="font-size:0.78rem;">מגדל הקירור פולט את החום באידוי (כ-19% מהחוות כשיטה עיקרית, וצפוי לגדול); Free Cooling מנצל אוויר או מים קרים מהסביבה כשמזג האוויר מאפשר — חוסך אנרגיה.<div style="margin-top:0.55rem;background:var(--gray-bg);border-radius:8px;padding:0.5rem 0.7rem;font-size:0.74rem;color:var(--navy);"><strong>איפה רכיבי בקרת הזרימה:</strong> מי איפור, בקרת מפלס, שסתומי מעקף (bypass) ומגופים בלולאת פליטת החום.</div></div></div>
+      </div>
+      <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:1rem;align-items:center;">
+        <span style="font-size:0.74rem;font-weight:700;color:var(--navy);">צפי צמיחה שנתי (CAGR) לפי משפחת שיטות:</span>
+        <span style="background:var(--gray-bg);border:1px solid var(--gray-light);border-radius:20px;padding:0.2rem 0.7rem;font-size:0.72rem;font-weight:700;color:var(--gray-dark);">קירור היקפי ~13%</span>
+        <span style="background:var(--teal-pale);border:1px solid var(--teal);border-radius:20px;padding:0.2rem 0.7rem;font-size:0.72rem;font-weight:700;color:var(--navy);">קירור ממוקד ~18%</span>
+        <span style="background:var(--teal-pale);border:1px solid var(--teal);border-radius:20px;padding:0.2rem 0.7rem;font-size:0.72rem;font-weight:700;color:var(--navy);">נוזלי ישיר / טבילה ~21%</span>
+        <span style="background:var(--gray-bg);border:1px solid var(--gray-light);border-radius:20px;padding:0.2rem 0.7rem;font-size:0.72rem;font-weight:700;color:var(--gray-dark);">Free Cooling ~12%</span>
+      </div>
+      <p class="irr-note">ככל שהשיטה יודעת לפנות יותר חום — היא צומחת מהר יותר. בחוות גדולות משולבות כמה שיטות במקביל, וקירור היקפי נשאר לרוב כמערכת תומכת.</p>
+    </div>
+
+    <div class="slide-divider" style="margin:0 0 2.5rem;"></div>
+
+    <!-- 5. where Baccara fits -->
+    <div class="irr-block">
+      <div class="section-eyebrow">מיקום בקרה גבע</div>
+      <h3 class="irr-h3">איפה בקרה גבע בתוך אקוסיסטם הקירור?</h3>
+      <p class="irr-sub">בקרה גבע אינה חלק מהשרתים ואינה יצרנית של מכונות הקירור. הרלוונטיות הפוטנציאלית שלה היא בשכבת <strong>רכיבי בקרת הזרימה</strong> שמקיפים את מערכות הקירור: שסתומים, סולנואידים, מגופים, מניפולדים, ויסות לחץ ובקרת זרימה.</p>
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:12px;padding:1.25rem;overflow-x:auto;margin-top:1rem;">
+<svg viewBox="0 0 980 330" style="min-width:820px;width:100%;height:auto;direction:ltr;" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="נקודות בקרת זרימה במערכת הקירור">
+  <defs><marker id="dcArr3" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#6B7A8D"/></marker></defs>
+  <rect x="790" y="50" width="170" height="56" rx="9" fill="#FFFFFF" stroke="#D8DEE6" stroke-width="1.4"/><text x="875" y="83" text-anchor="middle" font-size="12" font-weight="700" fill="#0F2243">ארונות שרתים</text>
+  <rect x="560" y="50" width="170" height="56" rx="9" fill="#EDF4FB" stroke="#8FB8E0" stroke-width="1.4"/><text x="645" y="83" text-anchor="middle" font-size="12" font-weight="700" fill="#0F2243">CRAH / CDU</text>
+  <rect x="330" y="50" width="170" height="56" rx="9" fill="#F4F6F9" stroke="#6B7A8D" stroke-width="1.4"/><text x="415" y="83" text-anchor="middle" font-size="12" font-weight="700" fill="#0F2243">משאבות וצנרת</text>
+  <rect x="100" y="50" width="170" height="56" rx="9" fill="#EDF4FB" stroke="#8FB8E0" stroke-width="1.4"/><text x="185" y="83" text-anchor="middle" font-size="12" font-weight="700" fill="#0F2243">צ'ילר</text>
+  <rect x="100" y="220" width="170" height="56" rx="9" fill="#EDF4FB" stroke="#8FB8E0" stroke-width="1.4"/><text x="185" y="253" text-anchor="middle" font-size="12" font-weight="700" fill="#0F2243">מגדל קירור</text>
+  <path d="M330 78 H276" stroke="#6B7A8D" stroke-width="2" marker-end="url(#dcArr3)"/>
+  <path d="M560 78 H506" stroke="#6B7A8D" stroke-width="2" marker-end="url(#dcArr3)"/>
+  <path d="M790 78 H736" stroke="#6B7A8D" stroke-width="2" marker-end="url(#dcArr3)"/>
+  <path d="M185 106 V220" stroke="#6B7A8D" stroke-width="2" marker-end="url(#dcArr3)"/>
+  <circle cx="303" cy="78" r="11" fill="#0E7C7B"/><text x="303" y="82" text-anchor="middle" font-size="11" font-weight="800" fill="#fff">1</text><circle cx="533" cy="78" r="11" fill="#0E7C7B"/><text x="533" y="82" text-anchor="middle" font-size="11" font-weight="800" fill="#fff">2</text><circle cx="763" cy="78" r="11" fill="#0E7C7B"/><text x="763" y="82" text-anchor="middle" font-size="11" font-weight="800" fill="#fff">3</text><circle cx="185" cy="168" r="11" fill="#0E7C7B"/><text x="185" y="172" text-anchor="middle" font-size="11" font-weight="800" fill="#fff">4</text><circle cx="270" cy="248" r="11" fill="#0E7C7B"/><text x="270" y="252" text-anchor="middle" font-size="11" font-weight="800" fill="#fff">5</text>
+  <text x="500" y="150" text-anchor="middle" font-size="12" font-weight="700" fill="#0E7C7B">● הנקודות הירוקות = נקודות שבהן יושבים רכיבי בקרת זרימה — שסתומים, מגופים, סולנואידים, מניפולדים, ויסות לחץ</text>
+  <text x="640" y="240" font-size="11.5" font-weight="700" fill="#0F2243">1 — שסתומי ניתוק ואיזון על קווי המים הראשיים</text>
+  <text x="640" y="260" font-size="11.5" font-weight="700" fill="#0F2243">2 — בקרת זרימה וויסות ביחידות הקירור וב-CDU</text>
+  <text x="640" y="280" font-size="11.5" font-weight="700" fill="#0F2243">3 — מניפולדים ושסתומי ניתוק מהיר בארונות (בקירור נוזלי)</text>
+  <text x="640" y="300" font-size="11.5" font-weight="700" fill="#0F2243">4 — שסתומים ומגופים בלולאת פליטת החום</text>
+  <text x="640" y="320" font-size="11.5" font-weight="700" fill="#0F2243">5 — מי איפור, ניקוז ובקרת מפלס במגדל הקירור</text>
+</svg>
+      </div>
+      <div class="three-col" style="margin-top:1.1rem;">
+        <div class="card gray-top">
+          <div class="card-title" style="font-size:0.88rem;">מה בקרה גבע איננה</div>
+          <div class="card-body" style="font-size:0.77rem;">לא יצרנית שרתים או ציוד IT; לא יצרנית צ'ילרים, CRAH או CDU; לא קבלן מיזוג אוויר ולא יזם.</div>
+        </div>
+        <div class="card teal-top">
+          <div class="card-title" style="font-size:0.88rem;">איפה הרלוונטיות האפשרית</div>
+          <div class="card-body" style="font-size:0.77rem;">רכיבי בקרת זרימה על קווי המים והנוזל: שסתומים וסולנואידים, מגופים, מניפולדים, אקטואטורים, ויסות לחץ — הן בלולאות המים והן סביב ה-CDU.</div>
+        </div>
+        <div class="card navy-top">
+          <div class="card-title" style="font-size:0.88rem;">שכבה סמוכה — צנרת ואביזרים</div>
+          <div class="card-body" style="font-size:0.77rem;">סביב הקירור נרכשת מערכת משלימה שלמה: צנרת, מחברים ואביזרי זרימה (שוק של כ-100 מ׳ ₪ בשנה). ליד השרתים התקן המקובל כיום הוא נירוסטה.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide-divider" style="margin:0 0 2.5rem;"></div>
+
+    <!-- 6. OEM vs open market -->
+    <div class="irr-block">
+      <div class="section-eyebrow">מבנה מסחרי</div>
+      <h3 class="irr-h3">OEM מול שוק פתוח — איך רכיבים מגיעים לפרויקט?</h3>
+      <p class="irr-sub">שני מסלולי רכש שונים חיים זה לצד זה בכל פרויקט — וההבחנה ביניהם קובעת מי מחליט על כל רכיב.</p>
+      <div class="two-col" style="margin-top:1rem;">
+        <div class="card teal-top">
+          <div class="card-title" style="font-size:0.9rem;">מסלול 1 — ציוד קירור ייעודי (ציוד ליבה)</div>
+          <div class="card-body" style="font-size:0.78rem;">
+            <div style="display:flex;flex-direction:column;gap:0.35rem;">
+              <div style="background:var(--gray-bg);border-radius:8px;padding:0.5rem 0.8rem;">היזם בוחר את מותג הקירור (לעיתים ישירות, כדי לקצר אספקה)</div>
+<div style="text-align:center;color:var(--gray-light);font-weight:900;font-size:1rem;line-height:1;">&#8595;</div>
+              <div style="background:var(--gray-bg);border-radius:8px;padding:0.5rem 0.8rem;">מהנדס מיזוג האוויר מאשר את הציוד</div>
+<div style="text-align:center;color:var(--gray-light);font-weight:900;font-size:1rem;line-height:1;">&#8595;</div>
+              <div style="background:var(--gray-bg);border-radius:8px;padding:0.5rem 0.8rem;">ההזמנה מגיעה ליבואן / ספק המותג</div>
+            </div>
+            <div style="margin-top:0.6rem;font-size:0.74rem;color:var(--gray-mid);">צ'ילרים, יחידות CRAH/CRAC, CDU — רכיבי בקרת הזרימה שבתוכם מגיעים מובנים מהיצרן (OEM).</div>
+          </div>
+        </div>
+        <div class="card navy-top">
+          <div class="card-title" style="font-size:0.9rem;">מסלול 2 — המערכת המשלימה (שוק פתוח)</div>
+          <div class="card-body" style="font-size:0.78rem;">
+            <div style="display:flex;flex-direction:column;gap:0.35rem;">
+              <div style="background:var(--gray-bg);border-radius:8px;padding:0.5rem 0.8rem;">מהנדס מיזוג האוויר קובע את התקן והמפרט</div>
+<div style="text-align:center;color:var(--gray-light);font-weight:900;font-size:1rem;line-height:1;">&#8595;</div>
+              <div style="background:var(--gray-bg);border-radius:8px;padding:0.5rem 0.8rem;">קבלן הביצוע בוחר ספק / מותג במסגרת התקן</div>
+<div style="text-align:center;color:var(--gray-light);font-weight:900;font-size:1rem;line-height:1;">&#8595;</div>
+              <div style="background:var(--gray-bg);border-radius:8px;padding:0.5rem 0.8rem;">ההזמנה מגיעה לספק / מפיץ</div>
+            </div>
+            <div style="margin-top:0.6rem;font-size:0.74rem;color:var(--gray-mid);">צנרת, ברזים, שסתומים, מגופים, אינסטלציה ואביזרי זרימה — נרכשים בנפרד, לפי מפרט המהנדס ובחירת הקבלן.</div>
+          </div>
+        </div>
+      </div>
+      <div class="irr-sowhat" style="margin-top:1.1rem;">המשמעות למיפוי: רכיבי בקרת זרימה מופיעים <strong>בשני המסלולים</strong> — חלקם מובנים בתוך ציוד ה-OEM (ההחלטה אצל יצרן הציוד), וחלקם נרכשים בשוק הפתוח (ההחלטה אצל המהנדס והקבלן). מי מחליט על כל רכיב — זו שאלת מפתח לראיונות ההמשך.</div>
+    </div>
+
+    <div class="slide-divider" style="margin:0 0 2.5rem;"></div>
+
+    <!-- 7. value chain -->
+    <div class="irr-block">
+      <div class="section-eyebrow">שרשרת ערך</div>
+      <h3 class="irr-h3">מי משתתף בפרויקט קירור של חוות שרתים?</h3>
+      <div style="display:flex;flex-direction:column;gap:0.5rem;margin-top:1rem;max-width:760px;">
+<div style="background:var(--white);border:1px solid var(--border);border-right:5px solid var(--navy-mid);border-radius:10px;padding:0.8rem 1.1rem;"><div style="font-size:0.85rem;font-weight:800;color:var(--navy);">יזם / מפעיל החווה</div><div style="font-size:0.75rem;color:var(--gray-dark);line-height:1.55;margin-top:0.25rem;">מקים את המתקן ומשכיר אותו ללקוחות (או בונה עבור לקוח עוגן). מחליט על התקציב, ולעיתים בוחר בעצמו את מותג ציוד הקירור.</div></div><div style="text-align:center;color:var(--gray-light);font-weight:900;font-size:1rem;line-height:1;">&#8595;</div><div style="background:var(--white);border:1px solid var(--border);border-right:5px solid var(--navy-mid);border-radius:10px;padding:0.8rem 1.1rem;"><div style="font-size:0.85rem;font-weight:800;color:var(--navy);">מהנדס חוות שרתים / יועץ מתמחה</div><div style="font-size:0.75rem;color:var(--gray-dark);line-height:1.55;margin-top:0.25rem;">מתכנן את המתקן כולו ומתאם בין הדיסציפלינות — חשמל, קירור, מבנה ותקשורת.</div></div><div style="text-align:center;color:var(--gray-light);font-weight:900;font-size:1rem;line-height:1;">&#8595;</div><div style="background:var(--white);border:1px solid var(--border);border-right:5px solid var(--teal);border-radius:10px;padding:0.8rem 1.1rem;"><div style="font-size:0.85rem;font-weight:800;color:var(--navy);">מתכנן / מהנדס מיזוג אוויר</div><div style="font-size:0.75rem;color:var(--gray-dark);line-height:1.55;margin-top:0.25rem;">קובע את ארכיטקטורת הקירור, את התקן ואת המפרט הטכני — שומר הסף המקצועי של כל רכיב במערכת.</div></div><div style="text-align:center;color:var(--gray-light);font-weight:900;font-size:1rem;line-height:1;">&#8595;</div><div style="background:var(--white);border:1px solid var(--border);border-right:5px solid var(--teal);border-radius:10px;padding:0.8rem 1.1rem;"><div style="font-size:0.85rem;font-weight:800;color:var(--navy);">קבלן ביצוע מיזוג אוויר (אלקטרו-מכני)</div><div style="font-size:0.75rem;color:var(--gray-dark);line-height:1.55;margin-top:0.25rem;">מתקין את המערכת בפועל; רוכש את המערכת המשלימה (צנרת, שסתומים, אביזרים) במסגרת התקן שנקבע.</div></div><div style="text-align:center;color:var(--gray-light);font-weight:900;font-size:1rem;line-height:1;">&#8595;</div><div style="background:var(--white);border:1px solid var(--border);border-right:5px solid var(--teal);border-radius:10px;padding:0.8rem 1.1rem;"><div style="font-size:0.85rem;font-weight:800;color:var(--navy);">ספקיות ציוד קירור ויבואנים</div><div style="font-size:0.75rem;color:var(--gray-dark);line-height:1.55;margin-top:0.25rem;">מספקות את ציוד הליבה (צ'ילרים, CRAH, CDU) עם שירות והתקנה — לרוב נציגויות בלעדיות של מותגים גלובליים.</div></div><div style="text-align:center;color:var(--gray-light);font-weight:900;font-size:1rem;line-height:1;">&#8595;</div><div style="background:var(--white);border:1px solid var(--border);border-right:5px solid var(--amber);border-radius:10px;padding:0.8rem 1.1rem;"><div style="font-size:0.85rem;font-weight:800;color:var(--navy);">ספקי רכיבים ואביזרים</div><div style="font-size:0.75rem;color:var(--gray-dark);line-height:1.55;margin-top:0.25rem;">שסתומים, מגופים, סולנואידים, צנרת ומחברים — נמכרים ליצרני הציוד (OEM) או לקבלנים בשוק הפתוח. כאן השכבה הרלוונטית לבקרה גבע.</div></div>
+      </div>
+    </div>
+
+    <div class="slide-divider" style="margin:0 0 2.5rem;"></div>
+
+    <!-- 8+9. players -->
+    <div class="irr-block">
+      <div class="section-eyebrow">מפת שחקנים</div>
+      <h3 class="irr-h3">מי השחקנים? מיפוי — לא דירוג</h3>
+      <p class="irr-sub">בציוד הקירור הייעודי בישראל שלוש שחקניות פתרון-מלא מחזיקות כ-95% מהשוק, כל אחת בזוגיות בלעדית בין מותג גלובלי ליבואן מקומי. סביבן — יבואני צ'ילרים, קבלנים מתמחים, יזמיות וסטארט-אפים.</p>
+      <div class="two-col" style="margin-top:1rem;">
+<div class="card teal-top"><div class="card-title" style="font-size:0.9rem;">מותגי קירור גלובליים (פתרון מלא)</div><div class="card-body" style="font-size:0.76rem;">שלושת המובילים בעולם ובישראל; השוק אינו מזהה פערים מהותיים באיכות המוצרים ביניהם.<div style="display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:0.6rem;"><span style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:0.25rem 0.6rem;font-size:0.74rem;font-weight:600;color:var(--navy);">Vertiv</span> <span style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:0.25rem 0.6rem;font-size:0.74rem;font-weight:600;color:var(--navy);">Schneider Electric (+Motivair)</span> <span style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:0.25rem 0.6rem;font-size:0.74rem;font-weight:600;color:var(--navy);">STULZ</span></div></div></div><div class="card gray-top"><div class="card-title" style="font-size:0.9rem;">יצרני צ'ילרים / ציוד משלים</div><div class="card-body" style="font-size:0.76rem;">ספקי ציוד שאינם פתרון מלא (כ-5% מציוד הקירור הייעודי), חלקם בשיתופי פעולה עם קבלנים.<div style="display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:0.6rem;"><span style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:0.25rem 0.6rem;font-size:0.74rem;font-weight:600;color:var(--navy);">Carrier</span> <span style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:0.25rem 0.6rem;font-size:0.74rem;font-weight:600;color:var(--navy);">York</span> <span style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:0.25rem 0.6rem;font-size:0.74rem;font-weight:600;color:var(--navy);">Mitsubishi</span></div></div></div><div class="card navy-top"><div class="card-title" style="font-size:0.9rem;">יבואנים / נציגויות בישראל</div><div class="card-body" style="font-size:0.76rem;">כל מותג גלובלי פועל בישראל דרך יבואן: אלכסנדר שניידר — Vertiv (מוביל, ~70% מהשוק המקומי); תדיראן — Channel Partner של שניידר ישראל; מגל פלוס — STULZ; אלקטרה — Carrier; משב — York.<div style="display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:0.6rem;"><span style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:0.25rem 0.6rem;font-size:0.74rem;font-weight:600;color:var(--navy);">אלכסנדר שניידר</span> <span style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:0.25rem 0.6rem;font-size:0.74rem;font-weight:600;color:var(--navy);">תדיראן / שניידר ישראל</span> <span style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:0.25rem 0.6rem;font-size:0.74rem;font-weight:600;color:var(--navy);">מגל פלוס</span> <span style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:0.25rem 0.6rem;font-size:0.74rem;font-weight:600;color:var(--navy);">אלקטרה</span> <span style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:0.25rem 0.6rem;font-size:0.74rem;font-weight:600;color:var(--navy);">משב</span></div></div></div><div class="card navy-top"><div class="card-title" style="font-size:0.9rem;">יזמיות ומפעילות חוות בישראל</div><div class="card-body" style="font-size:0.76rem;">מקימות ומנהלות את החוות; חלקן זרועות של קבוצות נדל"ן, תשתיות ותקשורת.<div style="display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:0.6rem;"><span style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:0.25rem 0.6rem;font-size:0.74rem;font-weight:600;color:var(--navy);">SDS</span> <span style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:0.25rem 0.6rem;font-size:0.74rem;font-weight:600;color:var(--navy);">MedOne (קבוצת תעבורה)</span> <span style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:0.25rem 0.6rem;font-size:0.74rem;font-weight:600;color:var(--navy);">Mega DC (מגה אור)</span> <span style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:0.25rem 0.6rem;font-size:0.74rem;font-weight:600;color:var(--navy);">דיגיטל מבנה (מבנה + Digital Realty)</span> <span style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:0.25rem 0.6rem;font-size:0.74rem;font-weight:600;color:var(--navy);">בינת (קבוצת רד-בינת)</span> <span style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:0.25rem 0.6rem;font-size:0.74rem;font-weight:600;color:var(--navy);">Serverfarm</span></div></div></div><div class="card gray-top"><div class="card-title" style="font-size:0.9rem;">קבלני ביצוע אלקטרו-מכניים</div><div class="card-body" style="font-size:0.76rem;">קבלני מיזוג אוויר ואינסטלציה מתמחים שמתקינים את מערכות הקירור ורוכשים את המערכת המשלימה. מיפוי שמי מלא — בראיונות ההמשך.<div style="display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:0.6rem;"><span style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:0.25rem 0.6rem;font-size:0.74rem;font-weight:600;color:var(--navy);">קבלני מיזוג מתמחים (למיפוי)</span></div></div></div><div class="card teal-top"><div class="card-title" style="font-size:0.9rem;">סטארט-אפים ישראליים בקירור</div><div class="card-body" style="font-size:0.76rem;">חדשנות ישראלית בקירור נוזלי: ZutaCore (קירור דו-פאזי צמוד מעבד) זכתה להשקעות של Carrier ו-Mitsubishi ולשותפות עם NVIDIA.<div style="display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:0.6rem;"><span style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:0.25rem 0.6rem;font-size:0.74rem;font-weight:600;color:var(--navy);">ZutaCore</span></div></div></div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.9rem;margin-top:1.1rem;">
+        <div style="background:var(--white);border:1px solid var(--border);border-radius:10px;padding:0.9rem 1.1rem;">
+          <div style="font-size:0.78rem;font-weight:800;color:var(--navy);margin-bottom:0.5rem;">שוק ציוד הקירור הייעודי — עולמי (הערכה)</div>
+          <div style="display:flex;height:20px;border-radius:5px;overflow:hidden;direction:ltr;">
+            <div style="width:45%;background:var(--navy-mid);color:#fff;font-size:0.66rem;font-weight:700;display:flex;align-items:center;justify-content:center;">Vertiv 45%</div>
+            <div style="width:30%;background:var(--teal);color:#fff;font-size:0.66rem;font-weight:700;display:flex;align-items:center;justify-content:center;">Schneider 30%</div>
+            <div style="width:25%;background:#8FB8E0;color:#fff;font-size:0.66rem;font-weight:700;display:flex;align-items:center;justify-content:center;">STULZ 25%</div>
+          </div>
+        </div>
+        <div style="background:var(--white);border:1px solid var(--border);border-radius:10px;padding:0.9rem 1.1rem;">
+          <div style="font-size:0.78rem;font-weight:800;color:var(--navy);margin-bottom:0.5rem;">שוק ציוד הקירור הייעודי — ישראל (הערכה)</div>
+          <div style="display:flex;height:20px;border-radius:5px;overflow:hidden;direction:ltr;">
+            <div style="width:70%;background:var(--navy-mid);color:#fff;font-size:0.66rem;font-weight:700;display:flex;align-items:center;justify-content:center;">אלכסנדר שניידר (Vertiv) 70%</div>
+            <div style="width:20%;background:var(--teal);color:#fff;font-size:0.66rem;font-weight:700;display:flex;align-items:center;justify-content:center;">תדיראן / שניידר 20%</div>
+            <div style="width:5%;background:#8FB8E0;"></div>
+            <div style="width:5%;background:var(--gray-light);"></div>
+          </div>
+          <div style="font-size:0.68rem;color:var(--gray-mid);margin-top:0.35rem;">5% מגל פלוס (STULZ) · 5% אחרים (בעיקר York / Carrier). הפער מהתמונה הגלובלית נובע מיכולות היבואן המקומי — שירות, שיווק וקשרי לקוחות — לא מאיכות המוצר.</div>
+        </div>
+      </div>
+      <p class="irr-note">מיפוי בלבד — ללא דירוג וללא המלצות. נתוני נתחי שוק: הערכות מראיונות עומק במחקר BDO.</p>
+    </div>
+
+    <div class="slide-divider" style="margin:0 0 2.5rem;"></div>
+
+    <!-- interviews -->
+    <div class="irr-block" style="margin-bottom:0;">
+      <div class="section-eyebrow">להמשך</div>
+      <h3 class="irr-h3">מה נשלים בראיונות שוק?</h3>
+      <p class="irr-sub">המיפוי הטכנולוגי בפרק זה נועד לאפשר לראיונות הבאים — עם קבלני קירור, מהנדסי מיזוג, מפעילים וספקי ציוד — להתמקד בשאלות המסחריות בלבד: מי מחליט על רכיבי בקרת הזרימה, איך הם נרכשים ובאילו היקפים. השאלות המלאות מרוכזות בפרק "פערי מידע" בסוף האתר.</p>
+    </div>
+
   </div>
 </div>
 
@@ -3040,7 +3291,34 @@
     <p class="irr-note">להשלמה בהמשך.</p>
 
     <h3 class="irr-h3" style="margin-top:1.5rem;">דאטה סנטרים</h3>
-    <p class="irr-note">להשלמה בהמשך.</p>
+    <div class="two-col" style="margin-top:1.1rem;">
+      <div class="card teal-top">
+        <div class="card-title" style="font-size:0.9rem;">פערי מידע</div>
+        <div class="card-body" style="font-size:0.78rem;">
+          <ol style="padding-right:1.15rem;margin:0;line-height:1.7;">
+            <li>אילו רכיבי בקרת זרימה (שסתומים, סולנואידים, מגופים) נרכשים בשוק הפתוח ואילו מגיעים מובנים בציוד ה-OEM.</li>
+            <li>מי קובע בפועל את מפרט הרכיבים — המהנדס, הקבלן, היזם או יצרן הציוד.</li>
+            <li>אילו מותגי שסתומים ורכיבי זרימה נמצאים היום בפרויקטים בישראל.</li>
+            <li>היקף הרכש של רכיבי זרימה ואביזרים לכל MW מותקן.</li>
+            <li>מיפוי שמי של קבלני הקירור / האלקטרו-מכניקה המתמחים בחוות שרתים.</li>
+            <li>תקני הצנרת בפועל (נירוסטה מול חלופות) ליד השרתים ובמערכת ההיקפית.</li>
+          </ol>
+        </div>
+      </div>
+      <div class="card navy-top">
+        <div class="card-title" style="font-size:0.9rem;">שאלות לראיונות (קבלנים, מהנדסי מיזוג, מפעילים, ספקי ציוד)</div>
+        <div class="card-body" style="font-size:0.78rem;">
+          <ol style="padding-right:1.15rem;margin:0;line-height:1.7;">
+            <li>ממי אתם קונים היום שסתומים, מגופים ואביזרי זרימה לפרויקטים של חוות שרתים?</li>
+            <li>מה נדרש כדי שרכיב ייכנס למפרט — אישורים, תקנים, ניסיון מוכח?</li>
+            <li>איפה נמצאים צווארי הבקבוק באספקה ובשירות של רכיבי המערכת המשלימה?</li>
+            <li>איך מתחלק הרכש בין היזם, הקבלן ויצרן הציוד בפרויקט טיפוסי?</li>
+            <li>האם קירור נוזלי ישיר (CDU / מניפולדים) פותח שכבת רכש חדשה בישראל — ואצל מי?</li>
+            <li>מה חשוב יותר בבחירת ספק רכיבים: מחיר, זמינות, תמיכה הנדסית או מותג?</li>
+          </ol>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
