@@ -908,9 +908,10 @@
   /* ── XY CATEGORY MAP ── */
   .xymap-outer { display: flex; gap: 0.6rem; margin-top: 1.25rem; direction: ltr; }
   .xymap-ylab {
-    writing-mode: vertical-rl; transform: rotate(180deg);
-    font-size: 0.82rem; font-weight: 700; color: var(--navy);
-    text-align: center; flex-shrink: 0;
+    display: flex; flex-direction: column; justify-content: space-between;
+    align-items: flex-end; text-align: right; direction: rtl;
+    width: 5rem; flex-shrink: 0;
+    font-size: 0.72rem; font-weight: 700; color: var(--gray-mid); line-height: 1.25;
   }
   .xymap {
     position: relative; flex: 1; height: 330px;
@@ -2078,8 +2079,8 @@
       <p class="irr-sub">מיקום קטגוריות מוצר בזירת ההשקיה לפי שני ממדים: התאמה לליבת בקרה גבע (ציר אופקי) ויכולת לייצר אפקט מיידי (ציר אנכי). המיקום יתעדכן לאחר השלמת נתוני בקרה, ראיונות שוק ואימות השחקנים.</p>
 
       <div class="xymap-outer">
-        <div class="xymap-ylab">מייצר אפקט מיידי ↑</div>
-        <div class="xymap"><span style="position:absolute;top:6px;left:8px;font-size:0.72rem;font-weight:700;color:var(--gray-mid);direction:rtl;">↑ אפקט מיידי משמעותי</span><span style="position:absolute;bottom:6px;left:8px;font-size:0.72rem;font-weight:700;color:var(--gray-mid);direction:rtl;">↓ אפקט מיידי נמוך</span>
+        <div class="xymap-ylab"><div>↑ אפקט מיידי משמעותי</div><div>↓ ללא אפקט מיידי</div></div>
+        <div class="xymap">
           <div class="xydot" style="left:12%;bottom:70%;"><span class="arena-dot conditional" style="margin:0;">מפיצים / ערוצי הפצה</span></div>
           <div class="xydot" style="left:86%;bottom:44%;"><span class="arena-dot priority" style="margin:0;">בקרים / Timers / IoT</span></div>
           <div class="xydot" style="left:86%;bottom:57%;"><span class="arena-dot priority" style="margin:0;">מגופים / שסתומי בקרה</span></div>
@@ -2563,8 +2564,8 @@
       <p class="irr-sub">מיקום לפי שני ממדים: התאמה לליבת בקרה גבע (ציר אופקי) ויכולת לייצר אפקט מיידי (ציר אנכי).</p>
 
       <div class="xymap-outer">
-        <div class="xymap-ylab">מייצר אפקט מיידי ↑</div>
-        <div class="xymap"><span style="position:absolute;top:6px;left:8px;font-size:0.72rem;font-weight:700;color:var(--gray-mid);direction:rtl;">↑ אפקט מיידי משמעותי</span><span style="position:absolute;bottom:6px;left:8px;font-size:0.72rem;font-weight:700;color:var(--gray-mid);direction:rtl;">↓ אפקט מיידי נמוך</span>
+        <div class="xymap-ylab"><div>↑ אפקט מיידי משמעותי</div><div>↓ ללא אפקט מיידי</div></div>
+        <div class="xymap">
           <div class="xydot" style="left:70%;bottom:70%;"><span class="arena-dot priority" style="margin:0;">חברות סחר ישראליות</span></div>
         </div>
       </div>
