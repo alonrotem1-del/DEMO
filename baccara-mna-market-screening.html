@@ -909,7 +909,7 @@
   .xymap-outer { display: flex; gap: 0.6rem; margin-top: 1.25rem; direction: ltr; }
   .xymap-ylab {
     writing-mode: vertical-rl; transform: rotate(180deg);
-    font-size: 0.74rem; font-weight: 700; color: var(--navy);
+    font-size: 0.82rem; font-weight: 700; color: var(--navy);
     text-align: center; flex-shrink: 0;
   }
   .xymap {
@@ -926,7 +926,7 @@
     position: absolute; transform: translate(-50%, 50%);
     max-width: 180px; text-align: center; direction: rtl;
   }
-  .xymap-xlab { text-align: center; font-size: 0.74rem; font-weight: 700; color: var(--navy); margin-top: 0.5rem; direction: ltr; }
+  .xymap-xlab { text-align: center; font-size: 0.82rem; font-weight: 700; color: var(--navy); margin-top: 0.5rem; direction: ltr; }
 
   /* ── SLIDE BG VARIANTS ── */
   .slide.gray-bg { background: var(--gray-bg); }
@@ -968,10 +968,10 @@
     line-height: 1.65;
   }
   .irr-note {
-    font-size: 0.74rem;
+    font-size: 0.78rem;
     color: var(--gray-mid);
     margin-top: 0.6rem;
-    line-height: 1.55;
+    line-height: 1.6;
   }
   .irr-sowhat {
     margin-top: 0.9rem;
@@ -1051,25 +1051,25 @@
   .irr-table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 0.78rem;
+    font-size: 0.83rem;
     background: var(--white);
   }
   .irr-table th {
     background: var(--navy);
-    color: rgba(255,255,255,0.85);
-    font-size: 0.68rem;
+    color: rgba(255,255,255,0.9);
+    font-size: 0.75rem;
     font-weight: 700;
-    padding: 0.55rem 0.7rem;
+    padding: 0.6rem 0.75rem;
     text-align: right;
     border: 1px solid rgba(255,255,255,0.08);
   }
   .irr-table td {
     border: 1px solid var(--border);
-    padding: 0.5rem 0.7rem;
+    padding: 0.58rem 0.75rem;
     vertical-align: top;
     color: var(--gray-dark);
     text-align: right;
-    line-height: 1.55;
+    line-height: 1.6;
   }
   .irr-table tr.cat-row td {
     background: var(--gray-bg);
@@ -1081,15 +1081,15 @@
   .tag {
     display: inline-block;
     border-radius: 20px;
-    padding: 0.12rem 0.55rem;
-    font-size: 0.68rem;
+    padding: 0.15rem 0.6rem;
+    font-size: 0.73rem;
     font-weight: 700;
     white-space: nowrap;
     margin-inline-end: 0.25rem;
     margin-bottom: 0.2rem;
   }
   .tag.t-test { background: var(--teal-pale); color: var(--teal); }
-  .tag-maybe { display:inline-block; background:#FFF7ED; border:1px solid #FDBA74; color:#9A3412; border-radius:4px; padding:0.15rem 0.5rem; font-size:0.68rem; font-weight:700; white-space:nowrap; }
+  .tag-maybe { display:inline-block; background:#FFF7ED; border:1px solid #FDBA74; color:#9A3412; border-radius:4px; padding:0.15rem 0.55rem; font-size:0.73rem; font-weight:700; white-space:nowrap; }
   .tag.t-partner { background: var(--green-pale); color: var(--green); }
   .tag.t-channel { background: #E0E7FF; color: #3730A3; }
   .tag.t-customer { background: var(--orange-pale); color: var(--orange); }
@@ -2079,7 +2079,7 @@
 
       <div class="xymap-outer">
         <div class="xymap-ylab">מייצר אפקט מיידי ↑</div>
-        <div class="xymap"><span style="position:absolute;top:6px;left:8px;font-size:0.62rem;font-weight:700;color:var(--gray-mid);direction:rtl;">↑ אפקט מיידי משמעותי</span><span style="position:absolute;bottom:6px;left:8px;font-size:0.62rem;font-weight:700;color:var(--gray-mid);direction:rtl;">↓ אפקט מיידי נמוך</span>
+        <div class="xymap"><span style="position:absolute;top:6px;left:8px;font-size:0.72rem;font-weight:700;color:var(--gray-mid);direction:rtl;">↑ אפקט מיידי משמעותי</span><span style="position:absolute;bottom:6px;left:8px;font-size:0.72rem;font-weight:700;color:var(--gray-mid);direction:rtl;">↓ אפקט מיידי נמוך</span>
           <div class="xydot" style="left:12%;bottom:70%;"><span class="arena-dot conditional" style="margin:0;">מפיצים / ערוצי הפצה</span></div>
           <div class="xydot" style="left:86%;bottom:44%;"><span class="arena-dot priority" style="margin:0;">בקרים / Timers / IoT</span></div>
           <div class="xydot" style="left:86%;bottom:57%;"><span class="arena-dot priority" style="margin:0;">מגופים / שסתומי בקרה</span></div>
@@ -2087,7 +2087,7 @@
           <div class="xydot" style="left:50%;bottom:20%;"><span class="arena-dot conditional" style="margin:0;">דישון / Fertigation</span></div>
         </div>
       </div>
-      <div class="xymap-xlab" style="display:flex;justify-content:space-between;align-items:center;padding:0 0.4rem;direction:ltr;"><span style="font-size:0.66rem;color:var(--gray-mid);font-weight:700;">← התאמה נמוכה</span><span>התאמה לליבת בקרה גבע</span><span style="font-size:0.66rem;color:var(--gray-mid);font-weight:700;">התאמה גבוהה →</span></div>
+      <div class="xymap-xlab" style="display:flex;justify-content:space-between;align-items:center;padding:0 0.4rem;direction:ltr;"><span style="font-size:0.74rem;color:var(--gray-mid);font-weight:700;">← התאמה נמוכה</span><span>התאמה לליבת בקרה גבע</span><span style="font-size:0.74rem;color:var(--gray-mid);font-weight:700;">התאמה גבוהה →</span></div>
 
       <div class="irr-sowhat" style="margin-top:1.25rem;">המפה מציגה מיפוי ראשוני של קטגוריות סמוכות להשקיה לפי שני ממדים: התאמה לליבת בקרה גבע ויכולת לייצר אפקט מיידי. בקרים ומגופים קרובים יחסית לליבה, אך דורשים בדיקת שחקנים וערוצים. חיישנים ודישון סמוכים יותר כתחומי הרחבה, אך האפקט המיידי שלהם נמוך יותר. מפיצים עשויים לייצר אפקט פיננסי מהיר יותר, אך הם רחוקים יותר מליבת המוצר והטכנולוגיה של בקרה.</div>
       <div style="margin-top:1.5rem;background:var(--teal-pale);border:1.5px solid var(--teal);border-right:5px solid var(--teal);border-radius:10px;padding:1.1rem 1.4rem;font-size:0.98rem;font-weight:600;color:var(--navy);line-height:1.85;">הפעילות המרכזית בעולם ההשקיה היא מחוץ לישראל. הגורם המתאים לרכישה צריך להשלים את הפעילות של בקרה בשווקים שבהם היא פועלת ולייצר מכפיל כוח. רכישה של גורם בתחום ההפצה עשויה לייצר אפקט פיננסי מהיר, אך היא חלשה יותר בהיבט האסטרטגי. אם ערוצי הבדיקה העיקריים לא יבשילו, ניתן לבחון גם אפשרות לרכישת פעילות רלוונטית (Spin-Off) מתוך אחת החברות הגדולות בענף.</div>
@@ -2564,11 +2564,11 @@
 
       <div class="xymap-outer">
         <div class="xymap-ylab">מייצר אפקט מיידי ↑</div>
-        <div class="xymap"><span style="position:absolute;top:6px;left:8px;font-size:0.62rem;font-weight:700;color:var(--gray-mid);direction:rtl;">↑ אפקט מיידי משמעותי</span><span style="position:absolute;bottom:6px;left:8px;font-size:0.62rem;font-weight:700;color:var(--gray-mid);direction:rtl;">↓ אפקט מיידי נמוך</span>
+        <div class="xymap"><span style="position:absolute;top:6px;left:8px;font-size:0.72rem;font-weight:700;color:var(--gray-mid);direction:rtl;">↑ אפקט מיידי משמעותי</span><span style="position:absolute;bottom:6px;left:8px;font-size:0.72rem;font-weight:700;color:var(--gray-mid);direction:rtl;">↓ אפקט מיידי נמוך</span>
           <div class="xydot" style="left:70%;bottom:70%;"><span class="arena-dot priority" style="margin:0;">חברות סחר ישראליות</span></div>
         </div>
       </div>
-      <div class="xymap-xlab" style="display:flex;justify-content:space-between;align-items:center;padding:0 0.4rem;direction:ltr;"><span style="font-size:0.66rem;color:var(--gray-mid);font-weight:700;">← התאמה נמוכה</span><span>התאמה לליבת בקרה גבע</span><span style="font-size:0.66rem;color:var(--gray-mid);font-weight:700;">התאמה גבוהה →</span></div>
+      <div class="xymap-xlab" style="display:flex;justify-content:space-between;align-items:center;padding:0 0.4rem;direction:ltr;"><span style="font-size:0.74rem;color:var(--gray-mid);font-weight:700;">← התאמה נמוכה</span><span>התאמה לליבת בקרה גבע</span><span style="font-size:0.74rem;color:var(--gray-mid);font-weight:700;">התאמה גבוהה →</span></div>
     </div>
 
   </div>
