@@ -1040,8 +1040,9 @@
   }
   /* Table A (automation) — sticky column headers; desktop only, mobile keeps horizontal scroll */
   @media (min-width: 900px) {
-    .automation-table-a { overflow-x: visible; }
-    .automation-table-a .irr-table thead th {
+    .automation-table-a, .sticky-head-table { overflow-x: visible; }
+    .automation-table-a .irr-table thead th,
+    .sticky-head-table .irr-table thead th {
       position: sticky;
       top: 54px; /* height of the fixed top nav */
       z-index: 20;
@@ -1970,7 +1971,7 @@
       <p class="irr-note">תקדים bundle חשוב (נתון פנימי / לפי הנהלת בקרה גבע): לנטפים הסכם בלעדיות היסטורי עם עמיעד על מערכות סינון מסוימות בפרויקטים הגדולים — הוכחה שמודל "רכיב משלים דרך שחקן מערכת" עובד בשוק הזה.</p>
 
       <h4 class="irr-h4" style="margin-top:1.75rem;">H · צנרת / fittings / טפטוף / emitters</h4>
-      <div class="irr-wrap">
+      <div class="irr-wrap sticky-head-table">
         <table class="irr-table">
           <thead><tr><th>שחקן</th><th>סגמנט</th><th>מוצר / פעילות</th><th>תפקיד בשרשרת</th><th>בעלות / קבוצה</th><th>הכנסות / סדר גודל</th><th>רלוונטיות לבקרה</th><th>הערות</th></tr></thead>
           <tbody>
@@ -1987,7 +1988,7 @@
       <p class="irr-note">שחקני קטגוריה זו חשובים להבנת האקוסיסטם והמערכת המלאה, אך רחוקים מליבת בקרה — אינם שחקני ליבה ואינם יעדי בדיקה.</p>
 
       <h4 class="irr-h4" style="margin-top:1.75rem;">I · מפיצים / סחר / נציגויות / ערוצי הפצה</h4>
-      <div class="irr-wrap">
+      <div class="irr-wrap sticky-head-table">
         <table class="irr-table">
           <thead><tr><th>שחקן</th><th>סגמנט</th><th>מוצר / פעילות</th><th>תפקיד בשרשרת</th><th>בעלות / קבוצה</th><th>הכנסות / סדר גודל</th><th>רלוונטיות לבקרה</th><th>הערות</th></tr></thead>
           <tbody>
@@ -2401,14 +2402,11 @@
             <tr><td style="font-weight:700;color:var(--navy);">מדיטל</td><td style="text-align:center;">-</td><td style="text-align:center;"><span style="color:var(--teal);font-weight:900;">&#10003;</span></td><td>Galil Motion Control, ETEL, Lenze ועוד</td><td>בקרת תנועה, הנעה לינארית, מנועים וסרוו, גירים ואנקודרים, ראייה ומדידה, אלמנטים מכניים</td><td>כ-₪100M הינע ובקרה (2020)<br>דורש אימות עדכני</td><td><span class="tag-maybe">ייתכן</span></td><td>מפיץ / VAR (est. 1983), medital.com; שחקן גדול בערוץ ההינע המקומי. בעלות ופתיחות — לאימות</td></tr>
             <tr><td style="font-weight:700;color:var(--navy);">אטקה</td><td style="text-align:center;">-</td><td style="text-align:center;"><span style="color:var(--teal);font-weight:900;">&#10003;</span></td><td>כ-40 יצרנים (חטיבת סחר אפקון)</td><td>מיתוג והתקנה חשמלית, ארונות בקרה, רכיבים אלקטרו-מכניים ומחברים, רובוטיקה ואוטומציה תעשייתית, פתרונות EX</td><td>כ-₪40M (2020)<br>דורש אימות עדכני</td><td><span class="tag-maybe">ייתכן</span></td><td>Ateka (ateka.co.il, est. 1971) — חטיבת הסחר של קבוצת אפקון (ציבורית). התאמה חלקית (דגש חשמל / מיתוג); בעלות = מבנה קבוצה — לאימות</td></tr>
             <tr><td style="font-weight:700;color:var(--navy);">ג'יג'י</td><td style="text-align:center;">?</td><td style="text-align:center;"><span style="color:var(--teal);font-weight:900;">&#10003;</span></td><td>SKF, NSK, Leroy Somer, Inovance, IKO, Motovario, Flender, TECO</td><td>מיסבים, גירים, מנועים, קפלינגים ורכיבי הינע והנעה</td><td>כ-₪30M הינע ובקרה (2020)<br>דורש אימות עדכני</td><td><span class="tag t-test">יעד בדיקה ל-M&amp;A</span></td><td>GG by Getter (gg.co.il) — קבוצת גטר; מיקוד בהינע והנעה מכנית. מתחת לרף ₪40M. בעלות = מבנה קבוצה — לאימות</td></tr>
-            <tr><td style="font-weight:700;color:var(--navy);">אנסיטק</td><td style="text-align:center;">-</td><td style="text-align:center;">?</td><td>—</td><td>זהות לא אומתה</td><td>—</td><td><span style="display:inline-block;background:var(--gray-bg);border:1px solid var(--border);border-radius:4px;padding:0.15rem 0.5rem;font-size:0.7rem;font-weight:700;color:var(--gray-mid);white-space:nowrap;">זהות לא אומתה</span></td><td>לא אותרה חברה ישראלית בשם "אנסיטק" / "Ansitec" במקורות (חיפוש רשת ומאגרים); ייתכן שם או תעתיק שגוי — נדרש בירור מול ההנהלה לפני כל סיווג</td></tr>
-            <tr><td style="font-weight:700;color:var(--navy);">נוימו</td><td style="text-align:center;">-</td><td style="text-align:center;">-</td><td>Neumo Vargus</td><td>מכונות ומכשירי מדידה, מטרולוגיה, אמצעי שינוע ואחסון (הקטגוריה הקודמת "מנועים" לא אומתה)</td><td>נתוני 2020 — דורש אימות</td><td>לא רלוונטי</td><td>Neumo-Vargus (neumo-vargus.co.il, est. 1964) — חברת מדידה / מטרולוגיה, לא הינע חשמלי; מחוץ להיקף האוטומציה של מכונות</td></tr>
             <tr><td style="font-weight:700;color:var(--navy);">דלתא אלקון</td><td style="text-align:center;">-</td><td style="text-align:center;"><span style="color:var(--teal);font-weight:900;">&#10003;</span></td><td>?</td><td>מנועים, דרייברים (סל מדויק לא אומת)</td><td>כ-₪10M (2020)<br>דורש אימות עדכני</td><td><span class="tag t-test">יעד בדיקה ל-M&amp;A</span></td><td>דלתה אלקון (delta-elkon.co.il) — אתר קיים; פירוט סל מוצרים וגודל עדכני — לאימות. מתחת לרף ₪40M</td></tr>
-            <tr><td style="font-weight:700;color:var(--navy);">EAD / אי.איי.די</td><td style="text-align:center;">-</td><td style="text-align:center;"><span style="color:var(--teal);font-weight:900;">&#10003;</span></td><td>?</td><td>זהות לא אומתה</td><td>—</td><td><span style="display:inline-block;background:var(--gray-bg);border:1px solid var(--border);border-radius:4px;padding:0.15rem 0.5rem;font-size:0.7rem;font-weight:700;color:var(--gray-mid);white-space:nowrap;">זהות לא אומתה</span></td><td>לא אותרה חברה ישראלית מזוהה בבירור בשם EAD / אי.איי.די בתחום; נדרש בירור מול ההנהלה לפני סיווג</td></tr>
           </tbody>
         </table>
       </div>
-      <p class="irr-note">סיווג הרלוונטיות מבוסס על רף גודל ראשוני: חברות בהיקף כ-₪40M ומעלה — "ייתכן"; מתחת לכך — "יעד בדיקה ל-M&amp;A" (באותו סימון כמו טלגיל בפרק ההשקיה). רף הגודל אינו קובע היתכנות עסקה — בעלות, מבנה קבוצה ופתיחות טעונים אימות. חברות שזהותן או התאמתן לא אומתה (אנסיטק, EAD, נוימו) מסומנות בנפרד ואינן יעד בדיקה.</p>
+      <p class="irr-note">סיווג הרלוונטיות מבוסס על רף גודל ראשוני: חברות בהיקף כ-₪40M ומעלה — "ייתכן"; מתחת לכך — "יעד בדיקה ל-M&amp;A" (באותו סימון כמו טלגיל בפרק ההשקיה). רף הגודל אינו קובע היתכנות עסקה — בעלות, מבנה קבוצה ופתיחות טעונים אימות.</p>
       <h4 class="irr-h4" style="margin-top:1.75rem;">C · יצרנים מקומיים</h4>
       <p class="irr-sub">חברות המפתחות או מייצרות בישראל רכיבים פיזיים הרלוונטיים ישירות לאוטומציה של מכונות — סולנואידים, שסתומים, רכיבי פנאומטיקה, manifolds, אקטואטורים, צילינדרים, מנועים, דרייברים ורכיבי הינע ותנועה. מוחרגים במפורש: חברות אלקטרוניקה גנריות, חברות מכניקה רחבות, חברות תוכנה בלבד, אינטגרטורי PLC/SCADA, אינטגרטורי רובוטיקה, וספקי ייעוץ ושירותי Industry 4.0.</p>
       <div class="irr-wrap">
@@ -2440,7 +2438,6 @@
         </div>
         <div style="font-size:0.7rem;color:var(--gray-mid);margin-top:0.5rem;">נתוני שחקנים: נתוני 2020 — דורש אימות עדכני. נתוני בקרה גבע (סה"כ כ-130M; פנאומטיקה 15M) — עדכניים. "אחר" מוצג רק כאשר קיים סה"כ ידוע, כהשלמה בלבד — לא בהכרח אוטומציה.</div>
         <div style="font-size:0.7rem;color:var(--gray-mid);margin-top:0.25rem;">SMC: הנתון מתייחס לפעילות / מכירות רלוונטיות לבקרה, לא בהכרח לכל פעילות SMC בישראל. בעבר, לפני אובדן SMC, פעילות הפנאומטיקה של בקרה הוערכה בכ-₪40M.</div>
-        <div style="font-size:0.7rem;color:var(--gray-mid);margin-top:0.25rem;">אנסיטק ו-EAD הוסרו מההשוואה משום שזהותן ופעילותן לא אומתו; נוימו הוסרה לאחר שנמצא כי פעילותה מתמקדת במטרולוגיה ואינה בתחום האוטומציה שהוגדר.</div>
       </div>
     </div>
 
@@ -2542,7 +2539,7 @@
           <div class="card-title" style="font-size:0.88rem;">מה נשאר לבדיקה</div>
           <div class="card-body" style="font-size:0.78rem;">
             <ul style="padding-right:1.05rem;margin:0;line-height:1.7;">
-              <li>שחקנים קטנים־בינוניים עם נציגויות ולקוחות — בעיקר ג'יג'י ודלתא אלקון; זהות אנסיטק ו-EAD דורשת בירור מול ההנהלה.</li>
+              <li>שחקנים קטנים־בינוניים עם נציגויות ולקוחות — בעיקר ג'יג'י ודלתא אלקון.</li>
               <li>זמינות נציגויות פנאומטיקה חלופיות</li>
               <li>קטגוריות פער: Servo, Drives, Gearboxes, Encoders</li>
               <li>רשימת בוני מכונות מלאה לפי OEM / Custom</li>
